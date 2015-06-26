@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+{% if browser_sync == true %}
+    <script type='text/javascript' id="__bs_script__">//<![CDATA[
+        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.7.12.js'><\/script>".replace("HOST", location.hostname));
+        //]]></script>
+{% endif %}
+</body>
+</html>
