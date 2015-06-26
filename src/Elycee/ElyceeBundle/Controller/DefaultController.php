@@ -8,12 +8,20 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class DefaultController extends Controller
 {
+
     /**
-     * @Route("/hello/{name}")
-     * @Template()
+     * @Route("/home", name="ElyceeBundle.default.index")
+     * @Template("ElyceeElyceeBundle:Default:index.html.twig")
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-        return array('name' => $name);
+        return array();
     }
+
+
+
+
+
+
+
 }
