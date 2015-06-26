@@ -1,7 +1,3 @@
-dashboard_dashboard:
-    resource: "@DashboardDashboardBundle/Controller/"
-    type:     annotation
-    prefix:   /
 
 elycee_elycee:
     resource: "@ElyceeElyceeBundle/Controller/"

@@ -79,7 +79,3 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-axstrad_browser_sync:
-    enabled: %kernel.debug%
-    server_port: 3000
-    client_version: null
