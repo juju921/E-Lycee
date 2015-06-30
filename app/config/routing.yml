@@ -1,6 +1,11 @@
 dashboarddashboard:
     resource: "@dashboarddashboardBundle/Controller/"
     type:     annotation
+    prefix:   /
+
+dashboarddashboard:
+    resource: "@dashboarddashboardBundle/Controller/"
+    type:     annotation
     prefix:   /dashboard
 
 
