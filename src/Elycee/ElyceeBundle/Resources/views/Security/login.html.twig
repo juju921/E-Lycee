@@ -1,29 +1,26 @@
-{% extends "ElyceeElyceeBundle::layout.html.twig" %}
-
+{% extends "::base.html.twig" %}
+{% block body %}
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    <div class="container">
-        <form class="form-signin">
-            <form action="{{ path("fos_user_security_check") }}" method="post">
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
 
-                <label for="username">login</label>
-                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
-                       class="form-control"/>
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-                <label for="password">mot de passe</label>
-                <input type="password" id="password" name="_password" required="required" class="form-control"/>
+        <label for="username">{{ 'security.login.username'|trans }}</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
 
-                <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="checkbox"/>
-                <label for="remember_me">se souvenir de moi</label>
+        <label for="password">{{ 'security.login.password'|trans }}</label>
+        <input type="password" id="password" name="_password" required="required" />
 
-                <input type="submit" id="_submit" name="_submit" value="envoyer"
-                       class="btn btn-lg btn-primary btn-block"/>
-            </form>
-    </div>
-    </div>
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+        <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    </form>
 {% endblock fos_user_content %}
+
+{% endblock %}

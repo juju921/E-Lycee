@@ -1,7 +1,6 @@
 dashboarddashboard:
     resource: "@dashboarddashboardBundle/Controller/"
     type:     annotation
-    prefix:   /dashboard
 
 
 elycee_elycee:
@@ -14,5 +13,4 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-    
 

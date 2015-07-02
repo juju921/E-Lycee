@@ -14,9 +14,20 @@ security:
             id: fos_user.user_provider.username
 
     firewalls:
-        dashboard:
-            pattern: ^/dashboard/
-            anonymous:    ~
+#        dashboard:
+#            pattern: ^/dashboard/
+#            anonymous:    ~
+#            form_login:
+#                provider: fos_userbundle
+#                csrf_provider: form.csrf_provider
+#                login_path: /login
+#                check_path:     /dashboard/login_check
+#                default_target_path:  /dashboard/
+#            logout:
+#                path:        /dashboard/logout
+#                target:      /home
+
+
 
         dev:
             pattern: ^/(_(profiler|wdt|error)|css|images|js)/
@@ -31,9 +42,11 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
+                default_target_path: /home
             logout:
                 path:        /logout
                 target:      /home
+
 
 
     access_control:
