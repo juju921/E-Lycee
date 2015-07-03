@@ -70,12 +70,14 @@
             </div>
         </div>
         <div class="row">
+    {% for posts in results %}
             <div class="col-md-4">
+                <img src="{{ posts.urlThumbnail }}" alt=""/>
                 <h2>
-                    Les suites récurrentes
+                   {{ posts.titre }}
                 </h2>
                 <p>
-                    L'étude des suites récurrentes linéaire d'ordre supérieur se ramène à un problème d'algèbre linéaire. l'expression du terme général d'une telle suite est possible si ...
+             {{ posts.abstract }}
                 </p>
                 <p>
                     <a class="btn" href="#">Lire la suite ...</a>
@@ -83,25 +85,10 @@
                 <p>auteur: alan</p>
                 <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
             </div>
-            <div class="col-md-4">
-                <h2>
-                    La machine de Turing
-                </h2>
-                <p>
+    {% endfor %}
 
-                    Alors que, connaissant le caractère lu sur le ruban et l'état courant, une ...
-                </p>
-                <p>
-                    <a class="btn" href="#">Lire la suite ...</a>
-                </p>
-            </div>
-            <div class="col-md-4">
-                <h2>
-                    A lire aussi
-                </h2>
-                <p>
-                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                </p>
+
+
 
                 <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="614434951082188800">Tweets de @LyceeSVSM</a>
 

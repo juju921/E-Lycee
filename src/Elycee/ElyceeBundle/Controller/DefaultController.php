@@ -24,7 +24,12 @@ class DefaultController extends BaseController
         $fb = $this->get('session')->getFlashBag();
         $fb->set('login', "vous êtes bien connectés");
         $session = $request->getSession();
-        return array();
+        $doctrine = $this->getDoctrine();
+        $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
+        $results = $rc->findAll();
+        return array(
+            'results'=>$results
+        );
 
         if (class_exists('\Symfony\Component\Security\Core\Security')) {
             $authErrorKey = Security::AUTHENTICATION_ERROR;
