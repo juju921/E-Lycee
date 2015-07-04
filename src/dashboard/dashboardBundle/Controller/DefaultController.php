@@ -28,6 +28,27 @@ class DefaultController extends Controller
         return array();
     }
 
+    /**
+     *
+     * @Route("/dashboard/user", name="dashboard.default.user" )
+     * @Template("dashboarddashboardBundle:dashboard:user.html.twig")
+     */
+    public function userAction()
+    {
+
+        $doctrine = $this->getDoctrine();
+        $rc = $doctrine->getRepository('ElyceeElyceeBundle:User');
+        $users = $rc->findAll();
+
+        return array(
+
+            'users'=> $users
+
+        );
+    }
+
+
+
 
 
 
