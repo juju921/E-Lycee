@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
 
 class DefaultController extends BaseController
@@ -78,12 +79,16 @@ class DefaultController extends BaseController
 
 
     /**
-     * @Route("/actu", name="ElyceeBundle.default.actu")
+     * @Route("/actu/{id}   ", name="ElyceeBundle.default.actu")
      * @Template("ElyceeElyceeBundle:Default:actu.html.twig")
      */
-    public function actuAction()
+    public function actuAction($id)
     {
-        return array();
+
+        $doctrine   = $this->getDoctrine();
+        $rc         = $doctrine->getRepository('ElyceeElyceeBundle:Posts') ;
+        $news    = $rc->findOneById($id);
+        return array('news' => $news );
     }
 
 

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="435a078d-210a-4ee9-92f8-1cb485c2330c" name="Default" comment="" />
-    <list default="true" id="884ac1a2-60a3-4f2d-a043-c9e020659e9a" name="ajout de browser-sync et du bundle et mise à jours (cherry picked from commit 8799664)" comment="modification des page login de foseuserbundle">
+    <list default="true" id="884ac1a2-60a3-4f2d-a043-c9e020659e9a" name="ajout de browser-sync et du bundle et mise à jours (cherry picked from commit 8799664)" comment="ajout du  fichier sql">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/E-lycee.iml" afterPath="$PROJECT_DIR$/.idea/E-lycee.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actu.html.twig" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actu.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -38,12 +39,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36129034" vertical-offset="420" max-vertical-offset="3864">
-              <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-              <folding />
+            <state vertical-scroll-proportion="4.368421" vertical-offset="2517" max-vertical-offset="3920">
+              <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+              <folding>
+                <element signature="e#51#108#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actu.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actu.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.59354836" vertical-offset="2600" max-vertical-offset="3248">
+              <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+              <folding>
+                <element signature="e#3009#3030#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,8 +66,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="9.857142" vertical-offset="2348" max-vertical-offset="3416">
-              <caret line="74" column="47" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
+            <state vertical-scroll-proportion="6.857143" vertical-offset="2768" max-vertical-offset="3444">
+              <caret line="92" column="141" selection-start-line="92" selection-start-column="15" selection-end-line="92" selection-end-column="141" />
               <folding />
             </state>
           </provider>
@@ -61,7 +76,7 @@
       <file leaf-file-name="Posts.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/Posts.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.0" vertical-offset="1148" max-vertical-offset="6356">
+            <state vertical-scroll-proportion="-8.0" vertical-offset="1148" max-vertical-offset="6300">
               <caret line="49" column="25" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="25" />
               <folding />
             </state>
@@ -99,9 +114,7 @@
         <option value="$PROJECT_DIR$/src/Dashboard/DashboardBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/home.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/test.html.twig" />
-        <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/web/css/bootstrap-social.css" />
-        <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actu.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/lelycee.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/contact.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/ml.html.twig" />
@@ -125,8 +138,10 @@
         <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actu.html.twig" />
       </list>
     </option>
   </component>
@@ -504,7 +519,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435618127573</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ajout du  fichier sql">
+      <created>1435962521419</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1435962521419</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -531,6 +552,7 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4132353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43823528" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -546,7 +568,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -580,11 +601,12 @@
     <MESSAGE value="ajout des insctruction pour le projet" />
     <MESSAGE value="ajout du bundle FosUserbundle et creation des pages de login au dashboard" />
     <MESSAGE value="modification des page login de foseuserbundle" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification des page login de foseuserbundle" />
+    <MESSAGE value="ajout du  fichier sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout du  fichier sql" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -772,13 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2360877" vertical-offset="0" max-vertical-offset="593">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9032258" vertical-offset="0" max-vertical-offset="1456">
@@ -818,13 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36129034" vertical-offset="0" max-vertical-offset="620">
           <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9467742" vertical-offset="813" max-vertical-offset="1568">
-          <caret line="46" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -929,25 +937,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/Posts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0" vertical-offset="1148" max-vertical-offset="6356">
+        <state vertical-scroll-proportion="-8.0" vertical-offset="1148" max-vertical-offset="6300">
           <caret line="49" column="25" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.857142" vertical-offset="2348" max-vertical-offset="3416">
-          <caret line="74" column="47" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36129034" vertical-offset="420" max-vertical-offset="3864">
-          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+        <state vertical-scroll-proportion="4.368421" vertical-offset="2517" max-vertical-offset="4172">
+          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+          <folding>
+            <element signature="e#51#108#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.857143" vertical-offset="2768" max-vertical-offset="3444">
+          <caret line="92" column="141" selection-start-line="92" selection-start-column="15" selection-end-line="92" selection-end-column="141" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.18887015" vertical-offset="616" max-vertical-offset="1624">
+          <caret line="15" column="108" selection-start-line="15" selection-start-column="108" selection-end-line="15" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59354836" vertical-offset="2600" max-vertical-offset="3248">
+          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+          <folding>
+            <element signature="e#3009#3030#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
