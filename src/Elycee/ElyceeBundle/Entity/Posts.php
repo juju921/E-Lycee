@@ -59,11 +59,20 @@ class Posts
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="posts")
+     * @ORM\ManyToOne(targetEntity="Status")
+     * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
+     *
+     */
+    private $status;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="post")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      *
      */
     private $auteur;
+
 
 
 
