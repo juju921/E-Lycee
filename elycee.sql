@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:8889
--- Généré le :  Sam 04 Juillet 2015 à 00:26
+-- Généré le :  Mer 08 Juillet 2015 à 01:19
 -- Version du serveur :  5.5.38
 -- Version de PHP :  5.6.2
 
@@ -45,7 +45,7 @@ CREATE TABLE `fos_user` (
 --
 
 INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`) VALUES
-(4, 'alexandre', 'alexandre', 'alexandre@ecole.com', 'alexandre@ecole.com', 1, '4simih0tz5kw0cggo4o8ko0ksokgow8', 'sacenIgHKmWcvpTsYxnT4si0jkiwn4IlJ62wrSXK4dpRVVRE9o4V4SR2WgOEE4XxS83negCsiAwKJzBYQpYKrQ==', '2015-07-04 00:00:20', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_TEACHER";}', 0, NULL),
+(4, 'alexandre', 'alexandre', 'alexandre@ecole.com', 'alexandre@ecole.com', 1, '4simih0tz5kw0cggo4o8ko0ksokgow8', 'sacenIgHKmWcvpTsYxnT4si0jkiwn4IlJ62wrSXK4dpRVVRE9o4V4SR2WgOEE4XxS83negCsiAwKJzBYQpYKrQ==', '2015-07-07 22:00:40', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_TEACHER";}', 0, NULL),
 (5, 'Abel', 'abel', 'Abel@ecole.com', 'abel@ecole.com', 1, 'odizbs92zms40w00s8owkkggswg0s88', '2G3wc/izm5Au9nr7HV2SX1GiHMJjOU3Ttm/UERyawgRyPBSMn+Gj13EsLa4k20W9tUd9mczchuI2WZCDU4I27w==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:11:"FIRST_CLASS";}', 0, NULL),
 (6, 'Al', 'al', 'al@ecole.com', 'al@ecole.com', 1, 'a9uzphue0pkcgkk0o4kc00sk840cs0g', 'vrwrJDs5vhhkeMT6Wezlihe3/qll3y96XymvxWLA5fXOdB0RsUXSdVAt26fyig3IpRuKMfp8lV9YFcRaaqsFcg==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:11:"FIRST_CLASS";}', 0, NULL),
 (7, 'Alain', 'alain', 'alain@ecole.com', 'alain@ecole.com', 1, 'xcd8hyy1xm8skk84400wogs88s0w0k', 'thBk7As6hYDGqVP4J62sMZirS7ph38RM17XKT57PbkAarMA+4K/NOyzgSxsxgDLLGQvhha0HfkYllwghRsVVXw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:11:"FIRST_CLASS";}', 0, NULL),
@@ -73,20 +73,41 @@ INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_
 CREATE TABLE `posts` (
 `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
+  `status_id` int(11) DEFAULT NULL,
   `titre` longtext COLLATE utf8_unicode_ci NOT NULL,
   `abstract` longtext COLLATE utf8_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8_unicode_ci NOT NULL,
   `url_thumbnail` longtext COLLATE utf8_unicode_ci NOT NULL,
   `date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `posts`
 --
 
-INSERT INTO `posts` (`id`, `user_id`, `titre`, `abstract`, `content`, `url_thumbnail`, `date`) VALUES
-(1, NULL, 'L’École Multimédia au forum Adobe Éducation 2015', 'Vendredi 19 juin, L’École Multimédia a apporté son expertise lors de la table ronde « Emploi et création digitale » organisée par Adobe...', 'Professionnels du recrutement, de la création, des porte-parole de l’industrie numérique et des responsables éducatifs se sont donnés rendez-vous ce vendredi 19 juin, à l’occasion du forum Adobe Education 2015.\r\nLa révolution digitale en France : quels impacts sur l’emploi et les processus créatifs ? telle était la question et ligne directrice de ce forum.\r\nParmi les intervenants, L’École Multimédia, représentée par Pascale Neveu, Co-fondatrice, Directrice des études et Secrétaire générale de l’association *designers interactifs* participait au débat.\r\n\r\nPour ce grand rendez-vous, seuls deux établissements spécialisés aux formations du web ont été conviés. L’École Multimédia était présente pour apporter son expertise et répondre aux questions que soulève la révolution numérique : quel impact sur le marché français en 2015 ? Quelles sont les tendances confirmées pour cette année ? Les métiers sont-ils structurés ? Quelles sont les compétences les plus prisées par les entreprises ? L’interactivité, la mobilité, l’accès instantané aux services web et aux plateformes collaboratives ont transformé les attentes et les usages.\r\nDe l’inspiration à la création et jusqu’à la publication, la création devient continue, fluide et agile : comment les étudiants et les professionnels abordent-ils ces nouveaux usages ? Comment l’expérience « frictionless » facilite-t-elle le processus créatif et accélère-t-elle les projets ? Comment intégrer ce nouveau mode de travail dans les apprentissages ?', 'http://lorempixel.com/397/250/sports', '2015-07-03 11:00:00'),
-(2, NULL, 'Jury de fin d’études : les développeurs devant les pros !', 'Mercredi 24 juin, les étudiants de la filière Informatique Multimédia ont présenté leur projet de fin d''études devant un jury d''exception. ', 'Pascale Neveu (@pascaleneveu), Directrice des études et co-fondatrice de L’École Multimédia et Thierry Tranchina, professeur référent de la filière Informatique Multimédia étaient accompagnés pour l’occasion de :\r\n\r\n    Maya Noël, Responsable pôle web – Chasseuse de têtes spécialisée en Javascript, Ruby et Python, chez Mobiskill\r\n    Tran Nguyen Ngoc, Freelance chez Fruit du Dragon\r\n    Olivier Reix , Co-fondateur et Producteur digital chez Ultranoir\r\n    Samuel Pott, Chef d’entreprise chez IQ12\r\n    Maxime Sarri, Développeur en freelance\r\n    Jean-Christophe Suzanne, Développeur en freelance\r\n    Pauline Touchet, Office manager chez AF83\r\n    Ludivine Réaut, Responsable du pôle recrutement/création digitale et Emmanuelle Rasse, Talent Acquisition Specialist – Recruiter Digital chez Aquent\r\n    Patricia Brouquère, Professeur de la filière création digitale\r\n    Fabio Soares, Professeur de la filière Direction Artistique Multimédia\r\n    Cyril Lebret, Directeur Artistique en freelance\r\n    Fabienne Schouler, Designer chez Orange\r\n\r\n \r\n\r\nCe sont des sujets de recherche et de développement qui ont demandé des qualités techniques et une aptitude à comprendre les enjeux du web d’aujourd’hui et de demain.\r\n\r\nCe jury vient clôturer pour nos étudiants leurs trois années passées après le bac.\r\n\r\nUn grand bravo à nos étudiants qui ont su montrer des projets de qualité et innovants, nous leur souhaitons une bonne continuation pour la suite ! Nous en retrouverons beaucoup en alternance dans quelques mois.\r\n\r\nNous remercions les prestigieux membres du jury pour leur confiance.', 'http://lorempixel.com/397/250/sports', '2015-07-03 12:00:00');
+INSERT INTO `posts` (`id`, `user_id`, `status_id`, `titre`, `abstract`, `content`, `url_thumbnail`, `date`) VALUES
+(1, 4, 1, 'L’École Multimédia au forum Adobe Éducation 2015', 'Vendredi 19 juin, L’École Multimédia a apporté son expertise lors de la table ronde « Emploi et création digitale » organisée par Adobe...', 'Professionnels du recrutement, de la création, des porte-parole de l’industrie numérique et des responsables éducatifs se sont donnés rendez-vous ce vendredi 19 juin, à l’occasion du forum Adobe Education 2015.\r\nLa révolution digitale en France : quels impacts sur l’emploi et les processus créatifs ? telle était la question et ligne directrice de ce forum.\r\nParmi les intervenants, L’École Multimédia, représentée par Pascale Neveu, Co-fondatrice, Directrice des études et Secrétaire générale de l’association *designers interactifs* participait au débat.\r\n\r\nPour ce grand rendez-vous, seuls deux établissements spécialisés aux formations du web ont été conviés. L’École Multimédia était présente pour apporter son expertise et répondre aux questions que soulève la révolution numérique : quel impact sur le marché français en 2015 ? Quelles sont les tendances confirmées pour cette année ? Les métiers sont-ils structurés ? Quelles sont les compétences les plus prisées par les entreprises ? L’interactivité, la mobilité, l’accès instantané aux services web et aux plateformes collaboratives ont transformé les attentes et les usages.\r\nDe l’inspiration à la création et jusqu’à la publication, la création devient continue, fluide et agile : comment les étudiants et les professionnels abordent-ils ces nouveaux usages ? Comment l’expérience « frictionless » facilite-t-elle le processus créatif et accélère-t-elle les projets ? Comment intégrer ce nouveau mode de travail dans les apprentissages ?', 'http://lorempixel.com/397/250/sports', '2015-07-03 11:00:00'),
+(2, 4, 1, 'Jury de fin d’études : les développeurs devant les pros !', 'Mercredi 24 juin, les étudiants de la filière Informatique Multimédia ont présenté leur projet de fin d''études devant un jury d''exception. ', 'Pascale Neveu (@pascaleneveu), Directrice des études et co-fondatrice de L’École Multimédia et Thierry Tranchina, professeur référent de la filière Informatique Multimédia étaient accompagnés pour l’occasion de :\r\n\r\n    Maya Noël, Responsable pôle web – Chasseuse de têtes spécialisée en Javascript, Ruby et Python, chez Mobiskill\r\n    Tran Nguyen Ngoc, Freelance chez Fruit du Dragon\r\n    Olivier Reix , Co-fondateur et Producteur digital chez Ultranoir\r\n    Samuel Pott, Chef d’entreprise chez IQ12\r\n    Maxime Sarri, Développeur en freelance\r\n    Jean-Christophe Suzanne, Développeur en freelance\r\n    Pauline Touchet, Office manager chez AF83\r\n    Ludivine Réaut, Responsable du pôle recrutement/création digitale et Emmanuelle Rasse, Talent Acquisition Specialist – Recruiter Digital chez Aquent\r\n    Patricia Brouquère, Professeur de la filière création digitale\r\n    Fabio Soares, Professeur de la filière Direction Artistique Multimédia\r\n    Cyril Lebret, Directeur Artistique en freelance\r\n    Fabienne Schouler, Designer chez Orange\r\n\r\n \r\n\r\nCe sont des sujets de recherche et de développement qui ont demandé des qualités techniques et une aptitude à comprendre les enjeux du web d’aujourd’hui et de demain.\r\n\r\nCe jury vient clôturer pour nos étudiants leurs trois années passées après le bac.\r\n\r\nUn grand bravo à nos étudiants qui ont su montrer des projets de qualité et innovants, nous leur souhaitons une bonne continuation pour la suite ! Nous en retrouverons beaucoup en alternance dans quelques mois.\r\n\r\nNous remercions les prestigieux membres du jury pour leur confiance.', 'http://lorempixel.com/397/250/sports', '2015-07-03 12:00:00'),
+(3, NULL, 1, 'Job Dating spécial « Métiers du numérique » : nouvelle édition mardi 29 septembre !', 'Mardi 29 septembre de 14h30 à 17h30, recrutements immédiats à L’École Multimédia ! Une vingtaine d''entreprises partenaires présentes, de nombreux postes à pourvoir, pour s''inscrire...', 'Mardi 29 septembre de 14h30 à 17h30, recrutements immédiats à L’École Multimédia !\r\n\r\nAfin de faciliter les rencontres étudiants/entreprises, L’École Multimédia organise plusieurs fois par an des Job Datings permettant aux candidats présélectionnés de passer en une après-midi plusieurs entretiens avec les recruteurs, des entreprises partenaires de l’école. Autant de chances pour les entreprises de dénicher la perle rare et pour les candidats d’optimiser leur recherche d’emploi, de stage ou de contrat en alternance.\r\n\r\nDe nombreux postes seront à pourvoir (CDI/CDD/contrats alternance/stages) : directeur artistique multimédia, chef de projet digital, UX designer, motion designer 2D/3D, développeur web…\r\n\r\nComment participer :\r\n\r\nVous êtes une entreprise, un recruteur ?\r\n\r\nRéservez dès maintenant votre place via ce formulaire de réservation. Si vous ne pouvez pas y participer, remplissez le formulaire pour recevoir une sélection de profils répondant à vos besoins.\r\n\r\nVous candidatez pour un emploi, un stage ou une alternance ?\r\n\r\nCe Job  Dating est ouvert aux étudiants et stagiaires qui suivent ou qui ont suivi une formation à L’École Multimédia, aux jeunes diplômés bac+2/3/4 souhaitant poursuivre leurs études en alternance à l’école, mais également aux étudiants d’autres écoles et aux professionnels en recherche d’un emploi.\r\n\r\nL’entrée au Job Dating est soumise à la validation de votre CV. Cette validation permet de faire coïncider les profils des candidats avec les postes recherchés par les entreprises.\r\n\r\nIls nous ont fait confiance lors de la précédente édition de juin :\r\n\r\nImage et dialogue group, Nexity consulting, Extrême Sensio, Jin, Len Médical, Les Artisans Numériques, TH-Industrie, Groupe Cayola, Better Art pour Michel Ajerstejn Studio, Eddo Communications, Disko, Toutpratique.com, Bouygues Energies et Services, 1000mercis, Acatus Informatique, Philharmonie de Paris, Guiz digital, Welcomeurope', 'http://lorempixel.com/397/250/sports', '2010-01-01 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `status`
+--
+
+CREATE TABLE `status` (
+`id` int(11) NOT NULL,
+  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `status`
+--
+
+INSERT INTO `status` (`id`, `nom`) VALUES
+(1, 'publish'),
+(2, 'unpublish');
 
 --
 -- Index pour les tables exportées
@@ -102,7 +123,13 @@ ALTER TABLE `fos_user`
 -- Index pour la table `posts`
 --
 ALTER TABLE `posts`
- ADD PRIMARY KEY (`id`), ADD KEY `IDX_885DBAFAA76ED395` (`user_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `IDX_885DBAFAA76ED395` (`user_id`), ADD KEY `IDX_885DBAFA6BF700BD` (`status_id`);
+
+--
+-- Index pour la table `status`
+--
+ALTER TABLE `status`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -117,6 +144,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 -- AUTO_INCREMENT pour la table `posts`
 --
 ALTER TABLE `posts`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT pour la table `status`
+--
+ALTER TABLE `status`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Contraintes pour les tables exportées
@@ -126,4 +158,5 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- Contraintes pour la table `posts`
 --
 ALTER TABLE `posts`
+ADD CONSTRAINT `FK_885DBAFA6BF700BD` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`),
 ADD CONSTRAINT `FK_885DBAFAA76ED395` FOREIGN KEY (`user_id`) REFERENCES `fos_user` (`id`);
