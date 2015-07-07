@@ -24,6 +24,12 @@
             {{ form_errors(form.content) }}
         </p>
 
+        <p class="form-group">
+            {{ form_label(form.status, 'status : ') }}
+            {{ form_widget(form.status,{'attr' : {'class':'form-control'}}) }}
+            {{ form_errors(form.status) }}
+        </p>
+
 
         {{ form_widget(form._token) }}
         <p>
