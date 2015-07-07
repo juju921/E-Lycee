@@ -11,6 +11,8 @@ use Symfony\Component\Security\Core\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
+use Elycee\ElyceeBundle\Form\ContactType;
+use Elycee\ElyceeBundle\Entity\Contact;
 
 class DefaultController extends BaseController
 {
@@ -28,7 +30,7 @@ class DefaultController extends BaseController
         $session = $request->getSession();
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
-        $results = $rc->findAll();
+        $results    = $rc->getThreeLastPost();
         return array(
             'results'=>$results
         );
@@ -110,9 +112,23 @@ class DefaultController extends BaseController
      *
      * )
      */
-    public function contactAction()
+    public function contactAction(Request $request)
     {
-        return array();
+        $contact = new Contact();
+        $contactType = new ContactType();
+        $form = $this->createForm($contactType,$contact);
+        $form->handleRequest($request);
+        if ($form->isValid()){
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Test d\'envoie email')
+                ->setFrom('julien.garretb@gmail.com')
+                ->setTo(array('julien.garretb@gmail.com', $form->getData()->getEmail()))
+                ->setBody($this->renderView('dashboarddashboardBundle:Default:contact.txt.twig', array('contact' => $contact)));
+            $this->get('mailer')->send($message);
+            return $this->redirect($this->generateUrl('ElyceeBundle.default.index'));
+        }
+        return array('form' => $form->createView());
     }
 
 

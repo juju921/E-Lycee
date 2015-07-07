@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "09e8d4dc855ffaf36a7de05132a74dc9",
+    "hash": "42e24e10df9e4f9f40a1439efa82aea7",
     "packages": [
         {
             "name": "axstrad/browser-sync-bundle",

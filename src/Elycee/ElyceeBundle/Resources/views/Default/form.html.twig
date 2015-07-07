@@ -8,27 +8,33 @@
     {#{{ dump(form) }}#}
     {#{{  form_start(form) }}#}
     <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
-        <p class="form-group">
+        <div class="form-group">
             {{ form_label(form.titre, 'titre : ') }}
             {{ form_widget(form.titre,{'attr' : {'placeholder':'Saisissez votre nom','class':'form-control'}}) }}
             {{ form_errors(form.titre) }}
-        </p>
-        <p class="form-group">
-            {{ form_label(form.abstract, 'Prénom : ') }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.abstract, 'abstract : ') }}
             {{ form_widget(form.abstract,{'attr' : {'class':'form-control'}}) }}
             {{ form_errors(form.abstract) }}
-        </p>
-        <p class="form-group">
-            {{ form_label(form.content, 'Email : ') }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.content, 'content : ') }}
             {{ form_widget(form.content,{'attr' : {'class':'form-control'}}) }}
             {{ form_errors(form.content) }}
-        </p>
+        </div>
 
-        <p class="form-group">
+        <div class="form-group">
+            {{ form_label(form.urlThumbnail, 'urlThumbnail : ') }}
+            {{ form_widget(form.urlThumbnail,{'attr' : {'class':'form-control'}}) }}
+            {{ form_errors(form.urlThumbnail) }}
+        </div>
+
+        <div class="form-group">
             {{ form_label(form.status, 'status : ') }}
             {{ form_widget(form.status,{'attr' : {'class':'form-control'}}) }}
             {{ form_errors(form.status) }}
-        </p>
+        </div>
 
 
         {{ form_widget(form._token) }}

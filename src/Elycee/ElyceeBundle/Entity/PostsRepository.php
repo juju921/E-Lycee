@@ -12,4 +12,17 @@ use Doctrine\ORM\EntityRepository;
  */
 class PostsRepository extends EntityRepository
 {
+
+    public function getThreeLastPost(){
+        $results = $this
+            ->createQueryBuilder('p')
+            ->orderBy('p.date','DESC')
+            ->where('p.status = 1')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+        return $results;
+    }
+
+
 }
