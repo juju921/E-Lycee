@@ -3,6 +3,9 @@
 namespace Elycee\ElyceeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert ;
+use Elycee\ElyceeBundle\Entity\User;
+use Elycee\ElyceeBundle\Entity\Status;
 
 /**
  * Posts
@@ -23,21 +26,18 @@ class Posts
 
     /**
      * @var string
-     *
      * @ORM\Column(name="titre", type="text")
      */
     private $titre;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="abstract", type="text")
      */
     private $abstract;
 
     /**
      * @var string
-     *
      * @ORM\Column(name="content", type="text")
      */
     private $content;
@@ -51,19 +51,13 @@ class Posts
 
     /**
      * @var \DateTime
-     *
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
 
 
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Status")
-     * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
-     *
-     */
-    private $status;
+
 
 
     /**
@@ -74,6 +68,12 @@ class Posts
     private $auteur;
 
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Status")
+     * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
+     *
+     */
+    private $status;
 
 
 
@@ -224,5 +224,29 @@ class Posts
     public function getAuteur()
     {
         return $this->auteur;
+    }
+
+
+    /**
+     * Set status
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Status $status
+     * @return Posts
+     */
+    public function setStatus(\Elycee\ElyceeBundle\Entity\Status $status = null)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return \Elycee\ElyceeBundle\Entity\Status
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }

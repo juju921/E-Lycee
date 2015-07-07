@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
 
 class DefaultController extends BaseController
@@ -104,6 +105,10 @@ class DefaultController extends BaseController
     /**
      * @Route("/contact", name="ElyceeBundle.default.contact")
      * @Template("ElyceeElyceeBundle:Default:contact.html.twig")
+     * @ApiDoc(
+     *
+     *
+     * )
      */
     public function contactAction()
     {

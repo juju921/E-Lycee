@@ -39,6 +39,20 @@ class Status
         return $this->id;
     }
 
+
+    /**
+     * Transform to string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->getId();
+    }
+
+
+
+
     /**
      * Set nom
      *
@@ -61,4 +75,10 @@ class Status
     {
         return $this->nom;
     }
+
+
+
+
+
+
 }

@@ -48,6 +48,26 @@ class DefaultController extends Controller
     }
 
 
+    /**
+     *
+     * @Route("/dashboard/articles", name="dashboard.default.articles" )
+     * @Template("dashboarddashboardBundle:dashboard:articles.html.twig")
+     */
+    public function postsAction()
+    {
+
+        $doctrine = $this->getDoctrine();
+        $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
+        $posts = $rc->findAll();
+
+        return array(
+
+            'posts'=> $posts
+
+        );
+    }
+
+
 
 
 

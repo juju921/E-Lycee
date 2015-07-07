@@ -20,6 +20,9 @@ class AppKernel extends Kernel
             new Elycee\ElyceeBundle\ElyceeElyceeBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new dashboard\dashboardBundle\dashboarddashboardBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

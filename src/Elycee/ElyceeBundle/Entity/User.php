@@ -31,7 +31,7 @@ class User extends BaseUser
     /**
      * @ORM\OneToMany(targetEntity="Posts", mappedBy="user")
      */
-    protected $post;
+   protected $post;
 
 
    
@@ -91,6 +91,10 @@ class User extends BaseUser
     {
         return $this->password;
     }
+
+   
+
+
 
     /**
      * Add post
