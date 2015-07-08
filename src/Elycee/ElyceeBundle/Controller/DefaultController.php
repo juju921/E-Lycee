@@ -118,15 +118,13 @@ class DefaultController extends BaseController
         $form = $this->createForm($contactType, $contact);
         $form->handleRequest($request);
         if ($form->isValid()) {
-
             $message = \Swift_Message::newInstance()
                 ->setSubject('Test d\'envoie email')
                 ->setFrom('julien.garretb@gmail.com')
                 ->setTo(array('julien.garretb@gmail.com', $form->getData()->getEmail()))
-
-            ->setBody(
-                $this->renderView(
-                    'ElyceeElyceeBundle:Default:contactEmail.txt.twig', array('contact' => $contact)));
+                ->setBody(
+                    $this->renderView(
+                        'ElyceeElyceeBundle:Default:contactEmail.txt.twig', array('contact' => $contact)));
 
             $this->get('mailer')->send($message);
             return $this->redirect($this->generateUrl('ElyceeBundle.default.contact'));
