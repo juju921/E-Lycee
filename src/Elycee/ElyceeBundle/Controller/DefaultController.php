@@ -123,8 +123,8 @@ class DefaultController extends BaseController
             $message = \Swift_Message::newInstance()
                 ->setSubject('Test d\'envoie email')
                 ->setFrom('julien.garretb@gmail.com')
-                ->setTo(array('julien.garretb@gmail.com', $form->getData()->getEmail()))
-                ->setBody($this->renderView('dashboarddashboardBundle:Default:contact.txt.twig', array('contact' => $contact)));
+                ->setTo(array('julien.garretb@gmail.com', $form->getData()->getEmail()));
+
             $this->get('mailer')->send($message);
             return $this->redirect($this->generateUrl('ElyceeBundle.default.index'));
         }

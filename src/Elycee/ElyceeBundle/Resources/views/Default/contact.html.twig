@@ -1,11 +1,20 @@
 {% extends "ElyceeElyceeBundle::base.html.twig" %}
 
 {% block body %}
+<form action="{{ url('ElyceeBundle.default.contact') }}" method="post" {{ form_enctype(form) }}>
 
 
-    {{ form(form) }}
+    {{ form_errors(form) }}
 
+    {{ form_row(form.nom) }}
+    {{ form_row(form.prenom) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.message) }}
+    {{ form_widget(form._token) }}
 
+    <input type="submit" />
+
+</form>
 
 
 {% endblock %}

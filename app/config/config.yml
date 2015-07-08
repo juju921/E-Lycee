@@ -73,9 +73,10 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-     transport: gmail
-     username:  julien.garretb@gmail.com
-     password:  azertyui
+    transport: gmail
+    username:  julien.garretb@gmail.com
+    password:   azertyui
+    spool:     { type: memory }
 
 
 # app/config/config.yml
