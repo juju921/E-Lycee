@@ -30,9 +30,9 @@ class DefaultController extends BaseController
         $session = $request->getSession();
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
-        $results    = $rc->getThreeLastPost();
+        $results = $rc->getThreeLastPost();
         return array(
-            'results'=>$results
+            'results' => $results
         );
 
         if (class_exists('\Symfony\Component\Security\Core\Security')) {
@@ -80,7 +80,6 @@ class DefaultController extends BaseController
     }
 
 
-
     /**
      * @Route("/actu/{id}   ", name="ElyceeBundle.default.actu")
      * @Template("ElyceeElyceeBundle:Default:actu.html.twig")
@@ -88,10 +87,10 @@ class DefaultController extends BaseController
     public function actuAction($id)
     {
 
-        $doctrine   = $this->getDoctrine();
-        $rc         = $doctrine->getRepository('ElyceeElyceeBundle:Posts') ;
-        $news    = $rc->findOneById($id);
-        return array('news' => $news );
+        $doctrine = $this->getDoctrine();
+        $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
+        $news = $rc->findOneById($id);
+        return array('news' => $news);
     }
 
 
@@ -116,21 +115,27 @@ class DefaultController extends BaseController
     {
         $contact = new Contact();
         $contactType = new ContactType();
-        $form = $this->createForm($contactType,$contact);
+        $form = $this->createForm($contactType, $contact);
         $form->handleRequest($request);
-        if ($form->isValid()){
+        if ($form->isValid()) {
 
             $message = \Swift_Message::newInstance()
                 ->setSubject('Test d\'envoie email')
                 ->setFrom('julien.garretb@gmail.com')
-                ->setTo(array('julien.garretb@gmail.com', $form->getData()->getEmail()));
+                ->setTo(array('julien.garretb@gmail.com', $form->getData()->getEmail()))
+
+            ->setBody(
+                $this->renderView(
+                    'ElyceeElyceeBundle:Default:contactEmail.txt.twig', array('contact' => $contact)));
 
             $this->get('mailer')->send($message);
-            return $this->redirect($this->generateUrl('ElyceeBundle.default.index'));
+            return $this->redirect($this->generateUrl('ElyceeBundle.default.contact'));
+            $request->getSession()->getFlashBag()->add('success', 'Your email has been sent! Thanks!');
         }
-        return array('form' => $form->createView());
+        return array(
+            'form' => $form->createView()
+        );
     }
-
 
 
     /**
@@ -141,15 +146,6 @@ class DefaultController extends BaseController
     {
         return array();
     }
-
-
-
-
-
-
-
-
-
 
 
 }

@@ -37,9 +37,7 @@ class PostController extends Controller {
 
         $doctrine   = $this->getDoctrine();
         $em         = $doctrine->getManager();
-
-            $entity = new Posts();
-
+        $entity = new Posts();
 
 
         $type   = new PostsType();

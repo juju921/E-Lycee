@@ -8,6 +8,7 @@
             {#{{ dump(form) }}#}
             {#{{  form_start(form) }}#}
             <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
+
                 <div class="form-group">
                     {{ form_label(form.titre, 'titre : ') }}
                     {{ form_widget(form.titre,{'attr' : {'placeholder':'Saisissez votre nom','class':'form-control'}}) }}

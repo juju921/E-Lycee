@@ -3,6 +3,7 @@
 namespace Elycee\ElyceeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert ;
 
 /**
  * Contact
@@ -24,7 +25,8 @@ class Contact
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=150)
+     * @ORM\Column(name="email", type="string", length=150, unique = true)
+     * @Assert\NotBlank(message="Vous devez saisir un nom")
      */
     private $email;
 
@@ -32,6 +34,13 @@ class Contact
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=100)
+     * @Assert\NotBlank(message="Vous devez saisir un nom")
+     *  @Assert\Length(
+     *      min=2,
+     *      max=50,
+     *      minMessage="Vous devez écrire un minimum de {{ limit }} caractères ",
+     *      maxMessage="Vous ne pouvez pas saisir plus de {{ limit }} caractères dans ce champs",
+     * )
      */
     private $nom;
 
@@ -39,6 +48,13 @@ class Contact
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=100)
+     *  * @Assert\NotBlank(message="Vous devez saisir un prenom")
+     *  @Assert\Length(
+     *      min=2,
+     *      max=50,
+     *      minMessage="Vous devez écrire un minimum de {{ limit }} caractères ",
+     *      maxMessage="Vous ne pouvez pas saisir plus de {{ limit }} caractères dans ce champs",
+     * )
      */
     private $prenom;
 
