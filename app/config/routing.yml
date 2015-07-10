@@ -18,4 +18,11 @@ NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
 
+elycee_article_index:
+    pattern: /post
+    methods: [GET]
+    defaults:
+        _controller: elycee.controller.post:indexAction
+        _sylius:
+            sortable: true
 

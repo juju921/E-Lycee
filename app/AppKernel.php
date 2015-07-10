@@ -21,8 +21,12 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new dashboard\dashboardBundle\dashboarddashboardBundle(),
             new FOS\RestBundle\FOSRestBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+
+
 
         );
 

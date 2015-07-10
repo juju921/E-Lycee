@@ -23,8 +23,13 @@
         "axstrad/browser-sync-bundle": "^1.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "friendsofsymfony/rest-bundle": "^1.7",
-        "jms/serializer-bundle": "^1.0",
-        "nelmio/api-doc-bundle": "^2.9"
+        "jms/serializer-bundle": "~0.13",
+        "nelmio/api-doc-bundle": "^2.9",
+        "sylius/resource": "^0.14.0",
+        "sylius/storage": "^0.14.0",
+        "sylius/resource-bundle": "^0.14.0"
+
+
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
