@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="435a078d-210a-4ee9-92f8-1cb485c2330c" name="Default" comment="" />
-    <list default="true" id="884ac1a2-60a3-4f2d-a043-c9e020659e9a" name="ajout de browser-sync et du bundle et mise à jours (cherry picked from commit 8799664)" comment="ajout des mentions légales">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actualites.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/posts.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php" />
+    <list default="true" id="884ac1a2-60a3-4f2d-a043-c9e020659e9a" name="ajout de browser-sync et du bundle et mise à jours (cherry picked from commit 8799664)" comment="creations de la pages actualites listant toutes les news">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/PostController.php" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/PostController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/PostsRepository.php" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/PostsRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/inc/menu.html.twig" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/inc/menu.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="E-Lycee.iws" />
@@ -62,19 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="16" selection-start="3419" selection-end="3419" vertical-scroll-proportion="0.70132744" vertical-offset="2906" max-vertical-offset="3810">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="1020">
+            <state line="113" column="0" selection-start="3164" selection-end="3164" vertical-scroll-proportion="0.0" vertical-offset="2652" max-vertical-offset="3556">
               <folding />
             </state>
           </provider>
@@ -83,7 +63,25 @@
       <file leaf-file-name="PostController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/PostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="46" selection-start="842" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1500">
+            <state line="26" column="0" selection-start="813" selection-end="813" vertical-scroll-proportion="-12.857142" vertical-offset="30" max-vertical-offset="1020">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="18" selection-start="503" selection-end="503" vertical-scroll-proportion="0.63495576" vertical-offset="86" max-vertical-offset="1020">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="posts.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/posts.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="14" selection-start="832" selection-end="832" vertical-scroll-proportion="-27.857143" vertical-offset="90" max-vertical-offset="1140">
               <folding />
             </state>
           </provider>
@@ -121,8 +119,8 @@
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/posts.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/PostController.php" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
       </list>
     </option>
   </component>
@@ -267,14 +265,6 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -298,7 +288,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -499,7 +489,11 @@
       <created>1436398078584</created>
       <updated>1436398078584</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="creations de la pages actualites listant toutes les news">
+      <created>1436597503122</created>
+      <updated>1436597503122</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -524,14 +518,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1053" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4132353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6966774" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36752138" sideWeight="0.3033226" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36752138" sideWeight="0.3033226" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5176471" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -542,7 +537,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -588,7 +582,8 @@
     <MESSAGE value="Ajouts du formulaire de contact et création du form contact ainsi que l'entité&#10;" />
     <MESSAGE value="Mise à jours du formulaire de contact et ajout de style css" />
     <MESSAGE value="ajout des mentions légales" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout des mentions légales" />
+    <MESSAGE value="creations de la pages actualites listant toutes les news" />
+    <option name="LAST_COMMIT_MESSAGE" value="creations de la pages actualites listant toutes les news" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -646,11 +641,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/posts.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="14" selection-start="832" selection-end="832" vertical-scroll-proportion="1.0616438" vertical-offset="30" max-vertical-offset="1140" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="30" selection-start="12" selection-end="30" vertical-scroll-proportion="4.285714" vertical-offset="120" max-vertical-offset="1140" />
@@ -663,23 +653,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/PostController.php">
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/posts.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="46" selection-start="842" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1500">
+        <state line="29" column="14" selection-start="832" selection-end="832" vertical-scroll-proportion="-27.857143" vertical-offset="90" max-vertical-offset="1140">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/PostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="1020">
+        <state line="26" column="0" selection-start="813" selection-end="813" vertical-scroll-proportion="-12.857142" vertical-offset="30" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="16" selection-start="3419" selection-end="3419" vertical-scroll-proportion="0.70132744" vertical-offset="2906" max-vertical-offset="3810">
+        <state line="113" column="0" selection-start="3164" selection-end="3164" vertical-scroll-proportion="0.0" vertical-offset="2652" max-vertical-offset="3556">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="18" selection-start="503" selection-end="503" vertical-scroll-proportion="0.63495576" vertical-offset="86" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>

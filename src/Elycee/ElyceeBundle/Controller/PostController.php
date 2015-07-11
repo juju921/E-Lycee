@@ -24,10 +24,7 @@ use FOS\RestBundle\Controller\FOSRestController;
 
 class PostController extends ResourceController {
 
-    /**
-     * @Route( name="ElyceeBundle.default.post")
-     * @Template("ElyceeElyceeBundle:Default:posts.html.twig")
-     */
+
 
     public static function getSupportedDrivers()
     {
