@@ -22,7 +22,7 @@ elycee_article_index:
     pattern: /post
     methods: [GET]
     defaults:
-        _controller: elycee.controller.post:indexAction
+        _controller: elycee.controller.posts:indexaction
         _sylius:
-            sortable: true
-
+            filterable: true
+            criteria:

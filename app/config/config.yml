@@ -108,11 +108,14 @@ nelmio_api_doc: ~
 
 sylius_resource:
     resources:
-        app.post:
-            driver:    doctrine/orm
-            classes:
-                model: Elycee\ElyceeBundle\Entity\Posts
-        app.user:
-            driver:    doctrine/orm
-            classes:
-                model: Elycee\ElyceeBundle\Entity\User
+            app.posts:
+                driver: doctrine/orm
+                object_manager: default
+
+                classes:
+                    model: Elycee\ElyceeBundle\Entity\Posts
+                    controller: Elycee\ElyceeBundle\Controller\PostController
+                    repository: Elycee\ElyceeBundle\Entity\PostsRepository
+                templates: ElyceeElyceeBundle:Default\posts
+
+

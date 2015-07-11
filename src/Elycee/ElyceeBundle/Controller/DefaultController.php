@@ -79,6 +79,27 @@ class DefaultController extends BaseController
 
     }
 
+    /**
+     * @Route("/actualites   ", name="ElyceeBundle.default.actualites")
+     * @Template("ElyceeElyceeBundle:Default:actualites.html.twig")
+     */
+    public  function actualitesAction(){
+
+
+        $doctrine = $this->getDoctrine();
+        $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
+        $results = $rc->getThePost();
+        return array('results' => $results);
+
+
+    }
+
+
+
+
+
+
+
 
     /**
      * @Route("/actu/{id}   ", name="ElyceeBundle.default.actu")
