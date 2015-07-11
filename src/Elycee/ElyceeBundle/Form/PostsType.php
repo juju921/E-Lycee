@@ -2,12 +2,11 @@
 
 namespace Elycee\ElyceeBundle\Form;
 
-use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
-use Symfony\Component\Form\AbstractType;
+
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class PostsType extends AbstractResourceType
+class PostsType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -41,6 +40,6 @@ class PostsType extends AbstractResourceType
      */
     public function getName()
     {
-        return 'app.post';
+        return 'elycee_elyceebundle.posts';
     }
 }
