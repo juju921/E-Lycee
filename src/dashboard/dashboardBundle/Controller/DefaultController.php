@@ -6,6 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Elycee\ElyceeBundle\Form\PostsType;
+use Elycee\ElyceeBundle\Entity\Posts;
+use Symfony\Component\HttpFoundation\Request;
+
+
+
 
 class DefaultController extends Controller
 {
@@ -15,7 +21,14 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return array();
+
+        $doctrine = $this->getDoctrine();
+        $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
+        $results = $rc->getCountPost();
+        return array('results' => $results);
+
+
+
     }
 
     /**
@@ -25,6 +38,8 @@ class DefaultController extends Controller
      */
     public function loginAction()
     {
+
+
         return array();
     }
 
