@@ -18,7 +18,7 @@ framework:
     form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
-    #serializer:      { enable_annotations: true }
+    serializer:     true
     templating:
         engines: ['twig']
         #assets_version: SomeVersionScheme
@@ -88,7 +88,12 @@ fos_user:
 fos_rest:
     param_fetcher_listener: true
     body_listener: true
-    format_listener: true
+    format_listener:
+        rules:
+
+        - { path: ^/api/, priorities: [ html, json, xml ], fallback_format: ~, prefer_extension: true }
+        - { path: '^/', priorities: [ 'html', '*/*'], fallback_format: html, prefer_extension: true }
+
     view:
         view_response_listener: 'force'
         formats:
@@ -106,3 +111,14 @@ fos_rest:
 
 nelmio_api_doc: ~
 
+iphp_file_store:
+    mappings:
+       photo:
+           upload_dir:  %kernel.root_dir%/../web/photo
+           upload_path: /photo
+       img_new:
+           upload_dir:  %kernel.root_dir%/../web/images/news
+           upload_path: /
+
+sc_datetimepicker:
+    picker: ~

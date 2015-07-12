@@ -3,7 +3,7 @@ security:
             FOS\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER, ROLE_TEACHER]
+        ROLE_ADMIN:       [ROLE_USER, ROLE_TEACHER, ROLE_STUDENT]
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
@@ -43,6 +43,8 @@ security:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
                 default_target_path: /home
+                use_referer: true
+                success_handler: redirect.after.login
             logout:
                 path:        /logout
                 target:      /home

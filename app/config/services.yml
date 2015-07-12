@@ -4,6 +4,11 @@ parameters:
 #    parameter_name: value
 
 services:
+    redirect.after.login:
+       class: Elycee\ElyceeBundle\Service\AfterLoginRedirection
+       arguments: [@router]
+
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+

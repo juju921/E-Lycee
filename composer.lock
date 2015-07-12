@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8b89d75b96e3eba4b8daee36c99102bf",
+    "hash": "87007c2b92bf60007182078b6a825f33",
     "packages": [
         {
             "name": "axstrad/browser-sync-bundle",
@@ -1001,6 +1001,65 @@
             "time": "2015-06-03 08:27:03"
         },
         {
+            "name": "iphp/filestore-bundle",
+            "version": "v0.2.3",
+            "target-dir": "Iphp/FileStoreBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vitiko/IphpFileStoreBundle.git",
+                "reference": "e170c9e9da544f38e1c2bda319e68621f4525f61"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vitiko/IphpFileStoreBundle/zipball/e170c9e9da544f38e1c2bda319e68621f4525f61",
+                "reference": "e170c9e9da544f38e1c2bda319e68621f4525f61",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": "~2.2"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "@stable",
+                "doctrine/orm": "@stable",
+                "mikey179/vfsstream": "@stable",
+                "sensio/framework-extra-bundle": "@stable",
+                "symfony/browser-kit": "@stable",
+                "symfony/class-loader": "@stable",
+                "symfony/css-selector": "@stable",
+                "symfony/finder": "@stable",
+                "symfony/form": "@stable",
+                "symfony/process": "@stable",
+                "symfony/twig-bundle": "@stable",
+                "symfony/validator": "@stable",
+                "symfony/yaml": "@stable"
+            },
+            "type": "bundle",
+            "autoload": {
+                "psr-0": {
+                    "Iphp\\FileStoreBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitiko",
+                    "email": "vitiko@mail.ru"
+                }
+            ],
+            "description": "Upload files for doctrine entities in symfony 2 project",
+            "homepage": "http://symfonydev.ru",
+            "keywords": [
+                "file upload",
+                "sonata admin file upload",
+                "symfony file upload",
+                "upload"
+            ],
+            "time": "2014-12-09 11:11:03"
+        },
+        {
             "name": "jdorn/sql-formatter",
             "version": "v1.2.17",
             "source": {
@@ -1919,6 +1978,52 @@
             ],
             "description": "A security checker for your composer.lock",
             "time": "2015-05-28 14:22:40"
+        },
+        {
+            "name": "stephanecollot/datetimepicker-bundle",
+            "version": "dev-master",
+            "target-dir": "SC/DatetimepickerBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stephanecollot/DatetimepickerBundle.git",
+                "reference": "733e4d1896aba5ee7c0b924d0ce25bca179b47ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stephanecollot/DatetimepickerBundle/zipball/733e4d1896aba5ee7c0b924d0ce25bca179b47ef",
+                "reference": "733e4d1896aba5ee7c0b924d0ce25bca179b47ef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "symfony/framework-bundle": "2.*",
+                "symfony/symfony": "2.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "SC\\DatetimepickerBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephane Collot"
+                }
+            ],
+            "description": "Symfony bundle for Bootstrap DateTime picker",
+            "keywords": [
+                "bootstrap",
+                "bundle",
+                "datepicker",
+                "picker",
+                "symfony",
+                "timepicker"
+            ],
+            "time": "2015-05-11 20:47:22"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2902,7 +3007,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofsymfony/user-bundle": 20
+        "friendsofsymfony/user-bundle": 20,
+        "stephanecollot/datetimepicker-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

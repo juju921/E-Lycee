@@ -3,10 +3,11 @@
 namespace Elycee\ElyceeBundle\Form;
 
 
+use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class PostsType
+class PostsType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -18,8 +19,23 @@ class PostsType
             ->add('titre', 'text')
             ->add('abstract')
             ->add('content')
-            ->add('urlThumbnail')
-            ->add('date')
+            ->add('urlThumbnail', 'iphp_file' )
+            ->add('date','collot_datetime', array( 'pickerOptions' =>
+                array('format' => 'dd/mm/yyyy',
+                    'weekStart' => 1,
+                    'startDate' => date('dd/mm/yyyy', 0),
+                    'autoclose' => true,
+                    'startView' => 'month',
+                    'minView' => 'hour',
+                    'maxView' => 'year',
+                    'todayBtn' => false,
+                    'todayHighlight' => false,
+                    'keyboardNavigation' => true,
+                    'language' => 'fr',
+                    'forceParse' => true,
+                    'minuteStep' => 5,
+                    'pickerPosition' => 'bottom-right',
+                )))
             ->add('status')
             ->add('auteur')
         ;
@@ -40,6 +56,6 @@ class PostsType
      */
     public function getName()
     {
-        return 'elycee_elyceebundle.posts';
+        return 'elycee_elyceebundle_posts';
     }
 }

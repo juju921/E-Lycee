@@ -25,7 +25,8 @@ class AppKernel extends Kernel
 
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
-
+            new Iphp\FileStoreBundle\IphpFileStoreBundle(),
+            new SC\DatetimepickerBundle\SCDatetimepickerBundle(),
 
 
         );

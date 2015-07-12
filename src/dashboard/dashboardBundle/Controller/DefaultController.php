@@ -9,12 +9,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Elycee\ElyceeBundle\Form\PostsType;
 use Elycee\ElyceeBundle\Entity\Posts;
 use Symfony\Component\HttpFoundation\Request;
+use FOS\RestBundle\Controller\FOSRestController;
 
 
 
-
-class DefaultController extends Controller
+class DefaultController extends FOSRestController
 {
+
     /**
      * @Route("/dashboard/", name="dashboard.default.index" )
      * @Template("dashboarddashboardBundle:Default:dashboard.html.twig")
@@ -45,10 +46,10 @@ class DefaultController extends Controller
 
     /**
      *
-     * @Route("/dashboard/user", name="dashboard.default.user" )
+     * @Route("/users", name="dashboard.default.users" )
      * @Template("dashboarddashboardBundle:dashboard:user.html.twig")
      */
-    public function userAction()
+    public function getusersAction()
     {
 
         $doctrine = $this->getDoctrine();
@@ -65,10 +66,10 @@ class DefaultController extends Controller
 
     /**
      *
-     * @Route("/dashboard/articles", name="dashboard.default.articles" )
+     * @Route("/articles", name="dashboard.default.getArticles" )
      * @Template("dashboarddashboardBundle:dashboard:articles.html.twig")
      */
-    public function postsAction()
+    public function getArticlesAction()
     {
 
         $doctrine = $this->getDoctrine();

@@ -127,10 +127,7 @@ class DefaultController extends BaseController
     /**
      * @Route("/contact", name="ElyceeBundle.default.contact")
      * @Template("ElyceeElyceeBundle:Default:contact.html.twig")
-     * @ApiDoc(
-     *
-     *
-     * )
+     * @Method({"POST","GET"})
      */
     public function contactAction(Request $request)
     {

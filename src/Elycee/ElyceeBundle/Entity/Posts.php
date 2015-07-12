@@ -6,12 +6,15 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert ;
 use Elycee\ElyceeBundle\Entity\User;
 use Elycee\ElyceeBundle\Entity\Status;
+use Iphp\FileStoreBundle\Mapping\Annotation as FileStore;
+
 
 /**
  * Posts
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Elycee\ElyceeBundle\Entity\PostsRepository")
+ * @FileStore\Uploadable
  */
 class Posts
 {
@@ -45,7 +48,14 @@ class Posts
     /**
      * @var string
      *
-     * @ORM\Column(name="url_thumbnail", type="text")
+     * @ORM\Column(name="url_thumbnail", type="array",nullable = true)
+
+     * @Assert\Image(
+     *      maxSize="1M",
+     *      mimeTypes={"image/jpeg","images/png"},
+     *     mimeTypesMessage="Vous devez transférer des JPG."
+     * )
+     * @FileStore\UploadableField(mapping="img_new")
      */
     private $urlThumbnail;
 
