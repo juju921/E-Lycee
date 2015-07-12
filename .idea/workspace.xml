@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="435a078d-210a-4ee9-92f8-1cb485c2330c" name="Default" comment="" />
-    <list default="true" id="884ac1a2-60a3-4f2d-a043-c9e020659e9a" name="ajout de browser-sync et du bundle et mise à jours (cherry picked from commit 8799664)" comment="mise à jours avec le Bundle pour uploader une mise et celui pour le datapicker">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/form.html.twig" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/form.html.twig" />
+    <list default="true" id="884ac1a2-60a3-4f2d-a043-c9e020659e9a" name="ajout de browser-sync et du bundle et mise à jours (cherry picked from commit 8799664)" comment="rajout de fontawesome">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="E-Lycee.iws" />
@@ -539,7 +532,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436729265059</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="rajout de fontawesome">
+      <created>1436733141630</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1436733141631</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -632,7 +631,8 @@
     <MESSAGE value="Creation de la table question" />
     <MESSAGE value="Creation de la table question et d'une requette qui calcule le nombre de post" />
     <MESSAGE value="mise à jours avec le Bundle pour uploader une mise et celui pour le datapicker" />
-    <option name="LAST_COMMIT_MESSAGE" value="mise à jours avec le Bundle pour uploader une mise et celui pour le datapicker" />
+    <MESSAGE value="rajout de fontawesome" />
+    <option name="LAST_COMMIT_MESSAGE" value="rajout de fontawesome" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
