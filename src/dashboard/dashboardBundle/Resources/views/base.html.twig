@@ -49,6 +49,23 @@
     <script src="{{ asset('js/metisMenu.min.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
+            <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
+
+    <script  src="{{ asset('js/bootstrap-datetimepicker.fr.js') }}"></script>
+    <script type="text/javascript" src="/bundles/scdatetimepicker/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script><script type="text/javascript" src="/bundles/scdatetimepicker/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $field = $('.bam_accueilbundle_evenement_debut');
+
+
+
+        $field.datetimepicker({"format":"dd\/mm\/yyyy","weekStart":1,"startDate":"0101\/0101\/70707070","autoclose":true,"startView":"month","minView":"hour","maxView":"year","todayBtn":false,"todayHighlight":false,"keyboardNavigation":true,"language":"fr","forceParse":true,"minuteStep":5,"pickerPosition":"bottom-right"});
+
+    });
+</script>
+
+
+
 
 
 {% endblock %}
