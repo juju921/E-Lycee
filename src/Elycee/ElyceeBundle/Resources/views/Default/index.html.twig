@@ -6,19 +6,29 @@
 
         <div class="row">
     {% for posts in results %}
-            <div class="col-md-4">
-                <img src="{{ asset("images/news/"~posts.urlThumbnail.fileName) }}" alt=""/>
-                <h2>
-                   {{ posts.titre }}
-                </h2>
-                <p>
-             {{ posts.abstract }}
-                </p>
-                <p>
-                    <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
-                </p>
-                <p>auteur: alan</p>
-                <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
+            <div class="col-lg-6 col-sm-6">
+                <div class="thumbnail">
+                     <a href="/template-overviews/creative" class="post-image-link">
+                        <p>
+                            <img src="{{ asset("images/news/"~posts.urlThumbnail.fileName) }}" class="img-responsive" alt=""/>
+                        </p>
+                    </a>
+
+                    <div class="caption">
+                        <h2>
+                           {{ posts.titre }}
+                        </h2>
+                        <p>
+                     {{ posts.abstract }}
+                        </p>
+                        <p>
+                            <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
+                        </p>
+                        <p>Auteur : <a href="{{ posts.auteur }}"></a> - Publié le : {{ posts.date }}</p>
+                        <a href="#lienDesComs"><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
+                        </a>
+                    </div>
+                </div>
             </div>
     {% endfor %}
 
