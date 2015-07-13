@@ -21,6 +21,20 @@ class PostController extends Controller
 
 
     /**
+     * @Route("/post/{id}   ", name="dashboarddashboardBundle:dashboard:show")
+     * @Template("dashboarddashboardBundle:dashboard:show.html.twig")
+     */
+    public function showAction($id)
+    {
+
+        $doctrine = $this->getDoctrine();
+        $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
+        $news = $rc->findOneById($id);
+        return array('news' => $news);
+    }
+
+
+    /**
      * @Route(
      *      "/posts/new",
      *      name="public.contact.form",
@@ -55,13 +69,6 @@ class PostController extends Controller
 
 
             $message = "L'article a été ajouté";
-
-            echo '<pre>';
-            Debug::dump($entity);
-            echo '</pre>';
-            exit();
-
-
         }
 
         return array(
@@ -85,6 +92,7 @@ class PostController extends Controller
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         if (!$id) {
+            $entity = new Contact();
             $message = "Le contact a été ajouté";
         } else {
 
@@ -94,38 +102,59 @@ class PostController extends Controller
             $message = "Le contact a été mis à jour";
         }
 
+        $type = new PostsType();
+        $form = $this->createForm($type, $entity);
+        $form->handleRequest($request);
 
-            $entity = new Posts();
-            $type = new PostsType();
-            $form = $this->createForm($type, $entity);
-            $form->handleRequest($request);
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            //$data = $form->getData();
+            $em->flush();
+            // message en session
+            $request->getSession()->getFlashBag()->set('notice', $message);
 
-            if ($form->isValid()) {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($entity);
-                //$data = $form->getData();
-                $em->flush();
-                // message en session
-                $request->getSession()->getFlashBag()->set('notice', $message);
-
-                // on redirige l'utilisateur
-                $url = $this->generateUrl('dashboard.default.user');
-                return $this->redirect($url);
+            // on redirige l'utilisateur
+            $url = $this->generateUrl('dashboard.default.user');
+            return $this->redirect($url);
 
 
-                $message = "L'article a été ajouté";
+            $message = "L'article a été ajouté";
 
 
-            }
-            return array(
-                'form' => $form->createView()
-            );
+        }
+        return array(
+            'form' => $form->createView(),
 
-
-
+        );
 
 
     }
+
+    /**
+     * @Route(
+     *      "/posts/delete/{id}",
+     *      name="dashboard.posts.delete",
+     * )
+     * @Method({"POST","GET"})
+     */
+    public function deleteAction(Request $request, $id)
+    {
+        $doctrine = $this->getDoctrine();
+        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
+        $contact = $repository->find($id);
+        $em = $doctrine->getManager();
+        // suppression du contact ciblé
+        $em->remove($contact);
+        $em->flush();
+        // message en session
+        $message = "Le contact a été supprimé";
+        $request->getSession()->getFlashBag()->set('notice', $message);
+        // on redirige l'utilisateur
+        $url = $this->generateUrl('dashboard.default.index');
+        return $this->redirect($url);
+    }
+
 
 }
 

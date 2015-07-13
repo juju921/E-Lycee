@@ -19,6 +19,9 @@
                     <th>titre</th>
                     <th>auteur</th>
                     <th>status</th>
+                    <th>voir</th>
+                    <th>modifier</th>
+                    <th>supprimer</th>
 
                 </tr>
                 </thead>
@@ -27,12 +30,15 @@
                 {% for post in posts %}
 
                 <tr>
-
-
                     <td>{{ post.titre }}</td>
                       <td>{{ post.auteur }}</td>
-                    <td></td>
+                    <td>
 
+
+                        {{ post.status }}</td>
+                    <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : post.id}) }}"><i class="fa fa-eye"></i> Voir</a></td>
+                    <td><a href="{{ path('dashboard.posts.update',{'id' : post.id}) }}"><i class="fa fa-pencil"></i> modifier</a></td>
+                    <td><a href="{{ path('dashboard.posts.delete',{'id' : post.id}) }}" id="new"><i class="fa fa-trash"></i>  supprimer</a></tdh>
 
 
                     {% endfor %}
