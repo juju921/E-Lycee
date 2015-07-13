@@ -81,7 +81,7 @@ class DefaultController extends BaseController
     }
 
     /**
-     * @Route("/actualites   ", name="ElyceeBundle.default.actualites")
+     * @Route("/actualites", name="ElyceeBundle.default.actualites")
      * @Template("ElyceeElyceeBundle:Default:actualites.html.twig")
      */
     public  function actualitesAction(){

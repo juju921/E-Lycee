@@ -28,9 +28,9 @@ class DefaultController extends FOSRestController
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
         $rcu = $doctrine->getRepository('ElyceeElyceeBundle:User');
-        $results = $rc->getCountPost();
+        /*$results = $rc->getCountPost();*/
         $countusr = $rcu->getCountUser();
-
+        $results = $rc->getThreeLastPost();
         return array(
             'results' => $results,
             'countusr' => $countusr

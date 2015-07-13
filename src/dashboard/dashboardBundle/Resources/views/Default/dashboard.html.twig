@@ -80,8 +80,25 @@
         <!-- /.panel-heading -->
         <div class="panel-body">
             <div class="row">
-                <div class="col-lg-4">
-                    Il y a {{ results }} articles
+                <div class="col-lg-12">
+                    <div class="list-group">
+    {% for posts in results %}
+                        <a href="#" class="list-group-item"><i class="fa fa-pencil"></i>  {{ posts.titre }}  <span class="pull-right text-muted small">
+        {% if posts.status ==   "1" %}
+            <button type="button" class="btn btn-success btn-xs">ok</button>
+        {% else %}
+            <button type="button" class="btn btn-danger btn-xs">no</button>
+
+
+        {% endif %}
+
+
+            </span></a>
+
+
+
+        {% endfor %}
+                    </div>
                     <!-- /.table-responsive -->
                 </div>
                 <!-- /.col-lg-4 (nested) -->

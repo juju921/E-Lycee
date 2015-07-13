@@ -30,7 +30,7 @@
                 {% for post in posts %}
 
                 <tr>
-                    <td>{{ post.titre }}</td>
+                    <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : post.id}) }}">{{ post.titre }}</a></td>
                           <td>{{ post.username }}</td>
                         <td>
                         {% if post.nom ==   "publish" %}
