@@ -4,6 +4,9 @@
     <div id="wrapper">
 
     <!-- Navigation -->
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <span class="alert alert-success">{{ flashMessage }}</span>
+    {% endfor %}
 
     <div id="page-wrapper">
     <div class="row">

@@ -17,7 +17,6 @@
 
 
 
-
                 <div class="form-group">
                     {{ form_label(form.titre, 'titre : ') }}
                     {{ form_widget(form.titre,{'attr' : {'placeholder':'Saisissez votre nom','class':'form-control'}}) }}
@@ -48,7 +47,8 @@
 
                 <div class="form-group">
                     {{ form_label(form.auteur, 'auteur : ') }}
-                    {{ form_widget(form.auteur,{'attr' : {'class':'form-control'}}) }}
+                    {{ form_widget(form.auteur,{'attr' : {'class':'form-control' }}) }}
+
                     {{ form_errors(form.auteur) }}
                 </div>
 
