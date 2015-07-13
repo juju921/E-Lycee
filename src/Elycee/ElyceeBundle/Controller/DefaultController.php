@@ -38,6 +38,7 @@ class DefaultController extends BaseController
         if (class_exists('\Symfony\Component\Security\Core\Security')) {
             $authErrorKey = Security::AUTHENTICATION_ERROR;
             $lastUsernameKey = Security::LAST_USERNAME;
+
         } else {
             // BC for SF < 2.6
             $authErrorKey = SecurityContextInterface::AUTHENTICATION_ERROR;

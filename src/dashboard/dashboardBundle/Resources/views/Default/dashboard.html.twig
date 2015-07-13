@@ -5,7 +5,7 @@
 
     <!-- Navigation -->
     {% for flashMessage in app.session.flashbag.get('notice') %}
-        <span class="alert alert-success">{{ flashMessage }}</span>
+        <span class="alert alert-success">{{ notice }}</span>
     {% endfor %}
 
     <div id="page-wrapper">
@@ -111,7 +111,7 @@
             <div class="panel-body">
 
                 <!-- /.list-group -->
-                <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                <i class="fa fa-user"></i>   il y a {{ countusr }} élèves
             </div>
             <!-- /.panel-body -->
         </div>
