@@ -17,7 +17,7 @@
             <p>
                 <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
             </p>
-            <p>auteur: alan</p>
+            <p>Auteur : <a href="#lienVersLauteur"></a> - Publié le : {{ posts.date }}</p>
             <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
         </div>
     {% endfor %}
