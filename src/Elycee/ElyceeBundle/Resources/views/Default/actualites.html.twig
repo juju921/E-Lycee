@@ -7,7 +7,7 @@
     <div class="row">
     {% for posts in results %}
         <div class="col-lg-8 col-md-8">
-            <img src="{{ posts.urlThumbnail }}" alt=""/>
+            <img src="{{ asset("images/news/"~posts.urlThumbnail.fileName) }}" alt=""/>
             <h2>
                 {{ posts.titre }}
             </h2>
