@@ -22,7 +22,7 @@ class PostController extends Controller
 
     /**
      * @Route("/post/{id}   ", name="dashboarddashboardBundle:dashboard:show")
-     * @Template("dashboarddashboardBundle:dashboard:show.html.twig")
+     * @Template("dashboarddashboardBundle:dashboard:showpost.html.twig")
      */
     public function showAction($id)
     {
@@ -115,7 +115,7 @@ class PostController extends Controller
             $request->getSession()->getFlashBag()->set('notice', $message);
 
             // on redirige l'utilisateur
-            $url = $this->generateUrl('dashboard.default.user');
+            $url = $this->generateUrl('dashboard.default.index');
             return $this->redirect($url);
 
 
@@ -168,7 +168,7 @@ class PostController extends Controller
 
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
-        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Post');
+        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
         $repositoryStatus = $doctrine->getRepository('ElyceeElyceeBundle:Status');
         $post = $repository->find($id);
         if ($post->getStatus()->getId() == 1) {

@@ -37,7 +37,7 @@
 
                             <a class="btn btn-success" href="{{ path('dashboard.posts.editstatus',{'id' : post.id}) }}">online</a>
                             {% else %}
-                                <a class="btn btn-danger" href="{{ path('dashboard.posts.editstatus',{'id' : post.status}) }}">offline</a>
+                                <a class="btn btn-danger" href="{{ path('dashboard.posts.editstatus',{'id' : post.id}) }}">offline</a>
 
                             {% endif %}
                             </td>
