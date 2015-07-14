@@ -13,6 +13,9 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use FOS\UserBundle\Controller\SecurityController as BaseController;
 use Elycee\ElyceeBundle\Form\ContactType;
 use Elycee\ElyceeBundle\Entity\Contact;
+use Elycee\ElyceeBundle\Entity\Comments;
+use Elycee\ElyceeBundle\Form\CommentsType;
+
 
 class DefaultController extends BaseController
 {
@@ -84,7 +87,8 @@ class DefaultController extends BaseController
      * @Route("/actualites", name="ElyceeBundle.default.actualites")
      * @Template("ElyceeElyceeBundle:Default:actualites.html.twig")
      */
-    public  function actualitesAction(){
+    public function actualitesAction()
+    {
 
 
         $doctrine = $this->getDoctrine();
@@ -96,23 +100,52 @@ class DefaultController extends BaseController
     }
 
 
-
-
-
-
-
-
     /**
      * @Route("/actu/{id}   ", name="ElyceeBundle.default.actu")
      * @Template("ElyceeElyceeBundle:Default:actu.html.twig")
      */
-    public function actuAction($id)
+    public function actuAction(Request $request, $id)
     {
+
 
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
         $news = $rc->findOneById($id);
-        return array('news' => $news);
+
+
+        $user = $this->getUser();
+        $userOnline = false;
+        if (true === $this->get('security.context')->isGranted(
+                'IS_AUTHENTICATED_FULLY'
+            )
+        ) {
+            $userOnline = true;
+        }
+
+
+        $commentaire = new Comments();
+        $commentairetype = new CommentsType();
+        $formCommentaire = $this->createForm($commentairetype, $commentaire);
+        $formCommentaire->handleRequest($request);
+
+
+        if ($formCommentaire->isValid()) {
+            $commentaire->setCreateAt(new \DateTime());
+            $commentaire->setPost($news);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($commentaire);
+            $em->flush();
+            return $this->redirect($this->generateUrl('ElyceeBundle.default.actu', array('id' => $id)));
+        }
+
+
+        return array(
+            'news' => $news,
+            'form' => $formCommentaire->createView(),
+            'userOnline' => $userOnline,
+            'user' => $user
+
+        );
     }
 
 
