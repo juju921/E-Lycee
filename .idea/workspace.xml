@@ -2,11 +2,101 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="435a078d-210a-4ee9-92f8-1cb485c2330c" name="Default" comment="" />
-    <list default="true" id="884ac1a2-60a3-4f2d-a043-c9e020659e9a" name="ajout de browser-sync et du bundle et mise à jours (cherry picked from commit 8799664)" comment="ajout de la page d'affiche d'un article">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/articles.html.twig" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/articles.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/Default/dashboard.html.twig" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/Default/dashboard.html.twig" />
+    <list default="true" id="884ac1a2-60a3-4f2d-a043-c9e020659e9a" name="ajout de browser-sync et du bundle et mise à jours (cherry picked from commit 8799664)" comment="ajout sur la page d'accueil du dashboard des 3 derniers articles avec un bouton rouge ou vert ( pour leurs status)">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/img/anchor.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/img/loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/media/moxieplayer.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/img/object.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-cool.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-cry.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-embarassed.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-foot-in-mouth.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-frown.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-innocent.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-kiss.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-laughing.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-money-mouth.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-sealed.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-smile.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-surprised.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-undecided.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-wink.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/img/smiley-yell.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce-small.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce-small.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce-small.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/img/trans.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap-datetimepicker.fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bootstrap-datetimepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/content.inline.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/content.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/example/dialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/jquery.tinymce.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/advlist/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/anchor/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/autolink/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/autoresize/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/autosave/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/bbcode/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/charmap/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/code/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/colorpicker/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/contextmenu/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/directionality/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/emoticons/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/example/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/example_dependency/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/fullpage/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/fullscreen/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/hr/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/image/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/importcss/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/insertdatetime/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/layer/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/legacyoutput/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/link/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/lists/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/media/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/nonbreaking/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/noneditable/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/pagebreak/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/paste/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/preview/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/print/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/save/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/searchreplace/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/spellchecker/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/tabfocus/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/table/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/template/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/textcolor/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/textpattern/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/visualblocks/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/visualchars/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/wordcount/plugin.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/langs/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/skin.ie7.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/skin.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/themes/modern/theme.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce-small.dev.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce-small.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce.dev.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/tinymce.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/skins/lightgray/fonts/tinymce.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/tinymce/plugins/visualblocks/css/visualblocks.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/form.html.twig" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/form.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="E-Lycee.iws" />
@@ -45,21 +135,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dashboard.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/Default/dashboard.html.twig">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5419355" vertical-offset="2660" max-vertical-offset="6916">
-              <caret line="87" column="63" selection-start-line="87" selection-start-column="63" selection-end-line="87" selection-end-column="63" />
+            <state vertical-scroll-proportion="-3.9655173" vertical-offset="3413" max-vertical-offset="4032">
+              <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="articles.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/articles.html.twig">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.142857" vertical-offset="1004" max-vertical-offset="2072">
-              <caret line="41" column="28" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.009677419" vertical-offset="2374" max-vertical-offset="3276">
+              <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+              <folding>
+                <element signature="e#1913#2309#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostsType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="40.857143" vertical-offset="1340" max-vertical-offset="1960">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/form.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="3.857143" vertical-offset="2124" max-vertical-offset="2744">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,14 +200,8 @@
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/Posts.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php" />
-        <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/form.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actu.html.twig" />
         <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/postsedit.html.twig" />
-        <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/PostsRepository.php" />
         <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/inc/nav.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/ContactRepository.php" />
@@ -109,6 +215,13 @@
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/Default/dashboard.html.twig" />
+        <option value="$PROJECT_DIR$/app/autoload.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/form.html.twig" />
+        <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/base.html.twig" />
       </list>
     </option>
   </component>
@@ -144,6 +257,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -172,7 +286,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="E-Lycee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="E-Lycee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -234,97 +366,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Elycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ElyceeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Elycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ElyceeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Elycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ElyceeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="Form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -410,40 +452,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboardBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="dashboard" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -484,25 +492,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="E-Lycee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="E-Lycee" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dashboardBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -531,118 +544,6 @@
       <recent name="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/Public" />
     </key>
   </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="Moments ago" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Security/login.html.twig</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with tree conflicts" />
-          <option name="myStatusName" value="Merged with tree conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with property conflicts" />
-          <option name="myStatusName" value="Will be merged with property conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Switched" />
-          <option name="myStatusName" value="Switched" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SWITCHED" />
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
-  </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
@@ -658,15 +559,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -905,7 +806,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436823079366</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="ajout sur la page d'accueil du dashboard des 3 derniers articles avec un bouton rouge ou vert ( pour leurs status)">
+      <created>1436824654380</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1436824654380</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -930,30 +837,53 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4132353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66764706" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42126623" sideWeight="0.33118972" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44852942" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44852942" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4132353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66764706" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44852942" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42207792" sideWeight="0.33118972" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42126623" sideWeight="0.33118972" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
@@ -974,7 +904,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="ajout des insctruction pour le projet" />
     <MESSAGE value="ajout du bundle FosUserbundle et creation des pages de login au dashboard" />
     <MESSAGE value="modification des page login de foseuserbundle" />
     <MESSAGE value="ajout du  fichier sql" />
@@ -999,7 +928,8 @@
     <MESSAGE value="ajout des modifications et de la suppresion" />
     <MESSAGE value="modification du bouton sur la page d'accueil et rajout de fonction" />
     <MESSAGE value="ajout de la page d'affiche d'un article" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de la page d'affiche d'un article" />
+    <MESSAGE value="ajout sur la page d'accueil du dashboard des 3 derniers articles avec un bouton rouge ou vert ( pour leurs status)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout sur la page d'accueil du dashboard des 3 derniers articles avec un bouton rouge ou vert ( pour leurs status)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1008,13 +938,42 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3528" max-vertical-offset="3696">
+          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2240">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1820">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="784" max-vertical-offset="1876">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4872">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#51#108#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,7 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1344" max-vertical-offset="1568">
           <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="728" max-vertical-offset="1260">
           <caret line="26" column="84" selection-start-line="26" selection-start-column="84" selection-end-line="26" selection-end-column="84" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,9 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="4844">
           <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding>
-            <element signature="e#51#108#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1064,10 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3836">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#57#114#0#PHP" expanded="true" />
-            <element signature="e#5209#5451#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1089,35 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="980">
           <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/ContactType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1135,13 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7225807" vertical-offset="532" max-vertical-offset="2464">
-          <caret line="27" column="56" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/postsedit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5483871" vertical-offset="248" max-vertical-offset="2184">
@@ -1153,21 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63225806" vertical-offset="1792" max-vertical-offset="7616">
           <caret line="77" column="19" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="2155" max-vertical-offset="3080">
-          <caret line="63" column="64" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/form.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4967742" vertical-offset="1456" max-vertical-offset="2660">
-          <caret line="49" column="41" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1196,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5180">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1204,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5483871" vertical-offset="108" max-vertical-offset="728">
           <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,7 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.683871" vertical-offset="276" max-vertical-offset="896">
           <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1220,9 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13548388" vertical-offset="28" max-vertical-offset="3836">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#46#78#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1230,7 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.142857" vertical-offset="500" max-vertical-offset="1120">
           <caret line="21" column="99" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1238,7 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33671743" vertical-offset="1369" max-vertical-offset="1960">
           <caret line="39" column="77" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1246,7 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40967742" vertical-offset="1090" max-vertical-offset="2296">
           <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1254,7 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27096775" vertical-offset="112" max-vertical-offset="1036">
           <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1262,7 +1151,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="9.0" vertical-offset="1988" max-vertical-offset="2884">
           <caret line="62" column="0" selection-start-line="54" selection-start-column="5" selection-end-line="62" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1270,7 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7290323" vertical-offset="8592" max-vertical-offset="9632">
           <caret line="252" column="83" selection-start-line="252" selection-start-column="83" selection-end-line="252" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,7 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5483871" vertical-offset="220" max-vertical-offset="896">
           <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1286,10 +1172,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.142857" vertical-offset="556" max-vertical-offset="6132">
           <caret line="24" column="61" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="61" />
-          <folding>
-            <element signature="e#57#114#0#PHP" expanded="true" />
-            <element signature="e#5209#5451#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1297,7 +1179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18064517" vertical-offset="672" max-vertical-offset="2016">
           <caret line="27" column="36" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1305,7 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.4903226" vertical-offset="304" max-vertical-offset="924">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,7 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1321,9 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.99325466" vertical-offset="503" max-vertical-offset="5880">
           <caret line="32" column="43" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="43" />
-          <folding>
-            <element signature="e#51#108#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1331,7 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.571429" vertical-offset="68" max-vertical-offset="1624">
           <caret line="7" column="30" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,23 +1214,86 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.678571" vertical-offset="485" max-vertical-offset="3052">
           <caret line="32" column="40" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/articles.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.142857" vertical-offset="1004" max-vertical-offset="2072">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/Default/dashboard.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5419355" vertical-offset="2660" max-vertical-offset="6916">
+        <state vertical-scroll-proportion="8.0" vertical-offset="2660" max-vertical-offset="6916">
           <caret line="87" column="63" selection-start-line="87" selection-start-column="63" selection-end-line="87" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="532">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/ContactType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.0" vertical-offset="308" max-vertical-offset="1372">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/articles.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9032258" vertical-offset="332" max-vertical-offset="2072">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38064516" vertical-offset="716" max-vertical-offset="2240">
+          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17741935" vertical-offset="814" max-vertical-offset="1904">
+          <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9655173" vertical-offset="3413" max-vertical-offset="4032">
+          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/dashboard/form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.857143" vertical-offset="2124" max-vertical-offset="2744">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="40.857143" vertical-offset="1340" max-vertical-offset="1960">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.009677419" vertical-offset="2374" max-vertical-offset="3276">
+          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+          <folding>
+            <element signature="e#1913#2309#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
