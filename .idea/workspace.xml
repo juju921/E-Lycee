@@ -3,13 +3,20 @@
   <component name="ChangeListManager">
     <list id="435a078d-210a-4ee9-92f8-1cb485c2330c" name="Default" comment="" />
     <list default="true" id="884ac1a2-60a3-4f2d-a043-c9e020659e9a" name="ajout de browser-sync et du bundle et mise à jours (cherry picked from commit 8799664)" comment="Comments done et maj de la base de données">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/inc/menu.html.twig" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/inc/menu.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/inc/nav.html.twig" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/inc/nav.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Choices.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/ChoicesRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Classes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/ClassesRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Fiches.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/FichesRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="E-Lycee.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +41,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="menu.html.twig" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/inc/menu.html.twig">
+      <file leaf-file-name="Fiches.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Fiches.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="934" selection-end="934" vertical-scroll-proportion="0.6164383" vertical-offset="180" max-vertical-offset="2850">
+            <state vertical-scroll-proportion="-9.142858" vertical-offset="836" max-vertical-offset="3976">
+              <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Classes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Classes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.0" vertical-offset="756" max-vertical-offset="2324">
+              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.8967742" vertical-offset="0" max-vertical-offset="4368">
+              <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -78,14 +106,18 @@
         <option value="$PROJECT_DIR$/elycee.sql" />
         <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/inc/nav.html.twig" />
         <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/inc/menu.html.twig" />
+        <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Choices.php" />
+        <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Fiches.php" />
+        <option value="$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Classes.php" />
+        <option value="$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/User.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1053" />
+    <option name="width" value="1280" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -101,7 +133,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -304,6 +336,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Elycee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ElyceeBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="E-Lycee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="E-Lycee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="dashboard" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -334,105 +392,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboardBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboardBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboardBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -476,24 +436,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="E-Lycee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -532,7 +474,14 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <method />
     </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
@@ -541,193 +490,261 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="mySSHConnectionTimeout" value="30000" />
-    <option name="mySSHReadTimeout" value="30000" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
+  <component name="SvnConfiguration" myUseAcceleration="nothing">
     <configuration useDefault="false" />
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="435a078d-210a-4ee9-92f8-1cb485c2330c" name="Default" comment="" />
       <created>1435236897512</created>
+      <option name="number" value="Default" />
       <updated>1435236897512</updated>
     </task>
     <task id="LOCAL-00001" summary="ajout dossier config">
       <created>1435255322194</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
       <updated>1435255322194</updated>
     </task>
     <task id="LOCAL-00002" summary="creation du bundle Elycee">
       <created>1435255401165</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
       <updated>1435255401165</updated>
     </task>
     <task id="LOCAL-00003" summary="ajout de browser-sync et du bundle">
       <created>1435305184185</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
       <updated>1435305184186</updated>
     </task>
     <task id="LOCAL-00004" summary="ajout de browser-sync et du bundle et mise à jours">
       <created>1435325262604</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
       <updated>1435325262604</updated>
     </task>
     <task id="LOCAL-00005" summary="Creation des pages actu, le lycée, contact, mentions légales">
       <created>1435358599082</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
       <updated>1435358599082</updated>
     </task>
     <task id="LOCAL-00006" summary="ajout des insctruction pour le projet">
       <created>1435358912405</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
       <updated>1435358912405</updated>
     </task>
     <task id="LOCAL-00007" summary="ajout du bundle FosUserbundle et creation des pages de login au dashboard">
       <created>1435533876322</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
       <updated>1435533876322</updated>
     </task>
     <task id="LOCAL-00008" summary="ajout du bundle FosUserbundle et creation des pages de login au dashboard">
       <created>1435602540256</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
       <updated>1435602540256</updated>
     </task>
     <task id="LOCAL-00009" summary="modification des page login de foseuserbundle">
       <created>1435618127573</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
       <updated>1435618127573</updated>
     </task>
     <task id="LOCAL-00010" summary="ajout du  fichier sql">
       <created>1435962521419</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
       <updated>1435962521419</updated>
     </task>
     <task id="LOCAL-00011" summary="mise en place de la page actu avec html et css et affichage de la news">
       <created>1436001598805</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
       <updated>1436001598805</updated>
     </task>
     <task id="LOCAL-00012" summary="ajout des fichier js et css">
       <created>1436005792820</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
       <updated>1436005792820</updated>
     </task>
     <task id="LOCAL-00013" summary="mise à jours du chemin ligin">
       <created>1436006020054</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
       <updated>1436006020054</updated>
     </task>
     <task id="LOCAL-00014" summary="mise à jours du chemin ligin">
       <created>1436006076646</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
       <updated>1436006076646</updated>
     </task>
     <task id="LOCAL-00015" summary="affichage des utilisateur et creation de la page user">
       <created>1436011974633</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
       <updated>1436011974633</updated>
     </task>
     <task id="LOCAL-00016" summary="affichage des utilisateur et creation de la page user">
       <created>1436012109643</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
       <updated>1436012109643</updated>
     </task>
     <task id="LOCAL-00017" summary="Creation de la table status">
       <created>1436087137944</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
       <updated>1436087137944</updated>
     </task>
     <task id="LOCAL-00018" summary="ajout du dossier inc pour le front avec le menu de creer inclus sur les pages index et news">
       <created>1436272513960</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
       <updated>1436272513960</updated>
     </task>
     <task id="LOCAL-00019" summary="ajout du bundle swiftmailerbundle et mise à jours du formulaire d'ajout d'une news &#10;">
       <created>1436311020152</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
       <updated>1436311020152</updated>
     </task>
     <task id="LOCAL-00020" summary="mise à jours de la base de données">
       <created>1436311304780</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
       <updated>1436311304780</updated>
     </task>
     <task id="LOCAL-00021" summary="Ajouts du formulaire de contact et création du form contact ainsi que l'entité&#10;">
       <created>1436384458921</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
       <updated>1436384458921</updated>
     </task>
     <task id="LOCAL-00022" summary="Mise à jours du formulaire de contact et ajout de style css">
       <created>1436397436488</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
       <updated>1436397436488</updated>
     </task>
     <task id="LOCAL-00023" summary="ajout des mentions légales">
       <created>1436398078584</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
       <updated>1436398078584</updated>
     </task>
     <task id="LOCAL-00024" summary="creations de la pages actualites listant toutes les news">
       <created>1436597503122</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
       <updated>1436597503122</updated>
     </task>
     <task id="LOCAL-00025" summary="Creation de la table question">
       <created>1436657489654</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
       <updated>1436657489654</updated>
     </task>
     <task id="LOCAL-00026" summary="Creation de la table question et d'une requette qui calcule le nombre de post">
       <created>1436660437265</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
       <updated>1436660437265</updated>
     </task>
     <task id="LOCAL-00027" summary="Creation de la table question et d'une requette qui calcule le nombre de post">
       <created>1436660458637</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
       <updated>1436660458637</updated>
     </task>
     <task id="LOCAL-00028" summary="mise à jours avec le Bundle pour uploader une mise et celui pour le datapicker">
       <created>1436717729187</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
       <updated>1436717729187</updated>
     </task>
     <task id="LOCAL-00029" summary="mise à jours avec le Bundle pour uploader une mise et celui pour le datapicker">
       <created>1436729265059</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
       <updated>1436729265059</updated>
     </task>
     <task id="LOCAL-00030" summary="rajout de fontawesome">
       <created>1436733141630</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
       <updated>1436733141631</updated>
     </task>
     <task id="LOCAL-00031" summary="rajout de fontawesome">
       <created>1436772464371</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
       <updated>1436772464371</updated>
     </task>
     <task id="LOCAL-00032" summary="mise à jours des images news">
       <created>1436774398700</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
       <updated>1436774398700</updated>
     </task>
     <task id="LOCAL-00033" summary="ajouts des images&#10;">
       <created>1436774554023</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
       <updated>1436774554023</updated>
     </task>
     <task id="LOCAL-00034" summary="ajout des modifications et de la suppresion">
       <created>1436785852106</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
       <updated>1436785852106</updated>
     </task>
     <task id="LOCAL-00035" summary="ajout des modifications et de la suppresion">
       <created>1436785873980</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
       <updated>1436785873980</updated>
     </task>
     <task id="LOCAL-00036" summary="modification du bouton sur la page d'accueil et rajout de fonction">
       <created>1436809046743</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
       <updated>1436809046743</updated>
     </task>
     <task id="LOCAL-00037" summary="ajout de la page d'affiche d'un article">
       <created>1436823079366</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
       <updated>1436823079366</updated>
     </task>
     <task id="LOCAL-00038" summary="ajout sur la page d'accueil du dashboard des 3 derniers articles avec un bouton rouge ou vert ( pour leurs status)">
       <created>1436824654380</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
       <updated>1436824654380</updated>
     </task>
     <task id="LOCAL-00039" summary="ajout du bundle tinymce interface wysiwyg pour l'admin &#10;php composer.phar update&#10;&#10;">
       <created>1436863401881</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
       <updated>1436863401881</updated>
     </task>
     <task id="LOCAL-00040" summary="Comments done et maj de la base de données">
       <created>1436880024470</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
       <updated>1436880024470</updated>
     </task>
     <task id="LOCAL-00041" summary="Comments done et maj de la base de données">
       <created>1436880084341</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
       <updated>1436880084341</updated>
     </task>
     <option name="localTasksCounter" value="42" />
@@ -754,53 +771,53 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1053" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41264737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55948555" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5588235" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2809829" sideWeight="0.44051448" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2857143" sideWeight="0.44051448" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44852942" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4132353" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41264737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5588235" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66764706" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44852942" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44852942" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2775974" sideWeight="0.33118972" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2857143" sideWeight="0.44051448" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
@@ -853,118 +870,173 @@
     <breakpoint-manager>
       <option name="time" value="39" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/inc/menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2464">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/ContactType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/Comments.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/PostsType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.65068495" vertical-offset="570" max-vertical-offset="2100">
+        <state vertical-scroll-proportion="-0.65068495" vertical-offset="570" max-vertical-offset="2100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Form/CommentsType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/Posts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6849315" vertical-offset="600" max-vertical-offset="9450">
+        <state vertical-scroll-proportion="-0.6849315" vertical-offset="600" max-vertical-offset="9450">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/PostsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="811" selection-end="1039" vertical-scroll-proportion="-12.285714" vertical-offset="720" max-vertical-offset="1960">
-          <folding />
+        <state vertical-scroll-proportion="-12.285714" vertical-offset="720" max-vertical-offset="1960">
+          <caret line="38" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/CommentsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="36" selection-start="286" selection-end="302" vertical-scroll-proportion="-16.071428" vertical-offset="0" max-vertical-offset="1080">
+        <state vertical-scroll-proportion="-16.071428" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="15" column="36" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/Default/actu.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="42" selection-start="835" selection-end="835" vertical-scroll-proportion="-27.857143" vertical-offset="0" max-vertical-offset="2490">
+        <state vertical-scroll-proportion="-27.857143" vertical-offset="0" max-vertical-offset="2490">
+          <caret line="26" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elycee.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="63" selection-start="24546" selection-end="24547" vertical-scroll-proportion="0.9380531" vertical-offset="9540" max-vertical-offset="11312">
-          <folding />
+        <state vertical-scroll-proportion="0.9380531" vertical-offset="9540" max-vertical-offset="11312">
+          <caret line="232" column="63" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/Default/dashboard.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="24" selection-start="4588" selection-end="4588" vertical-scroll-proportion="-3.2142856" vertical-offset="4050" max-vertical-offset="6510">
-          <folding />
+        <state vertical-scroll-proportion="-3.2142856" vertical-offset="4050" max-vertical-offset="6510">
+          <caret line="138" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="55" selection-start="751" selection-end="777" vertical-scroll-proportion="-12.857142" vertical-offset="0" max-vertical-offset="5880">
+        <state vertical-scroll-proportion="-12.857142" vertical-offset="0" max-vertical-offset="5880">
+          <caret line="23" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Resources/views/inc/nav.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="213" column="33" selection-start="8210" selection-end="8210" vertical-scroll-proportion="0.37671232" vertical-offset="6210" max-vertical-offset="8310">
-          <folding>
-            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#2;n#ul#0;n#li#1;n#ul#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#4;n#ul#0;n#li#1;n#ul#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#a#0;n#li#6;n#ul#0;n#li#1;n#ul#0;n#nav#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.37671232" vertical-offset="6210" max-vertical-offset="8310">
+          <caret line="213" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="55" selection-start="161" selection-end="199" vertical-scroll-proportion="-5.357143" vertical-offset="0" max-vertical-offset="1020">
-          <folding />
+        <state vertical-scroll-proportion="-5.357143" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="5" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="58" selection-start="646" selection-end="669" vertical-scroll-proportion="0.41095892" vertical-offset="0" max-vertical-offset="3030">
-          <folding />
+        <state vertical-scroll-proportion="0.41095892" vertical-offset="0" max-vertical-offset="3030">
+          <caret line="21" column="58" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Resources/views/inc/menu.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="934" selection-end="934" vertical-scroll-proportion="0.6164383" vertical-offset="180" max-vertical-offset="2850">
+        <state vertical-scroll-proportion="5.0" vertical-offset="784" max-vertical-offset="3024">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Choices.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.142858" vertical-offset="976" max-vertical-offset="4004">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/ChoicesRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Fiches.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.142858" vertical-offset="836" max-vertical-offset="3976">
+          <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboardBundle/Entity/Classes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.0" vertical-offset="756" max-vertical-offset="2324">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elycee/ElyceeBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8967742" vertical-offset="0" max-vertical-offset="4368">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -33,8 +33,24 @@ class User extends BaseUser
      */
    protected $post;
 
+    /**
+     * @ORM\OneToMany(targetEntity="DashboardBundle\Entity\Fiches", mappedBy="teacher")
+     */
+    protected $fiches; // correspond a la liaison teacher_id de celui qui a créé la fiche
 
-   
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="DashboardBundle\Entity\Classes", inversedBy="students")
+     * @ORM\JoinColumn(name="lvl_id", referencedColumnName="id")
+     *
+     */
+    private $niveau;
+
+
+
+
+
+
 
     /**
      * Get id
