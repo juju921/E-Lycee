@@ -1,6 +1,6 @@
 <?php
 
-namespace dashboard\dashboardBundle\Entity;
+namespace Elycee\ElyceeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Choices
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="dashboard\dashboardBundle\Entity\ChoicesRepository")
+ * @ORM\Entity(repositoryClass="Elycee\ElyceeBundle\Entity\ChoicesRepository")
  */
 class Choices
 {
@@ -47,11 +47,13 @@ class Choices
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Fiche", inversedBy="choices")
+     * @ORM\ManyToOne(targetEntity="Fiches", inversedBy="choices")
      * @ORM\JoinColumn(name="fiche_id", referencedColumnName="id")
      *
      */
-    private $fiche;
+    private $fiches;
+
+
 
 
 
@@ -132,5 +134,32 @@ class Choices
     public function getPoint()
     {
         return $this->point;
+    }
+
+   
+
+
+
+    /**
+     * Set fiches
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     * @return Choices
+     */
+    public function setFiches(\Elycee\ElyceeBundle\Entity\Fiches $fiches = null)
+    {
+        $this->fiches = $fiches;
+
+        return $this;
+    }
+
+    /**
+     * Get fiches
+     *
+     * @return \Elycee\ElyceeBundle\Entity\Fiches 
+     */
+    public function getFiches()
+    {
+        return $this->fiches;
     }
 }

@@ -5,6 +5,10 @@ namespace Elycee\ElyceeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
+
+
+
+
 /**
  * User
  *
@@ -34,13 +38,13 @@ class User extends BaseUser
    protected $post;
 
     /**
-     * @ORM\OneToMany(targetEntity="DashboardBundle\Entity\Fiches", mappedBy="teacher")
+     * @ORM\OneToMany(targetEntity="Fiches", mappedBy="teacher")
      */
-    protected $fiches; // correspond a la liaison teacher_id de celui qui a créé la fiche
+    protected $fiches;
 
     
     /**
-     * @ORM\ManyToOne(targetEntity="DashboardBundle\Entity\Classes", inversedBy="students")
+     * @ORM\ManyToOne(targetEntity="Classes", inversedBy="students")
      * @ORM\JoinColumn(name="lvl_id", referencedColumnName="id")
      *
      */
@@ -143,5 +147,65 @@ class User extends BaseUser
     public function getPost()
     {
         return $this->post;
+    }
+
+
+
+
+
+    /**
+     * Add fiches
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     * @return User
+     */
+    public function addFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
+    {
+        $this->fiches[] = $fiches;
+
+        return $this;
+    }
+
+    /**
+     * Remove fiches
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     */
+    public function removeFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
+    {
+        $this->fiches->removeElement($fiches);
+    }
+
+    /**
+     * Get fiches
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFiches()
+    {
+        return $this->fiches;
+    }
+
+    /**
+     * Set niveau
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Classes $niveau
+     * @return User
+     */
+    public function setNiveau(\Elycee\ElyceeBundle\Entity\Classes $niveau = null)
+    {
+        $this->niveau = $niveau;
+
+        return $this;
+    }
+
+    /**
+     * Get niveau
+     *
+     * @return \Elycee\ElyceeBundle\Entity\Classes 
+     */
+    public function getNiveau()
+    {
+        return $this->niveau;
     }
 }

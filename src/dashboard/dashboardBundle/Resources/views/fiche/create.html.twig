@@ -1,0 +1,48 @@
+{% extends "dashboarddashboardBundle::base.html.twig" %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Dashboard</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <span class="alert alert-success">{{ flashMessage }}</span>
+            {% endfor %}
+
+            <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
+
+
+
+
+                <div class="form-group">
+                    {{ form_label(form.title, 'title : ') }}
+                    {{ form_widget(form.title,{'attr' : {'placeholder':'Saisissez votre nom','class':'form-control'}}) }}
+                    {{ form_errors(form.title) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.content, 'content : ') }}
+                    {{ form_widget(form.content,{'attr' : {'class':'form-control'}}) }}
+                    {{ form_errors(form.content) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.niveau, 'niveau : ') }}
+                    {{ form_widget(form.niveau,{'attr' : {'class':'form-control tinymce'}}) }}
+                    {{ form_errors(form.niveau) }}
+                </div>
+
+                {{ form_widget(form._token) }}
+                <p>
+                    <input type="submit" value="Valider" class="btn"/>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
