@@ -15,6 +15,23 @@
         </div>
    <p> {{ news.content }}</p>
 
+
+
+        {% if news.commentaires is empty %}
+            <p>Pas de commentaires pour le moment.</p>
+        {% endif %}
+
+        {% for commentaire in news.commentaires %}
+            <div class="section__text">
+                <h5>{{ commentaire.username | title }} <span class="comment-info">- Envoyé le {{ commentaire.createAt.date | date('d M Y') }}</span></h5>
+                <p>{{ commentaire.contents }}</p>
+            </div>
+        {% endfor %}
+
+
+
+
+
         </div>
 
     {% if userOnline == true %}

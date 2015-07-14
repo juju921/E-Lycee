@@ -12,4 +12,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class CommentsRepository extends EntityRepository
 {
+
+    public function getCountComments(){
+        $results = $this
+            ->createQueryBuilder('p')
+            ->select('count(p)')
+            ->getQuery()
+            ->getSingleScalarResult();
+        return $results;
+
+
+    }
+
+
+
+
 }

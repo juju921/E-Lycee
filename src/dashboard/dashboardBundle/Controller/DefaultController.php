@@ -28,10 +28,13 @@ class DefaultController extends FOSRestController
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
         $rcu = $doctrine->getRepository('ElyceeElyceeBundle:User');
+        $rcc = $doctrine->getRepository('ElyceeElyceeBundle:Comments');
         /*$results = $rc->getCountPost();*/
         $countusr = $rcu->getCountUser();
+        $countcomments =  $rcc->getCountComments();
         $results = $rc->getThreeLastPost();
         return array(
+            'countcomments'=> $countcomments,
             'results' => $results,
             'countusr' => $countusr
         );
