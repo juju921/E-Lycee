@@ -1,17 +1,21 @@
 E-Lycee
 =======
 
-Installation du Projet
+#Pré-requis
 
-Requirements
+- MySQL 5.6
+- Php 5
 
-MySQL
+#Installation
 
-Installation des Vendors
-
-composer install
-
-php app/console assets:install web --symlink en utilisateur admin sur pc pour gérer les liens symboliques
+1. Cloner
+2. Exécuter : 
+  - "php composer.phar install"
+    - database name : elycee
+    - pour le reste, laisser par defaut
+  - "php app/console assets:install --symlink"
+  - "php app/console doctrine:database:create"
+  - "php app/console doctrine:schema:update --force"
 
 
 A Symfony project created on June 25, 2015, 2:53 pm.
