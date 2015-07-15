@@ -6,7 +6,7 @@ E-Lycee
 - MySQL 5.6
 - Php 5
 
-#Installation du Projet
+#Installation
 
 1. Cloner
 2. Exécuter : 
