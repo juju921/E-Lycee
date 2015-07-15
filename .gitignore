@@ -33,8 +33,7 @@
 # Build data
 /build/
 
-# Composer PHAR
-/composer.phar
+
 
 # PHP STORM
 /.idea/
