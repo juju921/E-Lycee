@@ -7,13 +7,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\HttpFoundation\Request ;
+use Symfony\Component\HttpFoundation\Request as Request;
 
 use Doctrine\Common\Util\Debug;
 use Elycee\ElyceeBundle\Entity\Fiches;
 use Elycee\ElyceeBundle\Form\FichesType;
-use Elycee\ElyceeBundle\Entity\Choices;
 use Elycee\ElyceeBundle\Form\ChoicesType;
+use Elycee\ElyceeBundle\Entity\Choices;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Elycee\ElyceeBundle\Entity\Status;
 
 
@@ -21,11 +23,9 @@ class FichesController extends Controller
 {
 
 
-
-
     /**
-     * @Route("dashboard/fiches/list", name="dashboard.fiches.home")
-     * @Template("dashboarddashboardBundle:Fiches:Default:dashboard.html.twig")
+     * @Route("dashboard/fiches/list", name="fiches.fiches.home")
+     * @Template("dashboarddashboardBundle:fiche:showfiche.html.twig")
      */
     public function homeAction()
     {
@@ -33,7 +33,7 @@ class FichesController extends Controller
 
         $token = $this->get('security.context')->getToken();
         $doctrine   = $this->getDoctrine();
-        $repository = $doctrine->getRepository('dashboarddashboardBundle:Fiches');
+        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
         $fiches    = $repository->findBy(array('teacher' => $token->getUser()->getId()));
         return array('fiches' => $fiches);
     }
@@ -62,7 +62,7 @@ class FichesController extends Controller
                 $data = $form->getData();
                 $data->setTeacher($user);
                 $data->setStatus($unpublished);
-                $data->setChoices($data->getChoices());
+               // $data->setChoices($data->getChoices());
                 $em->persist($data);
                 $em->flush();
                 $message = "Votre fiche a été créée";

@@ -48,7 +48,7 @@ class Posts
     /**
      * @var string
      *
-     * @ORM\Column(name="url_thumbnail", type="array",nullable = true)
+     * @ORM\Column(name="url_thumbnail", type="array", nullable = true)
 
      * @Assert\Image(
      *      maxSize="1M",
