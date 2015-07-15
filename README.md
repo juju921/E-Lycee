@@ -4,7 +4,7 @@ E-Lycee
 #Pré-requis
 
 - MySQL 5.6
-- Php 5
+- Php 5.5
 
 #Installation
 
