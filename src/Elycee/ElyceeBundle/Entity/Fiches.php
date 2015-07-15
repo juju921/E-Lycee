@@ -63,18 +63,21 @@ class Fiches
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Choices", mappedBy="fiches", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Choices", mappedBy="fiches",  cascade={"persist","remove"})
      */
     protected $choices;
 
 
 
-    
+
+
+
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -97,7 +100,7 @@ class Fiches
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -120,7 +123,7 @@ class Fiches
     /**
      * Get content
      *
-     * @return string 
+     * @return string
      */
     public function getContent()
     {
@@ -151,7 +154,7 @@ class Fiches
     /**
      * Get teacher
      *
-     * @return \Elycee\ElyceeBundle\Entity\User 
+     * @return \Elycee\ElyceeBundle\Entity\User
      */
     public function getTeacher()
     {
@@ -174,7 +177,7 @@ class Fiches
     /**
      * Get niveau
      *
-     * @return \Elycee\ElyceeBundle\Entity\Classes 
+     * @return \Elycee\ElyceeBundle\Entity\Classes
      */
     public function getNiveau()
     {
@@ -197,15 +200,12 @@ class Fiches
     /**
      * Get status
      *
-     * @return \Elycee\ElyceeBundle\Entity\Status 
+     * @return \Elycee\ElyceeBundle\Entity\Status
      */
     public function getStatus()
     {
         return $this->status;
     }
-
-
-
 
 
 
@@ -242,4 +242,16 @@ class Fiches
     {
         return $this->choices;
     }
+
+
+    public function setChoices(ArrayCollection $choices)
+    {
+        foreach ($choices as $choice) {
+            $choice->setFiche($this);
+        }
+        $this->choices = $choices;
+    }
+
+
+
 }

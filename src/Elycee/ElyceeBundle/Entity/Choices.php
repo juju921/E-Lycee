@@ -48,10 +48,13 @@ class Choices
 
     /**
      * @ORM\ManyToOne(targetEntity="Fiches", inversedBy="choices")
-     * @ORM\JoinColumn(name="fiche_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="fiches_id", referencedColumnName="id")
      *
      */
     private $fiches;
+
+
+
 
 
 

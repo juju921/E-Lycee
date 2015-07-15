@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request as Request;
 
-use Doctrine\Common\Util\Debug;
+use Doctrine\Common\Util\Debug ;
 use Elycee\ElyceeBundle\Entity\Fiches;
 use Elycee\ElyceeBundle\Form\FichesType;
 use Elycee\ElyceeBundle\Form\ChoicesType;
@@ -55,6 +55,8 @@ class FichesController extends Controller
         $em = $doctrine->getManager();
         $fiche = new Fiches();
         $ficheType = new FichesType();
+        $choix = new Choices();
+
         $form = $this->createForm($ficheType, $fiche);
         $form->handleRequest($request);
         if ($request->isMethod('POST')){
@@ -62,12 +64,15 @@ class FichesController extends Controller
                 $data = $form->getData();
                 $data->setTeacher($user);
                 $data->setStatus($unpublished);
-               // $data->setChoices($data->getChoices());
+                //$data->setChoices($data);
+
+              // $data->setChoices($data->getChoices());
                 $em->persist($data);
                 $em->flush();
                 $message = "Votre fiche a été créée";
                 $request->getSession()->getFlashBag()->set('notice', $message);
                 $urlRedirect = $this->generateUrl('dashboard.default.index');
+
                 return $this->redirect($urlRedirect);
             }
         }

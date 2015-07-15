@@ -34,6 +34,14 @@
                     {{ form_errors(form.niveau) }}
                 </div>
 
+                <div class="form-group level">
+                    {{ form_label(form.status, 'status : ') }}
+                    {{ form_widget(form.status    ,{'attr' : {'class':'form-control tinymce'}}) }}
+                    {{ form_errors(form.niveau) }}
+                </div>
+
+
+
                 {{ form_widget(form._token) }}
                 <p>
                     <input type="submit" value="Valider" class="btn"/>

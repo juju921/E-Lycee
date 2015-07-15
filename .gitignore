@@ -33,3 +33,5 @@
 # Build data
 /build/
 
+# PHP STORM
+/.idea/
