@@ -4,12 +4,13 @@ E-Lycee
 #Pré-requis
 
 - MySQL 5.6
-- Php 5.5
+- Php 5.5 (avec l'extension curl)
 
 #Installation
 
 1. Cloner
 2. Exécuter : 
+  - "php composer.phar update"
   - "php composer.phar install"
     - database name : elycee
     - pour le reste, laisser par defaut
