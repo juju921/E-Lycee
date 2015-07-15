@@ -3,14 +3,17 @@ E-Lycee
 
 #Pré-requis
 
-- MySQL
+- MySQL 5.6
 - Php 5
 
 #Installation du Projet
 
-1) Cloner
-2) éxécuter "php composer.phar install"
-3) php app/console assets:install web --symlink
+1. Cloner
+2. Exécuter : 
+  - "php composer.phar install"
+  - "php app/console assets:install --symlink"
+  - "php app/console doctrine:database:create"
+  - "php app/console doctrine:schema:update --force"
 
 
 A Symfony project created on June 25, 2015, 2:53 pm.
