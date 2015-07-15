@@ -8,7 +8,7 @@ E-Lycee
 
 #Installation
 
-1. Cloner
+1. Cloner sur le serveur
 2. Exécuter : 
   - "php composer.phar update"
     - database name : elycee
