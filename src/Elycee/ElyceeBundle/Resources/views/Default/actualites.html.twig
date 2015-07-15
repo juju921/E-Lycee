@@ -1,13 +1,14 @@
 {% extends "ElyceeElyceeBundle::base.html.twig" %}
 
 {% block body %}
+    
 
 
-
-    <div class="row">
+    <div class="col-lg-8 col-md-8">
     {% for posts in results %}
-        <div class="col-lg-8 col-md-8">
-            <img src="{{ asset("images/news/"~posts.urlThumbnail.fileName) }}" alt="" width="280px" />
+        <div class="col-lg-12 col-md-12">
+            <img src="{{ asset("images/news/"~posts.urlThumbnail.fileName) }}" alt="" class="img-responsive col-md-4 col-sm-4 img-circle"
+            style="padding: 0;margin: 3% 3% 5% 0;" />
             <h2>
                 {{ posts.titre }}
             </h2>
@@ -17,16 +18,33 @@
             <p>
                 <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
             </p>
-            <p>Auteur : <a href="#lienVersLauteur"></a> - Publié le : {{ posts.date | date('d M Y') }}</p>
+            <p>Auteur : {{ posts.auteur }} - Publié le : {{ posts.date | date('d M Y') }}</p>
             <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
         </div>
+        <br>
     {% endfor %}
-
-
-
-    <div class="col-lg-4 col-md-4">
-    <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="614434951082188800">Tweets de @LyceeSVSM</a>
-    </div>
     </div>
 
+    <aside class="col-md-4 content-col">
+        <h2>
+            A lire aussi
+        </h2>
+        <hr style="width: 100%; height: 1px; background-color:#888;" />    
+        <p>
+            <a href="#">-> Philae endormi</a> <br />
+            <a href="#">-> Fusée Antares</a> <br />
+        </p>
+         
+        <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="621308517669076992">Tweets de @LyceeSVSM</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    </aside>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="text-muted text-center">
+                <a href="#">Mentions légales</a>  |  <a href="#">Contact</a>
+            </h5>
+        </div>
+    </div>
 {% endblock %}
