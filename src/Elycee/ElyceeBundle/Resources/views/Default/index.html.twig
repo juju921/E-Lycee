@@ -1,0 +1,40 @@
+{% extends "ElyceeElyceeBundle::base.html.twig" %}
+
+{% block body %}
+
+
+
+        <div class="row">
+    {% for posts in results %}
+            <div class="col-lg-6 col-sm-6">
+                <div class="thumbnail">
+                     <a href="/template-overviews/creative" class="post-image-link">
+                        <p>
+                            <img src="{{ asset("images/news/"~posts.urlThumbnail.fileName) }}" class="img-responsive" alt=""/>
+                        </p>
+                    </a>
+
+                    <div class="caption">
+                        <h2>
+                           {{ posts.titre }}
+                        </h2>
+                        <p>
+                     {{ posts.abstract }}
+                        </p>
+                        <p>
+                            <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
+                        </p>
+                        <p>Auteur : <a href="{{ posts.auteur }}"></a> - Publié le : }</p>
+                        <a href="#lienDesComs"><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+
+
+
+
+                <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="614434951082188800">Tweets de @LyceeSVSM</a>
+
+{% endblock %}

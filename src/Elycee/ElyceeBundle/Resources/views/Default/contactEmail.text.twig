@@ -1,0 +1,6 @@
+A contact enquiry was made by {{ contact.prenom }} {{ contact.nom }} at {{ "now" | date("Y-m-d H:i") }}
+
+Reply-To: {{ contact.email }}
+Subject: Nouveau contact par le site
+Body:
+{{ contact.message }}

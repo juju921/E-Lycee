@@ -1,0 +1,78 @@
+{% extends "ElyceeElyceeBundle::base.html.twig" %}
+
+{% block body %}
+
+
+
+    <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8">
+        <img src="{{ asset("images/news/"~news.urlThumbnail.fileName) }}" alt=""/>
+    <h1>{{ news.titre }}</h1>
+        <div class="post_commentbox">
+
+            <span><i class="fa fa-calendar"></i> {{ news.date | date('d M Y') }}</span>
+
+        </div>
+   <p> {{ news.content }}</p>
+
+
+
+        {% if news.commentaires is empty %}
+            <p>Pas de commentaires pour le moment.</p>
+        {% endif %}
+
+        {% for commentaire in news.commentaires %}
+            <div class="section__text">
+                <h5>{{ commentaire.username | title }} <span class="comment-info">- Envoyé le {{ commentaire.createAt.date | date('d M Y') }}</span></h5>
+                <p>{{ commentaire.contents }}</p>
+            </div>
+        {% endfor %}
+
+
+
+
+
+        </div>
+
+    {% if userOnline == true %}
+        <p><small>Vous êtes connecté(e) en tant que : <strong>{{ app.user.username | title }}</strong> | <a href="{{ url('fos_user_security_logout')}}">Se déconnecter</a></small></p>
+        {{ form_widget(form.username, {'type': 'hidden', 'value': app.user.username} ) }}
+    {% else %}
+
+
+        <div class="col-md-6">
+            {{ form_start(form, {'method': 'POST', 'attr': {'class': ''}}) }}
+            <div class="form-group">
+                {{ form_label(form.username, 'username : ') }}
+
+                {{ form_widget(form.username,{'attr' : {'class':'form-control'}}) }}
+            </div>
+            {% endif %}
+
+            <div class="form-group">
+                {{ form_label(form.contents, 'contents : ') }}
+
+                {{ form_widget(form.contents,{'attr' : {'class':'form-control'}}) }}
+            </div>
+
+            {{ form_widget(form.envoyer, {'label': 'Envoyer', 'attr': {'class': 'btn btn-primary'}}) }}
+            {{ form_end(form) }}
+        </div>
+
+        </div>
+
+
+
+
+
+    <div class="col-lg-4 col-md-4 col-sm-4">
+
+        <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="614434951082188800">Tweets de @LyceeSVSM</a>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
