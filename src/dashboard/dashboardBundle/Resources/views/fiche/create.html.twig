@@ -15,7 +15,7 @@
 
             <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
 
-
+                <a href="#" id="add">Ajouter un champ</a>
 
 
                 <div class="form-group">
@@ -28,7 +28,7 @@
                     {{ form_widget(form.content,{'attr' : {'class':'form-control'}}) }}
                     {{ form_errors(form.content) }}
                 </div>
-                <div class="form-group">
+                <div class="form-group level">
                     {{ form_label(form.niveau, 'niveau : ') }}
                     {{ form_widget(form.niveau,{'attr' : {'class':'form-control tinymce'}}) }}
                     {{ form_errors(form.niveau) }}

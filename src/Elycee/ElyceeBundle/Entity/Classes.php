@@ -39,6 +39,11 @@ class Classes
     protected $students;
 
 
+    public function __toString()
+    {
+        return strval($this->id);
+    }
+
 
     /**
      * Get id
@@ -62,6 +67,7 @@ class Classes
 
         return $this;
     }
+
 
     /**
      * Get classLevel
