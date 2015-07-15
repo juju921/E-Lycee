@@ -22,7 +22,7 @@ class PostController extends Controller
 
     /**
      * @Route("/post/{id}   ", name="dashboarddashboardBundle:dashboard:show")
-     * @Template("dashboarddashboardBundle:dashboard:show.html.twig")
+     * @Template("dashboarddashboardBundle:dashboard:showpost.html.twig")
      */
     public function showAction($id)
     {
@@ -115,7 +115,7 @@ class PostController extends Controller
             $request->getSession()->getFlashBag()->set('notice', $message);
 
             // on redirige l'utilisateur
-            $url = $this->generateUrl('dashboard.default.user');
+            $url = $this->generateUrl('dashboard.default.index');
             return $this->redirect($url);
 
 
@@ -155,6 +155,42 @@ class PostController extends Controller
         return $this->redirect($url);
     }
 
+    /**
+     * @Route(
+     *      "/posts/edit/status/{id}",
+     *      name="dashboard.posts.editstatus",
+     * )
+     * @Template("dashboarddashboardBundle:dashboard:posteditstatus.html.twig")
+     * @Method({"POST","GET"})
+     */
+    public function editStatusAction(Request $request, $id)
+    {
+
+        $doctrine = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
+        $repositoryStatus = $doctrine->getRepository('ElyceeElyceeBundle:Status');
+        $post = $repository->find($id);
+        if ($post->getStatus()->getId() == 1) {
+            $status = $repositoryStatus->find(2);
+            $post->setStatus($status);
+            $message = "Votre Article n'est plus publié";
+            $request->getSession()->getFlashBag()->set('notice', $message);
+        } else {
+            $status = $repositoryStatus->find(1);
+            $post->setStatus($status);
+            $message = "Votre Article est désormais publié";
+            $request->getSession()->getFlashBag()->set('notice', $message);
+        }
+        $em->persist($post);
+        $em->flush();
+
+
+        $url = $this->generateUrl('dashboard.default.index');
+        return $this->redirect($url);
+
+
+    }
 
 }
 

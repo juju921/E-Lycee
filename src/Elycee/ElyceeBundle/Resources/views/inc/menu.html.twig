@@ -1,11 +1,29 @@
 <ul class="nav navbar-right navbar-nav">
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i>
+            {% if app.user is not null %}
+            Bonjour {{ app.user | title }}
+            {% endif %}
+        </a>
+
+
+
         <ul class="dropdown-menu">
-            <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
-            <li><a href="#">Profile</a></li>
-            <li class="divider"></li>
-            <li><a href="#">About</a></li>
+            {% if is_granted('ROLE_STUDENT') %}
+                <li><a  href="#">Fiches</a></li>
+                <li><a  href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+            {% elseif is_granted('ROLE_TEACHER') %}
+                <li><a  href="{{ url('dashboard.default.index')}}">Dashboard</a></li>
+                <li><a  href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+            {% else %}
+                <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+            {% endif %}
+
+
+
+
+
+
         </ul>
     </li>
     <li>

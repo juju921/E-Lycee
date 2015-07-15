@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+    <a class="navbar-brand" href="{{url('ElyceeBundle.default.index')}}"><i class="fa fa-home"></i>     Retour au site public</a>
 </div>
 <!-- /.navbar-header -->
 
@@ -203,10 +203,11 @@
 <!-- /.dropdown -->
 <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+        <i class="fa fa-user fa-fw"></i> Bonjour {{app.user.username}} <i class="fa fa-caret-down"></i>
     </a>
     <ul class="dropdown-menu dropdown-user">
-        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+
+        <li><a href="#"><i class="fa fa-user fa-fw"></i> mon Profil</a>
         </li>
         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
         </li>
@@ -250,7 +251,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="{{ url('dashboard.default.getArticles') }}"><i class="fa fa-table fa-fw"></i>Articles</a>
+                <a href="{{ url('dashboard.default.getArticles',{'id' : app.user.id}) }}"><i class="fa fa-table fa-fw"></i>Articles</a>
             </li>
             <li>
                 <a href="{{ url('dashboard.default.users') }}"><i class="fa fa-edit fa-fw"></i> Elèves</a>

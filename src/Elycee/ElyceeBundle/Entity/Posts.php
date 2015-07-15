@@ -86,6 +86,11 @@ class Posts
     private $status;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="Comments", mappedBy="post")
+     */
+    protected $commentaires;
+
 
 
     /**
@@ -258,5 +263,51 @@ class Posts
     public function getStatus()
     {
         return $this->status;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->commentaires = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add commentaires
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Comments $commentaires
+     * @return Posts
+     */
+    public function addCommentaire(\Elycee\ElyceeBundle\Entity\Comments $commentaires)
+    {
+        $this->commentaires[] = $commentaires;
+
+        return $this;
+    }
+
+    /**
+     * Remove commentaires
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Comments $commentaires
+     */
+    public function removeCommentaire(\Elycee\ElyceeBundle\Entity\Comments $commentaires)
+    {
+        $this->commentaires->removeElement($commentaires);
+    }
+
+    /**
+     * Get commentaires
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCommentaires()
+    {
+        return $this->commentaires;
+    }
+
+
+    public function __toString()
+    {
+        return strval($this->id);
     }
 }
