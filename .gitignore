@@ -36,5 +36,5 @@
 # Composer PHAR
 /composer.phar
 
-#PHP STORM
-/.idea
+# PHP STORM
+/.idea/
