@@ -11,7 +11,6 @@ E-Lycee
 1. Cloner
 2. Exécuter : 
   - "php composer.phar update"
-  - "php composer.phar install"
     - database name : elycee
     - pour le reste, laisser par defaut
   - "php app/console assets:install --symlink"
