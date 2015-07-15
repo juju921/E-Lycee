@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     {{ form_label(form.content, 'content : ') }}
-                    {{ form_widget(form.content,{'attr' : {'class':'form-control'}}) }}
+                    {{ form_widget(form.content,{'attr' : {'class':'form-control tinymce'}}) }}
                     {{ form_errors(form.content) }}
                 </div>
 
@@ -69,5 +69,8 @@
             </form>
     </div>
     </div>
+
+
+
 
 {% endblock %}

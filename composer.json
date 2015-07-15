@@ -30,8 +30,8 @@
         "sylius/resource-bundle": "^0.14.0",
         "white-october/pagerfanta-bundle": "^1.0",
         "iphp/filestore-bundle": "^0.2.3",
-        "stephanecollot/datetimepicker-bundle": "dev-master"
-
+        "stephanecollot/datetimepicker-bundle": "dev-master",
+        "stfalcon/tinymce-bundle": "dev-master"
 
     },
     "require-dev": {

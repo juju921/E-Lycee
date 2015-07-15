@@ -8,6 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Elycee\ElyceeBundle\Form\PostsType;
 use Elycee\ElyceeBundle\Entity\Posts;
+use Elycee\ElyceeBundle\Form\UserType;
+use Elycee\ElyceeBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\FOSRestController;
 
@@ -25,8 +27,17 @@ class DefaultController extends FOSRestController
 
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
-        $results = $rc->getCountPost();
-        return array('results' => $results);
+        $rcu = $doctrine->getRepository('ElyceeElyceeBundle:User');
+        $rcc = $doctrine->getRepository('ElyceeElyceeBundle:Comments');
+        /*$results = $rc->getCountPost();*/
+        $countusr = $rcu->getCountUser();
+        $countcomments =  $rcc->getCountComments();
+        $results = $rc->getThreeLastPost();
+        return array(
+            'countcomments'=> $countcomments,
+            'results' => $results,
+            'countusr' => $countusr
+        );
 
 
 
@@ -66,15 +77,16 @@ class DefaultController extends FOSRestController
 
     /**
      *
-     * @Route("/articles", name="dashboard.default.getArticles" )
+     * @Route("/articles/{id}", name="dashboard.default.getArticles" )
      * @Template("dashboarddashboardBundle:dashboard:articles.html.twig")
      */
-    public function getArticlesAction()
+    public function getArticlesAction($id)
     {
 
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
-        $posts = $rc->findAll();
+        /*$posts = $rc->findAll();*/
+        $posts   = $rc->getPostByAuteur($id);
 
         return array(
 

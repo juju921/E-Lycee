@@ -22,12 +22,12 @@ class AppKernel extends Kernel
             new dashboard\dashboardBundle\dashboarddashboardBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
 
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Iphp\FileStoreBundle\IphpFileStoreBundle(),
             new SC\DatetimepickerBundle\SCDatetimepickerBundle(),
-
 
         );
 

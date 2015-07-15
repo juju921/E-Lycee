@@ -10,7 +10,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <h1>Articles</h1>
-        <button>Ajouter</button>
+        <a href="{{ path('public.contact.form') }}" class="btn btn-primary">Ajouter</a>
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover">
                 <thead>
@@ -30,12 +30,17 @@
                 {% for post in posts %}
 
                 <tr>
-                    <td>{{ post.titre }}</td>
-                      <td>{{ post.auteur }}</td>
-                    <td>
+                    <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : post.id}) }}">{{ post.titre }}</a></td>
+                          <td>{{ post.username }}</td>
+                        <td>
+                        {% if post.nom ==   "publish" %}
 
+                            <a class="btn btn-success" href="{{ path('dashboard.posts.editstatus',{'id' : post.id}) }}">online</a>
+                            {% else %}
+                                <a class="btn btn-danger" href="{{ path('dashboard.posts.editstatus',{'id' : post.id}) }}">offline</a>
 
-                        {{ post.status }}</td>
+                            {% endif %}
+                            </td>
                     <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : post.id}) }}"><i class="fa fa-eye"></i> Voir</a></td>
                     <td><a href="{{ path('dashboard.posts.update',{'id' : post.id}) }}"><i class="fa fa-pencil"></i> modifier</a></td>
                     <td><a href="{{ path('dashboard.posts.delete',{'id' : post.id}) }}" id="new"><i class="fa fa-trash"></i>  supprimer</a></tdh>

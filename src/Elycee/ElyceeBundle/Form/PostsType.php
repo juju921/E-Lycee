@@ -18,7 +18,12 @@ class PostsType extends AbstractType
         $builder
             ->add('titre', 'text')
             ->add('abstract')
-            ->add('content')
+            ->add('content', 'textarea', array(
+                'attr' => array(
+                    'class' => 'tinymce',
+                    'data-theme' => 'bbcode' // Skip it if you want to use default theme
+                )
+            ))
             ->add('urlThumbnail', 'iphp_file' )
             ->add('date','collot_datetime', array( 'pickerOptions' =>
                 array('format' => 'dd/mm/yyyy',
