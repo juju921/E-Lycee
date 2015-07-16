@@ -3,6 +3,8 @@
 namespace Elycee\ElyceeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Status
@@ -27,6 +29,12 @@ class Status
      * @ORM\Column(name="nom", type="string", length=255)
      */
     private $nom;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Fiches", mappedBy="status")
+     */
+    protected $fiches;
 
 
     /**
@@ -81,4 +89,44 @@ class Status
 
 
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fiches = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add fiches
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     * @return Status
+     */
+    public function addFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
+    {
+        $this->fiches[] = $fiches;
+
+        return $this;
+    }
+
+    /**
+     * Remove fiches
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     */
+    public function removeFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
+    {
+        $this->fiches->removeElement($fiches);
+    }
+
+    /**
+     * Get fiches
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFiches()
+    {
+        return $this->fiches;
+    }
 }

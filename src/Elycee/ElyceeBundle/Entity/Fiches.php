@@ -3,6 +3,7 @@
 namespace Elycee\ElyceeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Fiches
@@ -44,11 +45,11 @@ class Fiches
     private $teacher;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Classes", inversedBy="fiches")
+     * @ORM\ManyToOne(targetEntity="classes", inversedBy="fiches")
      * @ORM\JoinColumn(name="lvl_id", referencedColumnName="id")
      *
      */
-    private $niveau;
+    private $classes;
 
 
     /**
@@ -161,28 +162,7 @@ class Fiches
         return $this->teacher;
     }
 
-    /**
-     * Set niveau
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Classes $niveau
-     * @return Fiches
-     */
-    public function setNiveau(\Elycee\ElyceeBundle\Entity\Classes $niveau = null)
-    {
-        $this->niveau = $niveau;
 
-        return $this;
-    }
-
-    /**
-     * Get niveau
-     *
-     * @return \Elycee\ElyceeBundle\Entity\Classes
-     */
-    public function getNiveau()
-    {
-        return $this->niveau;
-    }
 
     /**
      * Set status
@@ -243,8 +223,38 @@ class Fiches
         return $this->choices;
     }
 
+    public function setChoices(ArrayCollection $choices)
+    {
+        foreach ($choices as $choice) {
+            $choice->setFiches($this);
+        }
+        $this->choices = $choices;
+    }
 
 
 
 
+
+    /**
+     * Set classes
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Classes $classes
+     * @return Fiches
+     */
+    public function setClasses(\Elycee\ElyceeBundle\Entity\Classes $classes = null)
+    {
+        $this->classes = $classes;
+
+        return $this;
+    }
+
+    /**
+     * Get classes
+     *
+     * @return \Elycee\ElyceeBundle\Entity\Classes 
+     */
+    public function getClasses()
+    {
+        return $this->classes;
+    }
 }

@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.4.9
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Jeu 16 Juillet 2015 à 14:38
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+-- Client :  localhost
+-- Généré le :  Jeu 16 Juillet 2015 à 20:05
+-- Version du serveur :  5.5.42
+-- Version de PHP :  5.6.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données :  `elycee`
@@ -26,15 +20,26 @@ SET time_zone = "+00:00";
 -- Structure de la table `choices`
 --
 
-CREATE TABLE IF NOT EXISTS `choices` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `choices` (
+  `id` int(11) NOT NULL,
   `fiches_id` int(11) DEFAULT NULL,
   `content_choice` longtext COLLATE utf8_unicode_ci NOT NULL,
   `response` int(11) NOT NULL,
-  `point` double NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_5CE9639E9756732` (`fiches_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `point` double NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `choices`
+--
+
+INSERT INTO `choices` (`id`, `fiches_id`, `content_choice`, `response`, `point`) VALUES
+(1, NULL, '<p>dgfdg</p>', 1, 12),
+(2, 3, 'test', 1, 2),
+(3, 4, 'test', 1, 1),
+(4, 7, 'test', 1, 0),
+(5, 8, '2121', 1, 0),
+(6, 9, 'tees', 1, 0),
+(7, 10, 'test', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -42,11 +47,10 @@ CREATE TABLE IF NOT EXISTS `choices` (
 -- Structure de la table `classes`
 --
 
-CREATE TABLE IF NOT EXISTS `classes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `class_level` longtext COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+CREATE TABLE `classes` (
+  `id` int(11) NOT NULL,
+  `class_level` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `classes`
@@ -62,15 +66,13 @@ INSERT INTO `classes` (`id`, `class_level`) VALUES
 -- Structure de la table `comments`
 --
 
-CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
   `contents` longtext COLLATE utf8_unicode_ci NOT NULL,
   `createAt` datetime NOT NULL,
-  `username` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_5F9E962A4B89032C` (`post_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `username` varchar(150) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -78,15 +80,13 @@ CREATE TABLE IF NOT EXISTS `comments` (
 -- Structure de la table `contact`
 --
 
-CREATE TABLE IF NOT EXISTS `contact` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
   `email` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `nom` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `message` longtext COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_4C62E638E7927C74` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `message` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -94,18 +94,27 @@ CREATE TABLE IF NOT EXISTS `contact` (
 -- Structure de la table `fiches`
 --
 
-CREATE TABLE IF NOT EXISTS `fiches` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `fiches` (
+  `id` int(11) NOT NULL,
   `teacher_id` int(11) DEFAULT NULL,
   `lvl_id` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
   `title` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `content` longtext COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_459C25C941807E1D` (`teacher_id`),
-  KEY `IDX_459C25C950962F74` (`lvl_id`),
-  KEY `IDX_459C25C96BF700BD` (`status_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+  `content` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `fiches`
+--
+
+INSERT INTO `fiches` (`id`, `teacher_id`, `lvl_id`, `status_id`, `title`, `content`) VALUES
+(2, 4, 1, NULL, '<p>fdgfdg</p>', '<p>dfgfdg</p>'),
+(3, 4, 1, NULL, '<p>test</p>', '<p>&nbsp;test</p>'),
+(4, 4, 1, NULL, '<p>test</p>', '<p>&nbsp;test</p>'),
+(7, 4, 1, NULL, '<p>test</p>', '<p>test</p>'),
+(8, 4, 1, NULL, '<p>test</p>', '<p>test</p>'),
+(9, 4, 1, NULL, '<p>test</p>', '<p>test</p>'),
+(10, 4, 1, 1, '<p>test</p>', '<p>test</p>');
 
 -- --------------------------------------------------------
 
@@ -113,8 +122,8 @@ CREATE TABLE IF NOT EXISTS `fiches` (
 -- Structure de la table `fos_user`
 --
 
-CREATE TABLE IF NOT EXISTS `fos_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `fos_user` (
+  `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `username_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -131,19 +140,15 @@ CREATE TABLE IF NOT EXISTS `fos_user` (
   `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
   `credentials_expired` tinyint(1) NOT NULL,
   `credentials_expire_at` datetime DEFAULT NULL,
-  `lvl_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_957A647992FC23A8` (`username_canonical`),
-  UNIQUE KEY `UNIQ_957A6479A0D96FBF` (`email_canonical`),
-  KEY `IDX_957A647950962F74` (`lvl_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=22 ;
+  `lvl_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `fos_user`
 --
 
 INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`, `lvl_id`) VALUES
-(4, 'alexandre', 'alexandre', 'alexandre@ecole.com', 'alexandre@ecole.com', 1, '4simih0tz5kw0cggo4o8ko0ksokgow8', 'sacenIgHKmWcvpTsYxnT4si0jkiwn4IlJ62wrSXK4dpRVVRE9o4V4SR2WgOEE4XxS83negCsiAwKJzBYQpYKrQ==', '2015-07-16 10:20:05', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_TEACHER";}', 0, NULL, NULL),
+(4, 'alexandre', 'alexandre', 'alexandre@ecole.com', 'alexandre@ecole.com', 1, '4simih0tz5kw0cggo4o8ko0ksokgow8', 'sacenIgHKmWcvpTsYxnT4si0jkiwn4IlJ62wrSXK4dpRVVRE9o4V4SR2WgOEE4XxS83negCsiAwKJzBYQpYKrQ==', '2015-07-16 16:50:15', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_TEACHER";}', 0, NULL, NULL),
 (5, 'Abel', 'abel', 'Abel@ecole.com', 'abel@ecole.com', 0, 'odizbs92zms40w00s8owkkggswg0s88', '2G3wc/izm5Au9nr7HV2SX1GiHMJjOU3Ttm/UERyawgRyPBSMn+Gj13EsLa4k20W9tUd9mczchuI2WZCDU4I27w==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:11:"FIRST_CLASS";}', 0, NULL, NULL),
 (6, 'Al', 'al', 'al@ecole.com', 'al@ecole.com', 1, 'a9uzphue0pkcgkk0o4kc00sk840cs0g', 'vrwrJDs5vhhkeMT6Wezlihe3/qll3y96XymvxWLA5fXOdB0RsUXSdVAt26fyig3IpRuKMfp8lV9YFcRaaqsFcg==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:11:"FIRST_CLASS";}', 0, NULL, NULL),
 (7, 'Alain', 'alain', 'alain@ecole.com', 'alain@ecole.com', 1, 'xcd8hyy1xm8skk84400wogs88s0w0k', 'thBk7As6hYDGqVP4J62sMZirS7ph38RM17XKT57PbkAarMA+4K/NOyzgSxsxgDLLGQvhha0HfkYllwghRsVVXw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:11:"FIRST_CLASS";}', 0, NULL, NULL),
@@ -168,19 +173,16 @@ INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_
 -- Structure de la table `posts`
 --
 
-CREATE TABLE IF NOT EXISTS `posts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
   `titre` longtext COLLATE utf8_unicode_ci NOT NULL,
   `abstract` longtext COLLATE utf8_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8_unicode_ci NOT NULL,
   `date` datetime NOT NULL,
-  `url_thumbnail` longtext COLLATE utf8_unicode_ci COMMENT '(DC2Type:array)',
-  PRIMARY KEY (`id`),
-  KEY `IDX_885DBAFAA76ED395` (`user_id`),
-  KEY `IDX_885DBAFA6BF700BD` (`status_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+  `url_thumbnail` longtext COLLATE utf8_unicode_ci COMMENT '(DC2Type:array)'
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `posts`
@@ -201,12 +203,11 @@ INSERT INTO `posts` (`id`, `user_id`, `status_id`, `titre`, `abstract`, `content
 -- Structure de la table `questions`
 --
 
-CREATE TABLE IF NOT EXISTS `questions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `questions` (
+  `id` int(11) NOT NULL,
   `titre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -214,11 +215,10 @@ CREATE TABLE IF NOT EXISTS `questions` (
 -- Structure de la table `status`
 --
 
-CREATE TABLE IF NOT EXISTS `status` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `status`
@@ -228,6 +228,124 @@ INSERT INTO `status` (`id`, `nom`) VALUES
 (1, 'publish'),
 (2, 'unpublish');
 
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `choices`
+--
+ALTER TABLE `choices`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_5CE9639E9756732` (`fiches_id`);
+
+--
+-- Index pour la table `classes`
+--
+ALTER TABLE `classes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_5F9E962A4B89032C` (`post_id`);
+
+--
+-- Index pour la table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_4C62E638E7927C74` (`email`);
+
+--
+-- Index pour la table `fiches`
+--
+ALTER TABLE `fiches`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_459C25C941807E1D` (`teacher_id`),
+  ADD KEY `IDX_459C25C950962F74` (`lvl_id`),
+  ADD KEY `IDX_459C25C96BF700BD` (`status_id`);
+
+--
+-- Index pour la table `fos_user`
+--
+ALTER TABLE `fos_user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_957A647992FC23A8` (`username_canonical`),
+  ADD UNIQUE KEY `UNIQ_957A6479A0D96FBF` (`email_canonical`),
+  ADD KEY `IDX_957A647950962F74` (`lvl_id`);
+
+--
+-- Index pour la table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_885DBAFAA76ED395` (`user_id`),
+  ADD KEY `IDX_885DBAFA6BF700BD` (`status_id`);
+
+--
+-- Index pour la table `questions`
+--
+ALTER TABLE `questions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `choices`
+--
+ALTER TABLE `choices`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT pour la table `classes`
+--
+ALTER TABLE `classes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT pour la table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `fiches`
+--
+ALTER TABLE `fiches`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT pour la table `fos_user`
+--
+ALTER TABLE `fos_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT pour la table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT pour la table `questions`
+--
+ALTER TABLE `questions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `status`
+--
+ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Contraintes pour les tables exportées
 --
@@ -264,7 +382,3 @@ ALTER TABLE `fos_user`
 ALTER TABLE `posts`
   ADD CONSTRAINT `FK_885DBAFA6BF700BD` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`),
   ADD CONSTRAINT `FK_885DBAFAA76ED395` FOREIGN KEY (`user_id`) REFERENCES `fos_user` (`id`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

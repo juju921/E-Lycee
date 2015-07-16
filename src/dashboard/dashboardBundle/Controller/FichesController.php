@@ -50,12 +50,11 @@ class FichesController extends Controller
 
         $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Status');
-        $unpublished = $repository->findOneBy(array('nom'=>'UNPUBLISHED'));
+        //$unpublished = $repository->findOneBy(array('nom'=>'UNPUBLISHED'));
         $user = $token->getUser();
         $em = $doctrine->getManager();
         $fiche = new Fiches();
         $ficheType = new FichesType();
-        $choix = new Choices();
 
         $form = $this->createForm($ficheType, $fiche);
         $form->handleRequest($request);
@@ -63,10 +62,12 @@ class FichesController extends Controller
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->getData();
                 $data->setTeacher($user);
-                $data->setStatus($unpublished);
-                //$data->setChoices($data);
+                 $status = $form["status"]->getData();
+                $data->setStatus($status);
 
-              // $data->setChoices($data->getChoices());
+
+
+                $data->setChoices($data->getChoices());
                 $em->persist($data);
                 $em->flush();
                 $message = "Votre fiche a été créée";

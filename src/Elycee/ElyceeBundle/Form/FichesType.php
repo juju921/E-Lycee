@@ -19,8 +19,15 @@ class FichesType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('teacher')
-            ->add('niveau')
-            ->add('status')
+            ->add('classes', 'entity',array(
+                'class' => 'ElyceeElyceeBundle:Classes',
+                'property' => 'classLevel'
+            ))
+            ->add('status', 'entity' ,array(
+                    'class'=> 'ElyceeElyceeBundle:Status',
+                    'property' => 'nom'
+                    ))
+
             ->add('choices', 'collection',
                 array(
                 'type'         => new ChoicesType(),

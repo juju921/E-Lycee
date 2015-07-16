@@ -28,19 +28,22 @@
                     {{ form_errors(form.content) }}
                 </div>
                 <div class="form-group level">
-                    {{ form_label(form.niveau, 'niveau : ') }}
-                    {{ form_widget(form.niveau,{'attr' : {'class':'form-control tinymce'}}) }}
-                    {{ form_errors(form.niveau) }}
+                    {{ form_label(form.classes, 'classes : ') }}
+                    {{ form_widget(form.classes,{'attr' : {'class':'form-control tinymce'}}) }}
+                    {{ form_errors(form.classes) }}
                 </div>
 
                 <div class="form-group level">
                     {{ form_label(form.status, 'status : ') }}
                     {{ form_widget(form.status    ,{'attr' : {'class':'form-control tinymce'}}) }}
-                    {{ form_errors(form.niveau) }}
+                    {{ form_errors(form.status) }}
                 </div>
 
-                <ul class="form_choices" data-prototype="{{ form_widget(form.choices.vars.prototype ) }}" >
-                    <a href="#"  id="add_choices" >Ajouter un champ</a>
+                <ul class="tags" data-prototype="
+          {% filter escape %}
+            {{ include('dashboarddashboardBundle:inc:choices-prototype.html.twig', { 'form': form.choices.vars.prototype }) }}
+          {% endfilter %}
+        ">
                 </ul>
 
 
