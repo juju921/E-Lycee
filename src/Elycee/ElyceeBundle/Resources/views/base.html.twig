@@ -17,6 +17,7 @@
         <link href="{{ asset('css/bootstrap-social.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" >
+        <link href="{{ asset('css/lelycee-page.css') }}" rel="stylesheet" >
     {% endblock %}
 
 
@@ -30,12 +31,13 @@
 
             {% include 'ElyceeElyceeBundle::inc/menu.html.twig' %}
 
+         <body>
+            {% block body %}
 
+            {% endblock %}
 
+            {% include 'ElyceeElyceeBundle::inc/footer.html.twig' %}
 
-
-<body>
-{% block body %}{% endblock %}
 {% block javascripts %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -45,6 +47,7 @@
 
 {% endblock %}
 
+            
 
 
 </body>
