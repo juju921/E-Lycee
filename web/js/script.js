@@ -1,27 +1,14 @@
-$(document).ready(function(){
+$(document).ready(function () {
+    var index = 0;
+    var prototype = $('ul.form_choices').data('prototype');
+    $('#add_choices').on('click', function (e) {
+        e.preventDefault();
+        var newform = prototype.replace(/_name_/g, index++);
+        var newli = $('<li></li>');
+        newli.append(newform);
+        $(this).before(newli).fadeIn('slow')
 
-    var i = $('input').size() ;
-
-    $('#add').click(function() {
-        $('<div><input type="text" class="form-control" name="dynamic[]" value="' + i + '" /></div>').fadeIn('slow').appendTo('.level');
-        i++;
-    });
-
-    $('#remove').click(function() {
-        if(i > 1) {
-            $('.field:last').remove();
-            i--;
-        }
-    });
-
-    $('#reset').click(function() {
-        while(i > 2) {
-            $('.field:last').remove();
-            i--;
-        }
-    });
-
-// here's our click function for when the forms submitted
+    })
 
 
 });

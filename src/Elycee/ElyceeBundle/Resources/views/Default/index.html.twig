@@ -2,79 +2,80 @@
 
 {% block body %}
 
-
-
-        <div class="row">
+    <div class="row">
     {% for posts in results %}
-            <div class="col-lg-5 col-sm-6">
-                <div class="thumbnail">
-                     <a href="/template-overviews/creative" class="post-image-link">
-                        <p>
-                            <img src="#" class="img-responsive" alt=""/>
-                        </p>
-                    </a>
-
-                    <div class="caption">
-                        <h2>
-                           {{ posts.titre }}
-                        </h2>
-                        <p>
-                         {{ posts.abstract }}
-                        </p>
-
-                        <p>
-                            <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
-                        </p>
-
-                        <p>Auteur : <a href="{{ posts.auteur }}"></a> - Publié le : 
-                        </p>
-
-                        <a href="#"><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez
-                        </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-        <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="thumbnail">
-                    <a href="#" class="post-image-link">
-                        <p><img src="http://lorempixel.com/400/200/" class="img-responsive" alt=""></p>
-                    </a>
-
-                    <div class="caption">
-                        <h3>{{ posts.titre }}</h3>
-                        <p>{{ posts.abstract }}</p>
-                        <a href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}" class="btn btn-default">Lire la suite ...</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-
-        <div class="row">
-            <div class="col-lg-4 col-sm-6">
-                <aside class="col-md-4 content-col">
-                    <h2>
-                        A lire aussi
-                    </h2>
-                    <hr>    
+        <div class="col-lg-5 col-sm-6">
+            <div class="thumbnail">
+                <a href="/template-overviews/creative" class="post-image-link">
                     <p>
-                        <a href="#">-> Philae endormi</a> <br />
-                        <a href="#">-> Fusée Antares</a> <br />
+                        <img src="#" class="img-responsive" alt=""/>
                     </p>
-                     
-                    <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="614434951082188800">Tweets de @LyceeSVSM</a>
-                </aside>
+                </a>
+
+                <div class="caption">
+                    <h2>
+                        {{ posts.titre }}
+                    </h2>
+
+                    <p>
+                        {{ posts.abstract }}
+                    </p>
+
+                    <p>
+
+                        <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite
+                            ...</a>
+                    </p>
+
+                    <p>Auteur : <a href="{{ posts.auteur }}"></a> - Publié le : }</p>
+                    <a href="#"
+
+                    <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez
+                    </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+            <div class="thumbnail">
+                <a href="#" class="post-image-link">
+                    <p><img src="http://lorempixel.com/400/200/" class="img-responsive" alt=""></p>
+                </a>
+
+                <div class="caption">
+                    <h3>{{ posts.titre }}</h3>
+                    <p>{{ posts.abstract }}</p>
+                    <a href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}" class="btn btn-default">Lire la
+                        suite ...</a>
+                </div>
             </div>
         </div>
 
 
 
+    {% endfor %}
 
-                
+
+        <div class="col-lg-4 col-sm-6">
+            <aside class="col-md-4 content-col">
+                <h2>
+                    A lire aussi
+                </h2>
+                <hr>
+                <p>
+                    <a href="#">-> Philae endormi</a> <br/>
+                    <a href="#">-> Fusée Antares</a> <br/>
+                </p>
+
+
+                <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="614434951082188800">Tweets de @LyceeSVSM</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </aside>
+        </div>
+
+
+
+
 
 {% endblock %}

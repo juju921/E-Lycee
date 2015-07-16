@@ -25,7 +25,7 @@
 						<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
 								<ul class="dropdown-menu">
-								  <li><a href="#">Login</a></li>
+								  <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
 								  <li><a href="#">Profile</a></li>
 								  <li class="divider"></li>
 								  <li><a href="#">About</a></li>
@@ -43,6 +43,7 @@
 				Default
 			</button>
 			<div class="page-header">
+				<img src="http://www.getmdl.io/templates/android-dot-com/images/slide01.jpg" class="img-responsive" alt="">
 				<h1>
 					Lycée BIDULE <small>Bienvenue blabla</small>
 				</h1>
@@ -60,10 +61,10 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
 								<li class="active">
-									<a href="#">Home</a>
+									<a href="index.html">Home</a>
 								</li>
 								<li>
-									<a href="#">Actus</a>
+									<a href="actualites.html">Actus</a>
 								</li>
 								<li>
 									<a href="#">Le Lycée</a>
@@ -87,36 +88,58 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4">
-			<h2>
-				Les suites récurrentes
-			</h2>
-			<p>
-				L'étude des suites récurrentes linéaire d'ordre supérieur se ramène à un problème d'algèbre linéaire. l'expression du terme général d'une telle suite est possible si ... 
-			</p>
-			<p>
-				<a class="btn" href="#">Lire la suite ...</a>
-			</p>
-			<p>auteur: alan</p>
-			<p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
-		</div>
-		<div class="col-md-4">
-			<h2>
-				La machine de Turing
-			</h2>
-			<p>
-				Alors que, connaissant le caractère lu sur le ruban et l'état courant, une ...
-			</p>
-			<p>
-				<a class="btn" href="#">Lire la suite ...</a>
-			</p>
-		</div>
-		<div class="col-md-4">
+		<div class="col-lg-5 col-sm-6">
+			<div class="thumbnail">
+                <a href="/template-overviews/creative" class="post-image-link">
+                    <p><img src="http://i.ytimg.com/vi/zrS7D0n9n-w/maxresdefault.jpg" class="img-responsive" alt=""></p>
+
+                </a>
+                <div class="caption">
+                    <h2>Les suites récurrentes</h2>
+                    <p>L'étude des suites récurrentes linéaire d'ordre supérieur se ramène à un problème d'algèbre linéaire. l'expression du terme général d'une telle suite est possible si ...</p>
+                    <a href="#lienDuResteDeCetArticle" class="btn btn-default">Lire la suite ...</a>
+                	<p>Auteur : <a href="#lienVersLauteur">Alan</a> - Publié le : <a href="#lienVersLauteur">01/01/2010</a></p>
+            		<a href="#lienDesComs"><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p></a>
+            	</div>
+            </div>   
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+
+            <div class="thumbnail">
+                <a href="#" class="post-image-link">
+                    <p><img src="http://lorempixel.com/400/200/" class="img-responsive" alt=""></p>
+
+                </a>
+                <div class="caption">
+                    <h3>La machine de Turing</h3>
+                    <p>Alors que, connaissant le caractère lu sur le ruban et l'état courant, une ...</p>
+                    <a href="#" class="btn btn-default">Lire la suite ...</a>
+                </div>
+            </div>
+
+            <div class="thumbnail">
+                <a href="#" class="post-image-link">
+                    <p><img src="http://lorempixel.com/400/200/business" class="img-responsive" alt=""></p>
+
+                </a>
+                <div class="caption">
+                    <h3>Comment ramasse-t-on la papaye ?</h3>
+                    <p>Avec une foufourche ...</p>
+                    <a href="#" class="btn btn-default">Lire la suite ...</a>
+                </div>
+            </div>
+
+        </div>
+
+		<div class="col-lg-4 col-sm-6">
 			<h2>
 				A lire aussi
 			</h2>
+			<hr>	
 			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+				<a href="#">-> Philae endormi</a> <br />
+				<a href="#">-> Fusée Antares</a> <br />
 			</p>
 			
 			<a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="614434951082188800">Tweets de @LyceeSVSM</a>
