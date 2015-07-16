@@ -6,8 +6,18 @@
 
     <div class="col-lg-8 col-md-8">
     {% for posts in results %}
+        {%  if  posts.urlThumbnail.fileName is defined and posts.urlThumbnail.fileName != NULL %}
+            {% set pictureUrl = asset("images/news/"~posts.urlThumbnail.fileName) %}
+        {% else %}
+            {% set pictureUrl = '' %}
+        {%  endif  %}
+
+
+
+
         <div class="col-lg-12 col-md-12">
-            <img src="{{ asset("images/news/"~posts.urlThumbnail.fileName) }}" alt="" class="img-responsive col-md-4 col-sm-4 img-circle"
+
+            <img src="{{ pictureUrl }}" alt="" class="img-responsive col-md-4 col-sm-4 img-circle"
             style="padding: 0;margin: 3% 3% 5% 0;" />
             <h2>
                 {{ posts.titre }}

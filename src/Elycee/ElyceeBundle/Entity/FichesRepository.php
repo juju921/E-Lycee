@@ -12,4 +12,18 @@ use Doctrine\ORM\EntityRepository;
  */
 class FichesRepository extends EntityRepository
 {
+
+
+    public function getCountFiches(){
+        $results = $this
+            ->createQueryBuilder('p')
+            ->select('count(p)')
+            ->getQuery()
+            ->getSingleScalarResult();
+        return $results;
+
+
+    }
+
+
 }

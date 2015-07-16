@@ -35,9 +35,9 @@
                     <td>
                         {% if fiche.status  ==   "publish" %}
 
-                            <a class="btn btn-success" href="{{ path('dashboard.posts.editstatus',{'id' : fiche.id}) }}">online</a>
+                            <a class="btn btn-success" href="{{ path('dashboard.fiches.editstatus',{'id' : fiche.id}) }}">online</a>
                         {% else %}
-                            <a class="btn btn-danger" href="{{ path('dashboard.posts.editstatus',{'id' : fiche.id}) }}">offline</a>
+                            <a class="btn btn-danger" href="{{ path('dashboard.fiches.editstatus',{'id' : fiche.id}) }}">offline</a>
 
                         {% endif %}
                     </td>

@@ -24,7 +24,7 @@ class FichesController extends Controller
 
 
     /**
-     * @Route("dashboard/fiches/list", name="fiches.fiches.home")
+     * @Route("dashboard/fiches/list", name="fiches.show")
      * @Template("dashboarddashboardBundle:fiche:showfiche.html.twig")
      */
     public function homeAction()
@@ -79,6 +79,47 @@ class FichesController extends Controller
         }
         return array('form' => $form->createView());
     }
+
+
+
+    /**
+     * @Route(
+     *      "/dashboard/fiches/status/{id}",
+     *      name="dashboard.fiches.editstatus",
+     * )
+     * @Template("dashboarddashboardBundle:fiche:ficheeditstatus.html.twig")
+     * @Method({"POST","GET"})
+     */
+    public function editStatusAction(Request $request, $id)
+    {
+
+        $doctrine   = $this->getDoctrine();
+        $em = $doctrine->getManager();
+        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
+        $repositoryStatus = $doctrine->getRepository('ElyceeElyceeBundle:Status');
+        $fiche    = $repository->find($id);
+//        $status = $repository->find($id);
+        if ($fiche->getStatus()->getId() == 1 ){
+            $status = $repositoryStatus->find(2);
+            $fiche->setStatus($status);
+            $message = "non publié";
+        }
+        else{
+            $status = $repositoryStatus->find(1);
+            $fiche->setStatus($status);
+            $message = "publié";
+        }
+        $em->persist($fiche);
+        $em->flush();
+        $response = array('status'=>'OK','message'=>$message);
+        return new JsonResponse($response);
+
+
+    }
+
+
+
+
 
 
 

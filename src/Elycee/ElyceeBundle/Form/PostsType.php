@@ -41,8 +41,11 @@ class PostsType extends AbstractType
                     'minuteStep' => 5,
                     'pickerPosition' => 'bottom-right',
                 )))
-            ->add('status')
-            ->add('auteur')
+            ->add('status', 'entity', array(
+                'class' => 'ElyceeElyceeBundle:Status',
+                'property' => 'nom'
+            ))
+
         ;
     }
     

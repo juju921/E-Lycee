@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "84a4a417791b55336024e3d74d60f265",
+    "hash": "2ad9eef5d0f252a09fb126f0ba8d3ca7",
     "packages": [
         {
             "name": "axstrad/browser-sync-bundle",
@@ -1335,6 +1335,63 @@
                 "xml"
             ],
             "time": "2013-12-05 14:36:11"
+        },
+        {
+            "name": "kms/froala-editor-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/froala/KMSFroalaEditorBundle.git",
+                "reference": "a3a73ce626724898cd3e393b93367329bb3beef8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/KMSFroalaEditorBundle/zipball/a3a73ce626724898cd3e393b93367329bb3beef8",
+                "reference": "a3a73ce626724898cd3e393b93367329bb3beef8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/form": ">=2.1",
+                "symfony/framework-bundle": "2.*",
+                "twig/twig": ">=1.1"
+            },
+            "require-dev": {
+                "symfony/twig-bundle": "2.*",
+                "symfony/yaml": "~2.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.*-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KMS\\FroalaEditorBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simon Guionniere",
+                    "email": "simon.guionniere@gmail.com"
+                },
+                {
+                    "name": "Stefan Neculai",
+                    "email": "stefan.neculai@gmail.com"
+                }
+            ],
+            "description": "Provides a Froala editor integration for Symfony 2.",
+            "keywords": [
+                "editor",
+                "froala",
+                "wysiwyg"
+            ],
+            "time": "2015-06-25 20:00:10"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -3067,7 +3124,8 @@
     "stability-flags": {
         "friendsofsymfony/user-bundle": 20,
         "stephanecollot/datetimepicker-bundle": 20,
-        "stfalcon/tinymce-bundle": 20
+        "stfalcon/tinymce-bundle": 20,
+        "kms/froala-editor-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

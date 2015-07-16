@@ -1,36 +1,35 @@
 <ul class="nav navbar-right navbar-nav">
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i
+                    class="glyphicon glyphicon-chevron-down"></i>
             {% if app.user is not null %}
-            Bonjour {{ app.user | title }}
+                Bonjour {{ app.user | title }}
             {% endif %}
         </a>
 
 
-
         <ul class="dropdown-menu">
             {% if is_granted('ROLE_STUDENT') %}
-                <li><a  href="#">Fiches</a></li>
-                <li><a  href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+                <li><a href="#">Fiches</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
             {% elseif is_granted('ROLE_TEACHER') %}
-                <li><a  href="{{ url('dashboard.default.index')}}">Dashboard</a></li>
-                <li><a  href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+                <li><a href="{{ url('dashboard.default.index') }}">Dashboard</a></li>
+                <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
             {% else %}
                 <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
             {% endif %}
 
 
-
-
-
-
         </ul>
     </li>
     <li>
-        <a class="btn btn-social-icon btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-md']);"><i class="fa fa-twitter"></i></a>
+        <a class="btn btn-social-icon btn-twitter"
+           onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-md']);"><i class="fa fa-twitter"></i></a>
     </li>
     <li>
-        <a class="btn btn-social-icon btn-sm btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-sm']);"><i class="fa fa-facebook"></i></a>
+        <a class="btn btn-social-icon btn-sm btn-facebook"
+           onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-sm']);"><i
+                    class="fa fa-facebook"></i></a>
 
     </li>
 </ul>
@@ -39,7 +38,8 @@
 </button>
 <div class="page-header">
     <h1>
-        Lycée BIDULE <small>Bienvenue blabla</small>
+        Lycée BIDULE
+        <small>Bienvenue blabla</small>
     </h1>
 </div>
 <div class="row">
@@ -47,29 +47,34 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span>
                 </button>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="{{path('ElyceeBundle.default.index')}}">Home</a>
+                    <li {% if app.request.attributes.get('_route') == "ElyceeBundle.default.index" %}class="active"{% endif %}>
+                        <a href="{{ path('ElyceeBundle.default.index') }}">Home</a>
                     </li>
-                    <li>
+                    <li {% if app.request.attributes.get('_route') == "ElyceeBundle.default.actualites" %}class="active"{% endif %}>
                         <a href="{{ path('ElyceeBundle.default.actualites') }}">Actus</a>
                     </li>
-                    <li>
+                    <li {% if app.request.attributes.get('_route') == "ElyceeBundle.default.lelycee" %}class="active"{% endif %}>
                         <a href="{{ path('ElyceeBundle.default.lelycee') }}">Le Lycée</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-right navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                    class="glyphicon glyphicon-search"></i></a>
                         <ul class="dropdown-menu" style="padding: 12px; width: 250px;">
                             <form class="form-inline">
-                                <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+                                <button type="submit" class="btn btn-default pull-right"><i
+                                            class="glyphicon glyphicon-search"></i></button>
+                                <input type="text" class="form-control pull-left" placeholder="Search">
                             </form>
                         </ul>
                     </li>

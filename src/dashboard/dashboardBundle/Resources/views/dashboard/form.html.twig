@@ -9,9 +9,7 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
-        {% for flashMessage in app.session.flashbag.get('notice') %}
-            <span class="alert alert-success">{{ flashMessage }}</span>
-        {% endfor %}
+
 
         <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
 
@@ -46,11 +44,6 @@
                     {{ form_errors(form.status) }}
                 </div>
 
-            <div class="form-group">
-                {{ form_label(form.auteur, 'auteur : ') }}
-                {{ form_widget(form.auteur,{'attr' : {'class':'form-control'}}) }}
-                {{ form_errors(form.auteur) }}
-            </div>
 
 
                 <div class="form-group">

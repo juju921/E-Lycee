@@ -239,16 +239,8 @@
                 <a href="{{ url('dashboard.default.index') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Fiches<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="flot.html">Flot Charts</a>
-                    </li>
-                    <li>
-                        <a href="morris.html">Morris.js Charts</a>
-                    </li>
-                </ul>
-                <!-- /.nav-second-level -->
+                <a href="{{ url('fiches.show') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Fiches</a>
+
             </li>
             <li>
                 <a href="{{ url('dashboard.default.getArticles',{'id' : app.user.id}) }}"><i class="fa fa-table fa-fw"></i>Articles</a>

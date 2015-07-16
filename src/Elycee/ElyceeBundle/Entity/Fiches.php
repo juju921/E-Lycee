@@ -70,6 +70,11 @@ class Fiches
 
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="Scores", mappedBy="fiches", cascade={"persist","remove"})
+     */
+    protected $scores;
+
 
 
 
@@ -256,5 +261,38 @@ class Fiches
     public function getClasses()
     {
         return $this->classes;
+    }
+
+    /**
+     * Add scores
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Scores $scores
+     * @return Fiches
+     */
+    public function addScore(\Elycee\ElyceeBundle\Entity\Scores $scores)
+    {
+        $this->scores[] = $scores;
+
+        return $this;
+    }
+
+    /**
+     * Remove scores
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Scores $scores
+     */
+    public function removeScore(\Elycee\ElyceeBundle\Entity\Scores $scores)
+    {
+        $this->scores->removeElement($scores);
+    }
+
+    /**
+     * Get scores
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getScores()
+    {
+        return $this->scores;
     }
 }

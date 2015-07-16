@@ -4,11 +4,17 @@
 
     <div class="row">
     {% for posts in results %}
+        {%  if  posts.urlThumbnail.fileName is defined and posts.urlThumbnail.fileName != NULL %}
+                      {% set pictureUrl = asset("images/news/"~posts.urlThumbnail.fileName) %}
+                  {% else %}
+                      {% set pictureUrl = '' %}
+                  {%  endif  %}
         <div class="col-lg-5 col-sm-6">
             <div class="thumbnail">
                 <a href="/template-overviews/creative" class="post-image-link">
                     <p>
-                        <img src="{{ asset("images/news/"~posts.urlThumbnail.fileName) }}" class="img-responsive" alt=""/>
+
+                        <img src=" {{ pictureUrl }}" class="img-responsive" alt=""/>
                     </p>
                 </a>
 
@@ -27,7 +33,7 @@
                             ...</a>
                     </p>
 
-                    <p>Auteur : <a href="{{ posts.auteur }}"></a> - Publié le : }</p>
+                    <p>Auteur : <a href="{{ posts.auteur }}"></a> - Publié le :{{ posts.date | date('d M Y') }}</p>
                     <a href="#"
 
                     <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez

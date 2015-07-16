@@ -51,7 +51,10 @@ class User extends BaseUser
     private $niveau;
 
 
-
+    /**
+     * @ORM\OneToMany(targetEntity="Scores", mappedBy="student")
+     */
+    protected $scores;
 
 
 
@@ -207,5 +210,38 @@ class User extends BaseUser
     public function getNiveau()
     {
         return $this->niveau;
+    }
+
+    /**
+     * Add scores
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Scores $scores
+     * @return User
+     */
+    public function addScore(\Elycee\ElyceeBundle\Entity\Scores $scores)
+    {
+        $this->scores[] = $scores;
+
+        return $this;
+    }
+
+    /**
+     * Remove scores
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Scores $scores
+     */
+    public function removeScore(\Elycee\ElyceeBundle\Entity\Scores $scores)
+    {
+        $this->scores->removeElement($scores);
+    }
+
+    /**
+     * Get scores
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getScores()
+    {
+        return $this->scores;
     }
 }
