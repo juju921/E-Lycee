@@ -244,13 +244,6 @@ class Fiches
     }
 
 
-    public function setChoices(ArrayCollection $choices)
-    {
-        foreach ($choices as $choice) {
-            $choice->setFiche($this);
-        }
-        $this->choices = $choices;
-    }
 
 
 

@@ -1,4 +1,4 @@
-{% extends "dashboarddashboardBundle::base.html.twig" %}
+    {% extends "dashboarddashboardBundle::base.html.twig" %}
 
 {% block body %}
     <div id="wrapper">
@@ -15,7 +15,6 @@
 
             <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
 
-                <a href="#" id="add">Ajouter un champ</a>
 
 
                 <div class="form-group">
@@ -40,9 +39,13 @@
                     {{ form_errors(form.niveau) }}
                 </div>
 
+                <ul class="form_choices" data-prototype="{{ form_widget(form.choices.vars.prototype ) }}" >
+                    <a href="#"  id="add_choices" >Ajouter un champ</a>
+                </ul>
 
 
                 {{ form_widget(form._token) }}
+
                 <p>
                     <input type="submit" value="Valider" class="btn"/>
                 </p>
