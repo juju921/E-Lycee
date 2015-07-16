@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Accueil</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet" >
+    <link href="css/font-awesome.css" rel="stylesheet" >
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav navbar-right navbar-nav">
+						<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+								<ul class="dropdown-menu">
+								  <li><a href="#">Login</a></li>
+								  <li><a href="#">Profile</a></li>
+								  <li class="divider"></li>
+								  <li><a href="#">About</a></li>
+								 </ul>
+							  </li>
+						<li>
+							<a class="btn btn-social-icon btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-md']);"><i class="fa fa-twitter"></i></a>
+						</li>
+						<li>
+							<a class="btn btn-social-icon btn-sm btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-sm']);"><i class="fa fa-facebook"></i></a>
+						</li>
+					</ul>
+			 
+			<button type="button" class="btn btn-link">
+				Default
+			</button>
+			<div class="page-header">
+				<img src="http://lorempixel.com/2000/250/" class="img-responsive" alt="">
+				<h1>
+					Lycée BIDULE <small>Bienvenue blabla</small>
+				</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							 
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+							</button> <a class="navbar-brand" href="#">Brand</a>
+						</div>
+						
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="index.html">Home</a>
+								</li>
+								<li>
+									<a href="actualites.html">Actus</a>
+								</li>
+								<li>
+									<a href="#">Le Lycée</a>
+								</li>
+							</ul>
+							<ul class="nav navbar-right navbar-nav">
+							  <li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+								<ul class="dropdown-menu" style="padding:12px;">
+									<form class="form-inline">
+										<button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+									</form>
+								 </ul>
+							  </li>
+							</ul>
+						</div>
+						
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<section id="page-content"><!-- PAGE CONTENT -->
+            <div id="grid" style="position: relative; height: 0px;"></div>
+            <div class="row">
+                <div class="col-md-8 content-col">
+                    <article class="section-article solid light-gray">
+                        <div class="row">
+                            <div class="col-xs-4 content-col">
+                                <div class="dot-overlay"></div>
+                                <img src="{{ asset("images/news/"~posts.urlThumbnail.fileName) }}" alt="" class="img-responsive" />
+                            </div>
+                            <div class="col-xs-8 content-col">    
+                                <div class="article-content">
+                                    <h2>{{ posts.titre }}</h2>
+                                    <p class="by-line">{{ posts.user_id }}</p>
+                                    <p class="lead">{{ posts.abstract }}</p>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="action-links"><!-- START ACTION LINKS -->
+                            <a href="#" class="btn btn-primary">Lire la suite ...</a>
+                            <p class="article-info"><span class="icon-clock">&nbsp; </span>{{ posts.date | date('d M Y') }}</p>
+                            <p class="article-info"><span class="icon-tag">&nbsp; </span>Entertainment</p> 
+                            <a data-toggle="collapse" data-parent="#comments-1" href="#comments-1-collapse" class="btn btn-brand-dark btn-right"><span class="icon-comment"></span></a>
+                            <div class="comments" id="comments-1"><!-- START COMMENTS -->
+                                <div id="comments-1-collapse" class="comments-container collapse">
+                                    <div class="media">
+                                        <a class="pull-left" href="#">
+                                            <img src="http://wikipics.net/photos/20150125142221651988185.jpg" style="width: 64px; height: 64px;" class="media-object" alt="">
+                                        </a>                                      
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Cras sit amet nibh libero...</h4>
+                                            <p class="comment-date">20.1.14</p>
+                                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                            <div class="comment-actions text-right">
+                                                <a href="#">Reply</a>
+                                            </div>
+                                            <!-- NESTED COMMENT -->
+                                            <div class="media">
+                                                <a class="pull-left" href="#">
+                                                    <img src="images/person-1-64.jpg" style="width: 64px; height: 64px;" class="media-object" alt="">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Nulla vel metus scelerisque!</h4>
+                                                    <p class="comment-date">20.1.14</p>
+                                                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                                    <div class="comment-actions text-right">
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                    <!-- NESTED COMMENT -->
+                                                    <div class="media">
+                                                        <a class="pull-left" href="#">
+                                                            <img src="images/person-2-64.jpg" style="width: 64px; height: 64px;" class="media-object" alt="">
+                                                        </a>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Gravida nulla</h4>
+                                                            <p class="comment-date">20.1.14</p>
+                                                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                                            <div class="comment-actions text-right">
+                                                                <a href="#">Reply</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- NESTED COMMENT -->
+                                            <div class="media">
+                                                <a class="pull-left" href="#">
+                                                    <img src="images/person-3-64.jpg" style="width: 64px; height: 64px;" class="media-object" alt="">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Scelerisque ante sollicitudin commodo</h4>
+                                                    <p class="comment-date">20.1.14</p>
+                                                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                                    <div class="comment-actions text-right">
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- END COMMENTS -->
+                        </div><!-- END ACTION LINKS -->
+                    </article>
+                    <article class="section-article solid light-gray">
+                        <div class="row">
+                            <div class="col-xs-4 content-col">
+                                <div class="dot-overlay"></div>
+                                <img src="images/image-9-square.jpg" alt="">
+                            </div>
+                            <div class="col-xs-8 content-col">    
+                                <div class="article-content">
+                                    <h2><a href="#">Libero sit amet quam egestas semper</a></h2>
+                                    <p class="by-line">By J. R. Hartley</p>
+                                    <p class="lead">Habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae...</p>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="action-links"><!-- START ACTION LINKS -->
+                            <a href="#" class="btn btn-primary">Read more</a>
+                            <p class="article-info"><span class="icon-clock">&nbsp; </span>20.1.14</p>
+                            <p class="article-info"><span class="icon-tag">&nbsp; </span>Entertainment</p> 
+                            <a data-toggle="collapse" data-parent="#comments-2" href="#comments-2-collapse" class="btn btn-brand-dark btn-right"><span class="icon-comment"></span></a>
+                            <div class="comments" id="comments-2"><!-- START COMMENTS -->
+                                <div id="comments-2-collapse" class="comments-container collapse">
+                                    <div class="media">
+                                        <a class="pull-left" href="#">
+                                            <img src="images/person-4-64.jpg" style="width: 64px; height: 64px;" class="media-object" alt="">
+                                        </a>                                      
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Cras sit amet nibh libero...</h4>
+                                            <p class="comment-date">20.1.14</p>
+                                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                            <div class="comment-actions text-right">
+                                                <a href="#">Reply</a>
+                                            </div>
+                                            <!-- NESTED COMMENT -->
+                                            <div class="media">
+                                                <a class="pull-left" href="#">
+                                                    <img src="images/person-1-64.jpg" style="width: 64px; height: 64px;" class="media-object" alt="">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Nulla vel metus scelerisque!</h4>
+                                                    <p class="comment-date">20.1.14</p>
+                                                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                                    <div class="comment-actions text-right">
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                    <!-- NESTED COMMENT -->
+                                                    <div class="media">
+                                                        <a class="pull-left" href="#">
+                                                            <img src="images/person-2-64.jpg" style="widtth: 64px; height: 64px;" class="media-object" alt="">
+                                                        </a>
+                                                        <div class="media-body">
+                                                            <h4 class="media-heading">Gravida nulla</h4>
+                                                            <p class="comment-date">20.1.14</p>
+                                                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                                            <div class="comment-actions text-right">
+                                                                <a href="#">Reply</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- NESTED COMMENT -->
+                                            <div class="media">
+                                                <a class="pull-left" href="#">
+                                                    <img src="images/person-3-64.jpg" style="width: 64px; height: 64px;" class="media-object" alt="">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">Scelerisque ante sollicitudin commodo</h4>
+                                                    <p class="comment-date">20.1.14</p>
+                                                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                                    <div class="comment-actions text-right">
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- END COMMENTS -->
+                        </div><!-- END ACTION LINKS -->
+                    </article>
+                    <div class="row">
+                        <div class="col-xs-12 content-col text-center">
+                            <div class="solid inverse-bar">
+                                <ul class="pagination">
+                                    <li><a href="#">«</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <aside class="col-md-4 content-col">
+                    <h2>
+           			    A lire aussi
+           			</h2>
+           			<hr>    
+           			<p>
+           			    <a href="#">-> Philae endormi</a> <br />
+           			    <a href="#">-> Fusée Antares</a> <br />
+           			</p>
+           			 
+           			<a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="614434951082188800">Tweets de @LyceeSVSM</a>
+                </aside>
+            </div>
+        </section>
+				
+		</div>
+		<div class="row">
+		<div class="col-md-12">
+			<h5 class="text-muted text-center">
+				<a href="#">Mentions légales</a>  |  <a href="#">Contact</a>
+			</h5>
+		</div>
+		</div>
+	</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

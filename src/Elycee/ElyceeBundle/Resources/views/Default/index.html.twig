@@ -21,20 +21,24 @@
                         <p>
                          {{ posts.abstract }}
                         </p>
-                        <p>
 
+                        <p>
                             <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
                         </p>
-                        <p>Auteur : <a href="{{ posts.auteur }}"></a> - Publié le : }</p>
-                        <a href="#"<p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
+
+                        <p>Auteur : <a href="{{ posts.auteur }}"></a> - Publié le : 
+                        </p>
+
+                        <a href="#"><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez
+                        </p>
                         </a>
                     </div>
                 </div>
             </div>
-    {% endfor %}
+        </div>
+    
 
         <div class="row">
-    {% for posts in results %}
             <div class="col-lg-3 col-sm-6">
                 <div class="thumbnail">
                     <a href="#" class="post-image-link">
@@ -47,13 +51,11 @@
                         <a href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}" class="btn btn-default">Lire la suite ...</a>
                     </div>
                 </div>
-
-
             </div>
-    {% endfor %}
+        </div>
+        {% endfor %}
 
-            <div class="row">
-    {% for posts in results %}
+        <div class="row">
             <div class="col-lg-4 col-sm-6">
                 <aside class="col-md-4 content-col">
                     <h2>
@@ -68,7 +70,8 @@
                     <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="614434951082188800">Tweets de @LyceeSVSM</a>
                 </aside>
             </div>
-    {% endfor %}
+        </div>
+
 
 
 
