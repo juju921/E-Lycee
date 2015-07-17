@@ -176,7 +176,7 @@ class DefaultController extends BaseController
                 ->setTo(array('julien.garretb@gmail.com', $form->getData()->getEmail()))
                 ->setBody(
                     $this->renderView(
-                        'ElyceeElyceeBundle:Default:contactEmail.txt.twig', array('contact' => $contact)));
+                        'ElyceeElyceeBundle:Default:contactEmail.html.twig', array('contact' => $contact)));
 
             $this->get('mailer')->send($message);
             return $this->redirect($this->generateUrl('ElyceeBundle.default.contact'));
