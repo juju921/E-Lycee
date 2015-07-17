@@ -47,14 +47,11 @@ class Choices
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Fiches", inversedBy="choices")
-     * @ORM\JoinColumn(name="fiches_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="fiches", inversedBy="choices")
+     * @ORM\JoinColumn(name="fiche_id", referencedColumnName="id")
      *
      */
     private $fiches;
-
-
-
 
 
 
@@ -139,17 +136,16 @@ class Choices
         return $this->point;
     }
 
-   
 
 
 
     /**
      * Set fiches
      *
-     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     * @param \Elycee\ElyceeBundle\Entity\fiches $fiches
      * @return Choices
      */
-    public function setFiches(\Elycee\ElyceeBundle\Entity\Fiches $fiches = null)
+    public function setFiches(\Elycee\ElyceeBundle\Entity\fiches $fiches = null)
     {
         $this->fiches = $fiches;
 
@@ -159,7 +155,7 @@ class Choices
     /**
      * Get fiches
      *
-     * @return \Elycee\ElyceeBundle\Entity\Fiches 
+     * @return \Elycee\ElyceeBundle\Entity\fiches 
      */
     public function getFiches()
     {

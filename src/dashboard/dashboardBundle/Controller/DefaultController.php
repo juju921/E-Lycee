@@ -11,6 +11,8 @@ use Elycee\ElyceeBundle\Entity\Posts;
 use Elycee\ElyceeBundle\Form\UserType;
 use Elycee\ElyceeBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
 use FOS\RestBundle\Controller\FOSRestController;
 
 
@@ -80,7 +82,7 @@ class DefaultController extends FOSRestController
 
     /**
      *
-     * @Route("/articles/{id}", name="dashboard.default.getArticles" )
+     * @Route("/articles/{id}", name="dashboard.default.getArticles",  defaults={"page" = 1} )
      * @Template("dashboarddashboardBundle:dashboard:articles.html.twig")
      */
     public function getArticlesAction($id)
@@ -88,11 +90,16 @@ class DefaultController extends FOSRestController
 
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
+        $em = $this->getDoctrine()->getEntityManager();
+        $adapter  = new DoctrineORMAdapter($em->getRepository('ElyceeElyceeBundle:Posts'));
+        $pager    = new PagerFanta($adapter);
+
+
         /*$posts = $rc->findAll();*/
         $posts   = $rc->getPostByAuteur($id);
 
         return array(
-
+            'pager' => $pager,
             'posts'=> $posts
 
         );

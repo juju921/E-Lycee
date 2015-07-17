@@ -72,8 +72,10 @@
         </h2>
         <hr />
         <p>
-            <a href="#">-> Philae endormi</a> <br/>
-            <a href="#">-> Fusée Antares</a> <br/>
+    {% for posts in results %}
+            <a href="#">-> {{posts.titre}}</a> <br/>
+
+        {% endfor %}
         </p>
 
         <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="621308517669076992">Tweets de

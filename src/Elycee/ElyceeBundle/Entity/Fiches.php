@@ -72,6 +72,7 @@ class Fiches
 
     /**
      * @ORM\OneToMany(targetEntity="Scores", mappedBy="fiches", cascade={"persist","remove"})
+     *
      */
     protected $scores;
 

@@ -24,7 +24,7 @@
                 <span><i class="fa fa-calendar"></i> {{ news.date | date('d M Y') }}</span>
 
             </div>
-            <p> {{ news.content }}</p>
+            <p> {{ news.content | raw }}</p>
 
 
 
