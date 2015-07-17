@@ -12,16 +12,18 @@
         {% endif %}
         <div class="col-lg-6 col-md-6">
             <div class="thumbnail">
-                <a href="/template-overviews/creative" class="post-image-link">
+
                     <p>
 
-                        <img src=" {{ pictureUrl }}" class="img-responsive" alt="" class="img-responsive"/>
+                        <a  href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">     <img src=" {{ pictureUrl }}" class="img-responsive" alt="" class="img-responsive"/> </a>
                     </p>
-                </a>
+
 
                 <div class="caption">
                     <h2>
+                        <a  href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">
                         {{ posts.titre }}
+                            </a>
                     </h2>
 
                     <p>
@@ -30,7 +32,7 @@
 
                     <p>
 
-                        <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite
+                        <a class="btn btn-default btn-sm" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite
                             ...</a>
                     </p>
 
@@ -68,7 +70,7 @@
         <h2>
             A lire aussi
         </h2>
-        <hr style="width: 100%; height: 1px; background-color:#888;"/>
+        <hr />
         <p>
             <a href="#">-> Philae endormi</a> <br/>
             <a href="#">-> Fusée Antares</a> <br/>
