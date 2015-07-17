@@ -18,35 +18,35 @@
 
 
                 <div class="form-group">
-                    {{ form_label(form.titre, 'titre : ') }}
+                    {{ form_label(form.titre, 'Titre : ') }}
                     {{ form_widget(form.titre,{'attr' : {'placeholder':'Saisissez votre nom','class':'form-control'}}) }}
                     {{ form_errors(form.titre) }}
                 </div>
                 <div class="form-group">
-                    {{ form_label(form.abstract, 'abstract : ') }}
+                    {{ form_label(form.abstract, 'Extrait : ') }}
                     {{ form_widget(form.abstract,{'attr' : {'class':'form-control'}}) }}
                     {{ form_errors(form.abstract) }}
                 </div>
                 <div class="form-group">
-                    {{ form_label(form.content, 'content : ') }}
+                    {{ form_label(form.content, 'Contenu : ') }}
                     {{ form_widget(form.content,{'attr' : {'class':'form-control'}}) }}
                     {{ form_errors(form.content) }}
                 </div>
 
                 <div class="form-group">
-                    {{ form_label(form.urlThumbnail, 'urlThumbnail : ') }}
+                    {{ form_label(form.urlThumbnail, 'Image : ') }}
                     {{ form_widget(form.urlThumbnail,{'attr' : {'class':'form-control'}}) }}
                     {{ form_errors(form.urlThumbnail) }}
                 </div>
 
                 <div class="form-group">
-                    {{ form_label(form.status, 'status : ') }}
+                    {{ form_label(form.status, 'Status : ') }}
                     {{ form_widget(form.status,{'attr' : {'class':'form-control'}}) }}
                     {{ form_errors(form.status) }}
                 </div>
 
                 <div class="form-group">
-                    {{ form_label(form.auteur, 'auteur : ') }}
+                    {{ form_label(form.auteur, 'Auteur : ') }}
                     {{ form_widget(form.auteur,{'attr' : {'class':'form-control' }}) }}
 
                     {{ form_errors(form.auteur) }}
@@ -54,7 +54,7 @@
 
 
                 <div class="form-group">
-                    {{ form_label(form.date, 'date : ') }}
+                    {{ form_label(form.date, 'Date : ') }}
                     {{ form_widget(form.date,{'attr' : {'class':'bam_accueilbundle_evenement_debut'}}) }}
                     {{ form_errors(form.date) }}
                 </div>
