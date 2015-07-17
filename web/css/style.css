@@ -1,9 +1,8 @@
 body {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #eee;
     font-family: "Open Sans",sans-serif;
     font-weight: 300;
+    background-color: #709095;
+    background-image: url("../images/bg.png");
 
 }
 
@@ -11,6 +10,15 @@ body {
 .h2, h2{
     font-weight: 400;
     font-size: 19px;
+}
+
+
+.container-fluid {
+  padding-right: 3%;
+  padding-left: 3%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 
@@ -68,4 +76,8 @@ body {
     background: #1B93C7 none repeat scroll 0% 0%;
     border-radius: 0px !important;
     border: 0px none !important;
+}
+
+.thumbnail {
+  background-color: rgba(255, 255, 255, 0.5);
 }
