@@ -118,7 +118,7 @@ class FichesController extends Controller
 
     /**
      * @Route(
-     *      "/fiches/delete/{id}",
+     *      "/dashboard/fiches/delete/{id}",
      *      name="dashboard.fiches.delete",
      * )
      * @Method({"POST","GET"})
@@ -129,6 +129,7 @@ class FichesController extends Controller
         $em         = $doctrine->getManager();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
         $fiche       = $repository->find($id);
+
         $em->remove($fiche);
         $em->flush();
         $message = "La fiche a bien été supprimée";

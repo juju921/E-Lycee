@@ -119,6 +119,8 @@ iphp_file_store:
        img_new:
            upload_dir:  %kernel.root_dir%/../web/images/news
            upload_path: /
+           delete_on_remove: false
+           overwrite_duplicates: true
 
 sc_datetimepicker:
     picker: ~
