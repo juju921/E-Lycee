@@ -179,7 +179,7 @@ class DefaultController extends BaseController
                         'ElyceeElyceeBundle:Default:contactEmail.html.twig', array('contact' => $contact)));
 
             $this->get('mailer')->send($message);
-            return $this->redirect($this->generateUrl('ElyceeBundle.default.contact'));
+            return $this->redirect($this->generateUrl('ElyceeBundle.default.index'));
             $request->getSession()->getFlashBag()->add('success', 'Your email has been sent! Thanks!');
         }
         return array(
