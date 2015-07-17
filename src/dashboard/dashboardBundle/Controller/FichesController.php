@@ -116,4 +116,27 @@ class FichesController extends Controller
     }
 
 
+    /**
+     * @Route(
+     *      "/fiches/delete/{id}",
+     *      name="dashboard.fiches.delete",
+     * )
+     * @Method({"POST","GET"})
+     */
+    public function deleteAction(Request $request, $id)
+    {
+        $doctrine   = $this->getDoctrine();
+        $em         = $doctrine->getManager();
+        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
+        $fiche       = $repository->find($id);
+        $em->remove($fiche);
+        $em->flush();
+        $message = "La fiche a bien été supprimée";
+        $request->getSession()->getFlashBag()->set('notice', $message);
+        $urlRedirect = $this->generateUrl('dashboard.default.index');
+        return $this->redirect($urlRedirect);
+    }
+
+
+
 }

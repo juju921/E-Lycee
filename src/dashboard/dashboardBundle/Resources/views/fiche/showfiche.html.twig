@@ -44,7 +44,7 @@
                     </td>
                     <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : fiche.id}) }}"><i class="fa fa-eye"></i> Voir</a></td>
                     <td><a href="{{ path('dashboard.posts.update',{'id' : fiche.id}) }}"><i class="fa fa-pencil"></i> modifier</a></td>
-                    <td><a href="{{ path('dashboard.posts.delete',{'id' : fiche.id}) }}" id="new"><i class="fa fa-trash"></i>  supprimer</a></tdh>
+                    <td><a href="{{ path('dashboard.fiches.delete',{'id' : fiche.id}) }}" id="new"><i class="fa fa-trash"></i>  supprimer</a></tdh>
 
 
                         {% endfor %}
