@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request as Request;
 
-use Doctrine\Common\Util\Debug ;
+use Doctrine\Common\Util\Debug;
 use Elycee\ElyceeBundle\Entity\Fiches;
 use Elycee\ElyceeBundle\Form\FichesType;
 use Elycee\ElyceeBundle\Form\ChoicesType;
@@ -32,9 +32,9 @@ class FichesController extends Controller
 
 
         $token = $this->get('security.context')->getToken();
-        $doctrine   = $this->getDoctrine();
+        $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
-        $fiches    = $repository->findBy(array('teacher' => $token->getUser()->getId()));
+        $fiches = $repository->findBy(array('teacher' => $token->getUser()->getId()));
         return array('fiches' => $fiches);
     }
 
@@ -58,13 +58,12 @@ class FichesController extends Controller
 
         $form = $this->createForm($ficheType, $fiche);
         $form->handleRequest($request);
-        if ($request->isMethod('POST')){
+        if ($request->isMethod('POST')) {
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->getData();
                 $data->setTeacher($user);
-                 $status = $form["status"]->getData();
+                $status = $form["status"]->getData();
                 $data->setStatus($status);
-
 
 
                 $data->setChoices($data->getChoices());
@@ -81,7 +80,6 @@ class FichesController extends Controller
     }
 
 
-
     /**
      * @Route(
      *      "/dashboard/fiches/status/{id}",
@@ -93,38 +91,29 @@ class FichesController extends Controller
     public function editStatusAction(Request $request, $id)
     {
 
-        $doctrine   = $this->getDoctrine();
+        $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
         $repositoryStatus = $doctrine->getRepository('ElyceeElyceeBundle:Status');
-        $fiche    = $repository->find($id);
-//        $status = $repository->find($id);
-        if ($fiche->getStatus()->getId() == 1 ){
+        $fiche = $repository->find($id);
+
+        if ($fiche->getStatus()->getId() == 1) {
             $status = $repositoryStatus->find(2);
             $fiche->setStatus($status);
             $message = "non publié";
-        }
-        else{
+        } else {
             $status = $repositoryStatus->find(1);
             $fiche->setStatus($status);
             $message = "publié";
         }
         $em->persist($fiche);
         $em->flush();
-        $response = array('status'=>'OK','message'=>$message);
-        return new JsonResponse($response);
+
+        $url = $this->generateUrl('dashboard.default.index');
+        return $this->redirect($url);
 
 
     }
 
 
-
-
-
-
-
-
-
-
-
-} 
+}
