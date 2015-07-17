@@ -5,7 +5,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">panneau d'administration</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -33,9 +33,10 @@
                     <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : fiche.id}) }}">{{ fiche.title  |raw   }}</a></td>
                     <td>{{ fiche.content |raw }}</td>
                     <td>
-                        {% if fiche.status  ==   "publish" %}
 
+                        {% if fiche.status  ==   "1" %}
                             <a class="btn btn-success" href="{{ path('dashboard.fiches.editstatus',{'id' : fiche.id}) }}">online</a>
+
                         {% else %}
                             <a class="btn btn-danger" href="{{ path('dashboard.fiches.editstatus',{'id' : fiche.id}) }}">offline</a>
 
