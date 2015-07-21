@@ -6,7 +6,7 @@
     <div class="col-lg-8 col-md-8">
     {% for posts in results %}
         {% if  posts.urlThumbnail.fileName is defined and posts.urlThumbnail.fileName != NULL %}
-            {% set pictureUrl = asset("images/news/"~posts.urlThumbnail.fileName) %}
+            {% set pictureUrl = asset("images/news"~posts.urlThumbnail.fileName) %}
         {% else %}
             {% set pictureUrl = '' %}
         {% endif %}
@@ -14,8 +14,9 @@
             <div class="thumbnail">
 
                     <p>
-
-                        <a  href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">     <img src=" {{ pictureUrl }}" class="img-responsive" alt="" class="img-responsive"/> </a>
+                        <a  href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">
+                            <img src=" {{ pictureUrl }}" class="img-responsive" alt="" />
+                        </a>
                     </p>
 
 
@@ -30,7 +31,7 @@
                         {{ posts.abstract | raw }}
                     </p>
 
-                    <p>
+                    <p class="asideread">
 
                         <a class="btn btn-default btn-sm" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite
                             ...</a>
@@ -71,15 +72,17 @@
             A lire aussi
         </h2>
         <hr />
-        <p>
+        <article>
     {% for posts in results %}
-            <a href="#">-> {{posts.titre}}</a> <br/>
+            <p>
+                <a href="#"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> {{posts.titre}}</a>
+            </p>
 
         {% endfor %}
-        </p>
+        </article>
 
         <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="621308517669076992">Tweets de
-            @LyceeSVSM</a>
+            @E-Lycée</a>
         <script>!function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
                 if (!d.getElementById(id)) {

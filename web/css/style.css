@@ -6,12 +6,43 @@ body {
 
 }
 
+.h1, h1{
+    color:#e06619;
+}
 
 .h2, h2{
     font-weight: 400;
     font-size: 19px;
+    color:#fffff;
 }
 
+a.h2, a h2{
+    font-weight: 400;
+    font-size: 19px;
+    color:#e06619;
+}
+
+.btnRead{
+    color:#e06619 !important;
+}
+
+a{
+    color:#ffffff;
+}
+
+a:hover{
+    color:#ffffff;
+    text-decoration: underline;
+}
+
+.asideread{
+    margin-bottom: 25px;
+}
+
+.btnsocial{
+    margin: 10px 10px 10px 0%;
+    color: white;
+}
 
 .container-fluid {
   padding-right: 3%;
@@ -80,4 +111,11 @@ body {
 
 .thumbnail {
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 768px)
+.navbar-right {
+  float: right!important;
+  margin-right: -15px;
+  width: 21%;
 }
