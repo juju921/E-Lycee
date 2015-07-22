@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2ad9eef5d0f252a09fb126f0ba8d3ca7",
+    "hash": "b1e1c01b5a343313bceb3ef27a693a13",
     "packages": [
         {
             "name": "axstrad/browser-sync-bundle",
@@ -1002,17 +1002,17 @@
         },
         {
             "name": "iphp/filestore-bundle",
-            "version": "v0.2.3",
+            "version": "v0.2.4",
             "target-dir": "Iphp/FileStoreBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vitiko/IphpFileStoreBundle.git",
-                "reference": "e170c9e9da544f38e1c2bda319e68621f4525f61"
+                "reference": "d9d1afbe267aaf84ce26b081d89b55a7eff1b490"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vitiko/IphpFileStoreBundle/zipball/e170c9e9da544f38e1c2bda319e68621f4525f61",
-                "reference": "e170c9e9da544f38e1c2bda319e68621f4525f61",
+                "url": "https://api.github.com/repos/vitiko/IphpFileStoreBundle/zipball/d9d1afbe267aaf84ce26b081d89b55a7eff1b490",
+                "reference": "d9d1afbe267aaf84ce26b081d89b55a7eff1b490",
                 "shasum": ""
             },
             "require": {
@@ -1057,7 +1057,7 @@
                 "symfony file upload",
                 "upload"
             ],
-            "time": "2014-12-09 11:11:03"
+            "time": "2015-07-17 09:08:50"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1335,63 +1335,6 @@
                 "xml"
             ],
             "time": "2013-12-05 14:36:11"
-        },
-        {
-            "name": "kms/froala-editor-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/froala/KMSFroalaEditorBundle.git",
-                "reference": "a3a73ce626724898cd3e393b93367329bb3beef8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/froala/KMSFroalaEditorBundle/zipball/a3a73ce626724898cd3e393b93367329bb3beef8",
-                "reference": "a3a73ce626724898cd3e393b93367329bb3beef8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "symfony/form": ">=2.1",
-                "symfony/framework-bundle": "2.*",
-                "twig/twig": ">=1.1"
-            },
-            "require-dev": {
-                "symfony/twig-bundle": "2.*",
-                "symfony/yaml": "~2.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.*-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "KMS\\FroalaEditorBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Simon Guionniere",
-                    "email": "simon.guionniere@gmail.com"
-                },
-                {
-                    "name": "Stefan Neculai",
-                    "email": "stefan.neculai@gmail.com"
-                }
-            ],
-            "description": "Provides a Froala editor integration for Symfony 2.",
-            "keywords": [
-                "editor",
-                "froala",
-                "wysiwyg"
-            ],
-            "time": "2015-06-25 20:00:10"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -3124,8 +3067,7 @@
     "stability-flags": {
         "friendsofsymfony/user-bundle": 20,
         "stephanecollot/datetimepicker-bundle": 20,
-        "stfalcon/tinymce-bundle": 20,
-        "kms/froala-editor-bundle": 20
+        "stfalcon/tinymce-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -71,7 +71,7 @@ class Fiches
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Scores", mappedBy="fiche", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="Scores", mappedBy="fiches", cascade={"persist","remove"})
      *
      */
     protected $scores;
@@ -204,7 +204,7 @@ class Fiches
     public function setChoices(ArrayCollection $choices)
     {
         foreach ($choices as $choice) {
-            $choice->setFiche($this);
+            $choice->setFiches($this);
         }
         $this->choices = $choices;
     }
@@ -280,25 +280,5 @@ class Fiches
         $this->choices[] = $choices;
 
         return $this;
-    }
-
-    /**
-     * Remove choices
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Choices $choices
-     */
-    public function removeChoice(\Elycee\ElyceeBundle\Entity\Choices $choices)
-    {
-        $this->choices->removeElement($choices);
-    }
-
-    /**
-     * Get choices
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getChoices()
-    {
-        return $this->choices;
     }
 }

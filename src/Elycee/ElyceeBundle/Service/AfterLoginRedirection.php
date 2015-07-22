@@ -38,7 +38,7 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
         if (in_array('ROLE_TEACHER', $rolesTab, true) || in_array('ROLE_ADMIN', $rolesTab, true))
             $redirection = new RedirectResponse($this->router->generate('dashboard.default.index'));
         elseif (in_array('ROLE_STUDENT', $rolesTab, true))
-            $redirection = new RedirectResponse($this->router->generate('student.home'));
+            $redirection = new RedirectResponse($this->router->generate('student.fiches.home'));
         else
             $redirection = new RedirectResponse($this->router->generate('ElyceeBundle.default.index'));
         return $redirection;
