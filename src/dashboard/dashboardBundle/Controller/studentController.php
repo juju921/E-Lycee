@@ -24,7 +24,7 @@ class studentController extends Controller
 
 
     /**
-     * @Route("etudiant/fiches/list", name="student.fiches.home")
+     * @Route("etudiant/dashboard", name="student.fiches.home")
      * @Template("dashboarddashboardBundle:fiche:eleve/home.html.twig")
      */
     public function homeAction()
@@ -32,9 +32,9 @@ class studentController extends Controller
         $token = $this->get('security.context')->getToken();
         $doctrine   = $this->getDoctrine();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
-        //$scores = $scoreRp->getScoreSeenStudent($token->getUser()->getId());
+        $scores = $scoreRp->getScoreSeenStudent($token->getUser()->getId());
         return array(
-           // 'scores' => $scores
+            'scores' => $scores
         );
     }
 

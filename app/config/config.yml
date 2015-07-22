@@ -130,3 +130,4 @@ white_october_pagerfanta:
         out_of_range_page:        to_http_not_found
         not_valid_current_page:   to_http_not_found
 
+
