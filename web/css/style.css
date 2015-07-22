@@ -27,11 +27,11 @@ a.h2, a h2{
 }
 
 a{
-    color:#ffffff;
+    color:#444A4A;
 }
 
 a:hover{
-    color:#ffffff;
+    color: #2E474A;
     text-decoration: underline;
 }
 

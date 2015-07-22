@@ -23,7 +23,7 @@
                 {{ posts.titre }}
             </h2>
             <p>
-                {{ posts.abstract }}
+                {{ posts.abstract | raw  }}
             </p>
             <p>
                 <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
