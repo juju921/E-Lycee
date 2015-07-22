@@ -13,7 +13,7 @@
                 <li><a href="#">Fiches</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
             {% elseif is_granted('ROLE_TEACHER') %}
-                <li><a href="{{ url('dashboard.default.index') }}">Dashboard</a></li>
+                <li><a href="{{ url('dashboard.default.index') }}">Panneau de configuration</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
             {% else %}
                 <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
@@ -33,9 +33,7 @@
 
     </li>
 </ul>
-<button type="button" class="btn btn-link">
-    Default
-</button>
+<div class="fb-share-button" data-href="https://www.ecole-multimedia.com/" data-layout="button_count"></div>
 <div class="page-header">
     <h1>
         E-Lycée

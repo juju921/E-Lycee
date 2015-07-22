@@ -2,7 +2,8 @@ body {
     font-family: "Open Sans",sans-serif;
     font-weight: 300;
     background-color: #709095;
-    background-image: url("../images/bg.png");
+    background-image: url("../images/bg.jpg");
+    background-repeat: round;
 
 }
 
@@ -44,12 +45,16 @@ a:hover{
     color: white;
 }
 
+.fb-share-button{
+    margin-top: 10px;
+}
+
 .container-fluid {
   padding-right: 3%;
   padding-left: 3%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 2em auto;
   background-color: rgba(255, 255, 255, 0.5);
+  width: 90%;
 }
 
 
