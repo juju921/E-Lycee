@@ -77,6 +77,10 @@ a:hover{
   width: 90%;
 }
 
+.table-bordered>tbody>tr>td{
+  vertical-align: middle;
+}
+
 
 .form-signin {
     max-width: 330px;
