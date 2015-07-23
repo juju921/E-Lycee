@@ -1,5 +1,5 @@
 <ul class="nav navbar-right navbar-nav">
-    <li class="dropdown">
+    <li class="dropdown-front">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i
                     class="glyphicon glyphicon-chevron-down"></i>
             {% if app.user is not null %}
@@ -13,7 +13,7 @@
                 <li><a href="#">Fiches</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
             {% elseif is_granted('ROLE_TEACHER') %}
-                <li><a href="{{ url('dashboard.default.index') }}">Panneau de configuration</a></li>
+                <li><a href="{{ url('dashboard.default.index') }}">Administration</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
             {% else %}
                 <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
