@@ -4,7 +4,7 @@
     
 
 
-    <div class="col-lg-8 col-md-8">
+    <div class="col-lg-8 col-md-8 thumbnail">
     {% for posts in results %}
         {%  if  posts.urlThumbnail.fileName is defined and posts.urlThumbnail.fileName != NULL %}
             {% set pictureUrl = asset("images/news/"~posts.urlThumbnail.fileName) %}

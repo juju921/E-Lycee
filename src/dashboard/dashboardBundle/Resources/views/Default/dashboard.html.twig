@@ -100,9 +100,9 @@
 
                             <!-- /.list-group -->
                             <ul>
-                                <li><i class="fa fa-user"></i>  {{ countusr }} élèves</li>
+                                <li><a href="{{ url('dashboard.default.users') }}"><i class="fa fa-user"></i>  {{ countusr }} élèves</a></li>
                                 <li><i class="fa fa-comment"></i> {{ countcomments }} commentaires</li>
-                                <li><i class="fa fa-comment"></i>{{ countFiches }} fiches</li>
+                                <li><a href="{{ url('fiches.show') }}"><i class="fa fa-comment"></i>{{ countFiches }} fiches</a></li>
                             </ul>
 
                         </div>

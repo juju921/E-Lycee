@@ -29,7 +29,7 @@ a.h2, a h2{
 
 .banniere{
   height: 20em;
-  background-image: url('http://www.sequano.fr/wp-content/uploads/sites/2/2013/11/header16.jpg');
+  background-image: url('../images/banniere.jpg');
   background-position: 0px 420px;
   margin-top: 20px;
 }
