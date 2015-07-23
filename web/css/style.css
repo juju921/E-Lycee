@@ -3,7 +3,7 @@ body {
     font-weight: 300;
     background-color: #709095;
     background-image: url("../images/bg.jpg");
-    background-repeat: round;
+    background-size: cover;
 
 }
 
@@ -25,6 +25,26 @@ a.h2, a h2{
 
 .btnRead{
     color:#e06619 !important;
+}
+
+.banniere{
+  height: 20em;
+  background-image: url('../images/banniere.jpg');
+  background-position: 0px 420px;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px)
+.navbar-nav {
+  float: left;
+  margin: 0;
+  padding-right: 5px;
+}
+
+@media (min-width: 768px)
+.navbar-nav>li>a {
+  padding-top: 17px;
+  padding-bottom: 15px;
 }
 
 a{
@@ -116,6 +136,7 @@ a:hover{
 
 .thumbnail {
   background-color: rgba(255, 255, 255, 0.5);
+  padding: 2%;
 }
 
 @media (min-width: 768px)
