@@ -44,6 +44,7 @@ class Fiches
      */
     private $teacher;
 
+
     /**
      * @ORM\ManyToOne(targetEntity="classes", inversedBy="fiches")
      * @ORM\JoinColumn(name="lvl_id", referencedColumnName="id")
