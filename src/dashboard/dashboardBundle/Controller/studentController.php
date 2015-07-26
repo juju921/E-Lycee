@@ -42,6 +42,29 @@ class studentController extends Controller
 
 
     /**
+     * @Route("etudiant/fiche/", name="student.fiches.list")
+     * @Template("dashboarddashboardBundle:fiche:eleve/fiches.html.twig")
+     */
+    public function fichesAction()
+    {
+        $token = $this->get('security.context')->getToken();
+        $doctrine = $this->getDoctrine();
+        $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
+        $scores = $scoreRp->getScoreSeenStudent($token->getUser()->getId());
+
+        return array(
+            'scores' => $scores
+        );
+    }
+
+
+
+
+
+
+
+
+    /**
      * @Route("etudiant/fiche/{id}", name="student.fiches.make")
      * @Template("dashboarddashboardBundle:fiche:eleve/fiche.html.twig")
      */
@@ -59,10 +82,16 @@ class studentController extends Controller
 
         foreach ($fiche->getChoices() as $choice) {
             $tatat = $choice->getContentChoice();
-
+           // echo $choice->getResponse();
             if (!$request->isMethod('POST')) {
 
-                $form->add($choice->getContentChoice() . $choice->getId(), 'checkbox', array('required' => true, 'attr' => array('checked' => 'checked')));
+            if($choice->getResponse() == 0){
+                $tata  = 0;
+            }else{
+                $tata  = 1;
+            }
+
+                $form->add($choice->getContentChoice() , 'radio', array('required' => false,  'value'=>$tata ));
             }
 
             $form->add('save', 'submit', array('label' => 'envoyer mes réponses',
@@ -70,9 +99,20 @@ class studentController extends Controller
             ));
 
 
+
         }
 
         $form = $form->getForm();
+        if ($request->isMethod('POST')) {
+           // $data = $form->getData();
+            //$test =  $request->query->get($choice->getContentChoice() );
+            //$username = $form[]->getData();
+            //$nom = $form->get($choice->getContentChoice())->getData();
+            echo $form;
+
+
+        }
+
 
         return array(
             'score' => $score,
