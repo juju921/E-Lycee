@@ -31,7 +31,7 @@ class studentController extends Controller
     public function homeAction()
     {
         $token = $this->get('security.context')->getToken();
-        $doctrine   = $this->getDoctrine();
+        $doctrine = $this->getDoctrine();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
         $scores = $scoreRp->getScoreSeenStudent($token->getUser()->getId());
 
@@ -41,8 +41,6 @@ class studentController extends Controller
     }
 
 
-
-
     /**
      * @Route("etudiant/fiche/{id}", name="student.fiches.make")
      * @Template("dashboarddashboardBundle:fiche:eleve/fiche.html.twig")
@@ -50,23 +48,39 @@ class studentController extends Controller
     public function ficheMakeAction($id, Request $request)
     {
         $token = $this->get('security.context')->getToken();
-        $doctrine   = $this->getDoctrine();
+        $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
         $score = $scoreRp->find($id);
         $fiche = $score->getFiche();
-        $form = $this->createFormBuilder($score) ;
-        foreach ($fiche->getChoices() as $choice ){
-            $choice->getId();
+        $data = array();
+        $form = $this->createFormBuilder($data);
+        $flag_reponse = false;
+
+        foreach ($fiche->getChoices() as $choice) {
+            $tatat = $choice->getContentChoice();
+
+            if (!$request->isMethod('POST')) {
+
+                $form->add($choice->getContentChoice() . $choice->getId(), 'checkbox', array('required' => true, 'attr' => array('checked' => 'checked')));
+            }
+
+            $form->add('save', 'submit', array('label' => 'envoyer mes réponses',
+                'attr' => array('class' => 'btn btn-primary'),
+            ));
+
+
         }
 
+        $form = $form->getForm();
+
         return array(
-            'choice' => $choice
+            'score' => $score,
+            'form' => $form,
+            'tata' => $tatat
+
         );
     }
-
-
-
 
 
 }
