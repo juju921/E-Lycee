@@ -25,8 +25,16 @@ class Fiches
     /**
      * @var string
      *
+     * @ORM\Column(name="matiere", type="text")
+     */
+    private $matiere;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="title", type="text")
      */
+
     private $title;
 
     /**
@@ -112,6 +120,29 @@ class Fiches
     public function getTitle()
     {
         return $this->title;
+    }
+
+        /**
+     * Set matiere
+     *
+     * @param string $matiere
+     * @return Fiches
+     */
+    public function setmatiere($matiere)
+    {
+        $this->matiere = $matiere;
+
+        return $this;
+    }
+
+    /**
+     * Get matiere
+     *
+     * @return string
+     */
+    public function getmatiere()
+    {
+        return $this->matiere;
     }
 
     /**

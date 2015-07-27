@@ -16,12 +16,13 @@
                 <thead>
                 <tr>
 
-                    <th>titre</th>
-                    <th>auteur</th>
-                    <th>status</th>
-                    <th>voir</th>
-                    <th>modifier</th>
-                    <th>supprimer</th>
+                    <th>Matière</th>
+                    <th>Quizz</th>
+                    <th>Auteur</th>
+                    <th>Status</th>
+                    <th>Voir</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
 
                 </tr>
                 </thead>
@@ -30,7 +31,10 @@
                 {% for fiche in fiches %}
 
                 <tr>
+
                     <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : fiche.id}) }}">{{ fiche.title  |raw   }}</a></td>
+                    <td>{{ fiche.matiere  |raw   }}</td>
+                    <td>Philosophie : <strong>La conscience</strong></td>
                     <td>{{ fiche.content |raw }}</td>
                     <td>
 
