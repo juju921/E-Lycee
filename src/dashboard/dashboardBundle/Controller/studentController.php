@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request as Request;
-
+use Elycee\ElyceeBundle\Entity\Copie;
 use Doctrine\Common\Util\Debug;
 use Elycee\ElyceeBundle\Entity\Fiches;
 use Elycee\ElyceeBundle\Form\FichesType;
@@ -74,41 +74,45 @@ class studentController extends Controller
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
+        $copie = $em->getRepository('ElyceeElyceeBundle:Copie');
+        $copie = new Copie();
         $score = $scoreRp->find($id);
         $fiche = $score->getFiche();
-        $data = array();
-        $form = $this->createFormBuilder($data);
-        $flag_reponse = false;
+        //$data = array();
+        $form = $this->createFormBuilder($copie);
+
+
+
 
         foreach ($fiche->getChoices() as $choice) {
-            $tatat = $choice->getContentChoice();
-           // echo $choice->getResponse();
-            if (!$request->isMethod('POST')) {
 
-            if($choice->getResponse() == 0){
-                $tata  = 0;
-            }else{
-                $tata  = 1;
-            }
+           $content = $choice->getContentChoice();
 
-                $form->add($choice->getContentChoice() , 'radio', array('required' => false,  'value'=>$tata ));
-            }
-
-            $form->add('save', 'submit', array('label' => 'envoyer mes réponses',
-                'attr' => array('class' => 'btn btn-primary'),
-            ));
+                $form->add('reponse' , 'radio', array(
+                    'required' => false,
+                    'label'     =>$choice->getContentChoice(),
+                  ));
 
 
 
         }
 
-        $form = $form->getForm();
+        $form->add('save', 'submit', array('label' => 'envoyer mes réponses',
+            'attr' => array('class' => 'btn btn-primary'),
+        ));
+
+        $form = $form->getForm()->handleRequest($request);
         if ($request->isMethod('POST')) {
-           // $data = $form->getData();
-            //$test =  $request->query->get($choice->getContentChoice() );
-            //$username = $form[]->getData();
-            //$nom = $form->get($choice->getContentChoice())->getData();
-            echo $form;
+            echo '<pre>';Debug::dump($form->getData('reponse') );echo '</pre>';exit();
+
+            if ($form->isValid() && $form->isSubmitted()) {
+                $data = $form->all();
+                $em->persist($copie);
+                $em->flush();
+
+
+            }
+
 
 
         }
@@ -117,7 +121,7 @@ class studentController extends Controller
         return array(
             'score' => $score,
             'form' => $form,
-            'tata' => $tatat
+            'content' => $content
 
         );
     }

@@ -123,28 +123,7 @@ class Fiches
         return $this->title;
     }
 
-        /**
-     * Set matiere
-     *
-     * @param string $matiere
-     * @return Fiches
-     */
-    public function setmatiere($matiere)
-    {
-        $this->matiere = $matiere;
 
-        return $this;
-    }
-
-    /**
-     * Get matiere
-     *
-     * @return string
-     */
-    public function getmatiere()
-    {
-        return $this->matiere;
-    }
 
     /**
      * Set content
@@ -332,5 +311,31 @@ class Fiches
     public function getChoices()
     {
         return $this->choices;
+    }
+
+
+
+
+    /**
+     * Set matiere
+     *
+     * @param string $matiere
+     * @return Fiches
+     */
+    public function setMatiere($matiere)
+    {
+        $this->matiere = $matiere;
+
+        return $this;
+    }
+
+    /**
+     * Get matiere
+     *
+     * @return string 
+     */
+    public function getMatiere()
+    {
+        return $this->matiere;
     }
 }

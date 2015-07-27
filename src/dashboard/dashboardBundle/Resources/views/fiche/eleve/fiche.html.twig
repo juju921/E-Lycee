@@ -20,8 +20,10 @@
 
 
                                     {{ score.fiche.title | raw }}
-                                  {{ tata }}
                                   {{ form_start(form) }}
+  {{ score.fiche.content | raw }}
+
+        {{ content }}
 
                                    {{ form_end(form) }}
 
