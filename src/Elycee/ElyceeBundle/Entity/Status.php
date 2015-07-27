@@ -37,6 +37,16 @@ class Status
     protected $fiches;
 
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="User", mappedBy="classe")
+     */
+    protected $students;
+
+
+
+
+
     /**
      * Get id
      *

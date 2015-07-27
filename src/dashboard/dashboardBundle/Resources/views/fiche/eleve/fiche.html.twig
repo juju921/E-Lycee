@@ -1,0 +1,38 @@
+{% extends "dashboarddashboardBundle::baseEleves.html.twig" %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">panneau d'administration</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <span class="alert alert-success">{{ flashMessage }}</span>
+            {% endfor %}
+
+
+            <!-- /.panel -->
+
+
+
+
+                                    {{ score.fiche.title | raw }}
+                                  {{ tata }}
+                                  {{ form_start(form) }}
+
+                                   {{ form_end(form) }}
+
+
+
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+{% endblock %}

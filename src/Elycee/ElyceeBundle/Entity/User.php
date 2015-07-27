@@ -48,7 +48,7 @@ class User extends BaseUser
      * @ORM\JoinColumn(name="lvl_id", referencedColumnName="id")
      *
      */
-    private $niveau;
+    private $classe;
 
 
     /**
@@ -189,28 +189,10 @@ class User extends BaseUser
         return $this->fiches;
     }
 
-    /**
-     * Set niveau
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Classes $niveau
-     * @return User
-     */
-    public function setNiveau(\Elycee\ElyceeBundle\Entity\Classes $niveau = null)
-    {
-        $this->niveau = $niveau;
 
-        return $this;
-    }
 
-    /**
-     * Get niveau
-     *
-     * @return \Elycee\ElyceeBundle\Entity\Classes 
-     */
-    public function getNiveau()
-    {
-        return $this->niveau;
-    }
+
+
 
     /**
      * Add scores
@@ -243,5 +225,28 @@ class User extends BaseUser
     public function getScores()
     {
         return $this->scores;
+    }
+
+    /**
+     * Set classe
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Classes $classe
+     * @return User
+     */
+    public function setClasse(\Elycee\ElyceeBundle\Entity\Classes $classe = null)
+    {
+        $this->classe = $classe;
+
+        return $this;
+    }
+
+    /**
+     * Get classe
+     *
+     * @return \Elycee\ElyceeBundle\Entity\Classes 
+     */
+    public function getClasse()
+    {
+        return $this->classe;
     }
 }

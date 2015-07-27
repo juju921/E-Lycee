@@ -20,12 +20,23 @@ class ScoresRepository extends EntityRepository
             ->createQueryBuilder('s')
             ->join('s.fiche','f')
             ->join('f.status','status')
-            ->where('status.nom = \'PUBLISHED\'')
+            ->where('status.nom = \'publish\'')
             ->andWhere('s.student = :id')
             ->setParameter(':id',$id_student)
             ->orderBy('status.id','DESC')
             ->getQuery()
             ->getResult();
+
+        /*$results = $this
+            ->createQueryBuilder('s')
+            ->join('s.fiche','f')
+            ->join('f.status','status')
+            ->where('status.nom = \'PUBLISHED\'')
+            ->andWhere('s.student = :id')
+            ->setParameter(':id',$id_student)
+            ->orderBy('status.id','DESC')
+            ->getQuery()
+            ->getResult();*/
         return $results ;
     }
 
