@@ -1,19 +1,19 @@
 
 
 
-                <div class="form-group">
-                    {{ form_label(form.contentChoice, 'contenu : ') }}
-                    {{ form_widget(form.contentChoice,{'attr' : {'placeholder':'Saisissez votre nom','class':'form-control'}}) }}
+                <div class="form-group level">
+                    {{ form_label(form.contentChoice, 'Réponse : ') }}
+                    {{ form_widget(form.contentChoice,{'attr' : {'placeholder':'Saisissez une réponse à afficher','class':'form-control'}}) }}
                     {{ form_errors(form.contentChoice) }}
                 </div>
-                <div class="form-group">
-                    {{ form_label(form.response, 'réponse : ') }}
+                <div class="form-group level">
+                    {{ form_label(form.response, 'Correcte ou non ? ') }}
                     {{ form_widget(form.response,{'attr' : {'class':'form-control'}}) }}
                     {{ form_errors(form.response) }}
                 </div>
                 <div class="form-group level">
-                    {{ form_label(form.point, 'note : ') }}
-                    {{ form_widget(form.point,{'attr' : {'class':'form-control tinymce'}}) }}
+                    {{ form_label(form.point, 'Note : ') }}
+                    {{ form_widget(form.point,{'attr' : {'placeholder':'Si vide, mettre un "0"','class':'form-control tinymce'}}) }}
                     {{ form_errors(form.point) }}
                 </div>
 
