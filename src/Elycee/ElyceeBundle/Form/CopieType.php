@@ -15,10 +15,7 @@ class CopieType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('reponse',array(
-              //  'choices' => array('1' => 'oui', '0' => 'non'),
-                'expanded' => true,
-                'required' => true))
+            ->add('reponse')
         ;
     }
     

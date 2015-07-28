@@ -3,12 +3,14 @@
 namespace dashboard\dashboardBundle\Controller;
 
 
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request as Request;
 use Elycee\ElyceeBundle\Entity\Copie;
+use Elycee\ElyceeBundle\Form\CopieType;
 use Doctrine\Common\Util\Debug;
 use Elycee\ElyceeBundle\Entity\Fiches;
 use Elycee\ElyceeBundle\Form\FichesType;
@@ -58,12 +60,6 @@ class studentController extends Controller
     }
 
 
-
-
-
-
-
-
     /**
      * @Route("etudiant/fiche/{id}", name="student.fiches.make")
      * @Template("dashboarddashboardBundle:fiche:eleve/fiche.html.twig")
@@ -74,36 +70,37 @@ class studentController extends Controller
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
-        $copie = $em->getRepository('ElyceeElyceeBundle:Copie');
         $copie = new Copie();
+        $copieType = new CopieType();
         $score = $scoreRp->find($id);
         $fiche = $score->getFiche();
-        //$data = array();
-        $form = $this->createFormBuilder($copie);
+
+        //$datas = array();
 
 
 
 
-        foreach ($fiche->getChoices() as $choice) {
+        $form = $this->createFormBuilder($score) ;
+             foreach ($fiche->getChoices() as $choice) {
 
-           $content = $choice->getContentChoice();
+                 $content = $choice->getContentChoice();
+                 $form->add($content,'choice',array(
+                     'choices'   => array('1' ),
 
-                $form->add('reponse' , 'radio', array(
-                    'required' => false,
-                    'label'     =>$choice->getContentChoice(),
-                  ));
+                     'expanded'  => true,
+                     'mapped'    => false,
+                     'required'  => true
+                 ));
 
 
 
-        }
+              }
 
-        $form->add('save', 'submit', array('label' => 'envoyer mes réponses',
-            'attr' => array('class' => 'btn btn-primary'),
-        ));
 
         $form = $form->getForm()->handleRequest($request);
         if ($request->isMethod('POST')) {
-            echo '<pre>';Debug::dump($form->getData('reponse') );echo '</pre>';exit();
+
+
 
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->all();
@@ -112,7 +109,6 @@ class studentController extends Controller
 
 
             }
-
 
 
         }
