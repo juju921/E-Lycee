@@ -138,6 +138,10 @@ a:hover{
     border: 0px none !important;
 }
 
+.btn-primary-admin {
+    margin-bottom: 20px;
+}
+
 .thumbnail {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 2%;
