@@ -10,28 +10,22 @@
             <!-- /.col-lg-12 -->
         </div>
     <div class="table-responsive">
-        
         <table class="table table-striped table-bordered table-hover">
             <thead>
-            <tr>
-                <th>#</th>
-                <th>Pseudo</th>
-                <th>Email</th>
-
-            </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Pseudo</th>
+                    <th>Email</th>
+                </tr>
             </thead>
             <tbody>
-
-    {% for user in users %}
-    <tr>
-
-    <td>{{ user.id }}</td>
-        <td>{{ user.username }}</td>
-        <td>{{ user.email }}</td>
-
-
-       {% endfor %}
-            </tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                {% endfor %}
+                </tr>
             </tbody>
         </table>
     </div>

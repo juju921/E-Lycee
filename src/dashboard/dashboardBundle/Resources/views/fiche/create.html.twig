@@ -15,13 +15,6 @@
 
             <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
 
-
-
-                <div class="form-group level">
-                    {{ form_label(form.matiere, 'Matière : ') }}
-                    {{ form_widget(form.matiere,{'attr' : {'placeholder':'Philosophie, Physique ... ','class':'form-control'}}) }}
-                    {{ form_errors(form.matiere) }}
-                </div>
                 <div class="form-group">
                     {{ form_label(form.title, 'Titre du Quizz : ') }}
                     {{ form_widget(form.title,{'attr' : {'placeholder':'Saisissez le titre du Quizz','class':'form-control'}}) }}
