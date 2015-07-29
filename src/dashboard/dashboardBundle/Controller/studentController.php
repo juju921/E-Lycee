@@ -82,14 +82,19 @@ class studentController extends Controller
 
         $form = $this->createFormBuilder($score) ;
              foreach ($fiche->getChoices() as $choice) {
+                 if($choice->getResponse() == 0){
+                     $tata  = 0;
+                 }else{
+                     $tata  = 1;
+                 }
 
                  $content = $choice->getContentChoice();
                  $form->add($content,'choice',array(
-                     'choices'   => array('1' ),
+                     'label' =>$content,
 
                      'expanded'  => true,
                      'mapped'    => false,
-                     'required'  => true
+                     'required'  => false
                  ));
 
 
@@ -97,10 +102,9 @@ class studentController extends Controller
               }
 
 
-        $form = $form->getForm()->handleRequest($request);
+            $form = $form->getForm()->handleRequest($request);
         if ($request->isMethod('POST')) {
-
-
+            echo '<pre>';Debug::dump($form->getData() );echo '</pre>';exit();
 
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->all();
