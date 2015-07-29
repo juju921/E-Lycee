@@ -110,8 +110,7 @@ class studentController extends Controller
                 $data = $form->all();
                 $em->persist($copie);
                 $em->flush();
-
-
+                
             }
 
 
