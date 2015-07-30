@@ -94,6 +94,7 @@ class studentController extends Controller
                      'expanded'  => true,
                      'mapped'    => false,
                      'required'  => false,
+                   
 
                  ));
               /*   $form->add('reponse' , 'radio', array(
@@ -113,13 +114,13 @@ class studentController extends Controller
         $form = $form->getForm()->handleRequest($request);
         if ($request->isMethod('POST')) {
            // echo '<pre>';Debug::dump($form->getData() );echo '</pre>';exit();
-           // echo '<pre>';Debug::dump($form->getData('reponse') );echo '</pre>';
+            echo '<pre>';Debug::dump($form->getData($content) );echo '</pre>';
 
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->all();
                 $em->persist($score);
                 $em->flush();
-                
+
             }
 
 
