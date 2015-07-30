@@ -16,12 +16,25 @@
 
             <!-- /.panel -->
 
-            {{ score.fiche.title | raw }}
-            
-            {{ form_start(form) }}
-                {{ score.fiche.content | raw }}
-                {{ content }}
-            {{ form_end(form) }}
+
+
+
+
+                                    {{ score.fiche.title | raw }}
+
+  {{ score.fiche.content | raw }}
+
+   {{ form_start(form) }}
+                <p>
+                    <input type="submit" value="Valider" class="btn"/>
+                </p>
+
+
+
+
+                                   {{ form_end(form) }}
+
+
 
         </div>
     </div>

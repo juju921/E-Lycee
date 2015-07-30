@@ -80,33 +80,46 @@ class studentController extends Controller
 
 
 
-        $form = $this->createFormBuilder($score) ;
+        $form = $this->createFormBuilder($copie) ;
              foreach ($fiche->getChoices() as $choice) {
+                 if($choice->getResponse() == 0){
+                     $tata  = 0;
+                 }else{
+                     $tata  = 1;
+                 }
 
-                 $content = $choice->getContentChoice();
-                 $form->add($content,'choice',array(
-                     'choices'   => array('1' ),
-
+                $content = $choice->getContentChoice();
+                $form->add($content,'choice',array(
+                     'label' =>$content,
                      'expanded'  => true,
                      'mapped'    => false,
-                     'required'  => true
+                     'required'  => false,
+                   
+
+                 ));
+              /*   $form->add('reponse' , 'radio', array(
+                     'required' => false,
+
                  ));
 
-
+                 $form->add('save', 'submit', array('label' => 'envoyer mes réponses',
+                     'attr' => array('class' => 'btn btn-primary'),
+                 ));*/
 
               }
 
 
+
+
         $form = $form->getForm()->handleRequest($request);
         if ($request->isMethod('POST')) {
-
-
+           // echo '<pre>';Debug::dump($form->getData() );echo '</pre>';exit();
+            echo '<pre>';Debug::dump($form->getData($content) );echo '</pre>';
 
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->all();
-                $em->persist($copie);
+                $em->persist($score);
                 $em->flush();
-
 
             }
 

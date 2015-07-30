@@ -18,6 +18,7 @@ class CopieType extends AbstractType
             ->add('reponse',array(
                 // 'choices' => array('1' => 'oui', '0' => 'non'),
                 'expended' => true,
+                'value'=>true,
                 'requiered' => true));
     }
     
