@@ -1,94 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Source code generated using layoutit.com">
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
+        <title>{% block title %}Espace élève - E-Lycée{% endblock %}</title>
 
-
-    <title>{% block title %}Accueil{% endblock %}</title>
-
-    {% block stylesheets %}
+        {% block stylesheets %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link href="{{ asset('css/bootstrap-social.css') }}" rel="stylesheet" >
-
-
         <link href="{{ asset('css/metisMenu.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" >
+        {% endblock %}
+    </head>
 
-    {% endblock %}
+    <body>
+        <div id="wrapper">
 
+        {% include 'dashboarddashboardBundle::inc/navEleves.html.twig' %}
 
+        {% block body %}
 
+        {% endblock %}
 
-</head>
-
-
-
-
-
-
-
-<body>
-<div id="wrapper">
-
-{% include 'dashboarddashboardBundle::inc/navEleves.html.twig' %}
-
-
-
-
-{% block body %}{% endblock %}
-{% block javascripts %}
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('js/sb-admin-2.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('js/metisMenu.min.js') }}"></script>
+            <script src="{{ asset('js/sb-admin-2.js') }}"></script>
+            <script src="{{ asset('js/script.js') }}"></script>
             <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
-
-    <script  src="{{ asset('js/bootstrap-datetimepicker.fr.js') }}"></script>
-    <script type="text/javascript" src="/bundles/scdatetimepicker/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script><script type="text/javascript" src="/bundles/scdatetimepicker/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
-    <script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $field = $('.bam_accueilbundle_evenement_debut');
-
-
-
-
-
-        $field.datetimepicker({"format":"dd\/mm\/yyyy","weekStart":1,"startDate":"0101\/0101\/70707070","autoclose":true,"startView":"month","minView":"hour","maxView":"year","todayBtn":false,"todayHighlight":false,"keyboardNavigation":true,"language":"fr","forceParse":true,"minuteStep":5,"pickerPosition":"bottom-right"});
-
-    });
-</script>
-
-    <script type="text/javascript" src="{{ asset('js/tinymce/tinymce.min.js')}}"></script>
-
-    <script type="text/javascript">
-        $(window).load(function() {
-            tinymce.init({
-                selector: "textarea",
-                plugins: [
-                    "advlist autolink lists link image charmap print preview anchor",
-                    "searchreplace visualblocks code fullscreen",
-                    "insertdatetime media table contextmenu paste"
-                ],
-                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-            });
-        });
-    </script>
-
-
-
-
-{% endblock %}
-
-
-
-</body>
+            <script  src="{{ asset('js/bootstrap-datetimepicker.fr.js') }}"></script>
+            <script type="text/javascript" src="/bundles/scdatetimepicker/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+            <script type="text/javascript" src="/bundles/scdatetimepicker/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+            <script type="text/javascript">
+                jQuery(document).ready(function($) {
+                    $field = $('.bam_accueilbundle_evenement_debut');
+                    $field.datetimepicker({"format":"dd\/mm\/yyyy","weekStart":1,"startDate":"0101\/0101\/70707070","autoclose":true,"startView":"month","minView":"hour","maxView":"year","todayBtn":false,"todayHighlight":false,"keyboardNavigation":true,"language":"fr","forceParse":true,"minuteStep":5,"pickerPosition":"bottom-right"});
+                });
+            </script>
+            <script type="text/javascript" src="{{ asset('js/tinymce/tinymce.min.js')}}"></script>
+            <script type="text/javascript">
+                $(window).load(function() {
+                    tinymce.init({
+                        selector: "textarea",
+                        plugins: [
+                            "advlist autolink lists link image charmap print preview anchor",
+                            "searchreplace visualblocks code fullscreen",
+                            "insertdatetime media table contextmenu paste"
+                        ],
+                        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+                    });
+                });
+            </script>
+        {% endblock %}
+    </body>
 </html>

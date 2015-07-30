@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Source code generated using layoutit.com">
-        <title>{% block title %}Accueil{% endblock %}</title>
+        <title>{% block title %}Espace profs - E-Lycée{% endblock %}</title>
     
         {% block stylesheets %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -33,11 +33,10 @@
             <script type="text/javascript" src="/bundles/scdatetimepicker/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
             <script type="text/javascript" src="/bundles/scdatetimepicker/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
             <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $field = $('.bam_accueilbundle_evenement_debut');
-             $field.datetimepicker({"format":"dd\/mm\/yyyy","weekStart":1,"startDate":"0101\/0101\/70707070","autoclose":true,"startView":"month","minView":"hour","maxView":"year","todayBtn":false,"todayHighlight":false,"keyboardNavigation":true,"language":"fr","forceParse":true,"minuteStep":5,"pickerPosition":"bottom-right"});
-
-        });
+                jQuery(document).ready(function($) {
+                    $field = $('.bam_accueilbundle_evenement_debut');
+                    $field.datetimepicker({"format":"dd\/mm\/yyyy","weekStart":1,"startDate":"0101\/0101\/70707070","autoclose":true,"startView":"month","  minView":"hour","maxView":"year","todayBtn":false,"todayHighlight":false,"keyboardNavigation":true,"language":"fr","forceParse":true,"    minuteStep":5,"pickerPosition":"bottom-right"});
+                });
             </script>
             <script type="text/javascript" src="{{ asset('js/tinymce/tinymce.min.js')}}"></script>
             <script type="text/javascript">
