@@ -25,13 +25,23 @@
   {{ score.fiche.content | raw }}
 
    {{ form_start(form) }}
+
+        {% for contacts in contact %}
+        {{ contacts.contentChoice }}
+ <div class="form-group">
+                    {{ form_label(form.reponse) }}
+                    {{ form_widget(form.reponse,{'attr' : {'class':'form-control'}}) }}
+                    {{ form_errors(form.reponse) }}
+               </div>
+
+        {% endfor %}
+
                 <p>
                     <input type="submit" value="Valider" class="btn"/>
                 </p>
 
-            {{ form_widget(form.reponse) }}
 
-                    {{content}}
+
 
                                    {{ form_end(form) }}
 

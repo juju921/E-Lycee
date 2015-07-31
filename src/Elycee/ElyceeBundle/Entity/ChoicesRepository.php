@@ -12,4 +12,17 @@ use Doctrine\ORM\EntityRepository;
  */
 class ChoicesRepository extends EntityRepository
 {
+
+    public function getThePost($id){
+        $results = $this
+            ->createQueryBuilder('c')
+            ->select('c.contentChoice')
+            ->where('c.fiche  = :id')
+            ->setParameter(':id',$id)
+            ->getQuery()
+            ->getResult();
+        return $results;
+    }
+
+
 }

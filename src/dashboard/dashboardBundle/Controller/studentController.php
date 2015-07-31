@@ -3,7 +3,6 @@
 namespace dashboard\dashboardBundle\Controller;
 
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -70,6 +69,7 @@ class studentController extends Controller
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
+
         $copie = new Copie();
         $copieType = new CopieType();
         $score = $scoreRp->find($id);
@@ -78,48 +78,46 @@ class studentController extends Controller
         //$datas = array();
 
 
+        $form = $this->createFormBuilder($copie);
+        foreach ($fiche->getChoices() as $choice) {
 
+            $content = $choice->getContentChoice();
+            $repository = $doctrine->getRepository('ElyceeElyceeBundle:Choices');
+            $contact = $repository->getThePost($fiche->getId());
 
-        $form = $this->createForm($copieType, $copie) ;
-             foreach ($fiche->getChoices() as $choice) {
-                 if($choice->getResponse() == 0){
-                     $tata  = 0;
-                 }else{
-                     $tata  = 1;
-                 }
+            //echo $choice->getId();
 
-                $content = $choice->getContentChoice();
-                 $form->add('reponse','choice',array(
-                     'choices' => array('1' => 'oui', '0' => 'non'),
-                 ));
-                /*$form->add($content,'choice',array(
-                     'label' =>$content,
-                     'expanded'  => true,
-                     'mapped'    => false,
-                     'required'  => false,
-
-                 ));*/
-
-
-              /*   $form->add('reponse' , 'radio', array(
-                     'required' => false,
-
-                 ));
-
-                 $form->add('save', 'submit', array('label' => 'envoyer mes réponses',
-                     'attr' => array('class' => 'btn btn-primary'),
-                 ));*/
-
-              }
+            $form->add('reponse','choice',array(
+                'choices'   => array('1' => $content),
+                'label'     => $content,
+                'expanded'  => true,
+                'mapped'    => true,
+                'required'  => false
+            ));
 
 
 
 
-//        $form = $form->getForm()->handleRequest($request);
-        $form->handleRequest($request);
+
+            /*$form->add($content,'choice',array(
+                 'choices' => array('1' => 'oui', '0' => 'non'),
+                 'expanded'  => true,
+                 'mapped'    => false,
+                 'required'  => false,
+
+             ));*/
+
+
+        }
+
+
+        $form = $form->getForm()->handleRequest($request);
+        //$form->handleRequest($request);
         if ($request->isMethod('POST')) {
-           // echo '<pre>';Debug::dump($form->getData() );echo '</pre>';exit();
-            echo '<pre>';Debug::dump($form->getData($content) );echo '</pre>';
+
+            echo '<pre>';
+            Debug::dump($form->getData('reponse'));
+            echo '</pre>';
 
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->all();
@@ -128,14 +126,14 @@ class studentController extends Controller
 
             }
 
-
         }
 
 
         return array(
             'score' => $score,
-            'form' => $form,
-            'content' => $content
+            'form' => $form->createView(),
+            'content' => $content,
+            'contact'=>$contact,
 
         );
     }
