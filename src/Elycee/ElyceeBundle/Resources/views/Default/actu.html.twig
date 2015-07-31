@@ -40,20 +40,18 @@
             {{ form_start(form, {'method': 'POST', 'attr': {'class': '' }}) }}
                 <div class="form-group">
                     {{ form_label(form.username, 'username : ') }}
-
                     {{ form_widget(form.username,{'attr' : {'class':'form-control' }}) }}
                 </div>
                 {% endif %}
                 <div class="form-group">
                     {{ form_label(form.contents, 'contents : ') }}
-
                     {{ form_widget(form.contents,{'attr' : {'class':'form-control' }}) }}
                 </div>
                 {{ form_widget(form.envoyer, {'label': 'Envoyer', 'attr': {'class': 'btn btn-primary' }}) }}
                 {{ form_end(form) }}
             </div>
+            
         <div class="col-lg-4 col-md-4 col-sm-4">
-
             <a class="twitter-timeline" href="https://twitter.com/LyceeSVSM" data-widget-id="621308517669076992">Tweets de @E-Lycée</a>
             <script>!function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
