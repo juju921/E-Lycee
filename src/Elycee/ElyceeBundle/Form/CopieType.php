@@ -17,6 +17,9 @@ class CopieType extends AbstractType
         $builder
             ->add('reponse','choice',array(
         'choices' => array('1' => 'oui', '0' => 'non'),
+                'expanded'  => true,
+                'mapped'    => false,
+                'required'  => true,
              ));
            /* ->add('reponse', 'entity', array(
                 'choices'   => array('1' => 'oui', '0' => 'non'),

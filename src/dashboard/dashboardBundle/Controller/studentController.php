@@ -87,12 +87,10 @@ class studentController extends Controller
 
             //echo $choice->getId();
 
-            $form->add('reponse','choice',array(
-                'choices'   => array('1' => $content),
-                'label'     => $content,
-                'expanded'  => true,
-                'mapped'    => true,
-                'required'  => false
+            $form->add('reponse'.$choice->getId(),'checkbox', array(
+                'mapped'    => false,
+                'required'  => false,
+                'label'=>$content,
             ));
 
 
@@ -102,7 +100,7 @@ class studentController extends Controller
             /*$form->add($content,'choice',array(
                  'choices' => array('1' => 'oui', '0' => 'non'),
                  'expanded'  => true,
-                 'mapped'    => false,
+
                  'required'  => false,
 
              ));*/
@@ -115,14 +113,33 @@ class studentController extends Controller
         //$form->handleRequest($request);
         if ($request->isMethod('POST')) {
 
-            echo '<pre>';
-            Debug::dump($form->getData('reponse'));
-            echo '</pre>';
+           // echo '<pre>';
+            //Debug::dump($form->getData('reponse'));
+            //echo '</pre>';
 
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->all();
+                foreach ($data as $key => $reponse){
+                               //  echo '<pre>';Debug::dump($reponse->getData('reponse') );echo '</pre>';exit();
+
+                   $mareponse =  $reponse->getData('reponse');
+
+                       if( $mareponse == true){
+
+                           echo Debug::dump($mareponse);
+
+                       }else{
+                           echo Debug::dump($mareponse);
+
+                       }
+
+
+                }
+
+
                 $em->persist($score);
                 $em->flush();
+
 
             }
 

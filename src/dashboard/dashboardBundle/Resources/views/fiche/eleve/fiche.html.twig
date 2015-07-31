@@ -27,12 +27,8 @@
    {{ form_start(form) }}
 
         {% for contacts in contact %}
-        {{ contacts.contentChoice }}
- <div class="form-group">
-                    {{ form_label(form.reponse) }}
-                    {{ form_widget(form.reponse,{'attr' : {'class':'form-control'}}) }}
-                    {{ form_errors(form.reponse) }}
-               </div>
+       {{ contacts.contentChoice }}<br>
+
 
         {% endfor %}
 
