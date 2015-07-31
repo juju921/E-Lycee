@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="{{url('ElyceeBundle.default.index')}}"><i class="fa fa-home"></i>Retour au site public</a>
+    <a class="navbar-brand" href="{{url('ElyceeBundle.default.index')}}"><i class="fa fa-home"></i>Retour au site du Lycée</a>
 </div>
 <!-- /.navbar-header -->
 
@@ -48,6 +48,12 @@
             <li>
                 <a href="{{ url('dashboard.default.getArticles',{'id' : app.user.id}) }}"><i class="fa fa-table fa-fw"></i>Articles</a>
             </li>
+            <li>
+                <a href="#"><i class="fa fa-comment fa-fw"></i>Commentaire</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-comment fa-fw"></i>Pages</a>
+            </li>            
             <li>
                 <a href="{{ url('dashboard.default.users') }}"><i class="fa fa-edit fa-fw"></i> Elèves</a>
             </li>

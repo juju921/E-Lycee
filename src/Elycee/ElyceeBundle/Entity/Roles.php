@@ -1,0 +1,147 @@
+<?php
+
+namespace Elycee\ElyceeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+
+/**
+ * Roles
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Elycee\ElyceeBundle\Entity RolesRepository")
+ */
+class Roles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Fiches", mappedBy= Roles")
+     */
+    protected $fiches;
+
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="User", mappedBy="classe")
+     */
+    protected $students;
+
+        /**
+     * @ORM\OneToMany(targetEntity="Rôle", mappedBy="classe")
+     */
+    protected $roles;
+
+
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+
+    /**
+     * Transform to string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->getId();
+    }
+
+
+
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return Roles
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+
+
+
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->fiches = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add fiches
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     * @return Roles
+     */
+    public function addFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
+    {
+        $this->fiches[] = $fiches;
+
+        return $this;
+    }
+
+    /**
+     * Remove fiches
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     */
+    public function removeFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
+    {
+        $this->fiches->removeElement($fiches);
+    }
+
+    /**
+     * Get fiches
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFiches()
+    {
+        return $this->fiches;
+    }
+}

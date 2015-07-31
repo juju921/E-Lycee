@@ -5,7 +5,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">panneau d'administration</h1>
+                    <h1 class="page-header">QCM</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -20,27 +20,25 @@
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
                                    aria-expanded="false" aria-controls="collapseTwo">
-                                    <i class="fa fa-bar-chart-o fa-fw"></i> Gestion des articles
+                                    <i class="fa fa-pie-chart fa-fw"></i> Statistiques
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel"
                              aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores aut
-                                    ea eveniet fuga fugit harum, ipsa laudantium magni, modi nam, nihil nisi officia
-                                    quaerat quasi quos totam voluptate voluptates.</p>
+                                <p>Vos statistiques pour les QCM</p>
 
                                 {% for score in scores %}
 
 
                                     {{ score.fiche.title | raw }}
-                                  {{ score.status.nom }}
+                                    {{ score.status.nom }}
 
                                     {% if (score.status.nom  == "DONE") %}
-                                        <a class='material-icons' disabled>check</a>
+                                        <a class='fa fa-check-square-o' disabled>Complété</a>
                                     {% else %}
-                                        <a class='material-icons' href="{{ url('student.fiches.make',{'id':score.id} ) }}">send</a>
+                                        <a class='fa fa-square-o' href="{{ url('student.fiches.make',{'id':score.id} ) }}">Répondre au QCM</a>
                                     {% endif %}
 
 
