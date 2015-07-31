@@ -80,7 +80,7 @@ class studentController extends Controller
 
 
 
-        $form = $this->createFormBuilder($copie) ;
+        $form = $this->createForm($copieType, $copie) ;
              foreach ($fiche->getChoices() as $choice) {
                  if($choice->getResponse() == 0){
                      $tata  = 0;
@@ -89,14 +89,18 @@ class studentController extends Controller
                  }
 
                 $content = $choice->getContentChoice();
-                $form->add($content,'choice',array(
+                 $form->add('reponse','choice',array(
+                     'choices' => array('1' => 'oui', '0' => 'non'),
+                 ));
+                /*$form->add($content,'choice',array(
                      'label' =>$content,
                      'expanded'  => true,
                      'mapped'    => false,
                      'required'  => false,
-                   
 
-                 ));
+                 ));*/
+
+
               /*   $form->add('reponse' , 'radio', array(
                      'required' => false,
 
@@ -111,7 +115,8 @@ class studentController extends Controller
 
 
 
-        $form = $form->getForm()->handleRequest($request);
+//        $form = $form->getForm()->handleRequest($request);
+        $form->handleRequest($request);
         if ($request->isMethod('POST')) {
            // echo '<pre>';Debug::dump($form->getData() );echo '</pre>';exit();
             echo '<pre>';Debug::dump($form->getData($content) );echo '</pre>';
