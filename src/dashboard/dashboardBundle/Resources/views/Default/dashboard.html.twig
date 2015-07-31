@@ -59,16 +59,16 @@
                          aria-labelledby="headingTwo">
                         <div class="panel-body">
                             {% for posts in results %}
-                                <a href="#" class="list-group-item"><i
-                                            class="fa fa-pencil"></i>  {{ posts.titre }}  <span
-                                            class="pull-right text-muted small">
-
-        {% if posts.status ==   "1" %}
-            <button type="button" class="btn btn-success btn-xs">ok</button>
-        {% else %}
-            <button type="button" class="btn btn-danger btn-xs">no</button>
-        {% endif %}
-            </span></a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-pencil"></i>  {{ posts.titre }}
+                                    <span class="pull-right text-muted small">
+                                        {% if posts.status ==   "1" %}
+                                            <button type="button" class="btn btn-success btn-xs">ok</button>
+                                        {% else %}
+                                            <button type="button" class="btn btn-danger btn-xs">no</button>
+                                        {% endif %}
+                                    </span>
+                                </a>
                             {% endfor %}
                         </div>
                     </div>
