@@ -24,7 +24,7 @@ class Copie
     /**
      * @var boolean
      *
-     * @ORM\Column(name="reponse", type="boolean")
+     * @ORM\Column(name="reponse", type="boolean", nullable=false)
      */
     private $reponse;
 

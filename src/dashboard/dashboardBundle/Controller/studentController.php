@@ -85,25 +85,27 @@ class studentController extends Controller
             $repository = $doctrine->getRepository('ElyceeElyceeBundle:Choices');
             $contact = $repository->getThePost($fiche->getId());
 
-            //echo $choice->getId();
 
-            $form->add('reponse'.$choice->getId(),'checkbox', array(
-                'mapped'    => false,
-                'required'  => false,
-                'label'=>$content,
+            if ($choice->getResponse() == 0) {
+
+                $ma = 0;
+            } else {
+                $ma = 1;
+
+            }
+
+
+            $form->add('reponse' . $choice->getId(), 'choice', array(
+                'choices' => array($ma => $content),
+                //'label'     => $content,
+                'expanded' => true,
+                'mapped' => false,
+                'required' => false,
+                'empty_value' => false
             ));
 
 
 
-
-
-            /*$form->add($content,'choice',array(
-                 'choices' => array('1' => 'oui', '0' => 'non'),
-                 'expanded'  => true,
-
-                 'required'  => false,
-
-             ));*/
 
 
         }
@@ -113,25 +115,32 @@ class studentController extends Controller
         //$form->handleRequest($request);
         if ($request->isMethod('POST')) {
 
-           // echo '<pre>';
+            // echo '<pre>';
             //Debug::dump($form->getData('reponse'));
             //echo '</pre>';
 
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->all();
-                foreach ($data as $key => $reponse){
-                               //  echo '<pre>';Debug::dump($reponse->getData('reponse') );echo '</pre>';exit();
+                $choixRp = $doctrine->getRepository('ElyceeElyceeBundle:Choices');
+                foreach ($data as $key => $reponse) {
 
-                   $mareponse =  $reponse->getData('reponse');
 
-                       if( $mareponse == true){
+                    $mareponse =  $reponse->getData('choices');
+                   
+                    if ($mareponse == 1) {
+                        echo $mareponse;exit;
+                        echo '<pre>';
+                        Debug::dump($form->getData('reponse'));
+                        echo '</pre>';
 
-                           echo Debug::dump($mareponse);
 
-                       }else{
-                           echo Debug::dump($mareponse);
+                    } else {
+                        //echo $mareponse;exit;
 
-                       }
+                       // echo "bonjours";
+
+
+                    }
 
 
                 }
@@ -150,7 +159,7 @@ class studentController extends Controller
             'score' => $score,
             'form' => $form->createView(),
             'content' => $content,
-            'contact'=>$contact,
+            'contact' => $contact,
 
         );
     }
