@@ -100,9 +100,10 @@ class studentController extends Controller
                 //'choices' => array('h' => 'femme', 'f'=> 'homme'),
                 //'label'     => $content,
                 'expanded' => true,
+
                 'mapped' => false,
                 'required' => false,
-                'empty_value' => false
+                'empty_value' => false,
             ));
 
 
@@ -122,20 +123,21 @@ class studentController extends Controller
 
             if ($form->isValid() && $form->isSubmitted()) {
                 $data = $form->all();
+                echo '<pre>';Debug::dump($data);echo '</pre>';exit();
                 $choixRp = $doctrine->getRepository('ElyceeElyceeBundle:Choices');
                 foreach ($data as $key => $reponse) {
 
 
-                    $mareponse =  $reponse->getData('reponse');
-                   
+                    $mareponse =  $reponse->getData('choices');
+
                     if ($mareponse === 1) {
-                        echo '<pre>';Debug::dump($reponse->getData() );echo '</pre>';exit();
+                        echo '<pre>';Debug::dump($reponse->getData('reponse') );echo '</pre>';exit();
 
 
 
                     } else {
                         //echo $reponse->getData('choices');exit;
-                        echo '<pre>';Debug::dump($reponse->getData() );echo '</pre>';exit();
+                        echo '<pre>';Debug::dump($reponse->getData('reponse') );echo '</pre>';exit();
 
 
                     }
