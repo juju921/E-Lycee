@@ -97,6 +97,7 @@ class studentController extends Controller
 
             $form->add('reponse' . $choice->getId(), 'choice', array(
                 'choices' => array($ma => $content),
+                //'choices' => array('h' => 'femme', 'f'=> 'homme'),
                 //'label'     => $content,
                 'expanded' => true,
                 'mapped' => false,
@@ -125,19 +126,16 @@ class studentController extends Controller
                 foreach ($data as $key => $reponse) {
 
 
-                    $mareponse =  $reponse->getData('choices');
+                    $mareponse =  $reponse->getData('reponse');
                    
-                    if ($mareponse == 1) {
-                        echo $mareponse;exit;
-                        echo '<pre>';
-                        Debug::dump($form->getData('reponse'));
-                        echo '</pre>';
+                    if ($mareponse === 1) {
+                        echo '<pre>';Debug::dump($reponse->getData() );echo '</pre>';exit();
+
 
 
                     } else {
-                        //echo $mareponse;exit;
-
-                       // echo "bonjours";
+                        //echo $reponse->getData('choices');exit;
+                        echo '<pre>';Debug::dump($reponse->getData() );echo '</pre>';exit();
 
 
                     }

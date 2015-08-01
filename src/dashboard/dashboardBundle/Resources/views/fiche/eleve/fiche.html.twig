@@ -26,11 +26,26 @@
 
    {{ form_start(form) }}
 
+
+
         {% for contacts in contact %}
        {{ contacts.contentChoice }}<br>
 
 
         {% endfor %}
+
+ {% for key, formReponse in form.children %}
+
+
+              <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-cell mdl-cell--12-col" for="{{ formReponse.vars.id }}">
+                {{ form_widget(formReponse, {'attr' : {'class':'mdl-radio__button', 'type': 'radio', 'name': formReponse.vars.full_name, 'value': formReponse.vars.value, 'id': formReponse.vars.id}}) }}
+                <span class="mdl-radio__label">{{ formReponse.vars.label }}</span>
+              </label>
+
+
+
+   {% endfor %}
+
 
                 <p>
                     <input type="submit" value="Valider" class="btn"/>
