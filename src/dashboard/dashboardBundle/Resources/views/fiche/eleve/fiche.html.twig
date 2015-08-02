@@ -38,9 +38,10 @@
 
 
               <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-cell mdl-cell--12-col" for="{{ formReponse.vars.id }}">
-                {{ form_widget(formReponse, {'attr' : {'class':'mdl-radio__button', 'type': 'radio', 'name': formReponse.vars.full_name, 'value': formReponse.vars.value, 'id': formReponse.vars.id}}) }}
+                {{ form_widget(formReponse, {'attr' : {'type': 'checkbox', 'name': formReponse.vars.full_name, 'value': formReponse.vars.value, 'id': formReponse.vars.id}}) }}
                 <span class="mdl-radio__label">{{ formReponse.vars.label }}</span>
               </label>
+     {{ form_widget(form) }}
 
 
 

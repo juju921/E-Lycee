@@ -3,6 +3,7 @@
 namespace Elycee\ElyceeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Choice;
 
 /**
  * Copie
@@ -137,4 +138,17 @@ class Copie
     {
         return $this->choices;
     }
+
+
+    public function hasChoices(Choices $choices) {
+        foreach ($this->choices as $choice) {
+            if ($choice->getId() == $choices->getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
 }
