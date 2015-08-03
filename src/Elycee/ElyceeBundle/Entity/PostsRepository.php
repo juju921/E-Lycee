@@ -30,7 +30,7 @@ class PostsRepository extends EntityRepository
             ->createQueryBuilder('p')
             ->orderBy('p.date','DESC')
             ->where('p.status = 1')
-            ->setMaxResults(3)
+            ->setMaxResults(4)
             ->getQuery()
             ->getResult();
         return $results;
