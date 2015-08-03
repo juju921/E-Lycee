@@ -20,9 +20,9 @@
 
 
 
-                                    {{ score.fiche.title | raw }}
+            {{ score.fiche.title | raw }}
 
-  {{ score.fiche.content | raw }}
+            {{ score.fiche.content | raw }}
 
             {{ form_start(form) }}
 
@@ -30,32 +30,37 @@
 
 
 
+            {% for choice in fiche.choices %}
+                {% set value = 'c' ~ choice.id %}
+            <div class="form-group">
+                <label>
+                    {{ choice.contentChoice }}
 
-
-                {{ form_widget(form) }}
-
-
-
-
-
-
-
-
-
-                <p>
-                    <input type="submit" value="Valider" class="btn"/>
-                </p>
+                    {{ form_widget(attribute(form, value)) }}
+                </label>
+                </div>
+            {% endfor %}
 
 
 
 
-                                   {{ form_end(form) }}
 
+
+
+
+            <p>
+                <input type="submit" value="Valider" class="btn"/>
+            </p>
+
+
+
+
+            {{ form_end(form) }}
 
 
         </div>
     </div>
-</div>
+    </div>
 
 
 
