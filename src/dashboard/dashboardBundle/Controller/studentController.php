@@ -88,46 +88,62 @@ class studentController extends Controller
             $contact = $repository->getThePost($fiche->getId());
 
 
+            if (!$request->isMethod('POST')) {
 
-                    if (!$request->isMethod('POST')) {
+                if ($choice->getResponse() == 0) {
+                    $checked = 0;
 
-                        if($choice->getResponse() == 0){
-                            $checked = 0;
+                } else {
+                    $checked = 1;
 
-                        }else{
-                            $checked = 1;
-
-                        }
-
-
-                        //$checked = $copie->hasChoices($choice);
+                }
 
 
-                        if($checked && !$flag_reponse){
-                          //  $nb_rep_save++;
-                            $flag_reponse = true;
-                        }
-                        $form->add('c' . $choice->getId() , 'checkbox', array(
-                                'required' => false,
-                                'attr' => array(
-                                    'checked' => $checked,
-                                    'label' => $content,
+                //$checked = $copie->hasChoices($choice);
 
 
-                                )));
+                if ($checked && !$flag_reponse) {
+                    //  $nb_rep_save++;
+                    $flag_reponse = true;
+                }
+                /*$form->add('c' . $choice->getId(), 'checkbox', array(
+                    'required' => false,
+                    'attr' => array(
+                        'checked' => $checked,
+                        'label' => $content,
+
+                    )));*/
+                $form->add('c' . $choice->getId(), 'choice', array(
+                    'choices' => array('0' => 'oui', '1'=>'non'),
+                    //'choices' => array('h' => 'femme', 'f'=> 'homme'),
+                    //'label'     => $content,
+                    'expanded' => true,
+
+                    'mapped' => false,
+                    'required' => false,
+                    'empty_value' => false,
+
+                ));
+
+            } else {
+               /* $form->add('c' . $choice->getId(), 'checkbox', array(
+                    'required' => false,
+                    'label' => $content,
+                ));*/
+                $form->add('c' . $choice->getId(), 'choice', array(
+                    'choices' => array('0' => 'oui', '1'=>'non'),
+                    //'choices' => array('h' => 'femme', 'f'=> 'homme'),
+                    //'label'     => $content,
+                    'expanded' => true,
+
+                    'mapped' => false,
+                    'required' => false,
+                    'empty_value' => false,
+
+                ));
 
 
-                    } else {
-                       $form->add('c' . $choice->getId() , 'checkbox', array(
-                               'required' => false,
-                               'label' => $content,
-                          ));
-
-                    }
-
-
-
-
+            }
 
 
             /* $form->add('reponse' . $choice->getId(), 'choice', array(
@@ -141,9 +157,6 @@ class studentController extends Controller
                  'empty_value' => false,
 
              ));*/
-
-
-
 
 
         }
@@ -160,56 +173,55 @@ class studentController extends Controller
                 $data = $form->getData('datas');
 
 
-                    $flag_reponse = false;
-                    foreach ($fiche->getChoices() as $choice) {
+                $flag_reponse = false;
+                foreach ($fiche->getChoices() as $choice) {
 
-                        $key = 'c' . $choice->getId();
-                        //echo $choice->getId();exit();
-                        //echo '<pre>';Debug::dump($data);echo '</pre>';exit();
+                    $key = 'c' . $choice->getId();
+                    //echo $choice->getId();exit();
+                    //echo '<pre>';Debug::dump($data);echo '</pre>';exit();
 
-                        if($choice->getResponse() == 1){
-                            //$checked = 0;
-                            $c1 = 'c'.$choice->getResponse();
-                        }else{
-                          //  $checked = 1;
-                            $c1 = 'c2'.$choice->getResponse();
-                        }
-
-
-                        if($data[$c1] == true){
-                            echo "c'est bon ";exit();
-                        }else{
-                            echo "retente ta chance";exit();
-                        }
-
-                        if($data[$key] && !$flag_reponse){
-
-                            $flag_reponse = true;
-                           // $nb_rep_save++;
-
-                        }
-
-                       if (array_key_exists($key, $data) && $data[$key]) {
-                            //Sauvegarder la réponse ici
-                            //echo ;exit;
-                            //echo '<pre>';Debug::dump($choice);echo '</pre>';exit();
-                            //$copie->addProposition($proposition);
-
-                            $copie->setChoices($choice);
-                            $copie->setReponse(1);
-                        }else{
-
-                            $copie->setReponse(0);
-                            $copie->setChoices($choice);
-                        }
+                    if ($choice->getResponse() == 1) {
+                        //$checked = 0;
+                        $c1 = 'c' . $choice->getResponse();
+                    } else {
+                        //  $checked = 1;
+                        $c1 = 'c2' . $choice->getResponse();
                     }
 
 
+                    if ($data[$c1] == true) {
+                        echo "c'est bon ";
+                        exit();
+                    } else {
+                        echo "retente ta chance";
+                        exit();
+                    }
+
+                    if ($data[$key] && !$flag_reponse) {
+
+                        $flag_reponse = true;
+                        // $nb_rep_save++;
+
+                    }
+
+                    if (array_key_exists($key, $data) && $data[$key]) {
+                        //Sauvegarder la réponse ici
+                        //echo ;exit;
+                        //echo '<pre>';Debug::dump($choice);echo '</pre>';exit();
+                        //$copie->addProposition($proposition);
+
+                        $copie->setChoices($choice);
+                        $copie->setReponse(1);
+                    } else {
+
+                        $copie->setReponse(0);
+                        $copie->setChoices($choice);
+                    }
+                }
 
 
-                    $em->persist($copie);
-                    $em->flush();
-
+                $em->persist($copie);
+                $em->flush();
 
 
             }
@@ -223,6 +235,7 @@ class studentController extends Controller
             'form' => $form,
             'content' => $content,
             'contact' => $contact,
+            'fiche' => $fiche,
 
         );
     }

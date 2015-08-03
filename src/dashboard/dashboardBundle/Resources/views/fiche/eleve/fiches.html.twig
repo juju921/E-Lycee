@@ -1,4 +1,4 @@
-{% extends "dashboarddashboardBundle::base.html.twig" %}
+{% extends "dashboarddashboardBundle::baseEleves.html.twig" %}
 
 {% block body %}
     <div id="wrapper">
@@ -29,10 +29,10 @@
                         <td> {{ score.fiche.title | raw }}</td>
                         <td> {{ score.fiche.content | raw }}</td>
                         <td>
-                            {% if (score.status.nom  == "DONE") %}
-                                <a class='material-icons' disabled>check</a>
+                            {% if (score.status.nom  == "fait") %}
+                                <a class='material-icons' disabled>fait</a>
                             {% else %}
-                                <a class='material-icons' href="{{ url('student.fiches.make',{'id':score.id} ) }}">Valider</a>
+                                <a class='material-icons' href="{{ url('student.fiches.make',{'id':score.id} ) }}">à faire</a>
                             {% endif %}
                         </td>
     
