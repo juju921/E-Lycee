@@ -177,9 +177,9 @@ class studentController extends Controller
 
 
                         if($data[$c1] == true){
-                            echo "c'est bon ";exit();
+                            echo "réponse correcte ";exit();
                         }else{
-                            echo "retente ta chance";exit();
+                            echo "retentez votre chance";exit();
                         }
 
                         if($data[$key] && !$flag_reponse){

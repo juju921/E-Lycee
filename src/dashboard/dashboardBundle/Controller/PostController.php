@@ -61,7 +61,7 @@ class PostController extends Controller
 
             $em->flush();
             // message en session
-            $request->getSession()->getFlashBag()->set('notice', 'l article a été enregistre');
+            $request->getSession()->getFlashBag()->set('notice', "l' article a été enregistre");
 
             // on redirige l'utilisateur
             $url = $this->generateUrl('dashboard.default.user');
@@ -93,13 +93,13 @@ class PostController extends Controller
         $em = $doctrine->getManager();
         if (!$id) {
             $entity = new Contact();
-            $message = "Le contact a été ajouté";
+            $message = "L'article a été mis à jour'";
         } else {
 
 
             $repository = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
             $entity = $repository->find($id);
-            $message = "Le contact a été mis à jour";
+            $message = "L'article a été mis à jour";
         }
 
         $type = new PostsType();
@@ -148,7 +148,7 @@ class PostController extends Controller
         $em->remove($contact);
         $em->flush();
         // message en session
-        $message = "Le contact a été supprimé";
+        $message = "L'article a été supprimé";
         $request->getSession()->getFlashBag()->set('notice', $message);
         // on redirige l'utilisateur
         $url = $this->generateUrl('dashboard.default.index');
