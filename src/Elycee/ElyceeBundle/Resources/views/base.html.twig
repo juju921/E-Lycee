@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="Le site du E-Lycée">
     <meta name="author" content="E-Lycée">
 
@@ -19,6 +18,7 @@
         <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/lelycee-page.css') }}" rel="stylesheet" >
+        <link rel="icon" href="{{ asset('images/favicon.ico') }}" sizes="48x48">
     {% endblock %}
 </head>
 
@@ -40,25 +40,19 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
     
-
-    <!-- script btn FB -->
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4&appId=1434471260107201";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
+    <!-- script btn FB partage-->  
+    $( document ).ready(function() {
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4&appId=1434471260107201";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    });
     <!-- script btn twitter -->
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-
-
 {% endblock %}
-
-            
-
-
-</body>
+    </body>
 </html>

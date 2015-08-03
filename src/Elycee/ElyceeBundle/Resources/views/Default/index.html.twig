@@ -27,7 +27,7 @@
                         {{ posts.abstract | raw }}
                     </p>
                     <p class="asideread">
-                        <a class="btn btn-default btn-sm" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite...</a>
+                        <a class="btn btn-info btn-sm" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite...</a>
                     </p>
                     <p>Auteur : {{ posts.auteur }} - Publié le :{{ posts.date | date('d M Y') }}</p>
                     <p>
@@ -45,7 +45,7 @@
         <article>
         {% for posts in results %}
             <p>
-                <a href="#"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> {{posts.titre}}</a>
+                <a href="#"><span class="fa fa-minus" aria-hidden="true"></span>  {{posts.titre}}</a>
             </p>
         {% endfor %}
         </article>

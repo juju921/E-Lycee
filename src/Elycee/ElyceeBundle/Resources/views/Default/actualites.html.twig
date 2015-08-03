@@ -22,7 +22,7 @@
                 {{ posts.abstract | raw  }}
             </p>
             <p>
-                <a class="btn" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
+                <a class="btn btn-info" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
             </p>
             <p>Auteur : {{ posts.auteur }} - Publié le : {{ posts.date | date('d M Y') }}</p>
             <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
@@ -36,10 +36,13 @@
             A lire aussi
         </h2>
         <hr/>    
-        <p>
-            <a href="#"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> Philae endormi</a> <br />
-            <a href="#"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> Fusée Antares</a> <br />
-        </p>
+        <article>
+        {% for posts in results %}
+            <p>
+                <a href="#"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> {{posts.titre}}</a>
+            </p>
+        {% endfor %}
+        </article>
          
             <a class="twitter-timeline" href="https://twitter.com/ecolemultimedia" data-widget-id="624516677254946816">Tweets de @ecolemultimedia</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

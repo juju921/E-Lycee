@@ -15,7 +15,7 @@
                 <span><i class="fa fa-calendar"></i> {{ news.date | date('d M Y') }}</span>
                 <span><i class="fa fa-pencil"></i>{{ news.auteur }}</span>
             </div>
-            <p> {{ news.content }}</p>
+            <p> {{ news.content | raw }}</p>
         </div>
     </div>
 
