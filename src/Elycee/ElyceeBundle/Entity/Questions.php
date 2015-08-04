@@ -46,10 +46,6 @@ class Questions
 
 
 
-
-
-
-
     /**
      * @ORM\ManyToOne(targetEntity="fiches", inversedBy="questions")
      * @ORM\JoinColumn(name="fiche_id", referencedColumnName="id")

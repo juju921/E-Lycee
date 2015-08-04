@@ -1,11 +1,10 @@
+<form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
 
 <div class="form-group level">
     {{ form_label(form.titre, 'titre : ') }}
     {{ form_widget(form.titre,{'attr' : {'placeholder':'Saisissez un titre à afficher','class':'form-control'}}) }}
     {{ form_errors(form.titre) }}
 </div>
-
-
 
 
 <div class="form-group level">
@@ -22,6 +21,9 @@
 </ul>
 
 
+
+
+</form>
 
 <br/><br/><br/>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam error itaque? Architecto consectetur culpa facilis maiores nobis, quam voluptate! Aperiam cumque facere inventore itaque labore minima officia optio repellat.</p>

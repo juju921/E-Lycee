@@ -23,7 +23,8 @@ class QuestionsType extends AbstractType
                     'type'         => new ChoicesType(),
                     'allow_add'    => true,
                     'allow_delete' => true,
-                    'by_reference' => false
+                    'by_reference' => false,
+                    'prototype'=>true,
                 ))
         ;
     }

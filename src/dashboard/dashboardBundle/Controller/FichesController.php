@@ -16,6 +16,7 @@ use Elycee\ElyceeBundle\Form\ChoicesType;
 use Elycee\ElyceeBundle\Entity\Choices;
 use Elycee\ElyceeBundle\Entity\Questions;
 use Elycee\ElyceeBundle\Form\QuestionsType;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 
 
@@ -50,6 +51,7 @@ class FichesController extends Controller
      */
     public function createAction(Request $request)
     {
+
         $token = $this->get('security.context')->getToken();
 
         $doctrine = $this->getDoctrine();
@@ -61,6 +63,9 @@ class FichesController extends Controller
         $ficheType = new FichesType();
         $questions = new questions();
         $questionsType = new QuestionsType();
+        $choices = new Choices();
+        $choicesTypes = new ChoicesType();
+
 
         $form = $this->createForm($ficheType, $fiche);
         $formQuestion = $this->createForm($questionsType, $questions);
@@ -75,20 +80,27 @@ class FichesController extends Controller
                 $data->setStatus($status);
 
 
-              //  $dataQuestion->setChoices($dataQuestion->getChoices());
-              //  $data->setQuestions($data->getQuestions());
-                //$data->setChoices($data->getChoices());
+              $data->setQuestions($data->getQuestions());
                 $em->persist($data);
-               // $em->persit($dataQuestion);
                 $em->flush();
-                $message = "Votre fiche a été créée";
+                $idfiches = $fiche->getId();
+                $test =  $request->getSession()->set('name', $idfiches);
+                $message = "Votre fiche a été créée".$test;
                 $request->getSession()->getFlashBag()->set('notice', $message);
-                $urlRedirect = $this->generateUrl('dashboard.default.index');
 
+                $urlRedirect = $this->generateUrl('dashboard.fiches.new');
+
+
+
+              // echo '<pre>';Debug::dump($fiche->getId());echo '</pre>';exit();
                 return $this->redirect($urlRedirect);
             }
         }
-        return array('form' => $form->createView());
+        return array(
+            'form' => $form->createView(),
+
+
+        );
     }
 
 
