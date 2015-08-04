@@ -69,6 +69,8 @@ class studentController extends Controller
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
+        $scores = $scoreRp->getScoreSeenStudent($token->getUser()->getId());
+        $score = $scoreRp->find($id);
 
         $copie = new Copie();
         $copieType = new CopieType();
@@ -106,14 +108,14 @@ class studentController extends Controller
                     //  $nb_rep_save++;
                     $flag_reponse = true;
                 }
-                /*$form->add('c' . $choice->getId(), 'checkbox', array(
+                $form->add('c' . $choice->getId(), 'checkbox', array(
                     'required' => false,
                     'attr' => array(
                         'checked' => $checked,
                         'label' => $content,
 
-                    )));*/
-                $form->add('c' . $choice->getId(), 'choice', array(
+                    )));
+                /*$form->add('c' . $choice->getId(), 'choice', array(
                     'choices' => array('0' => 'oui', '1'=>'non'),
                     //'choices' => array('h' => 'femme', 'f'=> 'homme'),
                     //'label'     => $content,
@@ -123,24 +125,24 @@ class studentController extends Controller
                     'required' => false,
                     'empty_value' => false,
 
-                ));
+                ));*/
 
             } else {
-               /* $form->add('c' . $choice->getId(), 'checkbox', array(
+                $form->add('c' . $choice->getId(), 'checkbox', array(
                     'required' => false,
                     'label' => $content,
-                ));*/
-                $form->add('c' . $choice->getId(), 'choice', array(
-                    'choices' => array('0' => 'oui', '1'=>'non'),
-                    //'choices' => array('h' => 'femme', 'f'=> 'homme'),
-                    //'label'     => $content,
-                    'expanded' => true,
-
-                    'mapped' => false,
-                    'required' => false,
-                    'empty_value' => false,
-
                 ));
+                /* $form->add('c' . $choice->getId(), 'choice', array(
+                     'choices' => array('0' => 'oui', '1'=>'non'),
+                     //'choices' => array('h' => 'femme', 'f'=> 'homme'),
+                     //'label'     => $content,
+                     'expanded' => true,
+
+                     'mapped' => false,
+                     'required' => false,
+                     'empty_value' => false,
+
+                 ));*/
 
 
             }
@@ -183,45 +185,44 @@ class studentController extends Controller
                     if ($choice->getResponse() == 1) {
                         //$checked = 0;
                         $c1 = 'c' . $choice->getResponse();
+                        // echo '<pre>';Debug::dump($c1);echo '</pre>';exit();
                     } else {
                         //  $checked = 1;
                         $c1 = 'c2' . $choice->getResponse();
+                        //echo '<pre>';Debug::dump($c1);echo '</pre>';exit();
                     }
 
-
+                    // echo '<pre>';Debug::dump($data[$c1]);echo '</pre>';exit();
                     if ($data[$c1] == true) {
-                        echo "c'est bon ";
-                        exit();
+
+                        echo "c'est bon";
+                        $note = $choice->getPoint();
+
+                        $status = $doctrine->getRepository('ElyceeElyceeBundle:Status');
+                        $done = $status->findOneBy(array('nom' => 'fait'));
+
+
+                        $score->setNote($note);
+                        $score->setStatus($done);
+                        $em->persist($score);
+                        $em->flush();
+
+
                     } else {
-                        echo "retente ta chance";
-                        exit();
+                        $status = $doctrine->getRepository('ElyceeElyceeBundle:Status');
+                        $done = $status->findOneBy(array('nom' => 'fait'));
+                        // $score->setStudent(getUser()->getId());
+
+
+                        $score->setNote($note);
+                        $score->setStatus($done);
+                        $em->persist($score);
+                        $em->flush();
+
                     }
 
-                    if ($data[$key] && !$flag_reponse) {
 
-                        $flag_reponse = true;
-                        // $nb_rep_save++;
-
-                    }
-
-                    if (array_key_exists($key, $data) && $data[$key]) {
-                        //Sauvegarder la réponse ici
-                        //echo ;exit;
-                        //echo '<pre>';Debug::dump($choice);echo '</pre>';exit();
-                        //$copie->addProposition($proposition);
-
-                        $copie->setChoices($choice);
-                        $copie->setReponse(1);
-                    } else {
-
-                        $copie->setReponse(0);
-                        $copie->setChoices($choice);
-                    }
                 }
-
-
-                $em->persist($copie);
-                $em->flush();
 
 
             }

@@ -34,9 +34,7 @@
                             {% else %}
                                 <a class='material-icons' href="{{ url('student.fiches.make',{'id':score.id} ) }}">à faire</a>
                             {% endif %}
-                        </td>
-    
-                        <td>
+
                             <td>
                                 {% if (score.status.nom  == "DONE") %}
                                     <a class='material-icons' disabled>check</a>

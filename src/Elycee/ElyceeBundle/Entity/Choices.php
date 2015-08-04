@@ -50,8 +50,8 @@ class Choices
      * @ORM\ManyToOne(targetEntity="fiches", inversedBy="choices")
      * @ORM\JoinColumn(name="fiche_id", referencedColumnName="id")
      *
-     */
-    private $fiche;
+
+    private $fiche;  */
 
 
     /**
@@ -60,6 +60,11 @@ class Choices
      *
      */
     private $question;
+
+
+
+
+
 
 
 
@@ -153,28 +158,15 @@ class Choices
 
 
 
-    /**
-     * Set fiche
-     *
-     * @param \Elycee\ElyceeBundle\Entity\fiches $fiche
-     * @return Choices
-     */
-    public function setFiche(\Elycee\ElyceeBundle\Entity\fiches $fiche = null)
-    {
-        $this->fiche = $fiche;
 
-        return $this;
-    }
 
-    /**
-     * Get fiche
-     *
-     * @return \Elycee\ElyceeBundle\Entity\fiches 
-     */
-    public function getFiche()
-    {
-        return $this->fiche;
-    }
+
+
+
+
+
+
+
 
     /**
      * Set question

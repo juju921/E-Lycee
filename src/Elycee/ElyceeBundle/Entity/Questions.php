@@ -3,6 +3,7 @@
 namespace Elycee\ElyceeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Questions
@@ -36,10 +37,18 @@ class Questions
     private $content;
 
 
+
     /**
      * @ORM\OneToMany(targetEntity="Choices", mappedBy="question",  cascade={"persist","remove"})
      */
     protected $choices;
+
+
+
+
+
+
+
 
     /**
      * @ORM\ManyToOne(targetEntity="fiches", inversedBy="questions")
@@ -47,6 +56,11 @@ class Questions
      *
      */
     private $fiche;
+
+
+
+
+
 
 
 
@@ -115,8 +129,6 @@ class Questions
 
 
 
-
-
     public function setChoices(ArrayCollection $choices)
     {
         foreach ($choices as $choice) {
@@ -126,6 +138,31 @@ class Questions
     }
 
 
+
+
+
+    /**
+     * Set fiche
+     *
+     * @param \Elycee\ElyceeBundle\Entity\fiches $fiche
+     * @return Questions
+     */
+    public function setFiche(\Elycee\ElyceeBundle\Entity\fiches $fiche = null)
+    {
+        $this->fiche = $fiche;
+
+        return $this;
+    }
+
+    /**
+     * Get fiche
+     *
+     * @return \Elycee\ElyceeBundle\Entity\fiches 
+     */
+    public function getFiche()
+    {
+        return $this->fiche;
+    }
 
 
 
@@ -161,33 +198,4 @@ class Questions
     {
         return $this->choices;
     }
-
-    /**
-     * Set fiche
-     *
-     * @param \Elycee\ElyceeBundle\Entity\fiches $fiche
-     * @return Questions
-     */
-    public function setFiche(\Elycee\ElyceeBundle\Entity\fiches $fiche = null)
-    {
-        $this->fiche = $fiche;
-
-        return $this;
-    }
-
-    /**
-     * Get fiche
-     *
-     * @return \Elycee\ElyceeBundle\Entity\fiches 
-     */
-    public function getFiche()
-    {
-        return $this->fiche;
-    }
-
-
-
-
-
-
 }

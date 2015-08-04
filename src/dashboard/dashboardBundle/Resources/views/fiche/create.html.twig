@@ -1,4 +1,4 @@
-    {% extends "dashboarddashboardBundle::base.html.twig" %}
+{% extends "dashboarddashboardBundle::base.html.twig" %}
 
 {% block body %}
     <div id="wrapper">
@@ -17,29 +17,31 @@
 
                 <div class="form-group">
                     {{ form_label(form.title, 'Titre du Quizz : ') }}
-                    {{ form_widget(form.title,{'attr' : {'placeholder':'Saisissez le titre du Quizz','class':'form-control'}}) }}
+                    {{ form_widget(form.title,{'attr' : {'placeholder':'Saisissez le titre du Quizz','class':'form-control' }}
+                    ) }}
                     {{ form_errors(form.title) }}
                 </div>
 
                 <div class="form-group">
                     {{ form_label(form.matiere, 'matieres : ') }}
-                    {{ form_widget(form.matiere,{'attr' : {'placeholder':'Saisissez la matiere','class':'form-control'}}) }}
+                    {{ form_widget(form.matiere,{'attr' : {'placeholder':'Saisissez la matiere','class':'form-control' }}
+                    ) }}
                     {{ form_errors(form.matiere) }}
                 </div>
                 <div class="form-group">
                     {{ form_label(form.content, 'Question : ') }}
-                    {{ form_widget(form.content,{'attr' : {'class':'form-control'}}) }}
+                    {{ form_widget(form.content,{'attr' : {'class':'form-control' }}) }}
                     {{ form_errors(form.content) }}
                 </div>
                 <div class="form-group level">
                     {{ form_label(form.classes, 'Classes : ') }}
-                    {{ form_widget(form.classes,{'attr' : {'class':'form-control tinymce'}}) }}
+                    {{ form_widget(form.classes,{'attr' : {'class':'form-control tinymce' }}) }}
                     {{ form_errors(form.classes) }}
                 </div>
 
                 <div class="form-group level">
                     {{ form_label(form.status, 'Status : ') }}
-                    {{ form_widget(form.status,{'attr' : {'class':'form-control tinymce'}}) }}
+                    {{ form_widget(form.status,{'attr' : {'class':'form-control tinymce' }}) }}
                     {{ form_errors(form.status) }}
                 </div>
 
@@ -48,16 +50,15 @@
             {{ include('dashboarddashboardBundle:inc:questions-prototypes.html.twig', { 'form': form.questions.vars.prototype }) }}
           {% endfilter %}
         ">
-                </ul>
+   </ul>
 
 
 
-                <ul class="tags" data-prototype="
-          {% filter escape %}
-            {{ include('dashboarddashboardBundle:inc:choices-prototype.html.twig', { 'form': form.choices.vars.prototype }) }}
-          {% endfilter %}
-        ">
-                </ul>
+
+
+
+
+
 
 
 

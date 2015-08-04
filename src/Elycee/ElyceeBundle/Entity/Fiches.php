@@ -74,8 +74,8 @@ class Fiches
 
     /**
      * @ORM\OneToMany(targetEntity="Choices", mappedBy="fiche",  cascade={"persist","remove"})
-     */
-    protected $choices;
+
+    protected $choices;*/
 
 
 
@@ -161,7 +161,7 @@ class Fiches
      */
     public function __construct()
     {
-        $this->choices = new \Doctrine\Common\Collections\ArrayCollection();
+        //$this->choices = new \Doctrine\Common\Collections\ArrayCollection();
         $this->questions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -228,13 +228,13 @@ class Fiches
 
 
 
-    public function setChoices(ArrayCollection $choices)
+   /* public function setChoices(ArrayCollection $choices)
     {
         foreach ($choices as $choice) {
             $choice->setFiche($this);
         }
         $this->choices = $choices;
-    }
+    }*/
 
 
 
@@ -294,39 +294,6 @@ class Fiches
     public function getScores()
     {
         return $this->scores;
-    }
-
-    /**
-     * Add choices
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Choices $choices
-     * @return Fiches
-     */
-    public function addChoice(\Elycee\ElyceeBundle\Entity\Choices $choices)
-    {
-        $this->choices[] = $choices;
-
-        return $this;
-    }
-
-    /**
-     * Remove choices
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Choices $choices
-     */
-    public function removeChoice(\Elycee\ElyceeBundle\Entity\Choices $choices)
-    {
-        $this->choices->removeElement($choices);
-    }
-
-    /**
-     * Get choices
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getChoices()
-    {
-        return $this->choices;
     }
 
 

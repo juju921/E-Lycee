@@ -94,6 +94,7 @@ class DefaultController extends BaseController
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
         $results = $rc->getThePost();
+        
         return array('results' => $results);
 
 

@@ -23,4 +23,17 @@ class UserRepository extends EntityRepository
 
 
     }
+
+
+    public function getUserEleves(){
+        $results = $this
+            ->createQueryBuilder('p')
+            ->select('p.username')
+            ->where('p.roles = \'ROLE_STUDENT\'')
+            ->getQuery()
+            ->getResult();
+        return $results;
+
+
+    }
 }

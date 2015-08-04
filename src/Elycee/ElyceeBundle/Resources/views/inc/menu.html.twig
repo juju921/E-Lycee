@@ -8,7 +8,7 @@
         </a>
         <ul class="dropdown-menu">
             {% if is_granted('ROLE_STUDENT') %}
-                <li><a href="#">Fiches</a></li>
+                <li><a href="{{ path('student.fiches.home') }}">Fiches</a></li>
                 <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
             {% elseif is_granted('ROLE_TEACHER') %}
                 <li><a href="{{ url('dashboard.default.index') }}">Administration</a></li>

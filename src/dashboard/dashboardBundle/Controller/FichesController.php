@@ -75,11 +75,11 @@ class FichesController extends Controller
                 $data->setStatus($status);
 
 
-                $dataQuestion->setChoices($dataQuestion->getChoices());
-                $data->setQuestions($data->getQuestions());
-                $data->setChoices($data->getChoices());
+              //  $dataQuestion->setChoices($dataQuestion->getChoices());
+              //  $data->setQuestions($data->getQuestions());
+                //$data->setChoices($data->getChoices());
                 $em->persist($data);
-                $em->persit($dataQuestion);
+               // $em->persit($dataQuestion);
                 $em->flush();
                 $message = "Votre fiche a été créée";
                 $request->getSession()->getFlashBag()->set('notice', $message);
@@ -90,6 +90,61 @@ class FichesController extends Controller
         }
         return array('form' => $form->createView());
     }
+
+
+
+
+    /**
+     * @Route("dashboard/choix/new", name="dashboard.choix.new")
+     * @Template("dashboarddashboardBundle:fiche:createchoix.html.twig")
+     * @Method({"POST","GET"})
+     */
+    public function createChoicesAction(Request $request)
+    {
+        $token = $this->get('security.context')->getToken();
+
+        $doctrine = $this->getDoctrine();
+        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Status');
+        //$unpublished = $repository->findOneBy(array('nom'=>'UNPUBLISHED'));
+        $user = $token->getUser();
+        $em = $doctrine->getManager();
+        $fiche = new Fiches();
+        $ficheType = new FichesType();
+        $questions = new questions();
+        $questionsType = new QuestionsType();
+
+        $form = $this->createForm($questionsType, $questions);
+
+        $form->handleRequest($request);
+        if ($request->isMethod('POST')) {
+            if ($form->isValid() && $form->isSubmitted()) {
+
+                $data = $form->getData();
+
+
+
+               // $data->setChoices($data->getChoices());
+                $em->persist($data);
+                $em->flush();
+                $message = "Vos réponses ont été créée";
+                $request->getSession()->getFlashBag()->set('notice', $message);
+                $urlRedirect = $this->generateUrl('dashboard.default.index');
+
+                return $this->redirect($urlRedirect);
+            }
+        }
+        return array('form' => $form->createView());
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     /**
@@ -126,6 +181,22 @@ class FichesController extends Controller
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /**

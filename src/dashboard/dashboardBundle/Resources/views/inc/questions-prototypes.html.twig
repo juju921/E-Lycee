@@ -14,6 +14,19 @@
     {{ form_errors(form.content) }}
 </div>
 
+<ul class="tags" data-prototype="
+{% filter escape %}
+{{ include('dashboarddashboardBundle:inc:choices-prototype.html.twig', { 'form': form.choices.vars.prototype }) }}
+{% endfilter %}
+">
+</ul>
+
+
+
+<br/><br/><br/>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam error itaque? Architecto consectetur culpa facilis maiores nobis, quam voluptate! Aperiam cumque facere inventore itaque labore minima officia optio repellat.</p>
+
+
 
 
 
