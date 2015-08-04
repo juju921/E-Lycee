@@ -14,6 +14,10 @@ use Elycee\ElyceeBundle\Entity\Fiches;
 use Elycee\ElyceeBundle\Form\FichesType;
 use Elycee\ElyceeBundle\Form\ChoicesType;
 use Elycee\ElyceeBundle\Entity\Choices;
+use Elycee\ElyceeBundle\Entity\Questions;
+use Elycee\ElyceeBundle\Form\QuestionsType;
+
+
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Elycee\ElyceeBundle\Entity\Status;
@@ -55,19 +59,27 @@ class FichesController extends Controller
         $em = $doctrine->getManager();
         $fiche = new Fiches();
         $ficheType = new FichesType();
+        $questions = new questions();
+        $questionsType = new QuestionsType();
 
         $form = $this->createForm($ficheType, $fiche);
+        $formQuestion = $this->createForm($questionsType, $questions);
+        $formQuestion->handleRequest($request);
         $form->handleRequest($request);
         if ($request->isMethod('POST')) {
             if ($form->isValid() && $form->isSubmitted()) {
+                $dataQuestion = $formQuestion->getData();
                 $data = $form->getData();
                 $data->setTeacher($user);
                 $status = $form["status"]->getData();
                 $data->setStatus($status);
 
 
+                $dataQuestion->setChoices($dataQuestion->getChoices());
+                $data->setQuestions($data->getQuestions());
                 $data->setChoices($data->getChoices());
                 $em->persist($data);
+                $em->persit($dataQuestion);
                 $em->flush();
                 $message = "Votre fiche a été créée";
                 $request->getSession()->getFlashBag()->set('notice', $message);

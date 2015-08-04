@@ -79,6 +79,13 @@ class Fiches
 
 
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="Questions", mappedBy="fiche",  cascade={"persist","remove"})
+     */
+    protected $questions;
+
+
     /**
      * @ORM\OneToMany(targetEntity="Scores", mappedBy="fiche", cascade={"persist","remove"})
      *
@@ -125,6 +132,7 @@ class Fiches
 
 
 
+
     /**
      * Set content
      *
@@ -154,6 +162,7 @@ class Fiches
     public function __construct()
     {
         $this->choices = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->questions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -206,6 +215,13 @@ class Fiches
 
 
 
+    public function setQuestions(ArrayCollection $questions)
+    {
+        foreach ($questions as $question) {
+            $question->setFiche($this);
+        }
+        $this->questions = $questions;
+    }
 
 
 
@@ -337,5 +353,38 @@ class Fiches
     public function getMatiere()
     {
         return $this->matiere;
+    }
+
+    /**
+     * Add questions
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Questions $questions
+     * @return Fiches
+     */
+    public function addQuestion(\Elycee\ElyceeBundle\Entity\Questions $questions)
+    {
+        $this->questions[] = $questions;
+
+        return $this;
+    }
+
+    /**
+     * Remove questions
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Questions $questions
+     */
+    public function removeQuestion(\Elycee\ElyceeBundle\Entity\Questions $questions)
+    {
+        $this->questions->removeElement($questions);
+    }
+
+    /**
+     * Get questions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
     }
 }

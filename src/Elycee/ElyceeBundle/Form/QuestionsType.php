@@ -2,14 +2,12 @@
 
 namespace Elycee\ElyceeBundle\Form;
 
-use Elycee\ElyceeBundle\Entity\Questions;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Elycee\ElyceeBundle\Form\ChoicesType;
-use Elycee\ElyceeBundle\Form\QuestionsType;
 
-class FichesType extends AbstractType
+class QuestionsType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -18,34 +16,15 @@ class FichesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('matiere')
-            ->add('title')
+            ->add('titre')
             ->add('content')
-            ->add('teacher')
-            ->add('classes', 'entity',array(
-                'class' => 'ElyceeElyceeBundle:Classes',
-                'property' => 'classLevel'
-            ))
-            ->add('status', 'entity' ,array(
-                    'class'=> 'ElyceeElyceeBundle:Status',
-                    'property' => 'nom'
-                    ))
-
             ->add('choices', 'collection',
                 array(
-                'type'         => new ChoicesType(),
-                'allow_add'    => true,
-                'allow_delete' => true,
-                'by_reference' => false
-                ))
-            ->add('questions', 'collection',
-                array(
-                    'type'         => new QuestionsType(),
+                    'type'         => new ChoicesType(),
                     'allow_add'    => true,
                     'allow_delete' => true,
                     'by_reference' => false
                 ))
-
         ;
     }
     
@@ -55,7 +34,7 @@ class FichesType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Elycee\ElyceeBundle\Entity\Fiches'
+            'data_class' => 'Elycee\ElyceeBundle\Entity\Questions'
         ));
     }
 
@@ -64,6 +43,6 @@ class FichesType extends AbstractType
      */
     public function getName()
     {
-        return 'elycee_elyceebundle_fiches';
+        return 'elycee_elyceebundle_questions';
     }
 }

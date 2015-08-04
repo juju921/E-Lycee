@@ -37,6 +37,20 @@ class Questions
 
 
     /**
+     * @ORM\OneToMany(targetEntity="Choices", mappedBy="question",  cascade={"persist","remove"})
+     */
+    protected $choices;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="fiches", inversedBy="questions")
+     * @ORM\JoinColumn(name="fiche_id", referencedColumnName="id")
+     *
+     */
+    private $fiche;
+
+
+
+    /**
      * Get id
      *
      * @return integer 
@@ -91,4 +105,89 @@ class Questions
     {
         return $this->content;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->choices = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+
+
+
+    public function setChoices(ArrayCollection $choices)
+    {
+        foreach ($choices as $choice) {
+            $choice->setQuestion($this);
+        }
+        $this->choices = $choices;
+    }
+
+
+
+
+
+    /**
+     * Add choices
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Choices $choices
+     * @return Questions
+     */
+    public function addChoice(\Elycee\ElyceeBundle\Entity\Choices $choices)
+    {
+        $this->choices[] = $choices;
+
+        return $this;
+    }
+
+    /**
+     * Remove choices
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Choices $choices
+     */
+    public function removeChoice(\Elycee\ElyceeBundle\Entity\Choices $choices)
+    {
+        $this->choices->removeElement($choices);
+    }
+
+    /**
+     * Get choices
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getChoices()
+    {
+        return $this->choices;
+    }
+
+    /**
+     * Set fiche
+     *
+     * @param \Elycee\ElyceeBundle\Entity\fiches $fiche
+     * @return Questions
+     */
+    public function setFiche(\Elycee\ElyceeBundle\Entity\fiches $fiche = null)
+    {
+        $this->fiche = $fiche;
+
+        return $this;
+    }
+
+    /**
+     * Get fiche
+     *
+     * @return \Elycee\ElyceeBundle\Entity\fiches 
+     */
+    public function getFiche()
+    {
+        return $this->fiche;
+    }
+
+
+
+
+
+
 }
