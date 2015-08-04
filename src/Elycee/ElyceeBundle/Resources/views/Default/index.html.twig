@@ -12,12 +12,21 @@
         {% endif %}
         <div class="col-lg-6 col-md-6">
             <div class="thumbnail">
-                    <p>
-                        <a  href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">
-                            <img src=" {{ pictureUrl }}" class="img-responsive" alt="" />
-                        </a>
-                    </p>
-                <div class="caption">
+                            <div class="content">
+                                <div class="grid">
+                                    <figure class="effect-Elycee">
+                                        <a  href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">
+                                            <img src=" {{ pictureUrl }}" class="img-responsive" alt="" />
+                                        
+                                        <figcaption>
+                                            <p>Lire la suite...</p>
+                                        </figcaption>
+                                        </a>           
+                                    </figure>
+                                </div>
+                            </div>
+                       
+                <div class="caption-home">
                     <h2>
                         <a  href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">
                         {{ posts.titre }}
@@ -26,9 +35,9 @@
                     <p>
                         {{ posts.abstract | raw }}
                     </p>
-                    <p class="asideread">
+                    <!-- <p class="asideread">
                         <a class="btn btn-info btn-sm" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite...</a>
-                    </p>
+                    </p> -->
                     <p>Auteur : {{ posts.auteur }} - Publié le :{{ posts.date | date('d M Y') }}</p>
                     <p>
                         <a href="#"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</a>

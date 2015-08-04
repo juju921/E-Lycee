@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $('.collapse').collapse();
-    // Récupère le div qui contient la collection de tags
+    // Récupère le div qui contient la collection de tags 
+
     var collectionHolder = $('ul.tags');
     var collectionHolderes = $('ul.questions');
 
@@ -105,4 +106,7 @@ $(document).ready(function () {
     */
     }
 
+
 });
+
+

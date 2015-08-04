@@ -8,7 +8,7 @@ body {
 }
 
 .h1, h1{
-    color:#e06619;
+    color:#FFE6D2;
 }
 
 .h2, h2{
@@ -65,6 +65,19 @@ a:hover{
 
 .asideread{
     margin-bottom: 25px;
+}
+
+.textFooter{
+  color: white;
+}
+
+a.textFooter:hover{
+  text-decoration: underline;
+  color: white;
+}
+
+a.textFooter:focus{
+  color: white;
 }
 
 .btnsocial{
@@ -153,6 +166,10 @@ a:hover{
 .thumbnail {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 2%;
+}
+
+.caption-home {
+    padding: 250px 10px 0px;
 }
 
 @media (min-width: 768px)

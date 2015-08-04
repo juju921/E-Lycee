@@ -14,22 +14,29 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,700italic,300italic,300,400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,500,600' rel='stylesheet' type='text/css'>
         <link href="{{ asset('css/bootstrap-social.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" >
         <link href="{{ asset('css/lelycee-page.css') }}" rel="stylesheet" >
+        <link href="{{ asset('css/normalize.css') }}" rel="stylesheet" >
+        <link href="{{ asset('css/set2.css') }}" rel="stylesheet" >
         <link rel="icon" href="{{ asset('images/favicon.ico') }}" sizes="48x48">
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
     {% endblock %}
 </head>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
+            
             {% include 'ElyceeElyceeBundle::inc/menu.html.twig' %}
 
          <body>
             {% block body %}
-
+<div class="fb-root"></div>
             {% endblock %}
 
             {% include 'ElyceeElyceeBundle::inc/footer.html.twig' %}
@@ -39,9 +46,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
+
     
     <!-- script btn FB partage-->  
-    $( document ).ready(function() {
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
@@ -49,7 +56,7 @@
           js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4&appId=1434471260107201";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-    });
+    
     <!-- script btn twitter -->
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
