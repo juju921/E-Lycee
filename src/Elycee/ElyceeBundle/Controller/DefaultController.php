@@ -15,6 +15,9 @@ use Elycee\ElyceeBundle\Form\ContactType;
 use Elycee\ElyceeBundle\Entity\Contact;
 use Elycee\ElyceeBundle\Entity\Comments;
 use Elycee\ElyceeBundle\Form\CommentsType;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Exception\NotValidCurrentPageException;
 
 
 class DefaultController extends BaseController
@@ -84,7 +87,7 @@ class DefaultController extends BaseController
     }
 
     /**
-     * @Route("/actualites", name="ElyceeBundle.default.actualites")
+     * @Route("/actualites", name="ElyceeBundle.default.actualites", defaults={"page" = "1"})
      * @Template("ElyceeElyceeBundle:Default:actualites.html.twig")
      */
     public function actualitesAction()
@@ -94,8 +97,18 @@ class DefaultController extends BaseController
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
         $results = $rc->getThePost();
+        $pagerfanta = new Pagerfanta(new DoctrineORMAdapter($results));
+        $pagerfanta->setMaxPerPage(4);
+
+        try {
+            $pagerfanta->setCurrentPage($page);
+        } catch(NotValidCurrentPageException $e) {
+            throw new NotFoundHttpException();
+        }
         
-        return array('results' => $results);
+        return array('results' => $results,
+                    'examples' => $pagerfanta);
+
 
 
     }
@@ -144,7 +157,7 @@ class DefaultController extends BaseController
             'news' => $news,
             'form' => $formCommentaire->createView(),
             'userOnline' => $userOnline,
-            'user' => $user
+            'user' => $user,
 
         );
     }
