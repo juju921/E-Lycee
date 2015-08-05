@@ -5,7 +5,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Création d'une nouvelle fiche</h1>
+                    <h1 class="page-header">Création d'une nouvelle question</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -28,22 +28,16 @@
                     {{ form_errors(form.content) }}
                 </div>
 
-                <ul class="tags" data-prototype="
+             {#   <ul class="tags" data-prototype="
 {% filter escape %}
 {{ include('dashboarddashboardBundle:inc:choices-prototype.html.twig', { 'form': form.choices.vars.prototype }) }}
 {% endfilter %}
 ">
+                </ul>#}
+
+                <ul class="choices list-group" data-prototype="{{ form_widget(form.choices.vars.prototype)|e }}">
                 </ul>
-
-
-
-
-
-
-
-
-
-
+                <a href="#" role="button" class="btn btn-primary add_choice_link"><i class="fa fa-plus"></i>Ajouter une réponse</a>
 
 
 

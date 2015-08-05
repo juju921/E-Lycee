@@ -45,7 +45,7 @@ class FichesType extends AbstractType
                     'allow_delete' => true,
                     'by_reference' => false
                 ))
-
+            ->add('nbr', 'integer', array('mapped' => false));
         ;
     }
     
