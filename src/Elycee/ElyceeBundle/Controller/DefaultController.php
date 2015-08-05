@@ -87,7 +87,7 @@ class DefaultController extends BaseController
     }
 
     /**
-     * @Route("/actualites", name="ElyceeBundle.default.actualites", defaults={"page" = "1"})
+     * @Route("/actualites", name="ElyceeBundle.default.actualites", defaults={"results" = "1"})
      * @Template("ElyceeElyceeBundle:Default:actualites.html.twig")
      */
     public function actualitesAction()
@@ -101,7 +101,7 @@ class DefaultController extends BaseController
         $pagerfanta->setMaxPerPage(4);
 
         try {
-            $pagerfanta->setCurrentPage($page);
+            $pagerfanta->setCurrentPage($results);
         } catch(NotValidCurrentPageException $e) {
             throw new NotFoundHttpException();
         }
