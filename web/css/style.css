@@ -4,12 +4,14 @@ body {
     background-color: #709095;
     background-image: url("../images/bg.jpg");
     background-size: cover;
-
-
 }
 
 .h1, h1{
     color:#3E4645;
+}
+
+h1 a:hover{
+    text-decoration: none;
 }
 
 .h2, h2{
@@ -170,6 +172,11 @@ a.textFooter:focus{
 
 .caption-home {
     padding: 0px 10px 0px;
+}
+
+.caption-home p {
+    max-height: 35px;
+    overflow: hidden;
 }
 
 @media (min-width: 768px)
