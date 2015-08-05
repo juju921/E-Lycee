@@ -3,6 +3,7 @@ body {
     font-weight: 300;
     background-color: #709095;
     background-image: url("../images/bg.jpg");
+    background-size: cover;
 }
 
 .h1, h1{
