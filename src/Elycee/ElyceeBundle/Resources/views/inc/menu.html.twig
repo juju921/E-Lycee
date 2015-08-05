@@ -64,7 +64,8 @@
                         <a href="{{ path('ElyceeBundle.default.index') }}">Home</a>
                     </li>
                     <li {% if app.request.attributes.get('_route') == "ElyceeBundle.default.actualites" %}class="active"{% endif %}>
-                        <a href="{{ path('ElyceeBundle.default.actualites') }}">Actus</a>
+                        <a href="{{  url('ElyceeBundle.default.actualites', {'page': 1}) }}">Actus</a>
+
                     </li>
                     <li {% if app.request.attributes.get('_route') == "ElyceeBundle.default.lelycee" %}class="active"{% endif %}>
                         <a href="{{ path('ElyceeBundle.default.lelycee') }}">Le Lycée</a>

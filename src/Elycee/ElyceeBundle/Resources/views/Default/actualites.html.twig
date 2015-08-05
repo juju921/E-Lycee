@@ -5,7 +5,8 @@
 
 
     <div class="col-lg-8 col-md-8 thumbnail">
-    {% for posts in results %}
+    {% for posts in pagerfanta.currentPageResults %}
+    {#{% for posts in results %}#}
         {%  if  posts.urlThumbnail.fileName is defined and posts.urlThumbnail.fileName != NULL %}
             {% set pictureUrl = asset("images/news/"~posts.urlThumbnail.fileName) %}
         {% else %}
@@ -29,8 +30,18 @@
             <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
         </div>
         <br>
+
+
+
+
+
     {% endfor %}
-    <div>{{ pagerfanta(examples) }}</div>
+
+        {{ pagerfanta(pagerfanta, 'twitter_bootstrap3') }}
+
+
+
+
 
 
 

@@ -24,7 +24,7 @@ class DefaultController extends BaseController
 {
 
     /**
-     * @Route("/home", name="ElyceeBundle.default.index")
+     * @Route("/home/", name="ElyceeBundle.default.index")
      * @Template("ElyceeElyceeBundle:Default:index.html.twig")
      */
     public function indexAction(Request $request)
@@ -87,27 +87,54 @@ class DefaultController extends BaseController
     }
 
     /**
-     * @Route("/actualites", name="ElyceeBundle.default.actualites", defaults={"page" = "1"})
+     * @Route("/actualites/{page}", name="ElyceeBundle.default.actualites", defaults={"page" = "1"},  requirements={"page" = "\d+"},)
      * @Template("ElyceeElyceeBundle:Default:actualites.html.twig")
      */
-    public function actualitesAction()
+    public function actualitesAction($page, Request $request)
     {
 
 
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
         $results = $rc->getThePost();
-        $pagerfanta = new Pagerfanta(new DoctrineORMAdapter($results));
-        $pagerfanta->setMaxPerPage(4);
+
+
+        $qb = $this->getDoctrine()->getEntityManager()->createQueryBuilder()
+            ->select('Posts')
+            ->from('Elycee\ElyceeBundle\Entity\Posts', 'Posts')
+        ;
+
+
+        $adapter = new DoctrineORMAdapter($qb);
+        $pagerfanta = new Pagerfanta($adapter);
+        $pagerfanta->setMaxPerPage(1);
+        $pagerfanta->setCurrentPage($page);
+        $entities = $pagerfanta->getCurrentPageResults();
+
+       /* $pagerfanta = new Pagerfanta(new DoctrineORMAdapter($results));
+        $pagerfanta->setMaxPerPage(4);*/
+
 
         try {
-            $pagerfanta->setCurrentPage($page);
-        } catch(NotValidCurrentPageException $e) {
-            throw new NotFoundHttpException();
+            $entities = $pagerfanta
+                // Le nombre maximum d'éléments par page
+                ->setMaxPerPage(3)
+                // Notre position actuelle (numéro de page)
+                ->setCurrentPage($page)
+                // On récupère nos entités via Pagerfanta,
+                // celui-ci s'occupe de limiter la requête en fonction de nos réglages.
+                ->getCurrentPageResults()
+            ;
+        } catch (\Pagerfanta\Exception\NotValidCurrentPageException $e) {
+            throw $this->createNotFoundException("Cette page n'existe pas.");
         }
-        
+
+
         return array('results' => $results,
-                    'examples' => $pagerfanta);
+            'entities' => $entities,
+              'pagerfanta' => $pagerfanta,
+
+        );
 
 
 
