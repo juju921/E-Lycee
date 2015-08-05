@@ -74,8 +74,9 @@ class Fiches
 
     /**
      * @ORM\OneToMany(targetEntity="Choices", mappedBy="fiche",  cascade={"persist","remove"})
+     */
 
-    protected $choices;*/
+    protected $choices;
 
 
 
@@ -353,5 +354,38 @@ class Fiches
     public function getQuestions()
     {
         return $this->questions;
+    }
+
+    /**
+     * Add choices
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Choices $choices
+     * @return Fiches
+     */
+    public function addChoice(\Elycee\ElyceeBundle\Entity\Choices $choices)
+    {
+        $this->choices[] = $choices;
+
+        return $this;
+    }
+
+    /**
+     * Remove choices
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Choices $choices
+     */
+    public function removeChoice(\Elycee\ElyceeBundle\Entity\Choices $choices)
+    {
+        $this->choices->removeElement($choices);
+    }
+
+    /**
+     * Get choices
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getChoices()
+    {
+        return $this->choices;
     }
 }

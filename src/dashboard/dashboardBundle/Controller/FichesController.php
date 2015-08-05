@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request as Request;
-
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Doctrine\Common\Util\Debug;
 use Elycee\ElyceeBundle\Entity\Fiches;
 use Elycee\ElyceeBundle\Form\FichesType;
@@ -17,7 +17,6 @@ use Elycee\ElyceeBundle\Entity\Choices;
 use Elycee\ElyceeBundle\Entity\Questions;
 use Elycee\ElyceeBundle\Form\QuestionsType;
 use Symfony\Component\HttpFoundation\Session\Session;
-
 
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -48,12 +47,12 @@ class FichesController extends Controller
      * @Route("dashboard/fiches/new", name="dashboard.fiches.new")
      * @Template("dashboarddashboardBundle:fiche:create.html.twig")
      * @Method({"POST","GET"})
+     * @return array
      */
     public function createAction(Request $request)
     {
 
         $token = $this->get('security.context')->getToken();
-
         $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Status');
         //$unpublished = $repository->findOneBy(array('nom'=>'UNPUBLISHED'));
@@ -61,49 +60,38 @@ class FichesController extends Controller
         $em = $doctrine->getManager();
         $fiche = new Fiches();
         $ficheType = new FichesType();
-        $questions = new questions();
-        $questionsType = new QuestionsType();
+
         $choices = new Choices();
         $choicesTypes = new ChoicesType();
 
 
         $form = $this->createForm($ficheType, $fiche);
-        $formQuestion = $this->createForm($questionsType, $questions);
-        $formQuestion->handleRequest($request);
-        $form->handleRequest($request);
         if ($request->isMethod('POST')) {
-            if ($form->isValid() && $form->isSubmitted()) {
-                $dataQuestion = $formQuestion->getData();
-                $data = $form->getData();
-                $data->setTeacher($user);
+            $form->handleRequest($request);
+            $nbr = $form->get('nbr')->getData();
+
+       // echo $form->get('nbr')->getData();exit;
+
+            if ($nbr > 10 || $nbr < 1) return ['form' => $form->createView(), 'error' => 'Le nombre de questions doit être compris entre 1 et 10'];
+            if ($form->isValid() && $nbr <= 10 && $nbr > 0) {
+
+
                 $status = $form["status"]->getData();
-                $data->setStatus($status);
-
-
-              $data->setQuestions($data->getQuestions());
-                $em->persist($data);
-                $em->flush();
-                $idfiches = $fiche->getId();
-                $test =  $request->getSession()->set('name', $idfiches);
-                $message = "Votre fiche a été créée".$test;
-                $request->getSession()->getFlashBag()->set('notice', $message);
-
-                $urlRedirect = $this->generateUrl('dashboard.fiches.new');
-
-
-
-              // echo '<pre>';Debug::dump($fiche->getId());echo '</pre>';exit();
-                return $this->redirect($urlRedirect);
+                $fiche->setStatus($status);
+                $this->get('session')->set('nbr', $nbr);
+                $this->get('session')->set('choix', $nbr);
+                $this->get('session')->set('qcm', $fiche);
+                $this->get('session')->set('questions', []);
+                return $this->redirect($this->generateUrl('dashboard.choix.new'));
             }
         }
-        return array(
-            'form' => $form->createView(),
+
+        return ['form' => $form->createView()];
 
 
-        );
+        //return $this->redirect($urlRedirect);
+
     }
-
-
 
 
     /**
@@ -113,50 +101,41 @@ class FichesController extends Controller
      */
     public function createChoicesAction(Request $request)
     {
-        $token = $this->get('security.context')->getToken();
-
-        $doctrine = $this->getDoctrine();
-        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Status');
-        //$unpublished = $repository->findOneBy(array('nom'=>'UNPUBLISHED'));
-        $user = $token->getUser();
-        $em = $doctrine->getManager();
-        $fiche = new Fiches();
-        $ficheType = new FichesType();
         $questions = new questions();
         $questionsType = new QuestionsType();
-
         $form = $this->createForm($questionsType, $questions);
-
-        $form->handleRequest($request);
         if ($request->isMethod('POST')) {
-            if ($form->isValid() && $form->isSubmitted()) {
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $question = $form->getData();
+                if (is_null($question->getChoices()) || count($question->getChoices()) < 2 || count($question->getChoices()) > 5)
+                    return ['form' => $form->createView(), 'error' => 'Vous devez avoir au moins 1 réponse et au plus 5 réponses !'];
+                /*if (is_null($request->get('reponse')))
+                    return ['form' => $form->createView(), 'error' => 'Vous devez cocher la bonne réponse !'];*/
 
-                $data = $form->getData();
-
-
-
-               // $data->setChoices($data->getChoices());
-                $em->persist($data);
-                $em->flush();
-                $message = "Vos réponses ont été créée";
-                $request->getSession()->getFlashBag()->set('notice', $message);
-                $urlRedirect = $this->generateUrl('dashboard.default.index');
-
-                return $this->redirect($urlRedirect);
+                $questions = $this->get('session')->get('questions');
+               // $question->getChoices()[(int)$request->get('reponse')]->setStatus('yes');
+                array_push($questions, $question);
+                $this->get('session')->set('questions', $questions);
+                if ($this->get('session')->get('nbr') == 1) {
+                    $doctrine = $this->getDoctrine();
+                    $em = $doctrine->getManager();
+                    $em->persist($this->get('session')->get('qcm'));
+                    $em->flush();
+                    $qcm = $doctrine->getRepository('ElyceeElyceeBundle:Status')->find($this->get('session')->get('fiches')->getId());
+                    $response = $doctrine->getEntityManager()->getRepository('ElyceeElyceeBundle:Questions')->storeQuestions($this->get('session')->get('questions'), $qcm);
+                    $this->get('session')->getFlashBag()->add('message', $response);
+                    $request->getSession()->remove('nbr');
+                    $request->getSession()->remove('choix');
+                    $request->getSession()->remove('qcm');
+                    $request->getSession()->remove('questions');
+                    return $this->redirect($this->generateUrl('dashboard.choix.new'));
+                }
+                $this->get('session')->set('nbr', $this->get('session')->get('nbr') - 1);
             }
         }
-        return array('form' => $form->createView());
+        return ['form' => $form->createView()];
     }
-
-
-
-
-
-
-
-
-
-
 
 
     /**
@@ -195,22 +174,6 @@ class FichesController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * @Route(
      *      "/dashboard/fiches/delete/{id}",
@@ -220,9 +183,9 @@ class FichesController extends Controller
      */
     public function deleteAction(Request $request, $id)
     {
-        $doctrine   = $this->getDoctrine();
+        $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
-        $fiche       = $repository->find($id);
+        $fiche = $repository->find($id);
         $em = $doctrine->getManager();
         $em->remove($fiche);
         $em->flush();
@@ -234,7 +197,6 @@ class FichesController extends Controller
         return $this->redirect($urlRedirect);
 
     }
-
 
 
 }
