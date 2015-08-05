@@ -182,3 +182,10 @@ a.textFooter:focus{
 .login-panel {
   margin-top: 15%;
 }
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
