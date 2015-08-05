@@ -126,7 +126,7 @@ figure.effect-Elycee p {
 	opacity: 0;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 figure.effect-Elycee h2 {
