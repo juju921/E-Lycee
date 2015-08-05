@@ -5,10 +5,11 @@ body {
     background-image: url("../images/bg.jpg");
     background-size: cover;
 
+
 }
 
 .h1, h1{
-    color:#FFE6D2;
+    color:#3E4645;
 }
 
 .h2, h2{
@@ -169,7 +170,7 @@ a.textFooter:focus{
 }
 
 .caption-home {
-    padding: 140px 10px 0px;
+    padding: 0px 10px 0px;
 }
 
 @media (min-width: 768px)
