@@ -18,5 +18,10 @@ E-Lycee
   - "php app/console doctrine:schema:update --force"
 3. Ouvrir "http://localhost/E-Lycee/web/app_dev.php/home" dans un navigateur
 
+#Auteurs : 
+
+-Julien Garret : julien.garretb@gmail.com
+-Antoine Ferré : mail@antoine-ferre.com
+
 
 A Symfony project created on June 25, 2015, 2:53 pm.
