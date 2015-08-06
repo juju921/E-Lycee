@@ -29,13 +29,6 @@
                 </div>
             {% endif %}
 
-
-
-
-
-
-
-
             <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
 
                 <div class="form-group level">
@@ -62,26 +55,24 @@
 
                 <ul class="choices list-group" data-prototype="{{ form_widget(form.choices.vars.prototype)|e }}">
                 </ul>
-                <a href="#" role="button" class="btn btn-primary add_choice_link"><i class="fa fa-plus"></i>Ajouter une réponse</a>
+                <a href="#" role="button" class="btn btn-primary add_choice_link"><i class="fa fa-plus"></i> Ajouter une réponse</a>
 
                 </div>
 
 
 
                {# <p>
-                    <input type="submit" value="Valider" class="btn btn-success"/>
+                    <input type="submit" value="Valider" class="btn btn-success btn-primary-admin"/>
                 </p>
 #}
                 <div class="form-group level">
                     {{ form_widget(form._token) }}
                     {% if app.session.get('nbr') == 1 %}
-                        {{ form_widget(form.valider,{'attr' : {'class':'btn pull-right btn-default' }}) }}
+                        {{ form_widget(form.valider,{'attr' : {'class':'btn btn-success btn-primary-admin' }}) }}
                     {% else %}
-                        {{ form_widget(form.continuer,{'attr' : {'class':'btn pull-right btn-default' }}) }}
+                        {{ form_widget(form.continuer,{'attr' : {'class':'btn btn-success btn-primary-admin' }}) }}
                     {% endif %}
                 </div>
-
-
             </form>
         </div>
     </div>
