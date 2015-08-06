@@ -27,7 +27,8 @@
                 <a class="btn btn-info" href="{{ url('ElyceeBundle.default.actu', {'id': posts.id}) }}">Lire la suite ...</a>
             </p>
             <p>Auteur : {{ posts.auteur }} - Publié le : {{ posts.date | date('d M Y') }}</p>
-            <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</p>
+            <p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ posts.commentaires | length }}
+                commentaire(s) réagissez</p>
         </div>
         <br>
 

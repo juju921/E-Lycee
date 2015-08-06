@@ -113,12 +113,9 @@ nelmio_api_doc: ~
 
 iphp_file_store:
     mappings:
-       photo:
-           upload_dir:  %kernel.root_dir%/../web/photo
-           upload_path: /photo
        img_new:
            upload_dir:  %kernel.root_dir%/../web/images/news
-           upload_path: /
+           upload_path:
            delete_on_remove: false
            overwrite_duplicates: true
 

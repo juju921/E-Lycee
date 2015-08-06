@@ -40,7 +40,7 @@
                     </p> -->
                     <p>Auteur : {{ posts.auteur }} - Publié le : {{ posts.date | date('d M Y') }}</p>
                     <p>
-                        <a href="#"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 272 commentaire(s) réagissez</a>
+                        <a href="#"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> {{ posts.commentaires | length }} commentaire(s) réagissez</a>
                     </p>
                 </div>
             </div>

@@ -70,6 +70,9 @@ class FichesController extends Controller
             $form->handleRequest($request);
             $nbr = $form->get('nbr')->getData();
 
+
+
+
        // echo $form->get('nbr')->getData();exit;
 
             if ($nbr > 10 || $nbr < 1) return ['form' => $form->createView(), 'error' => 'Le nombre de questions doit être compris entre 1 et 10'];
@@ -109,6 +112,7 @@ class FichesController extends Controller
             if ($form->isValid()) {
                 $question = $form->getData();
                 if (is_null($question->getChoices()) || count($question->getChoices()) < 2 || count($question->getChoices()) > 5)
+
                     return ['form' => $form->createView(), 'error' => 'Vous devez avoir au moins 1 réponse et au plus 5 réponses !'];
                 /*if (is_null($request->get('reponse')))
                     return ['form' => $form->createView(), 'error' => 'Vous devez cocher la bonne réponse !'];*/
@@ -122,14 +126,14 @@ class FichesController extends Controller
                     $em = $doctrine->getManager();
                     $em->persist($this->get('session')->get('qcm'));
                     $em->flush();
-                    $qcm = $doctrine->getRepository('ElyceeElyceeBundle:Status')->find($this->get('session')->get('fiches')->getId());
-                    $response = $doctrine->getEntityManager()->getRepository('ElyceeElyceeBundle:Questions')->storeQuestions($this->get('session')->get('questions'), $qcm);
-                    $this->get('session')->getFlashBag()->add('message', $response);
+                    $qcm = $doctrine->getRepository('ElyceeElyceeBundle:Status')->find($this->get('session')->get('qcm')->getId());
+                   // $response = $doctrine->getEntityManager()->getRepository('ElyceeElyceeBundle:Questions')->findby($this->get('session')->get('questions'), $qcm);
+                    //$this->get('session')->getFlashBag()->add('message', $response);
                     $request->getSession()->remove('nbr');
                     $request->getSession()->remove('choix');
                     $request->getSession()->remove('qcm');
                     $request->getSession()->remove('questions');
-                    return $this->redirect($this->generateUrl('dashboard.choix.new'));
+                    return $this->redirect($this->generateUrl('dashboard.default.index'));
                 }
                 $this->get('session')->set('nbr', $this->get('session')->get('nbr') - 1);
             }

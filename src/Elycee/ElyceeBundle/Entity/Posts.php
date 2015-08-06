@@ -52,7 +52,7 @@ class Posts
 
      * @Assert\Image(
      *      maxSize="1M",
-     *      mimeTypes={"image/jpeg","images/png"},
+     *      mimeTypes={"image/jpeg","image/png","image/gif"},
      *     mimeTypesMessage="Vous devez transférer des JPG."
      * )
      * @FileStore\UploadableField(mapping="img_new")

@@ -54,7 +54,7 @@ class Fiches
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="classes", inversedBy="fiches")
+     * @ORM\ManyToOne(targetEntity="classes", inversedBy="fiches",  cascade={"persist"})
      * @ORM\JoinColumn(name="lvl_id", referencedColumnName="id")
      *
      */
@@ -62,7 +62,7 @@ class Fiches
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Status", inversedBy="fiches")
+     * @ORM\ManyToOne(targetEntity="Status", inversedBy="fiches", cascade={"persist"})
      * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
      *
      */
@@ -229,13 +229,13 @@ class Fiches
 
 
 
-   /* public function setChoices(ArrayCollection $choices)
+    public function setChoices(ArrayCollection $choices)
     {
         foreach ($choices as $choice) {
             $choice->setFiche($this);
         }
         $this->choices = $choices;
-    }*/
+    }
 
 
 
