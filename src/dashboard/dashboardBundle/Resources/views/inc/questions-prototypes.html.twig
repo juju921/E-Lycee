@@ -1,28 +1,24 @@
 <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
 
-<div class="form-group level">
-    {{ form_label(form.titre, 'titre : ') }}
-    {{ form_widget(form.titre,{'attr' : {'placeholder':'Saisissez un titre à afficher','class':'form-control'}}) }}
-    {{ form_errors(form.titre) }}
-</div>
+	<div class="form-group level">
+	    {{ form_label(form.titre, 'titre : ') }}
+	    {{ form_widget(form.titre,{'attr' : {'placeholder':'Saisissez un titre à afficher','class':'form-control'}}) }}
+	    {{ form_errors(form.titre) }}
+	</div>
 
 
-<div class="form-group level">
-    {{ form_label(form.content, 'contenu : ') }}
-    {{ form_widget(form.content,{'attr' : {'placeholder':'Saisissez un contenu à afficher','class':'form-control'}}) }}
-    {{ form_errors(form.content) }}
-</div>
+	<div class="form-group level">
+	    {{ form_label(form.content, 'contenu : ') }}
+	    {{ form_widget(form.content,{'attr' : {'placeholder':'Saisissez un contenu à afficher','class':'form-control'}}) }}
+	    {{ form_errors(form.content) }}
+	</div>
 
-<ul class="tags" data-prototype="
-{% filter escape %}
-{{ include('dashboarddashboardBundle:inc:choices-prototype.html.twig', { 'form': form.choices.vars.prototype }) }}
-{% endfilter %}
-">
-</ul>
-
-
-
-
+	<ul class="tags" data-prototype="
+	{% filter escape %}
+	{{ include('dashboarddashboardBundle:inc:choices-prototype.html.twig', { 'form': form.choices.vars.prototype }) }}
+	{% endfilter %}
+	">
+	</ul>
 </form>
 
 <br/><br/><br/>

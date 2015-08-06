@@ -30,19 +30,25 @@
 
                 <tr>
                     <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : post.id}) }}">{{ post.titre }}</a></td>
-                          <td>{{ post.username }}</td>
-                        <td>
+                    <td>{{ post.username }}</td>
+                    <td>
                         {% if post.nom ==   "publish" %}
 
-                            <a class="btn btn-success" href="{{ path('dashboard.posts.editstatus',{'id' : post.id}) }}">online</a>
-                            {% else %}
-                                <a class="btn btn-danger" href="{{ path('dashboard.posts.editstatus',{'id' : post.id}) }}">offline</a>
+                             <a class="btn btn-success" href="{{ path('dashboard.posts.editstatus',{'id' : post.id}) }}">online</a>
+                             {% else %}
+                             <a class="btn btn-danger" href="{{ path('dashboard.posts.editstatus',{'id' : post.id}) }}">offline</a>
 
-                            {% endif %}
-                            </td>
-                    <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : post.id}) }}"><i class="fa fa-eye"></i> Voir</a></td>
-                    <td><a href="{{ path('dashboard.posts.update',{'id' : post.id}) }}"><i class="fa fa-pencil"></i> modifier</a></td>
-                    <td><a href="{{ path('dashboard.posts.delete',{'id' : post.id}) }}" id="new"><i class="fa fa-trash"></i>  supprimer</a></tdh>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : post.id}) }}"><i class="fa fa-eye"></i> Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('dashboard.posts.update',{'id' : post.id}) }}"><i class="fa fa-pencil"></i> modifier</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('dashboard.posts.delete',{'id' : post.id}) }}" id="new"><i class="fa fa-trash"></i>  supprimer</a>
+                    </td>
 
 
                     {% endfor %}
