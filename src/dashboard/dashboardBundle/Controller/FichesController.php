@@ -71,9 +71,7 @@ class FichesController extends Controller
             $nbr = $form->get('nbr')->getData();
 
 
-
-
-       // echo $form->get('nbr')->getData();exit;
+            // echo $form->get('nbr')->getData();exit;
 
             if ($nbr > 10 || $nbr < 1) return ['form' => $form->createView(), 'error' => 'Le nombre de questions doit être compris entre 1 et 10'];
             if ($form->isValid() && $nbr <= 10 && $nbr > 0) {
@@ -118,7 +116,7 @@ class FichesController extends Controller
                     return ['form' => $form->createView(), 'error' => 'Vous devez cocher la bonne réponse !'];*/
 
                 $questions = $this->get('session')->get('questions');
-               // $question->getChoices()[(int)$request->get('reponse')]->setStatus('yes');
+                // $question->getChoices()[(int)$request->get('reponse')]->setStatus('yes');
                 array_push($questions, $question);
                 $this->get('session')->set('questions', $questions);
                 if ($this->get('session')->get('nbr') == 1) {
@@ -126,16 +124,20 @@ class FichesController extends Controller
                     $em = $doctrine->getManager();
                     $em->persist($this->get('session')->get('qcm'));
                     $em->flush();
+
                     $qcm = $doctrine->getRepository('ElyceeElyceeBundle:Status')->find($this->get('session')->get('qcm')->getId());
-                   // $response = $doctrine->getEntityManager()->getRepository('ElyceeElyceeBundle:Questions')->findby($this->get('session')->get('questions'), $qcm);
+                    // $response = $doctrine->getEntityManager()->getRepository('ElyceeElyceeBundle:Questions')->findby($this->get('session')->get('questions'), $qcm);
                     //$this->get('session')->getFlashBag()->add('message', $response);
                     $request->getSession()->remove('nbr');
                     $request->getSession()->remove('choix');
                     $request->getSession()->remove('qcm');
                     $request->getSession()->remove('questions');
+                    $request->getSession()->getFlashBag()->set('notice', $message);
+                    $this->get('session')->set('nbr', $this->get('session')->get('nbr') - 1);
                     return $this->redirect($this->generateUrl('dashboard.default.index'));
                 }
-                $this->get('session')->set('nbr', $this->get('session')->get('nbr') - 1);
+                $message = "La fiche a bien été supprimée";
+
             }
         }
         return ['form' => $form->createView()];

@@ -13,6 +13,29 @@
                 <span class="alert alert-success">{{ flashMessage }}</span>
             {% endfor %}
 
+
+
+
+
+            <div class="col-lg-12">
+                <h1 class="page-header">Question n° {{ (app.session.get('choix')-app.session.get('nbr'))+1 }}</h1>
+            </div>
+            {% if not form.vars.valid %}
+                <div class="alert alert-danger" role="alert">
+                    {{ form_errors(form.content) }}{{ form_errors(form.points) }}
+                    {% for choice in form.choices %}
+                        {{ form_errors(choice.content) }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+
+
+
+
+
+
+
             <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
 
                 <div class="form-group level">
@@ -35,24 +58,81 @@
 ">
                 </ul>#}
 
+                <div class="form-group level">
+
                 <ul class="choices list-group" data-prototype="{{ form_widget(form.choices.vars.prototype)|e }}">
                 </ul>
                 <a href="#" role="button" class="btn btn-primary add_choice_link"><i class="fa fa-plus"></i>Ajouter une réponse</a>
 
+                </div>
 
 
 
-
-                {{ form_widget(form._token) }}
-
-                <p>
+               {# <p>
                     <input type="submit" value="Valider" class="btn btn-success"/>
                 </p>
+#}
+                <div class="form-group level">
+                    {{ form_widget(form._token) }}
+                    {% if app.session.get('nbr') == 1 %}
+                        {{ form_widget(form.valider,{'attr' : {'class':'btn pull-right btn-default' }}) }}
+                    {% else %}
+                        {{ form_widget(form.continuer,{'attr' : {'class':'btn pull-right btn-default' }}) }}
+                    {% endif %}
+                </div>
+
+
             </form>
         </div>
     </div>
 
 
 
+    <script defer type="text/javascript">
+
+        var choiceCount = '{{ form.choices|length }}';
+        var choiceList = jQuery('ul.choices');
+
+        $(document).ready(function () {
+            if ($('ul.choices li').length == 0) {
+                choiceCount = 1;
+                addChoice(choiceList);
+            }
+            $('.add_choice_link').click(function (e) {
+                e.preventDefault();
+                addChoice(choiceList);
+                showButton();
+                deleteChoice();
+            });
+
+            function showButton() {
+                if ($('ul.choices li').length == 5) {
+                    $('.add_choice_link').hide();
+                } else {
+                    $('.add_choice_link').show();
+                }
+            }
+
+            function deleteChoice() {
+                $('.delete_choice').click(function (e) {
+                    $(this).parent().remove();
+                    showButton();
+                    e.preventDefault();
+                });
+            }
+
+            function addChoice(choiceList) {
+                if ($('ul.choices li').length < 5) {
+                    var newWidget = choiceList.attr('data-prototype');
+                    newWidget = '<label>Réponse n°' + choiceCount + ' :</label><br /><input type="radio" name="reponse" checked value="' + $('ul.choices li').length + '">' + newWidget.replace(/__name__/g, choiceCount) + '<a href="#" class="delete_choice btn btn-danger"><i class="fa fa-times"></i></a>';
+                    choiceCount++;
+                    var newLi = jQuery('<li class="list-group-item"></li>').html(newWidget);
+                    newLi.appendTo(choiceList);
+                }
+            }
+        });
+    </script>
 
 {% endblock %}
+
+

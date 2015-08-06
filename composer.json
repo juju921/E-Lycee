@@ -31,7 +31,8 @@
         "white-october/pagerfanta-bundle": "^1.0",
         "iphp/filestore-bundle": "^0.2.3",
         "stephanecollot/datetimepicker-bundle": "dev-master",
-        "stfalcon/tinymce-bundle": "dev-master"
+        "stfalcon/tinymce-bundle": "dev-master",
+        "friendsofsymfony/elastica-bundle": "^3.1"
 
 
     },

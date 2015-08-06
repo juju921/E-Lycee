@@ -127,4 +127,28 @@ white_october_pagerfanta:
         out_of_range_page:        to_http_not_found
         not_valid_current_page:   to_http_not_found
 
-
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 8888 }
+    serializer:
+         callback_class: FOS\ElasticaBundle\Serializer\Callback
+         serializer: serializer
+    indexes:
+        elycee:
+            client: default
+            types:
+                article:
+                    mappings:
+                        id:
+                            type: integer
+                        date :
+                            type : date
+                        titre : ~
+                        content : ~
+                        abstract: ~
+                    persistence:
+                        driver: orm
+                        model: Elycee\ElyceeBundle\Entity\Posts
+                        finder: ~
+                        provider: ~
+                        listener: ~

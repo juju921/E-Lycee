@@ -31,13 +31,13 @@ class FichesType extends AbstractType
                     'property' => 'nom'
                     ))
 
-            /*->add('choices', 'collection',
+            ->add('choices', 'collection',
                 array(
                 'type'         => new ChoicesType(),
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'by_reference' => false
-                ))*/
+                ))
             ->add('questions', 'collection',
                 array(
                     'type'         => new QuestionsType(),
@@ -45,7 +45,10 @@ class FichesType extends AbstractType
                     'allow_delete' => true,
                     'by_reference' => false
                 ))
-            ->add('nbr', 'integer', array('mapped' => false));
+            ->add('nbr', 'integer', array('mapped' => false))
+            ->add('continuer', 'submit')
+            ->add('valider','submit')
+
         ;
     }
     

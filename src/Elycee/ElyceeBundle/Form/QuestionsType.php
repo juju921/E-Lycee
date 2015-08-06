@@ -26,6 +26,8 @@ class QuestionsType extends AbstractType
                     'by_reference' => false,
                     'prototype'=>true,
                 ))
+            ->add('continuer', 'submit')
+            ->add('valider','submit')
         ;
     }
     

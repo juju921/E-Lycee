@@ -28,6 +28,8 @@ class AppKernel extends Kernel
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Iphp\FileStoreBundle\IphpFileStoreBundle(),
             new SC\DatetimepickerBundle\SCDatetimepickerBundle(),
+            new FOS\ElasticaBundle\FOSElasticaBundle(),
+
 
 
         );
