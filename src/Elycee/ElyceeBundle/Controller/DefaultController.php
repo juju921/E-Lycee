@@ -116,6 +116,7 @@ class DefaultController extends BaseController
 
 
         try {
+
             $entities = $pagerfanta
                 // Le nombre maximum d'éléments par page
                 ->setMaxPerPage(3)
@@ -127,6 +128,7 @@ class DefaultController extends BaseController
             ;
         } catch (\Pagerfanta\Exception\NotValidCurrentPageException $e) {
             throw $this->createNotFoundException("Cette page n'existe pas.");
+
         }
 
 
