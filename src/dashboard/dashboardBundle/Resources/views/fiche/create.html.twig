@@ -28,17 +28,9 @@
                     {{ form_errors(form.title) }}
                 </div>
 
-                <div class="form-group">
-                    {{ form_label(form.matiere, 'matieres : ') }}
-                    {{ form_widget(form.matiere,{'attr' : {'placeholder':'Saisissez la matiere','class':'form-control' }}
-                    ) }}
-                    {{ form_errors(form.matiere) }}
-                </div>
-                <div class="form-group">
-                    {{ form_label(form.content, 'Question : ') }}
-                    {{ form_widget(form.content,{'attr' : {'class':'form-control' }}) }}
-                    {{ form_errors(form.content) }}
-                </div>
+
+
+
                 <div class="form-group level">
                     {{ form_label(form.classes, 'Classes : ') }}
                     {{ form_widget(form.classes,{'attr' : {'class':'form-control tinymce' }}) }}

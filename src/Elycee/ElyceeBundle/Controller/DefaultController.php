@@ -87,7 +87,7 @@ class DefaultController extends BaseController
     }
 
     /**
-     * @Route("/actualites/{page}", name="ElyceeBundle.default.actualites", defaults={"page" = "1"},  requirements={"page" = "\d+"},)
+     * @Route("/actualites/{page}", name="ElyceeBundle.default.actualites", defaults={"page" = "1"},  requirements={"page" = "\d+"})
      * @Template("ElyceeElyceeBundle:Default:actualites.html.twig")
      */
     public function actualitesAction($page, Request $request)

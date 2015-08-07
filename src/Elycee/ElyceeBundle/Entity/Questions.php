@@ -22,12 +22,6 @@ class Questions
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="titre", type="string", length=100)
-     */
-    private $titre;
 
     /**
      * @var string
@@ -70,28 +64,6 @@ class Questions
         return $this->id;
     }
 
-    /**
-     * Set titre
-     *
-     * @param string $titre
-     * @return Questions
-     */
-    public function setTitre($titre)
-    {
-        $this->titre = $titre;
-
-        return $this;
-    }
-
-    /**
-     * Get titre
-     *
-     * @return string 
-     */
-    public function getTitre()
-    {
-        return $this->titre;
-    }
 
     /**
      * Set content
@@ -109,7 +81,7 @@ class Questions
     /**
      * Get content
      *
-     * @return string 
+     * @return string
      */
     public function getContent()
     {

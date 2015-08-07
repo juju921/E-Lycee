@@ -15,7 +15,6 @@
                 <thead>
                 <tr>
                     <th>Quizz</th>
-                    <th>Contenu</th>
                     <th>Status</th>
                     <th>Voir</th>
                     <th>Modifier</th>
@@ -24,13 +23,13 @@
                 </tr>
                 </thead>
                 <tbody>
+    {% for fiche in pagerfanta.currentPageResults %}
 
-                {% for fiche in fiches %}
+
 
                 <tr>
 
                     <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : fiche.id}) }}">{{ fiche.title  |raw   }}</a></td>
-                    <td>{{ fiche.content |raw }}</td>
                     <td>
 
                         {% if fiche.status  ==   "1" %}

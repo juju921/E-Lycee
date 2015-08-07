@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.4.9
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Mer 05 Août 2015 à 15:51
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+-- Client :  localhost
+-- Généré le :  Ven 07 Août 2015 à 02:26
+-- Version du serveur :  5.5.42
+-- Version de PHP :  5.6.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données :  `elycee`
@@ -26,22 +20,38 @@ SET time_zone = "+00:00";
 -- Structure de la table `choices`
 --
 
-CREATE TABLE IF NOT EXISTS `choices` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `choices` (
+  `id` int(11) NOT NULL,
   `content_choice` longtext COLLATE utf8_unicode_ci NOT NULL,
   `response` tinyint(1) NOT NULL,
   `point` double NOT NULL,
   `question_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_5CE96391E27F6BF` (`question_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+  `fiche_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `choices`
 --
 
-INSERT INTO `choices` (`id`, `content_choice`, `response`, `point`, `question_id`) VALUES
-(1, 'test', 1, 2, NULL);
+INSERT INTO `choices` (`id`, `content_choice`, `response`, `point`, `question_id`, `fiche_id`) VALUES
+(1, 'test', 1, 2, NULL, NULL),
+(2, '<p>test 30</p>', 0, 0, 19, NULL),
+(3, 'dsqdqs', 1, 10, 19, NULL),
+(4, '<p>test60</p>', 1, 2, 20, NULL),
+(5, 'test60', 0, 0, 20, 56),
+(6, '<p>test90</p>', 0, 0, 22, NULL),
+(7, 'test90', 1, 3, 22, NULL),
+(8, 'test90', 0, 0, 22, NULL),
+(9, '<p>test90</p>', 0, 0, 23, NULL),
+(10, 'test90', 1, 2, 23, NULL),
+(11, '<p>test100</p>', 0, 0, 24, NULL),
+(12, 'test100', 1, 3, 24, NULL),
+(13, '<p class="paragraph ng-attr-widget"><span class="ng-directive ng-binding">Souffl&eacute; brownie chocolate apple pie cotton candy liquorice caramels gingerbread marshmallow. Chupa chups drag&eacute;e bear claw marshmallow. Donut icing souffl&eacute;. Sweet gingerbread gingerbread sesame snaps chocolate croissant pie.</span></p>', 0, 0, 25, NULL),
+(14, 'Soufflé brownie chocolate apple pie cotton candy liquorice caramels gingerbread marshmallow. Chupa chups dragée bear claw marshmallow. Donut icing soufflé. Sweet gingerbread gingerbread sesame snaps chocolate croissant pie.', 1, 2, 25, NULL),
+(15, '<p>dfsfdsfd</p>', 0, 0, 26, NULL),
+(16, 'dfsfdsfd', 1, 2, 26, NULL),
+(17, '<p>qsdsqd</p>', 0, 0, 27, NULL),
+(18, 'qsdqds', 1, 1, 27, NULL);
 
 -- --------------------------------------------------------
 
@@ -49,11 +59,10 @@ INSERT INTO `choices` (`id`, `content_choice`, `response`, `point`, `question_id
 -- Structure de la table `classes`
 --
 
-CREATE TABLE IF NOT EXISTS `classes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `class_level` longtext COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+CREATE TABLE `classes` (
+  `id` int(11) NOT NULL,
+  `class_level` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `classes`
@@ -61,7 +70,47 @@ CREATE TABLE IF NOT EXISTS `classes` (
 
 INSERT INTO `classes` (`id`, `class_level`) VALUES
 (1, 'Terminale S'),
-(2, 'première S');
+(2, 'première S'),
+(3, 'Terminale S'),
+(4, 'Terminale S'),
+(5, 'Terminale S'),
+(6, 'Terminale S'),
+(7, 'Terminale S'),
+(8, 'Terminale S'),
+(9, 'Terminale S'),
+(10, 'Terminale S'),
+(11, 'Terminale S'),
+(12, 'Terminale S'),
+(13, 'Terminale S'),
+(14, 'Terminale S'),
+(15, 'Terminale S'),
+(16, 'Terminale S'),
+(17, 'Terminale S'),
+(18, 'Terminale S'),
+(19, 'Terminale S'),
+(20, 'Terminale S'),
+(21, 'Terminale S'),
+(22, 'Terminale S'),
+(26, 'Terminale S'),
+(27, 'Terminale S'),
+(28, 'Terminale S'),
+(29, 'Terminale S'),
+(30, 'Terminale S'),
+(31, 'Terminale S'),
+(32, 'Terminale S'),
+(33, 'Terminale S'),
+(34, 'Terminale S'),
+(35, 'Terminale S'),
+(36, 'Terminale S'),
+(37, 'Terminale S'),
+(38, 'Terminale S'),
+(39, 'Terminale S'),
+(40, 'Terminale S'),
+(41, 'Terminale S'),
+(42, 'Terminale S'),
+(43, 'Terminale S'),
+(44, 'Terminale S'),
+(45, 'Terminale S');
 
 -- --------------------------------------------------------
 
@@ -69,15 +118,13 @@ INSERT INTO `classes` (`id`, `class_level`) VALUES
 -- Structure de la table `comments`
 --
 
-CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
   `contents` longtext COLLATE utf8_unicode_ci NOT NULL,
   `createAt` datetime NOT NULL,
-  `username` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_5F9E962A4B89032C` (`post_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `username` varchar(150) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -85,15 +132,13 @@ CREATE TABLE IF NOT EXISTS `comments` (
 -- Structure de la table `contact`
 --
 
-CREATE TABLE IF NOT EXISTS `contact` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
   `email` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `nom` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `message` longtext COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_4C62E638E7927C74` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `message` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -101,15 +146,12 @@ CREATE TABLE IF NOT EXISTS `contact` (
 -- Structure de la table `copie`
 --
 
-CREATE TABLE IF NOT EXISTS `copie` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `copie` (
+  `id` int(11) NOT NULL,
   `eleves_id` int(11) DEFAULT NULL,
   `choices_id` int(11) DEFAULT NULL,
-  `reponse` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_A6E330BCC2140342` (`eleves_id`),
-  KEY `IDX_A6E330BC163CD901` (`choices_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `reponse` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -117,19 +159,46 @@ CREATE TABLE IF NOT EXISTS `copie` (
 -- Structure de la table `fiches`
 --
 
-CREATE TABLE IF NOT EXISTS `fiches` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `fiches` (
+  `id` int(11) NOT NULL,
   `teacher_id` int(11) DEFAULT NULL,
   `lvl_id` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
-  `title` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `content` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `matiere` longtext COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_459C25C941807E1D` (`teacher_id`),
-  KEY `IDX_459C25C950962F74` (`lvl_id`),
-  KEY `IDX_459C25C96BF700BD` (`status_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+  `title` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `fiches`
+--
+
+INSERT INTO `fiches` (`id`, `teacher_id`, `lvl_id`, `status_id`, `title`) VALUES
+(21, 4, 1, 1, '<p>sdfsdf</p>'),
+(22, 4, 1, 1, '<p>dfsdf</p>'),
+(23, 4, 1, 1, '<p>dssd</p>'),
+(24, 4, 1, 1, '<p>dssd</p>'),
+(25, 4, 1, 1, '<p>rertet</p>'),
+(26, 4, 1, 1, '<p>sdfsf</p>'),
+(47, NULL, 22, 22, '<p>test22</p>'),
+(48, NULL, 26, 26, '<p>test11</p>'),
+(49, NULL, 27, 27, '<p>test11</p>'),
+(50, NULL, 28, 28, '<p>test11</p>'),
+(51, NULL, 29, 29, '<p>test22</p>'),
+(52, NULL, 30, 30, '<p>toto</p>'),
+(53, NULL, 31, 31, '<p>test22</p>'),
+(54, NULL, 32, 32, '<p>test20</p>'),
+(55, NULL, 33, 33, '<p>test 30</p>'),
+(56, NULL, 34, 34, '<p>test60</p>'),
+(57, NULL, 35, 35, '<p>test120</p>'),
+(58, NULL, 36, 36, '<p>test60</p>'),
+(59, NULL, 37, 37, '<p>test60</p>'),
+(60, NULL, 38, 38, '<p>test60</p>'),
+(61, NULL, 39, 39, '<p>test90</p>'),
+(62, NULL, 40, 40, '<p>test90</p>'),
+(63, NULL, 41, 41, '<p>test120</p>'),
+(64, NULL, 42, 42, '<p class="paragraph ng-attr-widget"><span class="ng-directive ng-binding">Souffl&eacute; brownie chocolate apple pie cotton candy liquorice caramels gingerbread marshmallow. Chupa chups drag&eacute;e bear claw marshmallow. Donut icing souffl&eacute;. Sweet gingerbread gingerbread sesame snaps chocolate croissant pie.</span></p>'),
+(65, NULL, 43, 1, '<p>tessdfkljsdlkfdjkls</p>'),
+(66, NULL, 44, 44, '<p>dfsfdsfd</p>'),
+(67, NULL, 45, 45, '<p>dffdsdffds</p>');
 
 -- --------------------------------------------------------
 
@@ -137,8 +206,8 @@ CREATE TABLE IF NOT EXISTS `fiches` (
 -- Structure de la table `fos_user`
 --
 
-CREATE TABLE IF NOT EXISTS `fos_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `fos_user` (
+  `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `username_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -155,36 +224,32 @@ CREATE TABLE IF NOT EXISTS `fos_user` (
   `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
   `credentials_expired` tinyint(1) NOT NULL,
   `credentials_expire_at` datetime DEFAULT NULL,
-  `lvl_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_957A647992FC23A8` (`username_canonical`),
-  UNIQUE KEY `UNIQ_957A6479A0D96FBF` (`email_canonical`),
-  KEY `IDX_957A647950962F74` (`lvl_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=40 ;
+  `lvl_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `fos_user`
 --
 
 INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`, `lvl_id`) VALUES
-(4, 'alexandre', 'alexandre', 'alexandre@ecole.com', 'alexandre@ecole.com', 1, '4simih0tz5kw0cggo4o8ko0ksokgow8', 'sacenIgHKmWcvpTsYxnT4si0jkiwn4IlJ62wrSXK4dpRVVRE9o4V4SR2WgOEE4XxS83negCsiAwKJzBYQpYKrQ==', '2015-08-04 15:48:07', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_TEACHER";}', 0, NULL, NULL),
-(22, 'Abel', 'abel', 'able@abel.com', 'able@abel.com', 1, 'qv8tccxkjmok40w0gwkwgks0s84ck4k', 'ZRx11ESV2+BiWQ7SHdkMlxLSNw14uqp0hmY8BuQqhhH5JYi68N8aU8LE8smixaTKRtzcNmPH+oe1YJ3FX/KqaA==', '2015-08-05 14:47:19', 0, 0, NULL, 'p8Kyefaa9wkcXwbLadEeBVkPB46uAPHIDhOYQG1yc8Q', '2015-08-03 13:12:19', 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(23, 'Al', 'al', 'al@al.com', 'al@al.com', 1, 'q1230a640hwk4w40ww8s04c0ccggswc', 'uSckL866YCAgW05D31ngowizwiXUwIH67NZUe8Sa64UzVGWWYfsq2e4p2calBwpsm+9d0ha5SV+sN/7OQvZfuQ==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(24, 'Alan', 'alan', 'alain@yahoo.biz', 'alain@yahoo.biz', 1, 'cuqnc0xgjsowsgcc4kskcggwckskc44', 'ks0NI93vkSQG2HDLwbLFZeJvVOsVUv1zJYiqxInxTB4GnzM2AMkY1R0sO4dUGyZGsAB3iG0pL3uKjq5Mgh/l+w==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(26, 'Arthur', 'arthur', 'arthur@arthur.com', 'arthur@arthur.com', 1, 'd4jfa540da0w8ggcgckwkwcw0c4kkwk', 'sHv7A+h2aihNAC9WLXb9SMGrFD8G01cockvyGiMYDQWxeDqHhvCSrCXEpzoi/TYkpQJQ7DD0+YtIYc3KFG0Bjw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(27, 'Carl', 'carl', 'carl@carl.com', 'carl@carl.com', 1, 'p7035yh50msck480g0gcc88sksskccc', 'GqdRhZCWQxmFIvwVj14EBPhlcHEfGlrMpEApqzpva3J3Gbi+1WxaVeuHPXNnj4GIVdLjcYuaO8gG7P03yQ7/rw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(28, 'Blaise', 'blaise', 'blaise@blaise.com', 'blaise@blaise.com', 1, 'idwa6vrls2gcscw4ccw4sogkwcwocww', 'JAm1C0TK3qZiWampGR60M8lrLRJEbNjvnToAVUyhO0cizEIvQVxEry2xQyszIzBQgD6KmBl0tXQLGeTuQWjDJw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(29, 'Isaac', 'isaac', 'isaac@isaac.com', 'isaac@isaac.com', 1, '1mongps2lef4w0sskw0gwo4kkk4cc8c', 'rNxEaABY498azbwJ1JemxXdSpkJQ/d31v/DbYUMkjOV9rqeEFa7jacrIHSJyizqxgwmS5O6aYq4Yw5y4mPdtyw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(30, 'Steve', 'steve', 'steve@steve.com', 'steve@steve.com', 1, '4putcfqgh1moo0gcocsckoc0wwcks88', '6IqUavlJ3bQYzWeOSb+dgGCAvDnbOpdAjzZZFbI0AvZHq8kiMWIrujiY1JL1WyNLnLTCS+uIMm/z6Dc6a7Ye0Q==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(31, 'Alfred', 'alfred', 'alfred@tatayoyo.com', 'alfred@tatayoyo.com', 1, 'adq6kd0kxb4kog8440go8ss84c4g4sw', 'QvzM9lOkazb8snrtu4MQNXn8cBTacCAWIqRe5hjr2SMp7ivBfuNRA4cUDmm2JHfwG+ZCFSAgJRay9MiDz3oZNQ==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(32, 'Brendan', 'brendan', 'brendan@brendan.com', 'brendan@brendan.com', 1, 'ch4bim3ahy8kwkcc88w80gkwccgo8k0', 'sbf67Q5imYNyvBhfLU75hvQFpcrG8ud3wkW1dbXLJsDU0qhBSX0ues5I5D8WMM4V3ycfdcixRpIOiD6UKddQ9A==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(33, 'David', 'david', 'david@gcho.com', 'david@gcho.com', 1, '1gwgtwa3g39c84k8wkkgcowcgko08so', 'iJxz9GPROCfVKOK8gTOmGuYvrrs5jGYXBWhb7bc56P0nz+6RHF99WOuH/24FbtCR7NTWAxuhvAj4uhNI9PPPXw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(34, 'George', 'george', 'george@profonde.com', 'george@profonde.com', 1, 'fwco1ph20p44c404o0c004so4oossw', '3QNW8CCcD9YunYowRBAApZBysukwAHIPCy7HBqBTKJ1d1M0k3iYPf3NoPGqRSdKK2EI0faWR7qK4x54tDm/0mw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(35, 'Jim', 'jim', 'jim@launez.com', 'jim@launez.com', 1, '5pnjrobzpzc4w0wwogsk4g8gww40wc4', 'vI5JphO66OiqP0M9R66EBjpe1DyJUYDlZVsgByx5TUYSc17ku//IOMmxb6VxGFyH3aEvMFIZCIAPGLsbNVrp5A==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(36, 'Leslie', 'leslie', 'leslie@unlivre.com', 'leslie@unlivre.com', 1, 'eutclv8julw80sossogksoow4wc8cg4', 'H6UtRWRPjaFZsB3NjeNIllZ+eWbVnc1FwAcMjVaBkap8Hfiv0P3Cb9T3itTWrvmgOMX8hW1cX+YHNuaIpbvtMg==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(37, 'Maria', 'maria', 'mari@monhomme.com', 'mari@monhomme.com', 1, 'n9aeoz818zk4k40o004kccwoo00c4w8', 'vb2HILS2vALBNm4lhgEwFeFpUK7sGz3XqM2iLSmOEE3sSJN60q3JVEkrl1Yk1LhS24yKrc/Ba/5Rzb3EytB+uQ==', NULL, 0, 0, NULL, NULL, NULL, 'a:2:{i:0;s:12:"ROLE8STUDENT";i:1;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(38, 'Rasmus', 'rasmus', 'rasmus@rasmus.com', 'rasmus@rasmus.com', 1, 'ff251c6knxcg8kc0kwg8g4008skg440', 'Umn8yB2CuHdlX7LhVDDAAY8nyqIjE0jO+xa16PLkBMe5vlGtfRnOrBBB4fVdY08u/WgvuFFCIaDl6skuzRut/A==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL),
-(39, 'Tim', 'tim', 'tim@authe.com', 'tim@authe.com', 1, 'v5hwij24sasgsk8000o48w48gkko8k', '4Fd3OBpKPiXHa0DiNQVPlZ7iSNz39tCT0wCu1NlWhBMRtbb8iY9gpC/H67dBuRnfj35fkyENryxw46oYI7SKIA==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, NULL);
+(4, 'alexandre', 'alexandre', 'alexandre@ecole.com', 'alexandre@ecole.com', 1, '4simih0tz5kw0cggo4o8ko0ksokgow8', 'sacenIgHKmWcvpTsYxnT4si0jkiwn4IlJ62wrSXK4dpRVVRE9o4V4SR2WgOEE4XxS83negCsiAwKJzBYQpYKrQ==', '2015-08-07 01:46:52', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_TEACHER";}', 0, NULL, NULL),
+(22, 'Abel', 'abel', 'able@abel.com', 'able@abel.com', 1, 'qv8tccxkjmok40w0gwkwgks0s84ck4k', 'ZRx11ESV2+BiWQ7SHdkMlxLSNw14uqp0hmY8BuQqhhH5JYi68N8aU8LE8smixaTKRtzcNmPH+oe1YJ3FX/KqaA==', '2015-08-07 01:42:27', 0, 0, NULL, 'p8Kyefaa9wkcXwbLadEeBVkPB46uAPHIDhOYQG1yc8Q', '2015-08-03 13:12:19', 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 1),
+(23, 'Al', 'al', 'al@al.com', 'al@al.com', 1, 'q1230a640hwk4w40ww8s04c0ccggswc', 'uSckL866YCAgW05D31ngowizwiXUwIH67NZUe8Sa64UzVGWWYfsq2e4p2calBwpsm+9d0ha5SV+sN/7OQvZfuQ==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 1),
+(24, 'Alan', 'alan', 'alain@yahoo.biz', 'alain@yahoo.biz', 1, 'cuqnc0xgjsowsgcc4kskcggwckskc44', 'ks0NI93vkSQG2HDLwbLFZeJvVOsVUv1zJYiqxInxTB4GnzM2AMkY1R0sO4dUGyZGsAB3iG0pL3uKjq5Mgh/l+w==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 1),
+(26, 'Arthur', 'arthur', 'arthur@arthur.com', 'arthur@arthur.com', 1, 'd4jfa540da0w8ggcgckwkwcw0c4kkwk', 'sHv7A+h2aihNAC9WLXb9SMGrFD8G01cockvyGiMYDQWxeDqHhvCSrCXEpzoi/TYkpQJQ7DD0+YtIYc3KFG0Bjw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 1),
+(27, 'Carl', 'carl', 'carl@carl.com', 'carl@carl.com', 1, 'p7035yh50msck480g0gcc88sksskccc', 'GqdRhZCWQxmFIvwVj14EBPhlcHEfGlrMpEApqzpva3J3Gbi+1WxaVeuHPXNnj4GIVdLjcYuaO8gG7P03yQ7/rw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 1),
+(28, 'Blaise', 'blaise', 'blaise@blaise.com', 'blaise@blaise.com', 1, 'idwa6vrls2gcscw4ccw4sogkwcwocww', 'JAm1C0TK3qZiWampGR60M8lrLRJEbNjvnToAVUyhO0cizEIvQVxEry2xQyszIzBQgD6KmBl0tXQLGeTuQWjDJw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 1),
+(29, 'Isaac', 'isaac', 'isaac@isaac.com', 'isaac@isaac.com', 1, '1mongps2lef4w0sskw0gwo4kkk4cc8c', 'rNxEaABY498azbwJ1JemxXdSpkJQ/d31v/DbYUMkjOV9rqeEFa7jacrIHSJyizqxgwmS5O6aYq4Yw5y4mPdtyw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 1),
+(30, 'Steve', 'steve', 'steve@steve.com', 'steve@steve.com', 1, '4putcfqgh1moo0gcocsckoc0wwcks88', '6IqUavlJ3bQYzWeOSb+dgGCAvDnbOpdAjzZZFbI0AvZHq8kiMWIrujiY1JL1WyNLnLTCS+uIMm/z6Dc6a7Ye0Q==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 1),
+(31, 'Alfred', 'alfred', 'alfred@tatayoyo.com', 'alfred@tatayoyo.com', 1, 'adq6kd0kxb4kog8440go8ss84c4g4sw', 'QvzM9lOkazb8snrtu4MQNXn8cBTacCAWIqRe5hjr2SMp7ivBfuNRA4cUDmm2JHfwG+ZCFSAgJRay9MiDz3oZNQ==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 2),
+(32, 'Brendan', 'brendan', 'brendan@brendan.com', 'brendan@brendan.com', 1, 'ch4bim3ahy8kwkcc88w80gkwccgo8k0', 'sbf67Q5imYNyvBhfLU75hvQFpcrG8ud3wkW1dbXLJsDU0qhBSX0ues5I5D8WMM4V3ycfdcixRpIOiD6UKddQ9A==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 2),
+(33, 'David', 'david', 'david@gcho.com', 'david@gcho.com', 1, '1gwgtwa3g39c84k8wkkgcowcgko08so', 'iJxz9GPROCfVKOK8gTOmGuYvrrs5jGYXBWhb7bc56P0nz+6RHF99WOuH/24FbtCR7NTWAxuhvAj4uhNI9PPPXw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 2),
+(34, 'George', 'george', 'george@profonde.com', 'george@profonde.com', 1, 'fwco1ph20p44c404o0c004so4oossw', '3QNW8CCcD9YunYowRBAApZBysukwAHIPCy7HBqBTKJ1d1M0k3iYPf3NoPGqRSdKK2EI0faWR7qK4x54tDm/0mw==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 2),
+(35, 'Jim', 'jim', 'jim@launez.com', 'jim@launez.com', 1, '5pnjrobzpzc4w0wwogsk4g8gww40wc4', 'vI5JphO66OiqP0M9R66EBjpe1DyJUYDlZVsgByx5TUYSc17ku//IOMmxb6VxGFyH3aEvMFIZCIAPGLsbNVrp5A==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 2),
+(36, 'Leslie', 'leslie', 'leslie@unlivre.com', 'leslie@unlivre.com', 1, 'eutclv8julw80sossogksoow4wc8cg4', 'H6UtRWRPjaFZsB3NjeNIllZ+eWbVnc1FwAcMjVaBkap8Hfiv0P3Cb9T3itTWrvmgOMX8hW1cX+YHNuaIpbvtMg==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 2),
+(37, 'Maria', 'maria', 'mari@monhomme.com', 'mari@monhomme.com', 1, 'n9aeoz818zk4k40o004kccwoo00c4w8', 'vb2HILS2vALBNm4lhgEwFeFpUK7sGz3XqM2iLSmOEE3sSJN60q3JVEkrl1Yk1LhS24yKrc/Ba/5Rzb3EytB+uQ==', NULL, 0, 0, NULL, NULL, NULL, 'a:2:{i:0;s:12:"ROLE8STUDENT";i:1;s:12:"ROLE_STUDENT";}', 0, NULL, 2),
+(38, 'Rasmus', 'rasmus', 'rasmus@rasmus.com', 'rasmus@rasmus.com', 1, 'ff251c6knxcg8kc0kwg8g4008skg440', 'Umn8yB2CuHdlX7LhVDDAAY8nyqIjE0jO+xa16PLkBMe5vlGtfRnOrBBB4fVdY08u/WgvuFFCIaDl6skuzRut/A==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 2),
+(39, 'Tim', 'tim', 'tim@authe.com', 'tim@authe.com', 1, 'v5hwij24sasgsk8000o48w48gkko8k', '4Fd3OBpKPiXHa0DiNQVPlZ7iSNz39tCT0wCu1NlWhBMRtbb8iY9gpC/H67dBuRnfj35fkyENryxw46oYI7SKIA==', NULL, 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:12:"ROLE_STUDENT";}', 0, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -192,19 +257,16 @@ INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_
 -- Structure de la table `posts`
 --
 
-CREATE TABLE IF NOT EXISTS `posts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
   `titre` longtext COLLATE utf8_unicode_ci NOT NULL,
   `abstract` longtext COLLATE utf8_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8_unicode_ci NOT NULL,
   `date` datetime NOT NULL,
-  `url_thumbnail` longtext COLLATE utf8_unicode_ci COMMENT '(DC2Type:array)',
-  PRIMARY KEY (`id`),
-  KEY `IDX_885DBAFAA76ED395` (`user_id`),
-  KEY `IDX_885DBAFA6BF700BD` (`status_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+  `url_thumbnail` longtext COLLATE utf8_unicode_ci COMMENT '(DC2Type:array)'
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `posts`
@@ -224,21 +286,26 @@ INSERT INTO `posts` (`id`, `user_id`, `status_id`, `titre`, `abstract`, `content
 -- Structure de la table `questions`
 --
 
-CREATE TABLE IF NOT EXISTS `questions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+CREATE TABLE `questions` (
+  `id` int(11) NOT NULL,
   `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `fiche_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_8ADC54D5DF522508` (`fiche_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+  `fiche_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `questions`
 --
 
-INSERT INTO `questions` (`id`, `titre`, `content`, `fiche_id`) VALUES
-(6, 'KLJLJ', ',JLKJ', NULL);
+INSERT INTO `questions` (`id`, `content`, `fiche_id`) VALUES
+(18, 'fdgdf', 21),
+(19, 'test 30', NULL),
+(20, 'test60', 56),
+(22, 'test90', 61),
+(23, 'test90', 62),
+(24, 'test100', 63),
+(25, 'Soufflé brownie chocolate apple pie cotton candy liquorice caramels gingerbread marshmallow. Chupa chups dragée bear claw marshmallow. Donut icing soufflé. Sweet gingerbread gingerbread sesame snaps chocolate croissant pie.', 64),
+(26, 'dfsfdsfd', 66),
+(27, 'sdqq', 67);
 
 -- --------------------------------------------------------
 
@@ -246,17 +313,13 @@ INSERT INTO `questions` (`id`, `titre`, `content`, `fiche_id`) VALUES
 -- Structure de la table `scores`
 --
 
-CREATE TABLE IF NOT EXISTS `scores` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `scores` (
+  `id` int(11) NOT NULL,
   `fiche_id` int(11) DEFAULT NULL,
   `student_id` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
-  `note` double NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `IDX_750375EDF522508` (`fiche_id`),
-  KEY `IDX_750375ECB944F1A` (`student_id`),
-  KEY `IDX_750375E6BF700BD` (`status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `note` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -264,11 +327,10 @@ CREATE TABLE IF NOT EXISTS `scores` (
 -- Structure de la table `status`
 --
 
-CREATE TABLE IF NOT EXISTS `status` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `status`
@@ -276,8 +338,176 @@ CREATE TABLE IF NOT EXISTS `status` (
 
 INSERT INTO `status` (`id`, `nom`) VALUES
 (1, 'publish'),
-(2, 'unpublish');
+(2, 'unpublish'),
+(22, 'publish'),
+(26, 'publish'),
+(27, 'publish'),
+(28, 'publish'),
+(29, 'publish'),
+(30, 'publish'),
+(31, 'publish'),
+(32, 'publish'),
+(33, 'publish'),
+(34, 'publish'),
+(35, 'publish'),
+(36, 'publish'),
+(37, 'publish'),
+(38, 'publish'),
+(39, 'publish'),
+(40, 'publish'),
+(41, 'publish'),
+(42, 'publish'),
+(43, 'publish'),
+(44, 'publish'),
+(45, 'publish');
 
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `choices`
+--
+ALTER TABLE `choices`
+ADD PRIMARY KEY (`id`),
+ADD KEY `IDX_5CE96391E27F6BF` (`question_id`),
+ADD KEY `IDX_5CE9639DF522508` (`fiche_id`);
+
+--
+-- Index pour la table `classes`
+--
+ALTER TABLE `classes`
+ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `comments`
+--
+ALTER TABLE `comments`
+ADD PRIMARY KEY (`id`),
+ADD KEY `IDX_5F9E962A4B89032C` (`post_id`);
+
+--
+-- Index pour la table `contact`
+--
+ALTER TABLE `contact`
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `UNIQ_4C62E638E7927C74` (`email`);
+
+--
+-- Index pour la table `copie`
+--
+ALTER TABLE `copie`
+ADD PRIMARY KEY (`id`),
+ADD KEY `IDX_A6E330BCC2140342` (`eleves_id`),
+ADD KEY `IDX_A6E330BC163CD901` (`choices_id`);
+
+--
+-- Index pour la table `fiches`
+--
+ALTER TABLE `fiches`
+ADD PRIMARY KEY (`id`),
+ADD KEY `IDX_459C25C941807E1D` (`teacher_id`),
+ADD KEY `IDX_459C25C950962F74` (`lvl_id`),
+ADD KEY `IDX_459C25C96BF700BD` (`status_id`);
+
+--
+-- Index pour la table `fos_user`
+--
+ALTER TABLE `fos_user`
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `UNIQ_957A647992FC23A8` (`username_canonical`),
+ADD UNIQUE KEY `UNIQ_957A6479A0D96FBF` (`email_canonical`),
+ADD KEY `IDX_957A647950962F74` (`lvl_id`);
+
+--
+-- Index pour la table `posts`
+--
+ALTER TABLE `posts`
+ADD PRIMARY KEY (`id`),
+ADD KEY `IDX_885DBAFAA76ED395` (`user_id`),
+ADD KEY `IDX_885DBAFA6BF700BD` (`status_id`);
+
+--
+-- Index pour la table `questions`
+--
+ALTER TABLE `questions`
+ADD PRIMARY KEY (`id`),
+ADD KEY `IDX_8ADC54D5DF522508` (`fiche_id`);
+
+--
+-- Index pour la table `scores`
+--
+ALTER TABLE `scores`
+ADD PRIMARY KEY (`id`),
+ADD KEY `IDX_750375EDF522508` (`fiche_id`),
+ADD KEY `IDX_750375ECB944F1A` (`student_id`),
+ADD KEY `IDX_750375E6BF700BD` (`status_id`);
+
+--
+-- Index pour la table `status`
+--
+ALTER TABLE `status`
+ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `choices`
+--
+ALTER TABLE `choices`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT pour la table `classes`
+--
+ALTER TABLE `classes`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
+--
+-- AUTO_INCREMENT pour la table `comments`
+--
+ALTER TABLE `comments`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `copie`
+--
+ALTER TABLE `copie`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `fiches`
+--
+ALTER TABLE `fiches`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
+--
+-- AUTO_INCREMENT pour la table `fos_user`
+--
+ALTER TABLE `fos_user`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
+--
+-- AUTO_INCREMENT pour la table `posts`
+--
+ALTER TABLE `posts`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT pour la table `questions`
+--
+ALTER TABLE `questions`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT pour la table `scores`
+--
+ALTER TABLE `scores`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `status`
+--
+ALTER TABLE `status`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
 --
 -- Contraintes pour les tables exportées
 --
@@ -286,56 +516,53 @@ INSERT INTO `status` (`id`, `nom`) VALUES
 -- Contraintes pour la table `choices`
 --
 ALTER TABLE `choices`
-  ADD CONSTRAINT `FK_5CE96391E27F6BF` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`);
+ADD CONSTRAINT `FK_5CE96391E27F6BF` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`),
+ADD CONSTRAINT `FK_5CE9639DF522508` FOREIGN KEY (`fiche_id`) REFERENCES `fiches` (`id`);
 
 --
 -- Contraintes pour la table `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `FK_5F9E962A4B89032C` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`);
+ADD CONSTRAINT `FK_5F9E962A4B89032C` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`);
 
 --
 -- Contraintes pour la table `copie`
 --
 ALTER TABLE `copie`
-  ADD CONSTRAINT `FK_A6E330BC163CD901` FOREIGN KEY (`choices_id`) REFERENCES `choices` (`id`),
-  ADD CONSTRAINT `FK_A6E330BCC2140342` FOREIGN KEY (`eleves_id`) REFERENCES `fos_user` (`id`);
+ADD CONSTRAINT `FK_A6E330BC163CD901` FOREIGN KEY (`choices_id`) REFERENCES `choices` (`id`),
+ADD CONSTRAINT `FK_A6E330BCC2140342` FOREIGN KEY (`eleves_id`) REFERENCES `fos_user` (`id`);
 
 --
 -- Contraintes pour la table `fiches`
 --
 ALTER TABLE `fiches`
-  ADD CONSTRAINT `FK_459C25C941807E1D` FOREIGN KEY (`teacher_id`) REFERENCES `fos_user` (`id`),
-  ADD CONSTRAINT `FK_459C25C950962F74` FOREIGN KEY (`lvl_id`) REFERENCES `classes` (`id`),
-  ADD CONSTRAINT `FK_459C25C96BF700BD` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`);
+ADD CONSTRAINT `FK_459C25C941807E1D` FOREIGN KEY (`teacher_id`) REFERENCES `fos_user` (`id`),
+ADD CONSTRAINT `FK_459C25C950962F74` FOREIGN KEY (`lvl_id`) REFERENCES `classes` (`id`),
+ADD CONSTRAINT `FK_459C25C96BF700BD` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`);
 
 --
 -- Contraintes pour la table `fos_user`
 --
 ALTER TABLE `fos_user`
-  ADD CONSTRAINT `FK_957A647950962F74` FOREIGN KEY (`lvl_id`) REFERENCES `classes` (`id`);
+ADD CONSTRAINT `FK_957A647950962F74` FOREIGN KEY (`lvl_id`) REFERENCES `classes` (`id`);
 
 --
 -- Contraintes pour la table `posts`
 --
 ALTER TABLE `posts`
-  ADD CONSTRAINT `FK_885DBAFA6BF700BD` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`),
-  ADD CONSTRAINT `FK_885DBAFAA76ED395` FOREIGN KEY (`user_id`) REFERENCES `fos_user` (`id`);
+ADD CONSTRAINT `FK_885DBAFA6BF700BD` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`),
+ADD CONSTRAINT `FK_885DBAFAA76ED395` FOREIGN KEY (`user_id`) REFERENCES `fos_user` (`id`);
 
 --
 -- Contraintes pour la table `questions`
 --
 ALTER TABLE `questions`
-  ADD CONSTRAINT `FK_8ADC54D5DF522508` FOREIGN KEY (`fiche_id`) REFERENCES `fiches` (`id`);
+ADD CONSTRAINT `FK_8ADC54D5DF522508` FOREIGN KEY (`fiche_id`) REFERENCES `fiches` (`id`);
 
 --
 -- Contraintes pour la table `scores`
 --
 ALTER TABLE `scores`
-  ADD CONSTRAINT `FK_750375E6BF700BD` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`),
-  ADD CONSTRAINT `FK_750375ECB944F1A` FOREIGN KEY (`student_id`) REFERENCES `fos_user` (`id`),
-  ADD CONSTRAINT `FK_750375EDF522508` FOREIGN KEY (`fiche_id`) REFERENCES `fiches` (`id`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ADD CONSTRAINT `FK_750375E6BF700BD` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`),
+ADD CONSTRAINT `FK_750375ECB944F1A` FOREIGN KEY (`student_id`) REFERENCES `fos_user` (`id`),
+ADD CONSTRAINT `FK_750375EDF522508` FOREIGN KEY (`fiche_id`) REFERENCES `fiches` (`id`);

@@ -62,14 +62,6 @@ class Choices
     private $question;
 
 
-
-
-
-
-
-
-
-
     /**
      * Get id
      *

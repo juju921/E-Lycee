@@ -18,7 +18,10 @@ use Elycee\ElyceeBundle\Entity\Questions;
 use Elycee\ElyceeBundle\Form\QuestionsType;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use FOS\RestBundle\Controller\FOSRestController;
+use Pagerfanta\Exception\NotValidCurrentPageException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Elycee\ElyceeBundle\Entity\Status;
 
@@ -28,18 +31,63 @@ class FichesController extends Controller
 
 
     /**
-     * @Route("dashboard/fiches/list", name="fiches.show")
+     * @Route("dashboard/fiches/list/{page}", name="fiches.show", defaults={"page" = 1}, requirements={"page" = "\d+"} )
      * @Template("dashboarddashboardBundle:fiche:showfiche.html.twig")
      */
-    public function homeAction()
+    public function homeAction($page)
     {
+
 
 
         $token = $this->get('security.context')->getToken();
         $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
+
+        $qb = $this->getDoctrine()->getEntityManager()->createQueryBuilder()
+            ->select('Fiches')
+            ->from('Elycee\ElyceeBundle\Entity\Fiches', 'Fiches')
+        ;
+
+
+        $adapter = new DoctrineORMAdapter($qb);
+        $pagerfanta = new Pagerfanta($adapter);
+        $pagerfanta->setMaxPerPage(1);
+        $pagerfanta->setCurrentPage($page);
+        $entities = $pagerfanta->getCurrentPageResults();
+
+
+        try {
+
+            $entities = $pagerfanta
+                // Le nombre maximum d'éléments par page
+                ->setMaxPerPage(6)
+                // Notre position actuelle (numéro de page)
+                ->setCurrentPage($page)
+                // On récupère nos entités via Pagerfanta,
+                // celui-ci s'occupe de limiter la requête en fonction de nos réglages.
+                ->getCurrentPageResults()
+            ;
+        } catch (\Pagerfanta\Exception\NotValidCurrentPageException $e) {
+            throw $this->createNotFoundException("Cette page n'existe pas.");
+
+        }
+
+
+
+
         $fiches = $repository->findBy(array('teacher' => $token->getUser()->getId()));
-        return array('fiches' => $fiches);
+        return array(
+            'fiches' => $fiches,
+            'entities' => $entities,
+            'pagerfanta' => $pagerfanta,
+
+        );
+
+
+
+
+
+
     }
 
 
@@ -60,7 +108,6 @@ class FichesController extends Controller
         $em = $doctrine->getManager();
         $fiche = new Fiches();
         $ficheType = new FichesType();
-
         $choices = new Choices();
         $choicesTypes = new ChoicesType();
 
@@ -71,14 +118,12 @@ class FichesController extends Controller
             $nbr = $form->get('nbr')->getData();
 
 
-            // echo $form->get('nbr')->getData();exit;
-
             if ($nbr > 10 || $nbr < 1) return ['form' => $form->createView(), 'error' => 'Le nombre de questions doit être compris entre 1 et 10'];
             if ($form->isValid() && $nbr <= 10 && $nbr > 0) {
 
+                $fiche =  $form->getData();
+               // $fiche->setStatus('unpublish');
 
-                $status = $form["status"]->getData();
-                $fiche->setStatus($status);
                 $this->get('session')->set('nbr', $nbr);
                 $this->get('session')->set('choix', $nbr);
                 $this->get('session')->set('qcm', $fiche);
@@ -122,21 +167,24 @@ class FichesController extends Controller
                 if ($this->get('session')->get('nbr') == 1) {
                     $doctrine = $this->getDoctrine();
                     $em = $doctrine->getManager();
+
                     $em->persist($this->get('session')->get('qcm'));
                     $em->flush();
 
-                    $qcm = $doctrine->getRepository('ElyceeElyceeBundle:Status')->find($this->get('session')->get('qcm')->getId());
-                    // $response = $doctrine->getEntityManager()->getRepository('ElyceeElyceeBundle:Questions')->findby($this->get('session')->get('questions'), $qcm);
-                    //$this->get('session')->getFlashBag()->add('message', $response);
+                    $qcm = $doctrine->getRepository('ElyceeElyceeBundle:Fiches')->find($this->get('session')->get('qcm')->getId());
+
+                    $response = $doctrine->getEntityManager()->getRepository('ElyceeElyceeBundle:Fiches')->persistQuestions($this->get('session')->get('questions'), $qcm);
+                    $this->get('session')->getFlashBag()->add('message', $response);
                     $request->getSession()->remove('nbr');
                     $request->getSession()->remove('choix');
                     $request->getSession()->remove('qcm');
                     $request->getSession()->remove('questions');
+                    $message = "La fiche a bien été ajoutée";
                     $request->getSession()->getFlashBag()->set('notice', $message);
                     $this->get('session')->set('nbr', $this->get('session')->get('nbr') - 1);
                     return $this->redirect($this->generateUrl('dashboard.default.index'));
                 }
-                $message = "La fiche a bien été supprimée";
+                $message = "La fiche a bien été ajouté";
 
             }
         }

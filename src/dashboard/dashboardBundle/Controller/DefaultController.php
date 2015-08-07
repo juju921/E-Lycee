@@ -9,11 +9,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Elycee\ElyceeBundle\Form\PostsType;
 use Elycee\ElyceeBundle\Entity\Posts;
 use Elycee\ElyceeBundle\Form\UserType;
+
 use Elycee\ElyceeBundle\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
 use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use FOS\RestBundle\Controller\FOSRestController;
+use Pagerfanta\Exception\NotValidCurrentPageException;
 
 
 
@@ -36,12 +38,14 @@ class DefaultController extends FOSRestController
         $countusr = $rcu->getCountUser();
         $countcomments =  $rcc->getCountComments();
         $results = $rc->getThreeLastPost();
+        $resultsFiches = $rcfiche->getThreeLastFiches();
         $countFiches = $rcfiche->getCountFiches();
         return array(
             'countcomments'=> $countcomments,
             'results' => $results,
             'countusr' => $countusr,
-            'countFiches'=> $countFiches
+            'countFiches'=> $countFiches,
+            'resultsFiches'=>$resultsFiches,
         );
 
 
@@ -82,25 +86,56 @@ class DefaultController extends FOSRestController
 
     /**
      *
-     * @Route("/articles/{id}", name="dashboard.default.getArticles",  defaults={"page" = 1} )
+     * @Route("/articles/{id}/{page}", name="dashboard.default.getArticles",  defaults={"page" = 1},   requirements={"page" = "\d+"} )
      * @Template("dashboarddashboardBundle:dashboard:articles.html.twig")
      */
-    public function getArticlesAction($id)
+    public function getArticlesAction($id, $page, Request $request)
     {
 
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('ElyceeElyceeBundle:Posts');
         $em = $this->getDoctrine()->getEntityManager();
-        $adapter  = new DoctrineORMAdapter($em->getRepository('ElyceeElyceeBundle:Posts'));
-        $pager    = new PagerFanta($adapter);
+
+
+
+        $qb = $this->getDoctrine()->getEntityManager()->createQueryBuilder()
+            ->select('Posts')
+            ->from('Elycee\ElyceeBundle\Entity\Posts', 'Posts')
+        ;
+
+
+        $adapter = new DoctrineORMAdapter($qb);
+        $pagerfanta = new Pagerfanta($adapter);
+        $pagerfanta->setMaxPerPage(1);
+        $pagerfanta->setCurrentPage($page);
+        $entities = $pagerfanta->getCurrentPageResults();
+
+
+        try {
+
+            $entities = $pagerfanta
+                // Le nombre maximum d'éléments par page
+                ->setMaxPerPage(3)
+                // Notre position actuelle (numéro de page)
+                ->setCurrentPage($page)
+                // On récupère nos entités via Pagerfanta,
+                // celui-ci s'occupe de limiter la requête en fonction de nos réglages.
+                ->getCurrentPageResults()
+            ;
+        } catch (\Pagerfanta\Exception\NotValidCurrentPageException $e) {
+            throw $this->createNotFoundException("Cette page n'existe pas.");
+
+        }
 
 
         /*$posts = $rc->findAll();*/
         $posts   = $rc->getPostByAuteur($id);
 
         return array(
-            'pager' => $pager,
-            'posts'=> $posts
+
+            'posts'=> $posts,
+            'entities' => $entities,
+            'pagerfanta' => $pagerfanta,
 
         );
     }

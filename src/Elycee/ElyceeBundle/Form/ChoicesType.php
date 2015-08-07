@@ -18,7 +18,9 @@ class ChoicesType extends AbstractType
             ->add('contentChoice')
             ->add('response','choice',array(
                 'choices' => array('1' => 'oui', '0' => 'non'),
-                'required' => true
+                'required' => true,
+                'expanded'=> true,
+                'multiple'=>false,
             ))
             ->add('point')
         ;

@@ -25,5 +25,46 @@ class FichesRepository extends EntityRepository
 
     }
 
+    public function getThreeLastFiches(){
+        $results = $this
+            ->createQueryBuilder('p')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+        return $results;
+    }
+
+
+    public function persistQuestions($questions,$qcm)
+    {
+        foreach ($questions as $question) {
+            $question->setFiche($qcm);
+            foreach ($question->getChoices() as $choice) {
+                $choice->setQuestion($question);
+            }
+            $this->getEntityManager()->persist($question);
+            $this->getEntityManager()->flush();
+        }
+    }
+
+
+    public function gettheFiches()
+    {
+
+        $results = $this
+            ->createQueryBuilder('p')
+            ->join('p.classes','f')
+            //->where('f.lvl_id = 1 ')
+            ->getQuery()
+            ->getSingleScalarResult();
+        return $results;
+
+
+
+
+    }
+
+
+
 
 }

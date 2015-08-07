@@ -22,12 +22,6 @@ class Fiches
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="matiere", type="text")
-     */
-    private $matiere;
 
     /**
      * @var string
@@ -37,16 +31,11 @@ class Fiches
 
     private $title;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content", type="text")
-     */
-    private $content;
+
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="fiches")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="fiches", cascade={"persist"})
      * @ORM\JoinColumn(name="teacher_id", referencedColumnName="id")
      *
      */
@@ -62,7 +51,7 @@ class Fiches
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Status", inversedBy="fiches", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Status", cascade={"persist","remove"})
      * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
      *
      */
@@ -77,8 +66,6 @@ class Fiches
      */
 
     protected $choices;
-
-
 
 
     /**
@@ -132,37 +119,12 @@ class Fiches
     }
 
 
-
-
-    /**
-     * Set content
-     *
-     * @param string $content
-     * @return Fiches
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-
-        return $this;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
     /**
      * Constructor
      */
     public function __construct()
     {
-        //$this->choices = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->choices = new \Doctrine\Common\Collections\ArrayCollection();
         $this->questions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -297,31 +259,6 @@ class Fiches
         return $this->scores;
     }
 
-
-
-
-    /**
-     * Set matiere
-     *
-     * @param string $matiere
-     * @return Fiches
-     */
-    public function setMatiere($matiere)
-    {
-        $this->matiere = $matiere;
-
-        return $this;
-    }
-
-    /**
-     * Get matiere
-     *
-     * @return string 
-     */
-    public function getMatiere()
-    {
-        return $this->matiere;
-    }
 
     /**
      * Add questions

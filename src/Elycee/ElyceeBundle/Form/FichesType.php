@@ -18,9 +18,7 @@ class FichesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('matiere')
             ->add('title')
-            ->add('content')
             ->add('teacher')
             ->add('classes', 'entity',array(
                 'class' => 'ElyceeElyceeBundle:Classes',

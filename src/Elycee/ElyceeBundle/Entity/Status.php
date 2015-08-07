@@ -33,8 +33,10 @@ class Status
 
     /**
      * @ORM\OneToMany(targetEntity="Fiches", mappedBy="status")
-     */
+
     protected $fiches;
+     *
+     *   */
 
 
 
@@ -99,44 +101,45 @@ class Status
 
 
 
+
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->fiches = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->students = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add fiches
+     * Add students
      *
-     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     * @param \Elycee\ElyceeBundle\Entity\User $students
      * @return Status
      */
-    public function addFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
+    public function addStudent(\Elycee\ElyceeBundle\Entity\User $students)
     {
-        $this->fiches[] = $fiches;
+        $this->students[] = $students;
 
         return $this;
     }
 
     /**
-     * Remove fiches
+     * Remove students
      *
-     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
+     * @param \Elycee\ElyceeBundle\Entity\User $students
      */
-    public function removeFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
+    public function removeStudent(\Elycee\ElyceeBundle\Entity\User $students)
     {
-        $this->fiches->removeElement($fiches);
+        $this->students->removeElement($students);
     }
 
     /**
-     * Get fiches
+     * Get students
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getFiches()
+    public function getStudents()
     {
-        return $this->fiches;
+        return $this->students;
     }
 }

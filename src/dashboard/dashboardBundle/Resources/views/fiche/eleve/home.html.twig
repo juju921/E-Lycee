@@ -29,9 +29,11 @@
                             <div class="panel-body">
                                 <p>Vos statistiques pour les QCM</p>
 
+
+
                                 {% for score in scores %}
 
-
+                                   Votre score est de {{ student.scores|length }}
                                     {{ score.fiche.title | raw }}
                                     {{ score.status.nom }}
 
