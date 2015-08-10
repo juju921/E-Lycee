@@ -25,8 +25,16 @@ class Fiches
     /**
      * @var string
      *
+     * @ORM\Column(name="matiere", type="text")
+     */
+    private $matiere;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="title", type="text")
      */
+
     private $title;
 
     /**
@@ -43,6 +51,7 @@ class Fiches
      *
      */
     private $teacher;
+
 
     /**
      * @ORM\ManyToOne(targetEntity="classes", inversedBy="fiches")
@@ -66,12 +75,20 @@ class Fiches
     /**
      * @ORM\OneToMany(targetEntity="Choices", mappedBy="fiche",  cascade={"persist","remove"})
      */
+
     protected $choices;
 
 
 
+
     /**
-     * @ORM\OneToMany(targetEntity="Scores", mappedBy="fiches", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="Questions", mappedBy="fiche",  cascade={"persist","remove"})
+     */
+    protected $questions;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Scores", mappedBy="fiche", cascade={"persist","remove"})
      *
      */
     protected $scores;
@@ -114,6 +131,9 @@ class Fiches
         return $this->title;
     }
 
+
+
+
     /**
      * Set content
      *
@@ -142,7 +162,8 @@ class Fiches
      */
     public function __construct()
     {
-        $this->choices = new \Doctrine\Common\Collections\ArrayCollection();
+        //$this->choices = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->questions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -195,19 +216,26 @@ class Fiches
 
 
 
+    public function setQuestions(ArrayCollection $questions)
+    {
+        foreach ($questions as $question) {
+            $question->setFiche($this);
+        }
+        $this->questions = $questions;
+    }
 
 
 
 
 
 
-    public function setChoices(ArrayCollection $choices)
+   /* public function setChoices(ArrayCollection $choices)
     {
         foreach ($choices as $choice) {
-            $choice->setFiches($this);
+            $choice->setFiche($this);
         }
         $this->choices = $choices;
-    }
+    }*/
 
 
 
@@ -269,16 +297,62 @@ class Fiches
         return $this->scores;
     }
 
+
+
+
     /**
-     * Add choices
+     * Set matiere
      *
-     * @param \Elycee\ElyceeBundle\Entity\Choices $choices
+     * @param string $matiere
      * @return Fiches
      */
-    public function addChoice(\Elycee\ElyceeBundle\Entity\Choices $choices)
+    public function setMatiere($matiere)
     {
-        $this->choices[] = $choices;
+        $this->matiere = $matiere;
 
         return $this;
+    }
+
+    /**
+     * Get matiere
+     *
+     * @return string 
+     */
+    public function getMatiere()
+    {
+        return $this->matiere;
+    }
+
+    /**
+     * Add questions
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Questions $questions
+     * @return Fiches
+     */
+    public function addQuestion(\Elycee\ElyceeBundle\Entity\Questions $questions)
+    {
+        $this->questions[] = $questions;
+
+        return $this;
+    }
+
+    /**
+     * Remove questions
+     *
+     * @param \Elycee\ElyceeBundle\Entity\Questions $questions
+     */
+    public function removeQuestion(\Elycee\ElyceeBundle\Entity\Questions $questions)
+    {
+        $this->questions->removeElement($questions);
+    }
+
+    /**
+     * Get questions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
     }
 }

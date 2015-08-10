@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>d2f12970-7d00-4ee1-acdb-72d94cde14f3</OriginalElement>
+  <nodes>
+    <node x="0.0" y="1006.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.questions</node>
+    <node x="460.5906862745098" y="980.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.comments</node>
+    <node x="8.5" y="1194.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.choices</node>
+    <node x="317.0" y="136.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fos_user</node>
+    <node x="327.61151960784315" y="1434.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.copie</node>
+    <node x="57.0" y="727.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fiches</node>
+    <node x="276.2156862745098" y="0.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.classes</node>
+    <node x="430.5906862745098" y="688.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.posts</node>
+    <node x="184.0" y="344.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.status</node>
+    <node x="804.3480392156862" y="0.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.contact</node>
+    <node x="186.1470588235294" y="980.0">d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.scores</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.scores" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fiches">
+      <point x="-57.66666666666666" y="-82.0" />
+      <point x="214.98039215686273" y="955.0" />
+      <point x="201.16666666666666" y="955.0" />
+      <point x="57.66666666666666" y="82.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.copie" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fos_user">
+      <point x="38.25" y="-69.0" />
+      <point x="442.36151960784315" y="1409.0" />
+      <point x="723.3480392156862" y="1409.0" />
+      <point x="723.3480392156862" y="668.0" />
+      <point x="695.875" y="668.0" />
+      <point x="162.375" y="251.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.choices" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.questions">
+      <point x="-48.25" y="-95.0" />
+      <point x="56.75" y="1169.0" />
+      <point x="66.5" y="1169.0" />
+      <point x="0.0" y="56.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.scores" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.status">
+      <point x="0.0" y="-82.0" />
+      <point x="272.6470588235294" y="955.0" />
+      <point x="240.5" y="955.0" />
+      <point x="0.0" y="43.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fiches" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.classes">
+      <point x="-57.666666666666686" y="-82.0" />
+      <point x="85.83333333333331" y="668.0" />
+      <point x="122.48039215686273" y="668.0" />
+      <point x="122.48039215686273" y="111.0" />
+      <point x="304.4656862745098" y="111.0" />
+      <point x="-28.25" y="43.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.questions" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fiches">
+      <point x="0.0" y="-56.0" />
+      <point x="66.5" y="955.0" />
+      <point x="85.83333333333331" y="955.0" />
+      <point x="-57.66666666666666" y="82.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fiches" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.status">
+      <point x="0.0" y="-82.0" />
+      <point x="143.5" y="658.0" />
+      <point x="202.83333333333334" y="658.0" />
+      <point x="-37.66666666666666" y="43.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.scores" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fos_user">
+      <point x="57.666666666666686" y="-82.0" />
+      <point x="330.3137254901961" y="955.0" />
+      <point x="415.92401960784315" y="955.0" />
+      <point x="415.92401960784315" y="668.0" />
+      <point x="479.375" y="668.0" />
+      <point x="-54.125" y="251.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fiches" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fos_user">
+      <point x="57.66666666666666" y="-82.0" />
+      <point x="201.16666666666666" y="668.0" />
+      <point x="371.125" y="668.0" />
+      <point x="-162.375" y="251.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.posts" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fos_user">
+      <point x="58.25" y="-121.0" />
+      <point x="605.3406862745098" y="668.0" />
+      <point x="587.625" y="668.0" />
+      <point x="54.125" y="251.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fos_user" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.classes">
+      <point x="0.0" y="-251.0" />
+      <point x="533.5" y="111.0" />
+      <point x="360.9656862745098" y="111.0" />
+      <point x="28.25" y="43.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.comments" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.posts">
+      <point x="0.0" y="-82.0" />
+      <point x="0.0" y="121.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.posts" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.status">
+      <point x="-58.25" y="-121.0" />
+      <point x="488.8406862745098" y="658.0" />
+      <point x="278.16666666666663" y="658.0" />
+      <point x="37.66666666666663" y="43.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.copie" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.choices">
+      <point x="-38.25" y="-69.0" />
+      <point x="365.86151960784315" y="1409.0" />
+      <point x="105.0" y="1409.0" />
+      <point x="0.0" y="95.0" />
+    </edge>
+    <edge source="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.choices" target="d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fiches">
+      <point x="48.25" y="-95.0" />
+      <point x="153.25" y="1169.0" />
+      <point x="143.5" y="1169.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.35615577889447236" x="740.294532627866" y="823.9047619047619" />
+  <SelectedNodes>
+    <node>d2f12970-7d00-4ee1-acdb-72d94cde14f3.table:elycee.fos_user</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

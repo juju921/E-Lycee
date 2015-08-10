@@ -49,9 +49,22 @@ class Choices
     /**
      * @ORM\ManyToOne(targetEntity="fiches", inversedBy="choices")
      * @ORM\JoinColumn(name="fiche_id", referencedColumnName="id")
+     */
+
+    private $fiche;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="questions", inversedBy="choices")
+     * @ORM\JoinColumn(name="question_id", referencedColumnName="id")
      *
      */
-    private $fiche;
+    private $question;
+
+
+
+
+
 
 
 
@@ -144,4 +157,37 @@ class Choices
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Set question
+     *
+     * @param \Elycee\ElyceeBundle\Entity\questions $question
+     * @return Choices
+     */
+    public function setQuestion(\Elycee\ElyceeBundle\Entity\questions $question = null)
+    {
+        $this->question = $question;
+
+        return $this;
+    }
+
+    /**
+     * Get question
+     *
+     * @return \Elycee\ElyceeBundle\Entity\questions 
+     */
+    public function getQuestion()
+    {
+        return $this->question;
+    }
 }
