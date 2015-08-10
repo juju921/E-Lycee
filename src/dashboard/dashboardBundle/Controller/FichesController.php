@@ -60,7 +60,7 @@ class FichesController extends Controller
 
             $entities = $pagerfanta
                 // Le nombre maximum d'éléments par page
-                ->setMaxPerPage(6)
+                ->setMaxPerPage(3)
                 // Notre position actuelle (numéro de page)
                 ->setCurrentPage($page)
                 // On récupère nos entités via Pagerfanta,
@@ -122,7 +122,9 @@ class FichesController extends Controller
             if ($form->isValid() && $nbr <= 10 && $nbr > 0) {
 
                 $fiche =  $form->getData();
-               // $fiche->setStatus('unpublish');
+                $status = $form->get('status')->getData();
+                $fiche->setStatus($status);
+                $em->persist($fiche);
 
                 $this->get('session')->set('nbr', $nbr);
                 $this->get('session')->set('choix', $nbr);
@@ -181,10 +183,11 @@ class FichesController extends Controller
                     $request->getSession()->remove('questions');
                     $message = "La fiche a bien été ajoutée";
                     $request->getSession()->getFlashBag()->set('notice', $message);
-                    $this->get('session')->set('nbr', $this->get('session')->get('nbr') - 1);
                     return $this->redirect($this->generateUrl('dashboard.default.index'));
                 }
                 $message = "La fiche a bien été ajouté";
+                $this->get('session')->set('nbr', $this->get('session')->get('nbr') - 1);
+
 
             }
         }

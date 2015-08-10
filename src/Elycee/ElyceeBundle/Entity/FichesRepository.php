@@ -40,9 +40,13 @@ class FichesRepository extends EntityRepository
         foreach ($questions as $question) {
             $question->setFiche($qcm);
             foreach ($question->getChoices() as $choice) {
+                $choice->setFiche($qcm);
                 $choice->setQuestion($question);
+
             }
+
             $this->getEntityManager()->persist($question);
+            //echo  dump($question);exit;
             $this->getEntityManager()->flush();
         }
     }
@@ -54,9 +58,9 @@ class FichesRepository extends EntityRepository
         $results = $this
             ->createQueryBuilder('p')
             ->join('p.classes','f')
-            //->where('f.lvl_id = 1 ')
+            ->where('f.lvl_id = 1 ')
             ->getQuery()
-            ->getSingleScalarResult();
+            ->getResult();
         return $results;
 
 

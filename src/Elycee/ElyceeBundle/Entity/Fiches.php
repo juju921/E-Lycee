@@ -43,7 +43,7 @@ class Fiches
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="classes", inversedBy="fiches",  cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="classes", inversedBy="fiches", cascade={"persist"})
      * @ORM\JoinColumn(name="lvl_id", referencedColumnName="id")
      *
      */
@@ -51,7 +51,7 @@ class Fiches
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="Status", cascade={"persist","remove"})
+     * @ORM\ManyToOne(targetEntity="Status", cascade={"persist"})
      * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
      *
      */
@@ -75,7 +75,7 @@ class Fiches
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Scores", mappedBy="fiche", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="Scores", mappedBy="fiche")
      *
      */
     protected $scores;
