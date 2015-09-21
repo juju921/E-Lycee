@@ -24,18 +24,18 @@ class FichesType extends AbstractType
                 'class' => 'ElyceeElyceeBundle:Classes',
                 'property' => 'classLevel'
             ))
-            ->add('status', 'entity' ,array(
+           /* ->add('status', 'entity' ,array(
                     'class'=> 'ElyceeElyceeBundle:Status',
                     'property' => 'nom'
-                    ))
+                    ))*/
 
-            ->add('choices', 'collection',
+            /*->add('choices', 'collection',
                 array(
                 'type'         => new ChoicesType(),
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'by_reference' => false
-                ))
+                ))*/
             ->add('questions', 'collection',
                 array(
                     'type'         => new QuestionsType(),

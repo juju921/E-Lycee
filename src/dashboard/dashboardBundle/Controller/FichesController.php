@@ -103,7 +103,7 @@ class FichesController extends Controller
         $token = $this->get('security.context')->getToken();
         $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Status');
-        //$unpublished = $repository->findOneBy(array('nom'=>'UNPUBLISHED'));
+        $unpublished = $repository->findOneBy(array('nom'=>'unpublish'));
         $user = $token->getUser();
         $em = $doctrine->getManager();
         $fiche = new Fiches();
@@ -122,8 +122,9 @@ class FichesController extends Controller
             if ($form->isValid() && $nbr <= 10 && $nbr > 0) {
 
                 $fiche =  $form->getData();
-                $status = $form->get('status')->getData();
-                $fiche->setStatus($status);
+                $fiche->setStatus($unpublished);
+               // echo dump($unpublished);exit;
+               // $fiche->setStatus($status);
                 $em->persist($fiche);
 
                 $this->get('session')->set('nbr', $nbr);

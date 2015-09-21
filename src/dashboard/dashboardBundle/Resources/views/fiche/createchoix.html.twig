@@ -23,9 +23,7 @@
             {% if not form.vars.valid %}
                 <div class="alert alert-danger" role="alert">
                     {{ form_errors(form.content) }}{{ form_errors(form.content) }}
-                    {% for choice in form.choices %}
-                        {{ form_errors(choice.content) }}
-                    {% endfor %}
+
                 </div>
             {% endif %}
 

@@ -40,7 +40,7 @@ class FichesRepository extends EntityRepository
         foreach ($questions as $question) {
             $question->setFiche($qcm);
             foreach ($question->getChoices() as $choice) {
-                $choice->setFiche($qcm);
+                //$choice->setFiche($qcm);
                 $choice->setQuestion($question);
 
             }
@@ -58,7 +58,9 @@ class FichesRepository extends EntityRepository
         $results = $this
             ->createQueryBuilder('p')
             ->join('p.classes','f')
-            ->where('f.lvl_id = 1 ')
+            ->join('p.status','status')
+          //  ->where('f.class_level  =  \'premiere\' ')
+            ->andWhere('status.nom = \'publish\'')
             ->getQuery()
             ->getResult();
         return $results;

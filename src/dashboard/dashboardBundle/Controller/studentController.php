@@ -33,8 +33,9 @@ class studentController extends Controller
     {
         $token = $this->get('security.context')->getToken();
         $doctrine = $this->getDoctrine();
-        $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
-        $scores = $scoreRp->getScoreSeenStudent($token->getUser()->getId());
+        $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
+        $scores = $scoreRp->gettheFiches();
+        $fichesquery = $scoreRp->getfichebyuser();
 
         return array(
             'scores' => $scores
