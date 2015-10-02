@@ -237,10 +237,12 @@ class FichesController extends Controller
      *      "/dashboard/fiches/delete/{id}",
      *      name="dashboard.fiches.delete",
      * )
-     * @Method({"POST","GET"})
+     *
+     * @Method({"PUT","GET"})
      */
     public function deleteAction(Request $request, $id)
     {
+
         $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
         $fiche = $repository->find($id);
@@ -253,6 +255,59 @@ class FichesController extends Controller
         $urlRedirect = $this->generateUrl('dashboard.default.index');
 
         return $this->redirect($urlRedirect);
+
+    }
+
+
+
+    /**
+     * @Route(
+     *      "/dashboard/fiches/edit/{id}",
+     *      name="dashboard.fiches.edit",
+     *       requirements = { "id" = "\d+" }
+     * )
+     * @template("dashboarddashboardBundle:fiche:editfiche.html.twig")
+     * @Method({"POST","GET"})
+     */
+    public function editFicheAction(Request $request, $id)
+    {
+
+        $doctrine = $this->getDoctrine();
+        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
+        $fiche = $repository->find($id);
+        $em = $doctrine->getManager();
+        //$em->remove($fiche);
+        $type = new FichesType();
+        $form = $this->createForm($type, $fiche);
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($fiche);
+            //$data = $form->getData();
+            $em->flush();
+            // message en session
+            $request->getSession()->getFlashBag()->set('notice', $message);
+
+            // on redirige l'utilisateur
+            $url = $this->generateUrl('dashboard.default.index');
+            return $this->redirect($url);
+
+
+            $message = "La fiche a été ajouté";
+
+
+        }
+        return array(
+            'form' => $form->createView(),
+
+        );
+
+
+
+
+
+
+
 
     }
 

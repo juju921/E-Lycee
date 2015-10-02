@@ -29,7 +29,7 @@
 
                 <tr>
 
-                    <td><a href="{{ path('dashboarddashboardBundle:dashboard:show',{'id' : fiche.id}) }}">{{ fiche.title  |raw   }}</a></td>
+                    <td><a href="{{ path('dashboard.fiches.edit',{'id' : fiche.id}) }}">{{ fiche.title  |raw   }}</a></td>
                     <td>
 
                         {% if fiche.status  ==   "1" %}

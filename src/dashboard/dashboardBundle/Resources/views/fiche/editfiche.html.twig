@@ -1,0 +1,89 @@
+{% extends "dashboarddashboardBundle::base.html.twig" %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Editer un QCM</h1>
+                </div>
+                </div>
+
+                <div class="col-lg-12">
+                    {% if error is defined %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+                    {% if not form.vars.valid %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_errors(form) }}{{ form_errors(form.title) }}{{ form_errors(form.classLevel) }}{{ form_errors(form.status) }}
+                            {% for question in form.questions %}
+                                {{ form_errors(question.content) }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <form method="POST" {{ form_enctype(form) }} class="form-horizontal" novalidate>
+
+                    <input type="hidden" name="_method" value="PUT">
+
+                    <p class="form-group">
+                        {{ form_label(form.title, 'Titre du QCM * ') }}
+                        {{ form_widget(form.title,{'attr' : {'class':'form-control' }}) }}
+                    </p>
+
+                    <p class="form-group" {% if form.vars.value.status == 'publish' %}style="display:none"{% endif %}>
+                        {{ form_label(form.classes, 'Classe * ') }}
+                        {{ form_widget(form.classes,{'attr' : {'class':'form-control' }}) }}
+                    </p>
+
+                    {{ form_label(form.questions, 'Questions * ') }}
+                    <ul class="list-group">
+                        {% for question in form.questions %}
+                            {% set count = loop.index %}
+                            <li class="list-group-item well">
+                                <h4>Question n° {{ loop.index }}</h4>
+
+                                <p>
+                                    {{ form_widget(question.content,{'attr' : {'class':'form-control' }}) }}
+                                </p>
+                                <h4>Réponses</h4>
+                                <ul class="list-group">
+                                    {% for choice in question.choices %}
+                                        <li class="list-group-item">
+                                            <p>
+
+                                                {{ form_widget(choice.contentChoice,{'attr' : {'class':'form-control' }}) }}
+                                            </p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <h4>Points</h4>
+
+                                <p>
+                                    {#  {{ form_widget(question.points,{'attr' : {'class':'form-control' }}) }}#}
+                                </p>
+                                <em>Cocher la bonne réponse</em>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {#{% if form.vars.value.status != 'publish' %}
+                        <p class="form-group">
+                            {{ form_widget(form.publish) }}
+                            {{ form_label(form.publish,'Publier') }}
+                        </p>
+                    {% endif %}#}
+                    {{ form_widget(form._token) }}
+                    {{ form_widget(form.valider,{'attr' : {'class':'btn pull-right btn-default' }}) }}
+
+                </form>
+
+                <em>(*) Champs Obligatoire</em>
+
+
+        </div>
+    </div>
+
+{% endblock %}
