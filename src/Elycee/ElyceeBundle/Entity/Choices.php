@@ -35,12 +35,7 @@ class Choices
      */
     private $response;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="point", type="float")
-     */
-    private $point;
+
 
 
 

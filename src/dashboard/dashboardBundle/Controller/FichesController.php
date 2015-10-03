@@ -267,7 +267,7 @@ class FichesController extends Controller
      *       requirements = { "id" = "\d+" }
      * )
      * @template("dashboarddashboardBundle:fiche:editfiche.html.twig")
-     * @Method({"POST","GET"})
+     * @Method({"PUT","GET"})
      */
     public function editFicheAction(Request $request, $id)
     {
@@ -276,11 +276,14 @@ class FichesController extends Controller
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
         $fiche = $repository->find($id);
         $em = $doctrine->getManager();
-        //$em->remove($fiche);
+
+
+
         $type = new FichesType();
         $form = $this->createForm($type, $fiche);
         $form->handleRequest($request);
         if ($form->isValid()) {
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($fiche);
             //$data = $form->getData();

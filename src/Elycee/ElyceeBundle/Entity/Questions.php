@@ -47,7 +47,12 @@ class Questions
      */
     private $fiche;
 
-
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="point", type="float")
+     */
+    private $point;
 
 
 
@@ -165,5 +170,28 @@ class Questions
     public function getChoices()
     {
         return $this->choices;
+    }
+
+    /**
+     * Set point
+     *
+     * @param float $point
+     * @return Questions
+     */
+    public function setPoint($point)
+    {
+        $this->point = $point;
+
+        return $this;
+    }
+
+    /**
+     * Get point
+     *
+     * @return float 
+     */
+    public function getPoint()
+    {
+        return $this->point;
     }
 }
