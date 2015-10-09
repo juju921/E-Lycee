@@ -34,10 +34,12 @@
                         {{ form_widget(form.title,{'attr' : {'class':'form-control' }}) }}
                     </p>
 
-                    <p class="form-group" {% if form.vars.value.status == 'publish' %}style="display:none"{% endif %}>
+                    <p class="form-group" >
                         {{ form_label(form.classes, 'Classe * ') }}
                         {{ form_widget(form.classes,{'attr' : {'class':'form-control' }}) }}
                     </p>
+
+
 
                     {{ form_label(form.questions, 'Questions * ') }}
                     <ul class="list-group">
@@ -69,16 +71,24 @@
                             </li>
                         {% endfor %}
                     </ul>
-                    {#{% if form.vars.value.status != 'publish' %}
+
+
+                    {% if form.vars.value.status != 'publish' %}
                         <p class="form-group">
                             {{ form_widget(form.publish) }}
                             {{ form_label(form.publish,'Publier') }}
                         </p>
-                    {% endif %}#}
+                    {% endif %}
+
                     {{ form_widget(form._token) }}
                     {{ form_widget(form.valider,{'attr' : {'class':'btn  btn-default' }}) }}
 
+
+
+
+
                 </form>
+
 
                 <em>(*) Champs Obligatoire</em>
 

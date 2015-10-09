@@ -34,13 +34,20 @@ class studentController extends Controller
         $token = $this->get('security.context')->getToken();
         $doctrine = $this->getDoctrine();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
+
+        $qcms = $scoreRp->findBy(['status' => 'publish', 'classes' => $this->getUser()->getClasse()]);
+
+
+
         $scores = $scoreRp->gettheFiches();
         $fichesquery = $scoreRp->getfichebyuser();
 
         return array(
-            'scores' => $scores
+            'scores' => $scores,
+            'publishedQcms' => count($qcms)
         );
     }
+
 
 
     /**

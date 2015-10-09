@@ -36,6 +36,16 @@
                     {{ form_errors(form.content) }}
                 </div>
 
+
+
+                <div class="form-group level">
+                    {{ form_label(form.point, 'points : ') }}
+                    {{ form_widget(form.point,{'attr' : {'placeholder':'Saisissez le nombe de point de la qurestion','class':'form-control'}}) }}
+                    {{ form_errors(form.point) }}
+                </div>
+
+
+
              {#   <ul class="tags" data-prototype="
 {% filter escape %}
 {{ include('dashboarddashboardBundle:inc:choices-prototype.html.twig', { 'form': form.choices.vars.prototype }) }}

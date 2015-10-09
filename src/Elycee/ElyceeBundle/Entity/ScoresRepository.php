@@ -31,6 +31,20 @@ class ScoresRepository extends EntityRepository
         return $results ;
     }
 
+    public function generateScores($qcm){
+        $em = $this->getEntityManager();
+        $users = $em->getRepository('ElyceeElyceeBundle:User')->findBy(['classe' => $qcm->getClasses()]);
+        foreach ($users as $user) {
+            $score = new Scores();
+          //  $score->setStatus($qcm->setStatus(2));
+            $score->setNote(0);
+            $score->setStudent($user);
+            $score->setFiche($qcm);
+            $em->persist($score);
+        }
+        $em->flush();
+    }
+
 
 
 }

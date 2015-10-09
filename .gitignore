@@ -35,3 +35,8 @@
 
 # PHP STORM
 /.idea/
+
+
+#PHP HTML-TEST
+/html_test/
+

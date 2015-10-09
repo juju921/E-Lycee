@@ -28,6 +28,8 @@ class QuestionsType extends AbstractType
                 ))
             ->add('continuer', 'submit')
             ->add('valider','submit')
+            ->add('point', 'integer', array(
+    'label' => false))
         ;
     }
     

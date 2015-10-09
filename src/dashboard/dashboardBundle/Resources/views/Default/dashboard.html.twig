@@ -37,7 +37,7 @@
 
 
                             {% for fiche in resultsFiches %}
-                                <a href="#" class="list-group-item">
+                                <a href="{{ path('dashboard.fiches.edit',{'id' : fiche.id}) }}" class="list-group-item">
                                     <i class="fa fa-pencil"></i> {{ fiche.title | raw }}
                                     <span class="pull-right text-muted small">
                                         {% if fiche.status ==   "1" %}

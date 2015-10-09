@@ -71,6 +71,28 @@ class FichesRepository extends EntityRepository
     }
 
 
+    public function updateQcm($request,$form,$qcmStatus){
+        $em = $this->getEntityManager();
+        $qcm = $form->getData();
+        $published = $form->get('publish')->getData();
+        if($published){
+
+            $qcm->setStatus('publish');
+            $em->getRepository('ElyceeElyceeBundle:Scores')->generateScores($qcm);
+        }
+        if($qcmStatus == 'publish' && !$published)
+            $qcm->setStatus('publish');
+        foreach($qcm->getQuestions() as $key1 => $question)
+            foreach ($question->getChoices() as $key2 => $choice) {
+                if ($choice->getContentChoice() == '') return ['status' => 'error','content' => 'Les réponses ne peuvent pas être vides !'];
+                ($key2 + 1 == $request->get('reponse' . ($key1 + 1))) ? $choice->setStatus('yes') : $choice->setStatus('no');
+            }
+        $em->persist($qcm);
+        $em->flush();
+        return ['status' => 'success','content' => 'Le QCM a été mis à jour !'];
+    }
+
+
 
 
 }

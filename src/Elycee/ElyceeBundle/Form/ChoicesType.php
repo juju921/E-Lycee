@@ -22,7 +22,7 @@ class ChoicesType extends AbstractType
                 'expanded'=> true,
                 'multiple'=>false,
             ))
-            ->add('point')
+
         ;
     }
     

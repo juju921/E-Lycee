@@ -31,10 +31,7 @@ class Status
     private $nom;
 
 
-    /**
-     * @ORM\OneToMany(targetEntity="Fiches", mappedBy="status",  cascade={"persist"} )
-        */
-    protected $fiches;
+
 
 
 
@@ -142,36 +139,7 @@ class Status
         return $this->students;
     }
 
-    /**
-     * Add fiches
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
-     * @return Status
-     */
-    public function addFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
-    {
-        $this->fiches[] = $fiches;
 
-        return $this;
-    }
 
-    /**
-     * Remove fiches
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
-     */
-    public function removeFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
-    {
-        $this->fiches->removeElement($fiches);
-    }
 
-    /**
-     * Get fiches
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getFiches()
-    {
-        return $this->fiches;
-    }
 }

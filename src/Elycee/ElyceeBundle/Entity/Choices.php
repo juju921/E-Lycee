@@ -35,7 +35,12 @@ class Choices
      */
     private $response;
 
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string")
+     */
+    protected $status = 'no';
 
 
 
@@ -174,4 +179,27 @@ class Choices
     }
 
 
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return Choices
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 }

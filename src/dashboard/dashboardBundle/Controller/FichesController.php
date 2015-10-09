@@ -3,6 +3,7 @@
 namespace dashboard\dashboardBundle\Controller;
 
 
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -14,6 +15,7 @@ use Elycee\ElyceeBundle\Entity\Fiches;
 use Elycee\ElyceeBundle\Form\FichesType;
 use Elycee\ElyceeBundle\Form\ChoicesType;
 use Elycee\ElyceeBundle\Entity\Choices;
+use Elycee\ElyceeBundle\Form\UpdateFicheType;
 use Elycee\ElyceeBundle\Entity\Questions;
 use Elycee\ElyceeBundle\Form\QuestionsType;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -29,7 +31,6 @@ use Elycee\ElyceeBundle\Entity\Status;
 class FichesController extends Controller
 {
 
-
     /**
      * @Route("dashboard/fiches/list/{page}", name="fiches.show", defaults={"page" = 1}, requirements={"page" = "\d+"} )
      * @Template("dashboarddashboardBundle:fiche:showfiche.html.twig")
@@ -38,15 +39,13 @@ class FichesController extends Controller
     {
 
 
-
         $token = $this->get('security.context')->getToken();
         $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
 
         $qb = $this->getDoctrine()->getEntityManager()->createQueryBuilder()
             ->select('Fiches')
-            ->from('Elycee\ElyceeBundle\Entity\Fiches', 'Fiches')
-        ;
+            ->from('Elycee\ElyceeBundle\Entity\Fiches', 'Fiches');
 
 
         $adapter = new DoctrineORMAdapter($qb);
@@ -65,14 +64,11 @@ class FichesController extends Controller
                 ->setCurrentPage($page)
                 // On récupère nos entités via Pagerfanta,
                 // celui-ci s'occupe de limiter la requête en fonction de nos réglages.
-                ->getCurrentPageResults()
-            ;
+                ->getCurrentPageResults();
         } catch (\Pagerfanta\Exception\NotValidCurrentPageException $e) {
             throw $this->createNotFoundException("Cette page n'existe pas.");
 
         }
-
-
 
 
         $fiches = $repository->findBy(array('teacher' => $token->getUser()->getId()));
@@ -82,10 +78,6 @@ class FichesController extends Controller
             'pagerfanta' => $pagerfanta,
 
         );
-
-
-
-
 
 
     }
@@ -103,13 +95,13 @@ class FichesController extends Controller
         $token = $this->get('security.context')->getToken();
         $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Status');
-        $unpublished = $repository->findOneBy(array('nom'=>'unpublish'));
+        $unpublished = $repository->findOneBy(array('nom' => 'unpublish'));
         $user = $token->getUser();
         $em = $doctrine->getManager();
         $fiche = new Fiches();
         $ficheType = new FichesType();
-        $choices = new Choices();
-        $choicesTypes = new ChoicesType();
+        //$choices = new Choices();
+        //$choicesTypes = new ChoicesType();
 
 
         $form = $this->createForm($ficheType, $fiche);
@@ -121,15 +113,15 @@ class FichesController extends Controller
             if ($nbr > 10 || $nbr < 1) return ['form' => $form->createView(), 'error' => 'Le nombre de questions doit être compris entre 1 et 10'];
             if ($form->isValid() && $nbr <= 10 && $nbr > 0) {
 
-                $fiche =  $form->getData();
+                $fiche = $form->getData();
                 $fiche->setStatus($unpublished);
-               // echo dump($unpublished);exit;
-               // $fiche->setStatus($status);
+                // echo dump($unpublished);exit;
                 $em->persist($fiche);
 
                 $this->get('session')->set('nbr', $nbr);
                 $this->get('session')->set('choix', $nbr);
                 $this->get('session')->set('qcm', $fiche);
+
                 $this->get('session')->set('questions', []);
                 return $this->redirect($this->generateUrl('dashboard.choix.new'));
             }
@@ -259,7 +251,6 @@ class FichesController extends Controller
     }
 
 
-
     /**
      * @Route(
      *      "/dashboard/fiches/edit/{id}",
@@ -274,42 +265,24 @@ class FichesController extends Controller
 
         $doctrine = $this->getDoctrine();
         $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
-        $fiche = $repository->find($id);
-        $em = $doctrine->getManager();
-
-
-
-        $type = new FichesType();
-        $form = $this->createForm($type, $fiche);
-        $form->handleRequest($request);
-        if ($form->isValid()) {
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($fiche);
-            //$data = $form->getData();
-            $em->flush();
-            // message en session
-            $request->getSession()->getFlashBag()->set('notice', $message);
-
-            // on redirige l'utilisateur
-            $url = $this->generateUrl('dashboard.default.index');
-            return $this->redirect($url);
-
-
-            $message = "La fiche a été ajouté";
-
-
+        $qcm = $repository->find($id);
+        if (!$qcm) {
+            $this->get('session')->getFlashBag()->add('message', ['status' => 'error', 'content' => "La fiche n'a pas été trouvé !"]);
+            return $this->redirect($this->generateUrl('dashboard.default.index'));
         }
-        return array(
-            'form' => $form->createView(),
-
-        );
-
-
-
-
-
-
+        $qcmStatus = $qcm->getStatus();
+        $form = $this->createForm(new UpdateFicheType(), $qcm);
+        if ($request->isMethod('PUT')) {
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $response = $doctrine->getManager()->getRepository('ElyceeElyceeBundle:Fiches')->updateQcm($request, $form, $qcmStatus);
+                if ($response['status'] == 'error')
+                    return ['form' => $form->createView(), 'error' => $response["content"]];
+                $this->get('session')->getFlashBag()->add('message', $response);
+                return $this->redirect($this->generateUrl('dashboard.default.index'));
+            }
+        }
+        return ['form' => $form->createView()];
 
 
     }

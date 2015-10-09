@@ -30,7 +30,6 @@ class DefaultController extends BaseController
     public function indexAction(Request $request)
     {
 
-        /** @var $session \Symfony\Component\HttpFoundation\Session\Session */
         $fb = $this->get('session')->getFlashBag();
         $fb->set('login', "vous êtes bien connectés");
         $session = $request->getSession();

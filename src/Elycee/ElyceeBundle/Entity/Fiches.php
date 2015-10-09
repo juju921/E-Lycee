@@ -32,6 +32,12 @@ class Fiches
     private $title;
 
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", options = {"default":"unpublish"})
+     */
+    protected $status = 'unpublish';
 
 
     /**
@@ -50,12 +56,8 @@ class Fiches
     private $classes;
 
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Status")
-     * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
-     *
-     */
-    private $status;
+
+
 
 
 
@@ -145,29 +147,6 @@ class Fiches
     }
 
 
-
-    /**
-     * Set status
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Status $status
-     * @return Fiches
-     */
-    public function setStatus(\Elycee\ElyceeBundle\Entity\Status $status = null)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return \Elycee\ElyceeBundle\Entity\Status
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
 
 
 
@@ -280,4 +259,27 @@ class Fiches
     }
 
 
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return Fiches
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 }

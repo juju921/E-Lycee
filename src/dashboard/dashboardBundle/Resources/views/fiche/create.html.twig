@@ -47,22 +47,7 @@
 
                 </div>
 
-                {#  <p>
-                    {{ form_widget(form._token) }}
-                    {% if app.session.get('nbr') == 1 %}
-                        {{ form_widget(form.valider,{'attr' : {'class':'btn pull-right btn-default' }}) }}
-                    {% else %}
-                        {{ form_widget(form.continuer,{'attr' : {'class':'btn pull-right btn-default' }}) }}
-                    {% endif %}
-                </p>
 
-
-                {#   <ul class="questions" data-prototype="
-             {% filter escape %}
-               {{ include('dashboarddashboardBundle:inc:questions-prototypes.html.twig', { 'form': form.questions.vars.prototype }) }}
-             {% endfilter %}
-           ">
-                   </ul>#}
 
                 {{ form_widget(form._token) }}
 
