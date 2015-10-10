@@ -32,7 +32,7 @@ class Classes
     /**
      * @ORM\OneToMany(targetEntity="Fiches", mappedBy="classes")
      */
-    protected $fiches;
+    protected $lvl_id_fiches;
 
     /**
      * @ORM\OneToMany(targetEntity="User", mappedBy="classes")

@@ -49,12 +49,11 @@ class Fiches
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="classes", inversedBy="fiches", cascade={"persist"})
-     * @ORM\JoinColumn(name="lvl_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Classes", inversedBy="lvl_id_fiches")
+     * @ORM\JoinColumn(name="lvl_id_fiches", referencedColumnName="id")
      *
      */
     private $classes;
-
 
 
 
