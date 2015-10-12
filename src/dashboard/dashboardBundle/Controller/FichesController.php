@@ -150,7 +150,6 @@ class FichesController extends Controller
             if ($form->isValid()) {
                 $question = $form->getData();
                 if (is_null($question->getChoices()) || count($question->getChoices()) < 2 || count($question->getChoices()) > 5)
-
                     return ['form' => $form->createView(), 'error' => 'Vous devez avoir au moins 1 réponse et au plus 5 réponses !'];
                 /*if (is_null($request->get('reponse')))
                     return ['form' => $form->createView(), 'error' => 'Vous devez cocher la bonne réponse !'];*/
