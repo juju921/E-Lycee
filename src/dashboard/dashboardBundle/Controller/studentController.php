@@ -40,7 +40,9 @@ class studentController extends Controller
 
 
         $scores = $scoreRp->gettheFiches();
-        $fichesquery = $scoreRp->getfichebyuser();
+      //  $id = $token->getUser()->getId();
+        //$iduser = 2;
+        //$fichesquery = $scoreRp->getfichebyuser($iduser);
 
         return array(
             'scores' => $scores,

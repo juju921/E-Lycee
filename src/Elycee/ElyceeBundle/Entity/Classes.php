@@ -30,7 +30,7 @@ class Classes
     private $classLevel;
 
     /**
-     * @ORM\OneToMany(targetEntity="Fiches", mappedBy="classes")
+     * @ORM\OneToMany(targetEntity="Fiches", mappedBy="classesLevel")
      */
     protected $lvl_id_fiches;
 
@@ -85,42 +85,10 @@ class Classes
      */
     public function __construct()
     {
-        $this->fiches = new \Doctrine\Common\Collections\ArrayCollection();
         $this->students = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-    /**
-     * Add fiches
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
-     * @return Classes
-     */
-    public function addFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
-    {
-        $this->fiches[] = $fiches;
 
-        return $this;
-    }
-
-    /**
-     * Remove fiches
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Fiches $fiches
-     */
-    public function removeFich(\Elycee\ElyceeBundle\Entity\Fiches $fiches)
-    {
-        $this->fiches->removeElement($fiches);
-    }
-
-    /**
-     * Get fiches
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getFiches()
-    {
-        return $this->fiches;
-    }
 
     /**
      * Add students

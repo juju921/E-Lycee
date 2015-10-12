@@ -65,9 +65,20 @@ class FichesRepository extends EntityRepository
             ->getResult();
         return $results;
 
+    }
 
 
-
+    public  function getfichebyuser($iduser)
+    {
+        $results = $this
+            ->createQueryBuilder('p')
+            ->select('p.title')
+            ->where(':teacher_id   = :iduser')
+            ->setParameter(':id',$iduser)
+            ->getQuery()
+            ->getResult();
+        echo $results;
+        return $results ;
     }
 
 
@@ -91,7 +102,6 @@ class FichesRepository extends EntityRepository
         $em->flush();
         return ['status' => 'success','content' => 'Le QCM a été mis à jour !'];
     }
-
 
 
 

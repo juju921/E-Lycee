@@ -53,13 +53,7 @@ class Fiches
      * @ORM\JoinColumn(name="lvl_id_fiches", referencedColumnName="id")
      *
      */
-    private $classes;
-
-
-
-
-
-
+    private $classesLevels;
 
 
 
@@ -158,37 +152,6 @@ class Fiches
     }
 
 
-
-
-
-
-
-
-
-
-
-    /**
-     * Set classes
-     *
-     * @param \Elycee\ElyceeBundle\Entity\Classes $classes
-     * @return Fiches
-     */
-    public function setClasses(\Elycee\ElyceeBundle\Entity\Classes $classes = null)
-    {
-        $this->classes = $classes;
-
-        return $this;
-    }
-
-    /**
-     * Get classes
-     *
-     * @return \Elycee\ElyceeBundle\Entity\Classes 
-     */
-    public function getClasses()
-    {
-        return $this->classes;
-    }
 
     /**
      * Add scores
