@@ -35,17 +35,17 @@ class studentController extends Controller
         $doctrine = $this->getDoctrine();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
 
-        $qcms = $scoreRp->findBy(['status' => 'publish', 'classes' => $this->getUser()->getClasse()]);
+        $qcms = $scoreRp->findBy(['status' => 'publish', 'classLevel' => $this->getUser()->getClasse()]);
 
 
 
-        $scores = $scoreRp->gettheFiches();
+        //$scores = $scoreRp->gettheFiches();
       //  $id = $token->getUser()->getId();
         //$iduser = 2;
         //$fichesquery = $scoreRp->getfichebyuser($iduser);
 
         return array(
-            'scores' => $scores,
+          //  'scores' => $scores,
             'publishedQcms' => count($qcms)
         );
     }
@@ -61,10 +61,18 @@ class studentController extends Controller
         $token = $this->get('security.context')->getToken();
         $doctrine = $this->getDoctrine();
         $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
-        $scores = $scoreRp->getScoreSeenStudent($token->getUser()->getId());
+       // $scores = $scoreRp->getScoreSeenStudent($token->getUser()->getId());
+        $student = $token->getUser();
+        $scoreRps = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
+
+        $qcms = $scoreRps->findBy(['status' => 'publish', 'classLevel' => $this->getUser()->getClasse()]);
+        $fiche = $scoreRp->findBy(['student' => $student]);
+
 
         return array(
-            'scores' => $scores
+         //   'scores' => $scores
+            'publishedQcms' => count($qcms),
+            'fiche'=> $fiche
         );
     }
 
@@ -75,180 +83,28 @@ class studentController extends Controller
      */
     public function ficheMakeAction($id, Request $request)
     {
-        $token = $this->get('security.context')->getToken();
+
         $doctrine = $this->getDoctrine();
-        $em = $doctrine->getManager();
-        $scoreRp = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
-        $scores = $scoreRp->getScoreSeenStudent($token->getUser()->getId());
-        $score = $scoreRp->find($id);
+        $repository = $doctrine->getRepository('ElyceeElyceeBundle:Fiches');
+        $score = $doctrine->getRepository('ElyceeElyceeBundle:Scores');
+        $qcms = $repository->findBy(['status' => 'publish', 'classLevel' => $this->getUser()->getClasse()]);
 
-        $copie = new Copie();
-        $copieType = new CopieType();
-        $score = $scoreRp->find($id);
-        $fiche = $score->getFiche();
-
-        //$datas = array();
-
-        $datas = array();
-        $form = $this->createFormBuilder($datas);
-        //$form = $this->createFormBuilder($copie, array ( 'attr' => array ( 'name' => 'myFormName')));
-        $flag_reponse = false;
-        foreach ($fiche->getChoices() as $choice) {
-
-            $content = $choice->getContentChoice();
-            $repository = $doctrine->getRepository('ElyceeElyceeBundle:Choices');
-            $contact = $repository->getThePost($fiche->getId());
-
-
-            if (!$request->isMethod('POST')) {
-
-                if ($choice->getResponse() == 0) {
-                    $checked = 0;
-
-                } else {
-                    $checked = 1;
-
-                }
-
-
-                //$checked = $copie->hasChoices($choice);
-
-
-                if ($checked && !$flag_reponse) {
-                    //  $nb_rep_save++;
-                    $flag_reponse = true;
-                }
-                $form->add('c' . $choice->getId(), 'checkbox', array(
-                    'required' => false,
-                    'attr' => array(
-                        'checked' => $checked,
-                        'label' => $content,
-
-                    )));
-                /*$form->add('c' . $choice->getId(), 'choice', array(
-                    'choices' => array('0' => 'oui', '1'=>'non'),
-                    //'choices' => array('h' => 'femme', 'f'=> 'homme'),
-                    //'label'     => $content,
-                    'expanded' => true,
-
-                    'mapped' => false,
-                    'required' => false,
-                    'empty_value' => false,
-
-                ));*/
-
-            } else {
-                $form->add('c' . $choice->getId(), 'checkbox', array(
-                    'required' => false,
-                    'label' => $content,
-                ));
-                /* $form->add('c' . $choice->getId(), 'choice', array(
-                     'choices' => array('0' => 'oui', '1'=>'non'),
-                     //'choices' => array('h' => 'femme', 'f'=> 'homme'),
-                     //'label'     => $content,
-                     'expanded' => true,
-
-                     'mapped' => false,
-                     'required' => false,
-                     'empty_value' => false,
-
-                 ));*/
-
-
-            }
-
-
-            /* $form->add('reponse' . $choice->getId(), 'choice', array(
-                 'choices' => array($ma => $content),
-                 //'choices' => array('h' => 'femme', 'f'=> 'homme'),
-                 //'label'     => $content,
-                 'expanded' => true,
-
-                 'mapped' => false,
-                 'required' => false,
-                 'empty_value' => false,
-
-             ));*/
-
-
+        $qcm = $repository->findOneBy(['id' => $id, 'status' => 'publish', 'classLevel' => $this->getUser()->getClasse()]);
+        $check = $score->findOneBy(['fiche' => $qcm, 'student' => $this->getUser()]);
+        if (!$qcm) {
+            $this->get('session')->getFlashBag()->add('message', ['status' => 'error', 'content' => "Le QCM n'a pas été trouvé !"]);
+            return $this->redirect($this->generateUrl('app.qcm.student'));
         }
-        $form = $form->getForm();
-
-        //$form = $form->getForm()->handleRequest($request);
-
-        if ($request->isMethod('POST')) {
-            $form->handleRequest($request);
-
-            if ($form->isValid() && $form->isSubmitted()) {
-
-
-                $data = $form->getData('datas');
-
-
-                $flag_reponse = false;
-                foreach ($fiche->getChoices() as $choice) {
-
-                    $key = 'c' . $choice->getId();
-                    //echo $choice->getId();exit();
-                    //echo '<pre>';Debug::dump($data);echo '</pre>';exit();
-
-                    if ($choice->getResponse() == 1) {
-                        //$checked = 0;
-                        $c1 = 'c' . $choice->getResponse();
-                        // echo '<pre>';Debug::dump($c1);echo '</pre>';exit();
-                    } else {
-                        //  $checked = 1;
-                        $c1 = 'c2' . $choice->getResponse();
-                        //echo '<pre>';Debug::dump($c1);echo '</pre>';exit();
-                    }
-
-                    // echo '<pre>';Debug::dump($data[$c1]);echo '</pre>';exit();
-                    if ($data[$c1] == true) {
-
-                        echo "c'est bon";
-                        $note = $choice->getPoint();
-
-                        $status = $doctrine->getRepository('ElyceeElyceeBundle:Status');
-                        $done = $status->findOneBy(array('nom' => 'fait'));
-
-
-                        $score->setNote($note);
-                        $score->setStatus($done);
-                        $em->persist($score);
-                        $em->flush();
-
-
-                    } else {
-                        $status = $doctrine->getRepository('ElyceeElyceeBundle:Status');
-                        $done = $status->findOneBy(array('nom' => 'fait'));
-                        // $score->setStudent(getUser()->getId());
-
-
-                        $score->setNote($note);
-                        $score->setStatus($done);
-                        $em->persist($score);
-                        $em->flush();
-
-                    }
-
-
-                }
-
-
-            }
-            $form = $form->createView();
-
+        if ($request->isMethod('POST') && isset($_POST['submit'])) {
+            $student = $this->getUser();
+            $response = $doctrine->getManager()->getRepository('ElyceeElyceeBundle:Scores')->addScore($qcm, $student);
+            $this->get('session')->getFlashBag()->add('message', $response);
+            return $this->redirect($this->generateUrl('student.fiches.home'));
         }
+        return ['qcm' => $qcm,'check' => $check, 'publishedQcms' => count($qcms)];
 
 
-        return array(
-            'score' => $score,
-            'form' => $form,
-            'content' => $content,
-            'contact' => $contact,
-            'fiche' => $fiche,
 
-        );
     }
 
 

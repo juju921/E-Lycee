@@ -14,37 +14,30 @@
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
-
+                    <th>#</th>
                     <th>titre</th>
-                    <th>question</th>
                     <th>status</th>
-                    <th>répondre</th>
 
+                    <th>note</th>
 
                 </tr>
                 </thead>
                 <tbody>
-                    {% for score in scores %}
-                    <tr>
-                        <td> {{ score.fiche.title | raw }}</td>
-                        <td> {{ score.fiche.content | raw }}</td>
-                        <td>
-                            {% if (score.status.nom  == "fait") %}
-                                <a class='material-icons' disabled>fait</a>
-                            {% else %}
-                                <a class='material-icons' href="{{ url('student.fiches.make',{'id':score.id} ) }}">à faire</a>
-                            {% endif %}
 
-                            <td>
-                                {% if (score.status.nom  == "DONE") %}
-                                    <a class='material-icons' disabled>check</a>
-                                {% else %}
-                                    <a class='material-icons' href="{{ url('student.fiches.make',{'id':score.id} ) }}">Valider</a>
-                                {% endif %}
-                            </td>
-                        </td>
+                      {% for fiches in fiche %}
+                      <tr>
+                          <td>{{ loop.index }}</td>
+                          <td><a href=""><a href="">{{ fiches.fiche.title | raw }}</a></a></td>
+                    <td> {% if fiches.status == '1' %}
+                            <a href="{{  path("student.fiches.make",{'id' : fiches.fiche.id}) }}"><button type="button" class="btn btn-success"><i class="fa fa-check"></i> Fait</button></a>
+                        {% else %}
+                            <a href="{{  path("student.fiches.make",{'id' : fiches.fiche.id}) }}"><button type="button" class="btn btn-warning"><i class="fa fa-bell"></i> À Faire</button></a>
+                        {% endif %}</td>
+                          <td>{{ fiches.note }}</td>
+                      </tr>
                     {% endfor %}
-                    </tr>
+
+
                 </tbody>
             </table>
         </div>

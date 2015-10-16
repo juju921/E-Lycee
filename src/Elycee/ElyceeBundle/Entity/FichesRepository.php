@@ -14,7 +14,8 @@ class FichesRepository extends EntityRepository
 {
 
 
-    public function getCountFiches(){
+    public function getCountFiches()
+    {
         $results = $this
             ->createQueryBuilder('p')
             ->select('count(p)')
@@ -25,7 +26,8 @@ class FichesRepository extends EntityRepository
 
     }
 
-    public function getThreeLastFiches(){
+    public function getThreeLastFiches()
+    {
         $results = $this
             ->createQueryBuilder('p')
             ->setMaxResults(3)
@@ -35,7 +37,7 @@ class FichesRepository extends EntityRepository
     }
 
 
-    public function persistQuestions($questions,$qcm)
+    public function persistQuestions($questions, $qcm)
     {
         foreach ($questions as $question) {
             $question->setFiche($qcm);
@@ -57,9 +59,9 @@ class FichesRepository extends EntityRepository
 
         $results = $this
             ->createQueryBuilder('p')
-            ->join('p.classes','f')
-            ->join('p.status','status')
-          //  ->where('f.class_level  =  \'premiere\' ')
+            ->join('p.classes', 'f')
+            ->join('p.status', 'status')
+            //  ->where('f.class_level  =  \'premiere\' ')
             ->andWhere('status.nom = \'publish\'')
             ->getQuery()
             ->getResult();
@@ -68,41 +70,41 @@ class FichesRepository extends EntityRepository
     }
 
 
-    public  function getfichebyuser($iduser)
+    public function getfichebyuser($iduser)
     {
         $results = $this
             ->createQueryBuilder('p')
             ->select('p.title')
             ->where(':teacher_id   = :iduser')
-            ->setParameter(':id',$iduser)
+            ->setParameter(':id', $iduser)
             ->getQuery()
             ->getResult();
         echo $results;
-        return $results ;
+        return $results;
     }
 
 
-    public function updateQcm($request,$form,$qcmStatus){
+    public function updateQcm($request, $form, $qcmStatus)
+    {
         $em = $this->getEntityManager();
         $qcm = $form->getData();
         $published = $form->get('publish')->getData();
-        if($published){
+        if ($published) {
 
             $qcm->setStatus('publish');
             $em->getRepository('ElyceeElyceeBundle:Scores')->generateScores($qcm);
         }
-        if($qcmStatus == 'publish' && !$published)
+        if ($qcmStatus == 'publish' && !$published)
             $qcm->setStatus('publish');
-        foreach($qcm->getQuestions() as $key1 => $question)
+        foreach ($qcm->getQuestions() as $key1 => $question)
             foreach ($question->getChoices() as $key2 => $choice) {
-                if ($choice->getContentChoice() == '') return ['status' => 'error','content' => 'Les réponses ne peuvent pas être vides !'];
+                if ($choice->getContentChoice() == '') return ['status' => 'error', 'content' => 'Les réponses ne peuvent pas être vides !'];
                 ($key2 + 1 == $request->get('reponse' . ($key1 + 1))) ? $choice->setStatus('yes') : $choice->setStatus('no');
             }
         $em->persist($qcm);
         $em->flush();
-        return ['status' => 'success','content' => 'Le QCM a été mis à jour !'];
+        return ['status' => 'success', 'content' => 'Le QCM a été mis à jour !'];
     }
-
 
 
 }

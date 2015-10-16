@@ -33,16 +33,45 @@ class ScoresRepository extends EntityRepository
 
     public function generateScores($qcm){
         $em = $this->getEntityManager();
-        $users = $em->getRepository('ElyceeElyceeBundle:User')->findBy(['classe' => $qcm->getClasses()]);
+
+        $statusRp =  $em->getRepository('ElyceeElyceeBundle:Status');
+        $status =  $statusRp->findOneBy(array('nom'=>'not done'));
+
+
+        $users = $em->getRepository('ElyceeElyceeBundle:User')->findBy(['classe' => $qcm->getClassLevel()]);
         foreach ($users as $user) {
             $score = new Scores();
-          //  $score->setStatus($qcm->setStatus(2));
+            $score->setStatus($status);
             $score->setNote(0);
             $score->setStudent($user);
             $score->setFiche($qcm);
             $em->persist($score);
         }
         $em->flush();
+    }
+
+
+    public function addScore($qcm,$student){
+        $points = 0;
+        $questions = $qcm->getQuestions();
+
+        foreach($questions as $key => $question){
+            if(!isset($_POST['reponse'.($key+1)]) || !is_numeric($_POST['reponse'.($key+1)]))
+                return ['status' => 'error','content' => 'Erreur !'];
+            if($question->getChoices()[$_POST['reponse'.($key+1)]-1]->getStatus() === 'yes')
+                $points += $question->getPoints();
+        }
+        $em = $this->getEntityManager();
+
+        $score = $em->getRepository('ElyceeElyceeBundle:Scores')->findOneBy(['fiche' => $qcm,'student' => $student]);
+        $statusRp =  $em->getRepository('ElyceeElyceeBundle:Status');
+        $status =  $statusRp->findOneBy(array('nom'=>'done'));
+
+        $score->setNote($points);
+        $score->setStatus($status);
+        $em->persist($score);
+        $em->flush();
+        return ['status' => 'success','content' => 'QCM validé !'];
     }
 
 

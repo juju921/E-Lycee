@@ -29,10 +29,8 @@ class Classes
      */
     private $classLevel;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Fiches", mappedBy="classesLevel")
-     */
-    protected $lvl_id_fiches;
+
+
 
     /**
      * @ORM\OneToMany(targetEntity="User", mappedBy="classes")
@@ -122,4 +120,6 @@ class Classes
     {
         return $this->students;
     }
+
+
 }

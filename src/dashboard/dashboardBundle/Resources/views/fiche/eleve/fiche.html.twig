@@ -14,28 +14,57 @@
             {% endfor %}
 
 
-            <!-- /.panel -->
-
-            {{ score.fiche.title | raw }}
-
-            {{ score.fiche.content | raw }}
-
-            {{ form_start(form) }}
-
-
-
-            <p class="text-primary"><strong>cocher la bonne réponse.</strong></p>
-
-            {% for choice in fiche.choices %}
-                {% set value = 'c' ~ choice.id %}
-            <div class="form-group">
-                <label>
-                    {{ choice.contentChoice }}
-
-                    {{ form_widget(attribute(form, value)) }}
-                </label>
+          <form method="POST" class="form-horizontal" novalidate>
+            {% if check.status == '3' %}
+                {% for question in qcm.questions %}
+                    {% set count = loop.index %}
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">{{ question.content | raw }}</div>
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    {% for choice in question.choices %}
+                                        <li class="list-group-item">
+                                            <label class="radio-inline">
+                                                <input type="radio" name="reponse{{ count }}" value="{{ loop.index }}"/>{{ choice.contentChoice | raw }}
+                                            </label>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <em>Cocher la bonne réponse</em>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="col-lg-10 col-lg-offset-1">
+                    <input class="btn btn-default pull-right" type="submit" value="Valider" name="submit"/>
                 </div>
-            {% endfor %}
+            {% else %}
+                {% for question in qcm.questions %}
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">{{ question.content | raw }}</div>
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    {% for choice in question.choices %}
+                                        <li class="list-group-item">
+                                            <label class="radio-inline">
+                                                {% if choice.status == 'yes' %}
+                                                    <i class="fa fa-check publish"></i>
+                                                {% else %}
+                                                    <i class="fa fa-times btn-danger"></i>
+                                                {% endif %}
+                                                {{ choice.contentChoice | raw }}
+                                            </label>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
 
 
 
@@ -48,10 +77,9 @@
                 <input type="submit" value="Valider" class="btn"/>
             </p>
 
+</form>
 
 
-
-            {{ form_end(form) }}
 
 
         </div>

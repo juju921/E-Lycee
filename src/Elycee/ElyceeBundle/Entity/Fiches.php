@@ -48,14 +48,14 @@ class Fiches
     private $teacher;
 
 
+
+
     /**
-     * @ORM\ManyToOne(targetEntity="Classes", inversedBy="lvl_id_fiches")
-     * @ORM\JoinColumn(name="lvl_id_fiches", referencedColumnName="id")
+     * @var array
+     * @ORM\Column(name="class_level", type="string")
      *
      */
-    private $classesLevels;
-
-
+    protected $classLevel;
 
     /**
      * @ORM\OneToMany(targetEntity="Questions", mappedBy="fiche",  cascade={"persist","remove"})
@@ -238,10 +238,35 @@ class Fiches
     /**
      * Get status
      *
-     * @return string 
+     * @return string
      */
     public function getStatus()
     {
         return $this->status;
+    }
+
+
+
+    /**
+     * Set classLevel
+     *
+     * @param string $classLevel
+     * @return Fiches
+     */
+    public function setClassLevel($classLevel)
+    {
+        $this->classLevel = $classLevel;
+
+        return $this;
+    }
+
+    /**
+     * Get classLevel
+     *
+     * @return string 
+     */
+    public function getClassLevel()
+    {
+        return $this->classLevel;
     }
 }

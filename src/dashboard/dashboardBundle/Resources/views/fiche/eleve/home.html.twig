@@ -31,20 +31,6 @@
 
 
 
-                                {% for score in scores %}
-
-                  {#                 Votre score est de {{ student.scores|length }}#}
-                                    {{ score.fiche.title | raw }}
-                                    {{ score.status.nom }}
-
-                                    {% if (score.status.nom  == "DONE") %}
-                                        <a class='fa fa-check-square-o' disabled>Complété</a>
-                                    {% else %}
-                                        <a class='fa fa-square-o' href="{{ url('student.fiches.make',{'id':score.id} ) }}">Répondre au QCM</a>
-                                    {% endif %}
-
-
-                                {% endfor %}
                             </div>
                         </div>
                     </div>

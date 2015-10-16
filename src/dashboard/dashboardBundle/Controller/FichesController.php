@@ -3,7 +3,6 @@
 namespace dashboard\dashboardBundle\Controller;
 
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -114,7 +113,7 @@ class FichesController extends Controller
             if ($form->isValid() && $nbr <= 10 && $nbr > 0) {
 
                 $fiche = $form->getData();
-                $fiche->setStatus($unpublished);
+                $fiche->setStatus('unpublish');
                 // echo dump($unpublished);exit;
                 $em->persist($fiche);
 
@@ -151,11 +150,11 @@ class FichesController extends Controller
                 $question = $form->getData();
                 if (is_null($question->getChoices()) || count($question->getChoices()) < 2 || count($question->getChoices()) > 5)
                     return ['form' => $form->createView(), 'error' => 'Vous devez avoir au moins 1 réponse et au plus 5 réponses !'];
-                /*if (is_null($request->get('reponse')))
-                    return ['form' => $form->createView(), 'error' => 'Vous devez cocher la bonne réponse !'];*/
+                if (is_null($request->get('reponse')))
+                    return ['form' => $form->createView(), 'error' => 'Vous devez cocher la bonne réponse !'];
 
                 $questions = $this->get('session')->get('questions');
-                // $question->getChoices()[(int)$request->get('reponse')]->setStatus('yes');
+                $question->getChoices()[(int)$request->get('reponse')]->setStatus('yes');
                 array_push($questions, $question);
                 $this->get('session')->set('questions', $questions);
                 if ($this->get('session')->get('nbr') == 1) {

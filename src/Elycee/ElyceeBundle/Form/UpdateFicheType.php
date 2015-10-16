@@ -15,10 +15,9 @@ class UpdateFicheType extends AbstractType
         $builder->setMethod('PUT')
             ->add('title')
 
-            ->add('classes', 'entity' ,array(
-                'class' => 'ElyceeElyceeBundle:Classes',
-                'property' => 'classLevel',
-
+            ->add('classLevel', 'choice', array(
+                'choices' => array('1' => 'Première S', '2' => 'Terminale S'),
+                'required' => true,
             ))
             ->add('questions', 'collection',
                 array(
