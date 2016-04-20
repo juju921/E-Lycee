@@ -75,7 +75,7 @@ doctrine:
 swiftmailer:
     transport: gmail
     username:  julien.garretb@gmail.com
-    password:   azertyui
+    password:   ''
     spool:     { type: memory }
 
 
